@@ -27,9 +27,9 @@ if ($count > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $e = array(
-            "DNI" => $DNI,
             "username" => $username,
-            "password" => $password
+            "password" => $password,
+            "DNI" => $DNI
         );
 
         array_push($userArr, $e);
