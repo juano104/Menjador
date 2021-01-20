@@ -9,7 +9,7 @@ class Person {
     private $last_name;
     private $DNI;
     private $birth_date;
-    private $Role;
+    private $role;
     
     function getName() {
         return $this->name;
@@ -28,7 +28,7 @@ class Person {
     }
 
     function getRole() {
-        return $this->Role;
+        return $this->role;
     }
 
     function setName($name): void {
@@ -47,8 +47,8 @@ class Person {
         $this->birth_date = $birth_date;
     }
 
-    function setRole($Role): void {
-        $this->Role = $Role;
+    function setRole($role): void {
+        $this->Role = $role;
     }
 
         public function __construct($db) {
