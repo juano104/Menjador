@@ -1,7 +1,7 @@
 <?php
 class Database{
 
-    private $host = "40.68.231.216:3306";
+    private $host = "localhost";
     private $username = "menjador";
     private $password = "password";
     private $db = "AppMenjador";
