@@ -66,9 +66,9 @@ class Person {
 
     public function readOne() {
         $sqlQuery = "SELECT
-                        DNI, 
-                        username, 
-                        password
+                        name, 
+                        last_name, 
+                        role
                     FROM Person
                     WHERE 
                         DNI = ? Limit 1";
