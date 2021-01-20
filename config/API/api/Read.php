@@ -5,14 +5,14 @@ header("Content-Type: application/json; charset=UTF-8");
 
 //Headers
 include_once '../config/Database.php';
-include_once '../class/User_Admin.php';
+include_once '../class/Person.php';
 
 //DB
 $db = new Database();
 $db_conn = $db->connect();
 
 //User
-$user = new User_Admin($db_conn);
+$user = new Person($db_conn);
 
 $stmt = $user->read();
 $count = $stmt->rowCount();
