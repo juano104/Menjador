@@ -17,7 +17,6 @@ $user->readOne();
 if ($user->getName() != null) {
     // create array
     $user_arr = array(
-        "DNI" =>  $user->getDNI(),
         "name" => $user->getName(),
         "last_name" => $user->getLast_name(),
         "role" => $user->getRole()
@@ -27,5 +26,5 @@ if ($user->getName() != null) {
     echo json_encode($user_arr);
 } else {
     http_response_code(404);
-    echo json_encode("Employee not found.");
+    echo json_encode("Person not found.");
 }
