@@ -71,19 +71,19 @@ class Person {
                         password
                     FROM Person
                     WHERE 
-                        DNI = ?
-                    LIMIT 0,1";
+                        role = ?";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->DNI);
+        $stmt->bindParam(1, $this->role);
 
         $stmt->execute();
 
         $dataRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $this->username = $dataRow['username'];
-        $this->password = $dataRow['password'];
+        $this->name = $dataRow['name'];
+        $this->last_name = $dataRow['last_name'];
+        $this->DNI = $dataRow['DNI'];
     }
 
     /* public function create() {
