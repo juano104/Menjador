@@ -71,11 +71,11 @@ class Person {
                         password
                     FROM Person
                     WHERE 
-                        role = ?";
+                        DNI = ? Limit 1";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->role);
+        $stmt->bindParam(1, $this->DNI);
 
         $stmt->execute();
 
@@ -83,7 +83,7 @@ class Person {
 
         $this->name = $dataRow['name'];
         $this->last_name = $dataRow['last_name'];
-        $this->DNI = $dataRow['DNI'];
+        $this->role = $dataRow['role'];
     }
 
     /* public function create() {
