@@ -27,11 +27,11 @@ if ($count > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $e = array(
-            "Name" => $user->GetName(),
-            "Last Name" => $user->GetLast_name(),
-            "DNI" => $user->GetDNI(),
-            "Birth Date" => $user->GetBirth_date(),
-            "Role" => $user->GetRole(),
+            "Name" => $name,
+            "Last Name" => $last_name,
+            "DNI" => $DNI,
+            "Birth Date" => $birth_date,
+            "Role" => $role,
         );
 
         array_push($userArr, $e);

@@ -57,7 +57,7 @@ class Person {
 
     //Read
     public function read() {
-        $query = "Select * from User_Admin";
+        $query = "Select * from Person";
 
         $result = $this->conn->query($query);
 
@@ -69,7 +69,7 @@ class Person {
                         DNI, 
                         username, 
                         password
-                    FROM User_Admin
+                    FROM Person
                     WHERE 
                         DNI = ?
                     LIMIT 0,1";
