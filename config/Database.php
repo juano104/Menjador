@@ -4,7 +4,7 @@ class Database{
     private $host = "40.68.231.216:3306";
     private $username = "menjador";
     private $password = "password";
-    private $db = "api";
+    private $db = "AppMenjador";
     public $conn;
 
     public function connect() {
