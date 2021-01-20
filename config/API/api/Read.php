@@ -28,9 +28,9 @@ if ($count > 0) {
         extract($row);
         $e = array(
             "Name" => $name,
-            "Last Name" => $last_name,
+            "Last_name" => $last_name,
             "DNI" => $DNI,
-            "Birth Date" => $birth_date,
+            "Birth_date" => $birth_date,
             "Role" => $role,
         );
 
