@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -30,7 +33,7 @@ if ($count > 0) {
             "Name" => $user->GetName(),
             "Last Name" => $user->GetLast_name(),
             "DNI" => $user->GetDNI(),
-            "Brith Date" => $user->GetBirth_date(),
+            "Birth Date" => $user->GetBirth_date(),
             "Role" => $user->GetRole(),
         );
 
