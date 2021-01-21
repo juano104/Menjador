@@ -36,7 +36,7 @@ if ($count > 0) {
 
         array_push($userArr, $e);
     }
-    echo json_encode($userArr);
+    //echo json_encode($userArr);
 }
 
 ?>
@@ -108,11 +108,6 @@ if ($count > 0) {
     <script>
         $(document).ready(function() {
             var t = $('#table').DataTable({
-                /*ajax: {
-                    url: 'Read.php',
-                    dataSrc: '',
-                    type: "GET",
-                },*/
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
                     data: 'name'
@@ -133,11 +128,6 @@ if ($count > 0) {
 
             function loadData() {
                 t = $('#table').DataTable({
-                    /*ajax: {
-                        url: 'http://40.68.231.216/Menjador/config/API/api/Read.php',
-                        dataSrc: '',
-                        type: "GET",
-                    },*/
                     data: <?php echo json_encode($userArr); ?>,
                     columns: [{
                         data: 'name'
