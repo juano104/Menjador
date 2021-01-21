@@ -10,8 +10,7 @@ class Database{
     public function connect() {
         $this->conn = null;
         try {
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db, $this->username, $this->password);
-            $this->conn->exec("set names utf8");
+            $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->db);;
         } catch (PDOException $exception) {
             echo "Database could not be connected: " . $exception->getMessage();
         }
