@@ -111,7 +111,7 @@ if ($count > 0) {
                     data: 'role'
                 }],
                 language: {
-                    url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
+                    url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
                 select: true
             });
@@ -131,7 +131,7 @@ if ($count > 0) {
                         data: 'role'
                     }],
                     language: {
-                        url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
+                        url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
                     select: true
                 });
