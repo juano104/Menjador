@@ -29,15 +29,6 @@
         <h1> Exemple DataTablesJS - AJAX, Select & Bootrap 4. </h1>
         <p>Selecciona per editar una fila de la taula.</p>
         <div id="alert_message"></div>
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-outline-primary" id="b1">COMENÇA AMB S</button>
-                <button type="button" class="btn btn-outline-danger" id="b2">TOTS</button>
-                <button type="button" class="btn btn-outline-danger" id="b3">ID VISIBLE</button>
-                <button type="button" class="btn btn-outline-danger" id="b4">MODAL EDIT</button>
-                <button type="button" class="btn btn-outline-danger" id="b5">MODAL DELETE</button>
-            </div>
-        </div>
         <br />
         <div class="row">
             <div class="col">

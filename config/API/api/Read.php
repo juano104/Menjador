@@ -15,12 +15,15 @@ $db_conn = $db->connect();
 $user = new Person($db_conn);
 
 $stmt = $user->read();
-$count = $stmt->rowCount();
+$result = $stmt->get_result();
+$outp = $result->fetch_all(MYSQLI_ASSOC);
+echo json_encode($outp);
+//$count = $stmt->rowCount();
 
-echo json_encode($count);
+//echo json_encode($count);
 
 
-if ($count > 0) {
+/*if ($count > 0) {
 
     $userArr = array();
 
@@ -37,4 +40,4 @@ if ($count > 0) {
         array_push($userArr, $e);
     }
     echo json_encode($userArr);
-}
+}*/
