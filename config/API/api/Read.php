@@ -36,5 +36,5 @@ if ($count > 0) {
 
         array_push($userArr, $e);
     }
-    $json = json_encode($userArr);
+    echo json_encode($userArr);
 }
