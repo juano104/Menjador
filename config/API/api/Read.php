@@ -16,7 +16,7 @@ $user = new Person($db_conn);
 
 $stmt = $user->read();
 
-$row = $stmt->fetch_all(PDO::FETCH_ASSOC);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 json_encode($row);
 //$count = $stmt->rowCount();
 
