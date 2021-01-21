@@ -105,12 +105,12 @@ if ($count > 0) {
     </div>
 
     <script>
-        var jsonData = <?php echo $json; ?>
+        //var jsonData = <?php echo $json; ?>
         $(document).ready(function() {
             var t = $('#table').DataTable({
                 ajax: {
                     url: 'http://40.68.231.216/Menjador/config/API/api/Read.php',
-                    dataSrc: '',
+                    dataSrc: '<?php echo $json; ?>',
                     type: "GET",
                 },
                 //data: jsonData,
