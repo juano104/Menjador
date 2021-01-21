@@ -1,7 +1,7 @@
 <?php
 
-//header("Access-Control-Allow-Origin: *");
-//header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
 
 //Headers
 include_once '../config/Database.php';
@@ -107,10 +107,11 @@ if ($count > 0) {
     <script>
         //var jsonData = <?php echo $json; ?>
         $(document).ready(function() {
-            var t = $('#table').DataTable({
+            /*var t = $('#table').DataTable({
                 ajax: {
                     url: 'http://40.68.231.216/Menjador/config/API/api/Read.php',
-                    dataSrc: '<?php echo $json; ?>',
+                    dataSrc: '<?php //echo $json; 
+                                ?>',
                     type: "GET",
                 },
                 //data: jsonData,
@@ -155,37 +156,28 @@ if ($count > 0) {
                     },
                     select: true
                 });
-            }
+            }*/
 
-            //t.column(0).visible(false);
-
-            /*$.ajax({
-                'url': "cds.php",
+            $.ajax({
+                'url': "http://40.68.231.216/Menjador/config/API/api/Read.php",
                 'method': "GET",
                 'contentType': 'application/json'
             }).done(function(data) {
                 $('#table').dataTable({
                     "aaData": data,
                     "columns": [{
-                        "data": "idsong"
-                    }, {
                         "data": "name"
+                    }, {
+                        "data": "last_name"
+                    }, {
+                        "data": "DNI"
+                    }, {
+                        "data": "birth_date"
+                    }, {
+                        "data": "role"
                     }]
                 })
-            })*/
-
-            $("#b1").click(function() {
-                t.search("S").draw();
-            });
-
-            $("#b2").click(function() {
-                t.search("").draw();
-            });
-
-            $("#b3").click(function() {
-                var b = t.column(0).visible();
-                t.column(0).visible(!b);
-            });
+            })
         });
     </script>
 
