@@ -113,17 +113,17 @@ if ($count > 0) {
                     dataSrc: '',
                     type: "POST",
                 },*/
-                "data": jsonData,
-                "columns": [{
-                    "data": 'name'
+                data: jsonData,
+                columns: [{
+                    data: 'name'
                 }, {
-                    "data": 'last_name'
+                    data: 'last_name'
                 }, {
-                    "data": 'DNI'
+                    data: 'DNI'
                 }, {
-                    "data": 'birth_date'
+                    data: 'birth_date'
                 }, {
-                    "data": 'role'
+                    data: 'role'
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
@@ -138,17 +138,17 @@ if ($count > 0) {
                     dataSrc: '',
                     type: "POST",
                 },*/
-                    "data": jsonData,
-                    "columns": [{
-                        "data": 'name'
+                    data: jsonData,
+                    columns: [{
+                        data: 'name'
                     }, {
-                        "data": 'last_name'
+                        data: 'last_name'
                     }, {
-                        "data": 'DNI'
+                        data: 'DNI'
                     }, {
-                        "data": 'birth_date'
+                        data: 'birth_date'
                     }, {
-                        "data": 'role'
+                        data: 'role'
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
