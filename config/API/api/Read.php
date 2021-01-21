@@ -132,15 +132,21 @@ if ($count > 0) {
             function loadData() {
                 t = $('#table').DataTable({
                     ajax: {
-                        url: 'cds.php',
+                        url: 'Read.php',
                         dataSrc: '',
-                        type: "POST",
+                        type: "GET",
                     },
                     columns: [{
-                        data: 'idsong'
-                    }, {
-                        data: 'name'
-                    }],
+                    data: 'name'
+                }, {
+                    data: 'last_name'
+                },{
+                    data: 'DNI'
+                },{
+                    data: 'birth_date'
+                },{
+                    data: 'role'
+                }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
                     },
