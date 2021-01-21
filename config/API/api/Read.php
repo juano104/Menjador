@@ -159,7 +159,7 @@ if ($count > 0) {
             }*/
 
             $.ajax({
-                'url': "http://40.68.231.216/Menjador/config/API/api/Read.php",
+                'url': "Read.php",
                 'method': "GET",
                 'contentType': 'application/json'
             }).done(function(data) {
