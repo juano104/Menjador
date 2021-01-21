@@ -26,7 +26,7 @@ if ($count > 0) {
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $e = array(
+        /*$e = array(
             "name" => $name,
             "last_name" => $last_name,
             "DNI" => $DNI,
@@ -34,7 +34,7 @@ if ($count > 0) {
             "role" => $role,
         );
 
-        array_push($userArr, $e);
+        array_push($userArr, $e);*/
     }
-    echo json_encode($userArr);
+    echo json_encode($row);
 }

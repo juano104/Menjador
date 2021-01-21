@@ -123,16 +123,16 @@
             }).done(function(data) {
                 $('#table').dataTable({
                     "aaData": data,
-                    columns: [{
-                        data: "name"
+                    "columns": [{
+                        "data": "name"
                     }, {
-                        data: "last_name"
+                        "data": "last_name"
                     }, {
-                        data: "DNI"
+                        "data": "DNI"
                     }, {
-                        data: "birth_date"
+                        "data": "birth_date"
                     }, {
-                        data: "role"
+                        "data": "role"
                     }]
                 })
             })
