@@ -80,18 +80,7 @@ if ($count > 0) {
 
 <body>
     <div class="container">
-        <h1> Exemple DataTablesJS - AJAX, Select & Bootrap 4. </h1>
-        <p>Select to edit a row in the table.</p>
-        <div id="alert_message"></div>
-
-        <button type="button" class="btn btn-outline-primary" id="b1">INCLUDES LETTER "S"</button>
-        <button type="button" class="btn btn-outline-danger" id="b2">ALL</button>
-        <button type="button" class="btn btn-outline-danger" id="b3">ID VISIBLE</button>
-        <button type="button" class="btn btn-outline-danger" id="b4">EDIT MODAL</button>
-        <button type="button" class="btn btn-outline-danger" id="b5">DELETE MODAL</button>
-
-    </div>
-    <div class="container">
+    <h1>Showing Person Table</h1>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -104,6 +93,7 @@ if ($count > 0) {
             </thead>
         </table>
     </div>
+
 
     <script>
         $(document).ready(function() {
