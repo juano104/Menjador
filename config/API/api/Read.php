@@ -33,8 +33,8 @@ if ($count > 0) {
             "birth_date" => $birth_date,
             "role" => $role,
         );
-
-        array_push($userArr, $e);*/
+*/
+        array_push($userArr, $arr);
     }
-    echo json_encode($arr);
+    echo json_encode($userArr);
 }
