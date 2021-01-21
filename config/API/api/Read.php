@@ -36,10 +36,5 @@ if ($count > 0) {
 
         array_push($userArr, $e);
     }
-    $json = json_encode($userArr);
-} else {
-    http_response_code(404);
-    echo json_encode(
-        array("message" => "No record found.")
-    );
+    echo json_encode($userArr);
 }
