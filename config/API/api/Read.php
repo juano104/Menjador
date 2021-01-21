@@ -108,12 +108,12 @@ if ($count > 0) {
         var jsonData = <?php echo $json; ?>
         $(document).ready(function() {
             var t = $('#table').DataTable({
-                /*ajax: {
-                    url: 'Read.php',
+                ajax: {
+                    url: 'http://40.68.231.216/Menjador/config/API/api/Read.php',
                     dataSrc: '',
-                    type: "POST",
-                },*/
-                data: jsonData,
+                    type: "GET",
+                },
+                //data: jsonData,
                 columns: [{
                     data: 'name'
                 }, {
@@ -133,12 +133,12 @@ if ($count > 0) {
 
             function loadData() {
                 t = $('#table').DataTable({
-                    /*ajax: {
-                    url: 'Read.php',
+                    ajax: {
+                    url: 'http://40.68.231.216/Menjador/config/API/api/Read.php',
                     dataSrc: '',
-                    type: "POST",
-                },*/
-                    data: jsonData,
+                    type: "GET",
+                },
+                    //data: jsonData,
                     columns: [{
                         data: 'name'
                     }, {
