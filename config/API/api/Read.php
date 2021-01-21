@@ -57,8 +57,6 @@ if ($count > 0) {
 
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-
     <!-- js -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
