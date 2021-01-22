@@ -65,17 +65,14 @@ class Person {
     }
 
     public function readOne() {
-        $sqlQuery = "SELECT
-                        name, 
-                        last_name, 
-                        role
+        $sqlQuery = "SELECT *
                     FROM Person
                     WHERE 
-                        DNI = ? Limit 1";
+                        name = ?";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->DNI);
+        $stmt->bindParam(1, $this->name);
 
         $stmt->execute();
 
@@ -83,6 +80,8 @@ class Person {
 
         $this->name = $dataRow['name'];
         $this->last_name = $dataRow['last_name'];
+        $this->DNI = $dataRow['DNI'];
+        $this->birth_date = $dataRow['birth_date'];
         $this->role = $dataRow['role'];
     }
 
