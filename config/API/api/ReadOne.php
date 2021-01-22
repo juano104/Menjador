@@ -12,27 +12,24 @@ $db_conn = $db->connect();
 $user = new Person($db_conn);
 
 $user->setName(isset($_GET["name"]) ? $_GET["name"] : die());
-$stmt = $user->readOne();
-$count = $stmt->rowCount();
-
+$user->readOne();
+//$count = $stmt->rowCount();
 //echo json_encode($count);
 
 
-if ($count > 0) {
 
-    $userArr = array();
+$userArr = array();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
-        $e = array(
-            "name" => $name,
-            "last_name" => $last_name,
-            "DNI" => $DNI,
-            "birth_date" => $birth_date,
-            "role" => $role,
-        );
+while ($row = $user->readOne()->fetch(PDO::FETCH_ASSOC)) {
+    extract($row);
+    $e = array(
+        "name" => $name,
+        "last_name" => $last_name,
+        "DNI" => $DNI,
+        "birth_date" => $birth_date,
+        "role" => $role,
+    );
 
-        array_push($userArr, $e);
-    }
-    //echo json_encode($userArr);
+    array_push($userArr, $e);
 }
+    echo json_encode($userArr);
