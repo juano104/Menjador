@@ -13,7 +13,7 @@ $user = new Person($db_conn);
 
 $user->setDNI(isset($_GET["DNI"]) ? $_GET["DNI"] : die());
 $user->readOne();
-
+$userArr = array();
 
 if ($user->getName() != null) {
     // create array
@@ -24,12 +24,7 @@ if ($user->getName() != null) {
         "birth_date" => $user->getBirth_date(),
         "role" => $user->getRole(),
     );
-
-    http_response_code(200);
     echo json_encode($userArr);
-} else {
-    http_response_code(404);
-    echo json_encode("Person not found.");
 }
 ?>
 
@@ -70,7 +65,7 @@ if ($user->getName() != null) {
 
 <body>
     <div class="container">
-    <h1>Showing Person Table</h1>
+        <h1>Showing Person Table</h1>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
