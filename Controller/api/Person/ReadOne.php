@@ -1,8 +1,8 @@
 <?php
 
 //Headers
-include_once '../../Model/Database.php';
-include_once '../../Model/Person.php';
+include_once '../../../Model/Database.php';
+include_once '../../../Model/Person.php';
 
 //DB
 $db = new Database();
