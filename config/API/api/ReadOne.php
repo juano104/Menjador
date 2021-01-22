@@ -11,15 +11,17 @@ $db_conn = $db->connect();
 //User
 $user = new Person($db_conn);
 
-$user->setDNI(isset($_GET["DNI"]) ? $_GET["DNI"] : die());
+$user->setName(isset($_GET["name"]) ? $_GET["name"] : die());
 $user->readOne();
 
 if ($user->getName() != null) {
     // create array
     $user_arr = array(
-        "name" => $user->getName(),
-        "last_name" => $user->getLast_name(),
-        "role" => $user->getRole()
+        "name" => $name,
+        "last_name" => $last_name,
+        "DNI" => $DNI,
+        "birth_date" => $birth_date,
+        "role" => $role,
     );
 
     http_response_code(200);
