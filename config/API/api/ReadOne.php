@@ -11,7 +11,7 @@ $db_conn = $db->connect();
 //User
 $user = new Person($db_conn);
 
-$user->setDNI(isset($_GET["DNI"]) ? $_GET["DNI"] : die());
+$user->setDNI(isset($_POST["DNI"]) ? $_POST["DNI"] : die());
 $user->readOne();
 $userArr = array();
 
