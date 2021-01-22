@@ -18,11 +18,11 @@ $user->readOne();
 if ($user->getName() != null) {
     // create array
     $user_arr = array(
-        "name" => $name,
-        "last_name" => $last_name,
-        "DNI" => $DNI,
-        "birth_date" => $birth_date,
-        "role" => $role,
+        "name" => $user->getName(),
+        "last_name" => $user->getLast_name(),
+        "DNI" => $user->getDNI(),
+        "birth_date" => $user->getBirth_date(),
+        "role" => $user->getRole(),
     );
 
     http_response_code(200);
