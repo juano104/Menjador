@@ -25,7 +25,7 @@ if ($user->getName() != null) {
         "role" => $user->getRole(),
     );
     array_push($userArr, $e);
-    echo json_encode($userArr);
+    //echo json_encode($userArr);
 }
 ?>
 
