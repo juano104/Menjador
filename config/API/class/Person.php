@@ -68,11 +68,11 @@ class Person {
         $sqlQuery = "SELECT *
                     FROM Person
                     WHERE 
-                        name = ?";
+                        DNI = ? limit 1";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
-        $stmt->bindParam(1, $this->name);
+        $stmt->bindParam(1, $this->DNI);
 
         $stmt->execute();
 
