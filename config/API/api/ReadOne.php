@@ -17,13 +17,14 @@ $userArr = array();
 
 if ($user->getName() != null) {
     // create array
-    $userArr = array(
+    $e = array(
         "name" => $user->getName(),
         "last_name" => $user->getLast_name(),
         "DNI" => $user->getDNI(),
         "birth_date" => $user->getBirth_date(),
         "role" => $user->getRole(),
     );
+    array_push($userArr, $e);
     echo json_encode($userArr);
 }
 ?>
