@@ -27,7 +27,6 @@ if ($count > 0) {
             "name" => $name,
             "last_name" => $last_name,
             "DNI" => $DNI,
-            "birth_date" => $birth_date,
             "role" => $role,
         );
 
