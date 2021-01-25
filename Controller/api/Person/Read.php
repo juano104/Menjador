@@ -12,7 +12,7 @@ $db_conn = $db->connect();
 $user = new Person($db_conn);
 
 $stmt = $user->read();
-$count = $stmt->num_rows;
+$count = $stmt->rowCount();
 
 //echo json_encode($count);
 
