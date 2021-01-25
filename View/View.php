@@ -1,6 +1,3 @@
-<?php
-    include_once "../Controller/api/Person/Read.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +35,7 @@
 
 <body>
     <div class="container">
-    <h1>Showing Person Table</h1>
+        <h1>Showing Person Table</h1>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
