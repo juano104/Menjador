@@ -12,12 +12,12 @@ $db_conn = $db->connect();
 $user = new Person($db_conn);
 
 $stmt = $user->read();
-//$count = $stmt->rowCount();
+$count = $stmt->rowCount();
 
 //echo json_encode($count);
 
 
-//if ($count > 0) {
+if ($count > 0) {
 
     $userArr = array();
 
@@ -34,6 +34,6 @@ $stmt = $user->read();
         array_push($userArr, $e);
     }
     //echo json_encode($userArr);
-//}
+}
 //INCLUDE VIEW PHP
 include "../../../View/View.php";
