@@ -17,7 +17,7 @@ $stmt = $user->read();
 //echo json_encode($count);
 
 
-if ($count > 0) {
+//if ($count > 0) {
 
     $userArr = array();
 
@@ -34,6 +34,6 @@ if ($count > 0) {
         array_push($userArr, $e);
     }
     //echo json_encode($userArr);
-}
+//}
 //INCLUDE VIEW PHP
 include "../../../View/View.php";
