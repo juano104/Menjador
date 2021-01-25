@@ -57,7 +57,7 @@ class Person {
 
     //Read
     public function read() {
-        $query = "Select * from Person";
+        $query = "Select * from User";
 
         $result = $this->conn->query($query);
 
@@ -66,7 +66,7 @@ class Person {
 
     public function readOne() {
         $sqlQuery = "SELECT *
-                    FROM Person
+                    FROM User
                     WHERE 
                         DNI = ? limit 1";
 
@@ -81,7 +81,6 @@ class Person {
         $this->name = $dataRow['name'];
         $this->last_name = $dataRow['last_name'];
         $this->DNI = $dataRow['DNI'];
-        $this->birth_date = $dataRow['birth_date'];
         $this->role = $dataRow['role'];
     }
 
