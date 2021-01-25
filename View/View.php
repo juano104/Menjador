@@ -1,8 +1,10 @@
+<?php
+    include_once "../Controller/api/Person/Read.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<!-- Hacer un view para cada read?? -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read_All</title>
@@ -36,7 +38,7 @@
 
 <body>
     <div class="container">
-        <h1>Showing Person Table</h1>
+    <h1>Showing Person Table</h1>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>

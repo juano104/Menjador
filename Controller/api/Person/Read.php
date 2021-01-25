@@ -36,4 +36,4 @@ if ($count > 0) {
     //echo json_encode($userArr);
 }
 //INCLUDE VIEW PHP
-include "../../../View/View.php";
+include "../../../View/View.php"
