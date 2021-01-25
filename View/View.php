@@ -1,3 +1,6 @@
+<?php
+    include_once "../Controller/api/Person/Read.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
