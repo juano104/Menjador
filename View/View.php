@@ -43,7 +43,6 @@
                     <th>Name</th>
                     <th>Last_Name</th>
                     <th>DNI</th>
-                    <th>Birth_date</th>
                     <th>Role</th>
                 </tr>
             </thead>
@@ -61,8 +60,6 @@
                     data: 'last_name'
                 }, {
                     data: 'DNI'
-                }, {
-                    data: 'birth_date'
                 }, {
                     data: 'role'
                 }],
