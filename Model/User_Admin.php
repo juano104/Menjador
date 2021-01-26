@@ -112,25 +112,26 @@ class User_Admin
     {
         $sqlQuery = "INSERT INTO
                 User
-                SET
-                name = :name,
+                values(?, ?, ?, ?)
+                /*name = :name,
                 last_name = :last_name,
                 DNI = :DNI,
-                role = :role";
+                role = :role*/";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
-        // sanitize
+        /*// sanitize
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->last_name = htmlspecialchars(strip_tags($this->last_name));
         $this->DNI = htmlspecialchars(strip_tags($this->DNI));
-        $this->role = htmlspecialchars(strip_tags($this->role));
+        $this->role = htmlspecialchars(strip_tags($this->role));*/
 
         // bind data
-        $stmt->bindParam(":name", $this->name);
+        $stmt->bindParam("ssss", $this->name, $this->last_name, $this->DNI, $this->role);
+        /*$stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":last_name", $this->last_name);
         $stmt->bindParam(":DNI", $this->DNI);
-        $stmt->bindParam(":role", $this->role);
+        $stmt->bindParam(":role", $this->role);*/
 
         if ($stmt->execute()) {
             return true;
@@ -142,19 +143,20 @@ class User_Admin
     {
         $sqlQuery = "INSERT INTO
                 User_Parent
-                SET
-                username = :username,
-                password = :password";
+                values(?, ?)
+                /*username = :username,
+                password = :password*/";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
-        // sanitize
+        /*// sanitize
         $this->username = htmlspecialchars(strip_tags($this->username));
-        $this->password = htmlspecialchars(strip_tags($this->password));
+        $this->password = htmlspecialchars(strip_tags($this->password));*/
 
         // bind data
-        $stmt->bindParam(":username", $this->username);
-        $stmt->bindParam(":password", $this->password);
+        $stmt->bindParam("ss", $this->username, $this->password);
+        /*$stmt->bindParam(":username", $this->username);
+        $stmt->bindParam(":password", $this->password);*/
 
         if ($stmt->execute()) {
             return true;

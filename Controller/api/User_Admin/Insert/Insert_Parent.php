@@ -9,7 +9,7 @@ $db_conn = $db->connect();
 
 //User
 $user = new User_Admin($db_conn);
-
+/*
 $properties = json_decode(file_get_contents("php://input"));
 //set properties
 $user->setName($properties->name);
@@ -17,7 +17,14 @@ $user->setLast_name($properties->last_name);
 $user->setDNI($properties->DNI);
 $user->setRole($properties->role);
 $user->setUsername($properties->DNI);
-$user->setPassword($properties->password);
+$user->setPassword($properties->password);*/
+
+$user->setName($_POST["name"]);
+$user->setLast_name($_POST["last_name"]);
+$user->setDNI($_POST["DNI"]);
+$user->setRole($_POST["role"]);
+$user->setUsername($_POST["DNI"]);
+$user->setPassword($_POST["password"]);
 
 if ($user->getDNI() != "" || $user->getPassword() != "") {
     if ($user->insertUser()) {
