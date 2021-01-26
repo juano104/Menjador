@@ -1,5 +1,5 @@
 <?php
-include"../../../../View/User_Admin/Insert_Parent.php";
+include "../../../../View/User_Admin/Insert_Parent.php";
 include_once "../../../../Model/User_Admin.php";
 include_once "../../../../Model/Database.php";
 
@@ -19,11 +19,15 @@ $user->setRole($properties->role);
 $user->setUsername($properties->DNI);
 $user->setPassword($properties->password);
 
-if ($user->insertUser()) {
-    echo json_encode("User created");
-    if($user->insertParent()){
-        echo json_encode("User_Parent created");
+if ($user->getDNI() != "") {
+    if ($user->insertUser()) {
+        echo json_encode("User created");
+        if ($user->insertParent()) {
+            echo json_encode("User_Parent created");
+        }
+    } else {
+        echo json_encode("User not created, error");
     }
 } else {
-    echo json_encode("User not created");
+    echo json_encode("User not created, no null");
 }
