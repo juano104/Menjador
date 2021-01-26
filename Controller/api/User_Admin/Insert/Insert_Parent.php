@@ -26,8 +26,8 @@ if ($user->getDNI() != "") {
             echo json_encode("User_Parent created");
         }
     } else {
-        echo json_encode("User not created, error");
+        echo json_encode("User not created, maybe already created?");
     }
 } else {
-    echo json_encode("User not created, no null");
+    echo json_encode("User not created, something is null.");
 }
