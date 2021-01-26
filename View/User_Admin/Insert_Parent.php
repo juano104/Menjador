@@ -9,11 +9,11 @@
 
 <body>
     <form name="insert" method="post" action="">
-        <input name="name" type="text">
-        <input name="last_name" type="text">
-        <input name="DNI" type="text">
-        <input name="role" type="text">
-        <input name="password" type="text">
+        Name: <input name="name" type="text"> <br>
+        Last Name: <input name="last_name" type="text"><br>
+        DNI: <input name="DNI" type="text"><br>
+        Role: <input name="role" type="text"><br>
+        Password: <input name="password" type="text"><br>
         <input type="button" class="button" value="Generate" onClick="randomPassword(8);" tabindex="2">
     </form>
 
