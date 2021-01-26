@@ -127,7 +127,7 @@ class User_Admin
         $this->role = htmlspecialchars(strip_tags($this->role));*/
 
         // bind data
-        $stmt->bindParam($this->name, $this->last_name, $this->DNI, $this->role);
+        $stmt->bindParam("ssss", $this->name, $this->last_name, $this->DNI, $this->role);
         /*$stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":last_name", $this->last_name);
         $stmt->bindParam(":DNI", $this->DNI);
