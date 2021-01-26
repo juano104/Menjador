@@ -2,14 +2,14 @@
 
 //Headers
 include_once '../../../Model/Database.php';
-include_once '../../../Model/Person.php';
+include_once '../../../Model/User.php';
 
 //DB
 $db = new Database();
 $db_conn = $db->connect();
 
 //User
-$user = new Person($db_conn);
+$user = new User($db_conn);
 
 $stmt = $user->read();
 $count = $stmt->rowCount();

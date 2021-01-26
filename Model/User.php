@@ -1,6 +1,7 @@
 <?php
 
-class Person {
+class User
+{
 
     //conn
     private $conn;
@@ -10,53 +11,65 @@ class Person {
     private $DNI;
     private $birth_date;
     private $role;
-    
-    function getName() {
+
+    function getName()
+    {
         return $this->name;
     }
 
-    function getLast_name() {
+    function getLast_name()
+    {
         return $this->last_name;
     }
 
-    function getDNI() {
+    function getDNI()
+    {
         return $this->DNI;
     }
 
-    function getBirth_date() {
+    function getBirth_date()
+    {
         return $this->birth_date;
     }
 
-    function getRole() {
+    function getRole()
+    {
         return $this->role;
     }
 
-    function setName($name): void {
+    function setName($name): void
+    {
         $this->name = $name;
     }
 
-    function setLast_name($last_name): void {
+    function setLast_name($last_name): void
+    {
         $this->last_name = $last_name;
     }
 
-    function setDNI($DNI): void {
+    function setDNI($DNI): void
+    {
         $this->DNI = $DNI;
     }
 
-    function setBirth_date($birth_date): void {
+    function setBirth_date($birth_date): void
+    {
         $this->birth_date = $birth_date;
     }
 
-    function setRole($role): void {
+    function setRole($role): void
+    {
         $this->Role = $role;
     }
 
-        public function __construct($db) {
+    public function __construct($db)
+    {
         $this->conn = $db;
     }
 
     //Read
-    public function read() {
+    public function read()
+    {
         $query = "Select * from User";
 
         $result = $this->conn->query($query);
@@ -64,7 +77,8 @@ class Person {
         return $result;
     }
 
-    public function readOne() {
+    public function readOne()
+    {
         $sqlQuery = "SELECT *
                     FROM User
                     WHERE 
@@ -84,30 +98,37 @@ class Person {
         $this->role = $dataRow['role'];
     }
 
-    /* public function create() {
-      $sqlQuery = "INSERT INTO
-      users
-      SET
-      username = :username,
-      privileges = :privileges";
+    /*public function insert()
+    {
+        $sqlQuery = "INSERT INTO
+                User
+                SET
+                name = :name,
+                last_name = :last_name,
+                DNI = :DNI,
+                role = :role";
 
-      $stmt = $this->conn->prepare($sqlQuery);
+        $stmt = $this->conn->prepare($sqlQuery);
 
-      // sanitize
-      $this->username = htmlspecialchars(strip_tags($this->username));
-      $this->privileges = htmlspecialchars(strip_tags($this->privileges));
+        // sanitize
+        $this->name = htmlspecialchars(strip_tags($this->name));
+        $this->last_name = htmlspecialchars(strip_tags($this->last_name));
+        $this->DNI = htmlspecialchars(strip_tags($this->DNI));
+        $this->role = htmlspecialchars(strip_tags($this->role));
 
-      // bind data
-      $stmt->bindParam(":username", $this->username);
-      $stmt->bindParam(":privileges", $this->privileges);
+        // bind data
+        $stmt->bindParam(":name", $this->name);
+        $stmt->bindParam(":last_name", $this->last_name);
+        $stmt->bindParam(":DNI", $this->DNI);
+        $stmt->bindParam(":role", $this->role);
 
-      if ($stmt->execute()) {
-      return true;
-      }
-      return false;
-      }
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }*/
 
-      public function update() {
+    /*public function update() {
       $sqlQuery = "UPDATE users
       SET
       username = :username,
@@ -132,7 +153,7 @@ class Person {
       return false;
       }
 
-      function delete() {
+      /*function delete() {
       $sqlQuery = "DELETE FROM users WHERE id = ?";
       $stmt = $this->conn->prepare($sqlQuery);
 
