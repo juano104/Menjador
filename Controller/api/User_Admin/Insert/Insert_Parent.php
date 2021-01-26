@@ -1,5 +1,5 @@
 <?php
-
+include"../../../../View/User_Admin/Insert_Parent.php";
 include_once "../../../../Model/User_Admin.php";
 include_once "../../../../Model/Database.php";
 
