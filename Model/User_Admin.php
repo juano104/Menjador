@@ -127,7 +127,7 @@ class User_Admin
         $this->role = htmlspecialchars(strip_tags($this->role));*/
 
         // bind data
-        $stmt->bindParam("ssss", $this->name, $this->last_name, $this->DNI, $this->role);
+        $stmt->bindParam($this->name, $this->last_name, $this->DNI, $this->role);
         /*$stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":last_name", $this->last_name);
         $stmt->bindParam(":DNI", $this->DNI);
@@ -154,7 +154,7 @@ class User_Admin
         $this->password = htmlspecialchars(strip_tags($this->password));*/
 
         // bind data
-        $stmt->bindParam("ss", $this->username, $this->password);
+        $stmt->bindParam($this->username, $this->password);
         /*$stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":password", $this->password);*/
 
