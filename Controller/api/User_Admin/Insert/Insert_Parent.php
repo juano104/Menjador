@@ -19,7 +19,7 @@ $user->setRole($properties->role);
 $user->setUsername($properties->DNI);
 $user->setPassword($properties->password);
 
-if ($user->getDNI() != "") {
+if ($user->getDNI() != "" || $user->getPassword() != "") {
     if ($user->insertUser()) {
         echo json_encode("User created");
         if ($user->insertParent()) {
@@ -29,5 +29,5 @@ if ($user->getDNI() != "") {
         echo json_encode("User not created, maybe already created?");
     }
 } else {
-    echo json_encode("User not created, something is null.");
+    echo json_encode("User not created, password or DNI is null.");
 }

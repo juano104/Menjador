@@ -8,9 +8,13 @@
 </head>
 
 <body>
-    <form name="myform" method="post" action="">
-        <input name="row_password" type="text" size="40">
-        <input type="button" class="button" value="Generate" onClick="randomPassword(10);" tabindex="2">
+    <form name="insert" method="post" action="">
+        <input name="name" type="text">
+        <input name="last_name" type="text">
+        <input name="DNI" type="text">
+        <input name="role" type="text">
+        <input name="password" type="text">
+        <input type="button" class="button" value="Generate" onClick="randomPassword(8);" tabindex="2">
     </form>
 
 
@@ -22,7 +26,7 @@
                 var i = Math.floor(Math.random() * chars.length);
                 pass += chars.charAt(i);
             }
-            myform.row_password.value = pass;
+            insert.password.value = pass;
         }
     </script>
 </body>
