@@ -154,7 +154,7 @@ class User_Admin
 
         // bind data
         $stmt->bindParam(":username", $this->username);
-        $stmt->bindParam(":last_name", $this->last_name);
+        $stmt->bindParam(":password", $this->password);
 
         if ($stmt->execute()) {
             return true;
