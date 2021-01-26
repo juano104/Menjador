@@ -13,8 +13,9 @@
         Last Name: <input name="last_name" type="text"><br>
         DNI: <input name="DNI" type="text"><br>
         Role: <input name="role" type="text"><br>
-        Password: <input name="password" type="text"><br>
-        <input type="button" class="button" value="Generate" onClick="randomPassword(8);" tabindex="2">
+        Password: <input name="password" type="text">
+        <input type="button" class="button" value="Generate" onClick="randomPassword(8);" tabindex="2"><br>
+        <input type="submit" value="Insert Parent">
     </form>
 
 
