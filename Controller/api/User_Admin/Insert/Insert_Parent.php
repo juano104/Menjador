@@ -12,16 +12,7 @@ if (isset($_POST["submit"])) {
 
     //User
     $user = new User_Admin($db_conn);
-    /*
-$properties = json_decode(file_get_contents("php://input"));
-//set properties
-$user->setName($properties->name);
-$user->setLast_name($properties->last_name);
-$user->setDNI($properties->DNI);
-$user->setRole($properties->role);
-$user->setUsername($properties->DNI);
-$user->setPassword($properties->password);*/
-
+    //set properties to user
     $user->setName($_POST["name"]);
     $user->setLast_name($_POST["last_name"]);
     $user->setDNI($_POST["DNI"]);
