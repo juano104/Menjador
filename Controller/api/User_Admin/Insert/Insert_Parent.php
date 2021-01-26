@@ -27,7 +27,7 @@ $user->setRole($_POST["role"]);
 $user->setUsername($_POST["DNI"]);
 $user->setPassword($_POST["password"]);
 
-if ($user->getDNI() != "" || $user->getPassword() != "") {
+/*if ($user->getDNI() != "" || $user->getPassword() != "") {
     if ($user->insertUser()) {
         echo json_encode("User created");
         if ($user->insertParent()) {
@@ -38,4 +38,4 @@ if ($user->getDNI() != "" || $user->getPassword() != "") {
     }
 } else {
     echo json_encode("User not created, password or DNI is null.");
-}
+}*/

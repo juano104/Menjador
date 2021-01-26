@@ -18,6 +18,21 @@
         <input type="submit" value="Insert Parent">
     </form>
 
+    <?php
+    if ($user->getDNI() != "" || $user->getPassword() != "") {
+        if ($user->insertUser()) {
+            echo json_encode("User created");
+            if ($user->insertParent()) {
+                echo json_encode("User_Parent created");
+            }
+        } else {
+            echo json_encode("User not created, maybe already created?");
+        }
+    } else {
+        echo json_encode("User not created, password or DNI is null.");
+    }
+    ?>
+
 
     <script>
         function randomPassword(length) {
