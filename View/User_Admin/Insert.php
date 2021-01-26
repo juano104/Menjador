@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form name="insert" method="post" action="Insert.php">
+    <form name="insert" method="post" action="Insert_Parent.php">
         Name: <input name="name" type="text"> <br>
         Last Name: <input name="last_name" type="text"><br>
         DNI: <input name="DNI" type="text"><br>
