@@ -1,5 +1,6 @@
 <?php
-include "../../../../View/User_Admin/Insert_Parent.php";
+//include "../../../../View/User_Admin/Insert.php";
+header("Location: ../../../../View/User_Admin/Insert.php");
 include_once "../../../../Model/User_Admin.php";
 include_once "../../../../Model/Database.php";
 
