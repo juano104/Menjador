@@ -16,9 +16,14 @@ $user->setName($properties->name);
 $user->setLast_name($properties->last_name);
 $user->setDNI($properties->DNI);
 $user->setRole($properties->role);
+$user->setUsername($properties->DNI);
+$user->setPassword($properties->password);
 
-if ($user->insert()) {
+if ($user->insertUser()) {
     echo json_encode("User created");
+    if($user->insertParent()){
+        echo json_encode("User_Parent created");
+    }
 } else {
     echo json_encode("User not created");
 }

@@ -10,6 +10,8 @@ class User_Admin
     private $last_name;
     private $DNI;
     private $role;
+    private $username;
+    private $password;
 
     function getName()
     {
@@ -31,6 +33,15 @@ class User_Admin
         return $this->role;
     }
 
+    function getUsername()
+    {
+        return $this->DNI;
+    }
+    function getPassword()
+    {
+        return $this->password;
+    }
+
     function setName($name): void
     {
         $this->name = $name;
@@ -49,6 +60,16 @@ class User_Admin
     function setRole($role): void
     {
         $this->role = $role;
+    }
+
+    function setUsername($DNI): void
+    {
+        $this->username = $DNI;
+    }
+
+    function setPassword($password): void
+    {
+        $this->password = $password;
     }
 
     public function __construct($db)
@@ -87,7 +108,7 @@ class User_Admin
         $this->role = $dataRow['role'];
     }
 
-    public function insert()
+    public function insertUser()
     {
         $sqlQuery = "INSERT INTO
                 User
@@ -110,6 +131,30 @@ class User_Admin
         $stmt->bindParam(":last_name", $this->last_name);
         $stmt->bindParam(":DNI", $this->DNI);
         $stmt->bindParam(":role", $this->role);
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function insertParent()
+    {
+        $sqlQuery = "INSERT INTO
+                User_Parent
+                SET
+                username = :username,
+                password = :password";
+
+        $stmt = $this->conn->prepare($sqlQuery);
+
+        // sanitize
+        $this->username = htmlspecialchars(strip_tags($this->username));
+        $this->password = htmlspecialchars(strip_tags($this->password));
+
+        // bind data
+        $stmt->bindParam(":username", $this->username);
+        $stmt->bindParam(":last_name", $this->last_name);
 
         if ($stmt->execute()) {
             return true;
