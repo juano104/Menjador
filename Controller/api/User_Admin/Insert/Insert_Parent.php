@@ -1,5 +1,6 @@
 <?php
-header("Location: ../../../../View/User_Admin/Insert.php");
+//header("Location: ../../../../View/User_Admin/Insert.php");
+include "../../../../View/User_Admin/Insert.php";
 if (isset($_POST["submit"])) {
     //include "../../../../View/User_Admin/Insert.php";
     include_once "../../../../Model/User_Admin.php";
