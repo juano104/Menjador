@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <form name="insert" method="post" action="../../Controller/api/User_Admin/Insert/Insert_Parent.php">
+    <form name="insert" method="post" action="Insert.php">
         Name: <input name="name" type="text"> <br>
         Last Name: <input name="last_name" type="text"><br>
         DNI: <input name="DNI" type="text"><br>
         Role: <input name="role" type="text"><br>
         Password: <input name="password" type="text">
         <input type="button" class="button" value="Generate" onClick="randomPassword(8);" tabindex="2"><br>
-        <input type="submit" value="Insert Parent">
+        <input name="submit" type="submit" value="Insert Parent">
     </form>
 
 
