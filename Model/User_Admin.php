@@ -9,7 +9,6 @@ class User_Admin
     private $name;
     private $last_name;
     private $DNI;
-    private $birth_date;
     private $role;
 
     function getName()
@@ -25,11 +24,6 @@ class User_Admin
     function getDNI()
     {
         return $this->DNI;
-    }
-
-    function getBirth_date()
-    {
-        return $this->birth_date;
     }
 
     function getRole()
@@ -52,14 +46,9 @@ class User_Admin
         $this->DNI = $DNI;
     }
 
-    function setBirth_date($birth_date): void
-    {
-        $this->birth_date = $birth_date;
-    }
-
     function setRole($role): void
     {
-        $this->Role = $role;
+        $this->role = $role;
     }
 
     public function __construct($db)
