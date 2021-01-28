@@ -58,7 +58,7 @@
     </div>
 
     <div class="container justify-content-center" id="container">
-        <form action="" method="post" id="form" name="f1">
+        <form name="insert" method="post" action="Insert_Parent.php">
             <hr>
             <h1>Inserir Pare</h1>
             <strong>NOM PARE:</strong> 
