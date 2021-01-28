@@ -86,8 +86,9 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Last_Name</th>
+                    <th>Llinatge</th>
                     <th>DNI</th>
+                    <th>Afegir Alumne</th>
                 </tr>
             </thead>
         </table>
@@ -120,6 +121,8 @@
                         data: 'last_name'
                     }, {
                         data: 'DNI'
+                    }, {
+                        "defaultContent": "<button>editar</button>"
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
