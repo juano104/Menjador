@@ -12,13 +12,12 @@ $db_conn = $db->connect();
 $user = new User($db_conn);
 $student = new Student($db_conn);
 
-$stmt = $user->readParent();
 $count = $stmt->rowCount();
 
 $student->setName($_POST["nomalumne"]);
 $student->setLast_name($_POST["llinatgealumne"]);
-$student->setParent_Id($_POST["pareID"]);
 $student->setBirth_Date($_POST["date"]);
+$student->setParent_Id($_POST["pareID"]);
 
 
 
