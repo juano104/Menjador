@@ -175,7 +175,7 @@
                     }, {
                         data: 'DNI'
                     }, {
-                        "defaultContent": "<button type='button' class='editar btn btn-primary editar' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
+                        "defaultContent": "<button type='button' class='editar btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -188,7 +188,7 @@
             var obtener_data_editar = function(tbody, table){
                 $(tbody).on("click", "button.editar", function(){
                     var data = table.row( $(this).parents("tr") ).data();
-                    alert(data);
+                    console.log(data);
                     //var DNI = $("#pareID").val(data.DNI);
                 });
             }
