@@ -182,7 +182,7 @@
                     },
                     select: true
                 });
-                obtener_data_editar("#table tbody", table);
+                obtener_data_editar("#table tbody", t);
             }
 
             var obtener_data_editar = function(tbody, table){
