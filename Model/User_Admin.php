@@ -132,7 +132,7 @@ class User_Admin
     {
         $sqlQuery = "INSERT INTO
                 User
-                values(?, ?, ?, ?)";
+                values(?, ?, ?)";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
