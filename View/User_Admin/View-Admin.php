@@ -165,6 +165,13 @@
                 select: true,
                 
             });
+            var obtener_data_editar = function(tbody, table){
+                $(tbody).on("click", "button.editar", function(){
+                    var data = table.row( $(this).parents("tr") ).data();
+                    console.log(data);
+                    //var DNI = $("#pareID").val(data.DNI);
+                });
+            }
             obtener_data_editar("#table tbody", t);
             function loadData() {
                 t = $('#table').DataTable({
@@ -183,16 +190,9 @@
                     },
                     select: true
                 });
-                obtener_data_editar("#table tbody", t);
             }
 
-            var obtener_data_editar = function(tbody, table){
-                $(tbody).on("click", "button.editar", function(){
-                    var data = table.row( $(this).parents("tr") ).data();
-                    console.log(data);
-                    //var DNI = $("#pareID").val(data.DNI);
-                });
-            }
+            
 
         });
 
