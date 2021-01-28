@@ -3,6 +3,7 @@ include "../../../../View/User_Admin/View-Admin.php";
 //Headers
 include_once '../../../../Model/Database.php';
 include_once '../../../../Model/User.php';
+include_once '../../../../Model/Student.php';
 
 //DB
 $db = new Database();
