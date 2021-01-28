@@ -188,7 +188,8 @@
             var obtener_data_editar = function(tbody, table){
                 $(tbody).on("click", "button.editar", function(){
                     var data = table.row( $(this).parents("tr") ).data();
-                    var DNI = $("#pareID").val(data.DNI);
+                    console.log(data);
+                    //var DNI = $("#pareID").val(data.DNI);
                 });
             }
 
