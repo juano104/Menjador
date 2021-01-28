@@ -103,7 +103,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="" method="post" id="form" name="f1">
+                <form action="Insert_Student.php" method="post" id="form" name="f1">
                 <div class="modal-body">
                 
                     <strong>NOM ALUMNE</strong>

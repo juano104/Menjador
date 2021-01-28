@@ -1,6 +1,5 @@
 <?php
 include "../../../../View/User_Admin/View-Admin.php";
-if (isset($_POST["submit"])) {
 //Headers
 include_once '../../../../Model/Database.php';
 include_once '../../../../Model/User.php';
@@ -56,4 +55,3 @@ $student->setBirth_Date($_POST["date"]);
     }
 //INCLUDE VIEW PHP
 
-}
