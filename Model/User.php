@@ -66,6 +66,16 @@ class User
         return $result;
     }
 
+    //Read Parent
+    public function readParent()
+    {
+        $query = "Select * from User where role='parent'";
+
+        $result = $this->conn->query($query);
+
+        return $result;
+    }
+
     public function readOne()
     {
         $sqlQuery = "SELECT *
