@@ -132,7 +132,7 @@ class User_Admin
     {
         $sqlQuery = "INSERT INTO
                 User
-                values(?, ?, ?)";
+                values(?, ?, ?, ?)";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
@@ -140,7 +140,9 @@ class User_Admin
         $stmt->bindParam(1, $this->name);
         $stmt->bindParam(2, $this->last_name);
         $stmt->bindParam(3, $this->DNI);
+        $stmt->bindParam(4, "parent");
 
+        echo $stmt;
         if ($stmt->execute()) {
             return true;
         }
@@ -158,6 +160,8 @@ class User_Admin
         // bind data
         $stmt->bindParam(1, $this->username);
         $stmt->bindParam(2, $this->password);
+        
+        echo $stmt;
 
         if ($stmt->execute()) {
             return true;
