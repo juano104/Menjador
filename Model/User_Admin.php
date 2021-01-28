@@ -12,6 +12,16 @@ class User_Admin
     private $role;
     private $username;
     private $password;
+    private $birth_date;
+    private $allergy;
+
+    function getBirth_date(){
+        return $this->birth_date;
+    }
+
+    function getAllergy(){
+        return $this->allergy;
+    }
 
     function getName()
     {
@@ -55,6 +65,16 @@ class User_Admin
     function setDNI($DNI): void
     {
         $this->DNI = $DNI;
+    }
+    
+    function setBirthDate($birth_date): void
+    {
+        $this->birth_date = $birth_date;
+    }
+    
+    function setAllergy($allergy): void
+    {
+        $this->allergy = $allergy;
     }
 
     function setRole($role): void
@@ -120,7 +140,6 @@ class User_Admin
         $stmt->bindParam(1, $this->name);
         $stmt->bindParam(2, $this->last_name);
         $stmt->bindParam(3, $this->DNI);
-        $stmt->bindParam(4, $this->role);
 
         if ($stmt->execute()) {
             return true;
@@ -145,6 +164,8 @@ class User_Admin
         }
         return false;
     }
+
+
 
     /*public function update() {
       $sqlQuery = "UPDATE users
