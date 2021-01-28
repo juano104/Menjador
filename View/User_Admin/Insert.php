@@ -68,37 +68,6 @@
             <strong>DNI PARE:</strong> 
             <input type="text" name="dnipare" id="dnipare">
             <hr>
-            <div class='alumne' id="alu">
-                <h1>Inserir Alumne</h1>
-                <strong>NOM ALUMNE</strong> 
-                <input type="text" name="nomalumne[]" id="nomalumne">
-                <strong>LLINATGE ALUMNE</strong> 
-                <input type="text" name="llinatgealumne[]" id="llinatgealumne">
-                <br>
-                <br>
-                <strong>ALERGIA</strong> 
-                <br>
-
-                    <label for='ous'>Ous</label>
-                    <input type='checkbox' id='ous' name='ous[]' value='ous'>
-
-                    <label for='marisc'>Marisc</label>
-                    <input type='checkbox' id='marisc' name='marisc[]' value='marisc'>
-
-                    <label for='peix'>Peix</label>
-                    <input type='checkbox' id='peix' name='peix[]' value='peix'><br>
-
-                    <label for='frutssecs'>Fruts Secs</label>
-                    <input type='checkbox' id='frutssecs' name='frutssecs[]' value='frutssecs'>
-
-                    <label for='llet'>Llet</label>
-                    <input type='checkbox' id='llet' name='llet[]' value='llet'>
-
-                    <label for='cereals'>Cereals</label>
-                    <input type='checkbox' id='cereals' name='cereals[]' value='cereals'>
-            <strong>FECHA DE NAIXAMENT:</strong> 
-            <input type="date" name="date[]" id="">
-            </div>
             <br>
             <input name="submit" type="submit" id="boton" value="Insert Users">
         </form>
