@@ -107,6 +107,7 @@
       <h1>Inserir Alumne</h1>
                 <strong>NOM ALUMNE</strong> 
                 <input type="text" name="nomalumne" id="nomalumne">
+                <br>
                 <strong>LLINATGE ALUMNE</strong> 
                 <input type="text" name="llinatgealumne" id="llinatgealumne">
                 <br>
@@ -131,6 +132,7 @@
 
                     <label for='cereals'>Cereals</label>
                     <input type='checkbox' id='cereals' name='cereals' value='cereals'>
+                    <br>
             <strong>FECHA DE NAIXAMENT:</strong> 
             <input type="date" name="date" id="">
       </div>
