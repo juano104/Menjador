@@ -80,7 +80,7 @@ class Student
         $stmt->bindParam(1, $this->name);
         $stmt->bindParam(2, $this->last_name);
         $stmt->bindParam(3, $this->birth_date);
-        $stmt->bindParam(3, $this->parent_DNI);
+        $stmt->bindParam(4, $this->parent_DNI);
 
         if ($stmt->execute()) {
             return true;
