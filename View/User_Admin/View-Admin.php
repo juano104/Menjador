@@ -133,7 +133,7 @@
                     <label for='cereals'>Cereals</label>
                     <input type='checkbox' id='cereals' name='cereals' value='cereals'>
 
-                    <input id="pareID" name="pareID" type="text" value="0">
+                    <input id="pareID" name="pareID" type="hidden" value="0">
                     <br>
                     <strong>FECHA DE NAIXAMENT:</strong>
                     <input type="date" name="date" id="">
