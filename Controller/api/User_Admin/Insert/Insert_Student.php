@@ -34,4 +34,4 @@ if ($count > 0) {
     //echo json_encode($userArr);
 }
 //INCLUDE VIEW PHP
-include "../../../../View/View-Admin.php";
+include "../../../../User_Admin/View/View-Admin.php";
