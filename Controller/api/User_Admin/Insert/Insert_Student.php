@@ -1,8 +1,8 @@
 <?php
 
 //Headers
-include_once '../../../Model/Database.php';
-include_once '../../../Model/User.php';
+include_once '../../../../Model/Database.php';
+include_once '../../../../Model/User.php';
 
 //DB
 $db = new Database();
@@ -11,7 +11,7 @@ $db_conn = $db->connect();
 //User
 $user = new User($db_conn);
 
-$stmt = $user->read();
+$stmt = $user->readParent();
 $count = $stmt->rowCount();
 
 //echo json_encode($count);
@@ -27,7 +27,6 @@ if ($count > 0) {
             "name" => $name,
             "last_name" => $last_name,
             "DNI" => $DNI,
-            "role" => $role,
         );
 
         array_push($userArr, $e);
