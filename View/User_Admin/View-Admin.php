@@ -157,14 +157,14 @@
                 }, {
                     data: 'DNI'
                 }, {
-                    "defaultContent": "<button type='button' class='editar btn btn-primary'>Afegir Alumne</button>"
+                    "defaultContent": "<button type='button' class='editar btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
-                select: true,
-                
+                select: true
             });
+
             var obtener_data_editar = function(tbody, table){
                 $(tbody).on("click", "button.editar", function(){
                     var data = table.row( $(this).parents("tr") ).data();
@@ -172,7 +172,9 @@
                     //var DNI = $("#pareID").val(data.DNI);
                 });
             }
+
             obtener_data_editar("#table tbody", t);
+
             function loadData() {
                 t = $('#table').DataTable({
                     data: <?php echo json_encode($userArr); ?>,
@@ -183,13 +185,14 @@
                     }, {
                         data: 'DNI'
                     }, {
-                        "defaultContent": "<button type='button' class='editar btn btn-primary'>Afegir Alumne</button>"
+                        "defaultContent": "<button type='button' class='editar btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
                     select: true
                 });
+                
             }
 
             
