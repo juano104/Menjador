@@ -14,6 +14,12 @@ class User_Admin
     private $password;
     private $birth_date;
     private $allergy;
+    private $parent_DNI;
+
+    function getParent_DNI(){
+        return $this->parent_DNI;
+    }
+    
 
     function getBirth_date(){
         return $this->birth_date;
@@ -55,6 +61,11 @@ class User_Admin
     function setName($name): void
     {
         $this->name = $name;
+    }
+
+    function setParent_DNI($parent_DNI): void
+    {
+        $this->parent_DNI = $parent_DNI;
     }
 
     function setLast_name($last_name): void
