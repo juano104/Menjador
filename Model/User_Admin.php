@@ -141,8 +141,6 @@ class User_Admin
         $stmt->bindParam(2, $this->last_name);
         $stmt->bindParam(3, $this->DNI);
 
-
-        echo $stmt;
         if ($stmt->execute()) {
             return true;
         }
@@ -160,8 +158,7 @@ class User_Admin
         // bind data
         $stmt->bindParam(1, $this->username);
         $stmt->bindParam(2, $this->password);
-        
-        echo $stmt;
+
 
         if ($stmt->execute()) {
             return true;
