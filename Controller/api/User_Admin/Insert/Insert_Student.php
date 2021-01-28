@@ -1,5 +1,5 @@
 <?php
-include "../../../../View/User_Admin/View-Admin.php";
+
 //Headers
 include_once '../../../../Model/Database.php';
 include_once '../../../../Model/User.php';
@@ -33,4 +33,4 @@ if ($count > 0) {
 }
 
 //INCLUDE VIEW PHP
-
+include "../../../../View/User_Admin/View-Admin.php";
