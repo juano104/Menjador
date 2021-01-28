@@ -11,7 +11,6 @@ $db_conn = $db->connect();
 
 //User
 $user = new User($db_conn);
-$student = new Student($db_conn);
 
 $stmt = $user->readParent();
 $count = $stmt->rowCount();
@@ -33,17 +32,5 @@ if ($count > 0) {
     //echo json_encode($userArr);
 }
 
-$student->setName($_POST["nomalumne"]);
-$student->setLast_name($_POST["llinatgealumne"]);
-$student->setParent_Id($_POST["pareID"]);
-$student->setBirth_Date($_POST["date"]);
-
-
-
-    if ($student->insertStudent()) {
-        echo json_encode("Student created");
-    } else {
-        echo json_encode("Student not created, maybe already created?");
-    }
 //INCLUDE VIEW PHP
 
