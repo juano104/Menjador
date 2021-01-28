@@ -162,9 +162,10 @@
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
-                select: true
+                select: true,
+                
             });
-
+            obtener_data_editar("#table tbody", t);
             function loadData() {
                 t = $('#table').DataTable({
                     data: <?php echo json_encode($userArr); ?>,
