@@ -71,7 +71,7 @@ class Student
     public function insertStudent()
     {
         $sqlQuery = "INSERT INTO
-                User (name, last_name, birth_date, parent_DNI)
+                Student (name, last_name, birth_date, parent_DNI)
                 values(?, ?, ?, ?)";
 
         $stmt = $this->conn->prepare($sqlQuery);
