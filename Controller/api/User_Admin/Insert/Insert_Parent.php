@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
         if ($user->insertUser()) {
             echo json_encode("User created");
             if ($user->insertParent()) {
-                echo json_encode("User_Parent created");
+                echo json_encode("User_Parent created", $password);
             }
         } else {
             echo json_encode("User not created, maybe already created?");
