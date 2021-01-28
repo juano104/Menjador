@@ -95,25 +95,25 @@
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <h1>Inserir Alumne</h1>
-                <strong>NOM ALUMNE</strong> 
-                <input type="text" name="nomalumne" id="nomalumne">
-                <br>
-                <strong>LLINATGE ALUMNE</strong> 
-                <input type="text" name="llinatgealumne" id="llinatgealumne">
-                <br>
-                <br>
-                <strong>ALERGIA</strong> 
-                <br>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1>Inserir Alumne</h1>
+                    <strong>NOM ALUMNE</strong>
+                    <input type="text" name="nomalumne" id="nomalumne">
+                    <br>
+                    <strong>LLINATGE ALUMNE</strong>
+                    <input type="text" name="llinatgealumne" id="llinatgealumne">
+                    <br>
+                    <br>
+                    <strong>ALERGIA</strong>
+                    <br>
 
                     <label for='ous'>Ous</label>
                     <input type='checkbox' id='ous' name='ous' value='ous'>
@@ -132,17 +132,19 @@
 
                     <label for='cereals'>Cereals</label>
                     <input type='checkbox' id='cereals' name='cereals' value='cereals'>
+
+                    <input id="pareID" name="pareID" type="hidden" value="0">
                     <br>
-            <strong>FECHA DE NAIXAMENT:</strong> 
-            <input type="date" name="date" id="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Afegir</button>
-      </div>
+                    <strong>FECHA DE NAIXAMENT:</strong>
+                    <input type="date" name="date" id="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Afegir</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <script>
         $(document).ready(function() {
@@ -155,7 +157,7 @@
                 }, {
                     data: 'DNI'
                 }, {
-                        "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
+                    "defaultContent": "type='button' class='editar btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -173,15 +175,25 @@
                     }, {
                         data: 'DNI'
                     }, {
-                        "defaultContent": "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
+                        "defaultContent": "<button type='button' class='btn btn-primary editar' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
                     select: true
                 });
+                obtener_data_editar("#table tbody", table);
             }
+
+            var obtener_data_editar = function(tbody, table){
+                $(tbody).on("click", "button.editar", function(){
+                    var data = table.row( $(this).parents("tr") ).data();
+                    var DNI = $("#pareID").val(data.DNI);
+                });
+            }
+
         });
+
     </script>
     <footer class="page-footer font-small stylish-color-dark pt-4">
 
