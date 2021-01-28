@@ -12,7 +12,6 @@ $db_conn = $db->connect();
 $user = new User($db_conn);
 $student = new Student($db_conn);
 
-$count = $stmt->rowCount();
 
 $student->setName($_POST["nomalumne"]);
 $student->setLast_name($_POST["llinatgealumne"]);
