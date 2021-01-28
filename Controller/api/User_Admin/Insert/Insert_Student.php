@@ -16,15 +16,6 @@ $student = new Student($db_conn);
 $stmt = $user->readParent();
 $count = $stmt->rowCount();
 
-//echo json_encode($count);
-
-$user->setName($_POST["nompare"]);
-$user->setLast_name($_POST["llinatgepare"]);
-$user->setDNI($_POST["dnipare"]);
-
-
-
-
 if ($count > 0) {
 
     $userArr = array();
