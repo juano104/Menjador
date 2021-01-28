@@ -131,8 +131,8 @@ class User_Admin
     public function insertUser()
     {
         $sqlQuery = "INSERT INTO
-                User
-                values(?, ?, ?, ?)";
+                User (name, last_name, DNI, role)
+                values(?, ?, ?, 'parent')";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
@@ -140,7 +140,7 @@ class User_Admin
         $stmt->bindParam(1, $this->name);
         $stmt->bindParam(2, $this->last_name);
         $stmt->bindParam(3, $this->DNI);
-        $stmt->bindParam(4, "parent");
+
 
         echo $stmt;
         if ($stmt->execute()) {
