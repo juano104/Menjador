@@ -87,7 +87,7 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 10%;">
         <h1>Taula Pares</h1>
-        <button class="btn btn-success" name="afegirpare" data-toggle='modal' data-target='#ModalPare'><i class="fas fa-plus-circle"></i></button>
+        
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -113,8 +113,10 @@
       <div class="modal-body">
             <strong>NOM PARE:</strong> 
             <input type="text" name="nompare" id="nompare">
+            <br>
             <strong>LLINATGE PARE:</strong> 
             <input type="text" name="llinatgepare" id="llinatgepare">
+            <br>
             <strong>DNI PARE:</strong> 
             <input type="text" name="dnipare" id="dnipare">
       </div>
@@ -183,6 +185,9 @@
 
     <script>
         $(document).ready(function() {
+        
+            $("input[type='search']").before("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>");
+
             var t = $('#table').DataTable({
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
