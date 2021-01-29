@@ -17,7 +17,12 @@
 
     <link rel="stylesheet" href="estils.css">
 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+
     <!-- js -->
+
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
@@ -93,7 +98,10 @@
             </thead>
             <tfoot>
                 <tr>
-                    <td><button class="btn btnaction" id="add" type="button"><span class="texto" data-i18n="panelcontrol.propietario.precios.añadir">Add</span><span class="glyphicon glyphicon-refresh"></span></button></td>
+                    <td><input type="text" name="nompare" value=""></td>
+                    <td><input type="text" name="llinatgepare" value=""></td>
+                    <td><input type="text" name="dnipare" value=""></td>
+                    <td><input type="submit" value="<i class='fas fa-user-plus'></i>"></td>
                 </tr>
         </table>
     </div>
@@ -155,20 +163,6 @@
 
     <script>
         $(document).ready(function() {
-
-            //add new row
-            $(document).ready(function() {
-                $("#add").on("click", function() {
-                    $clone = $("table tbody tr:first").clone();
-                    $clone.find("input").each(function() {
-                        $(this).val("");
-                    });
-                    $("table tbody").append($clone);
-                });
-            });
-
-
-
             var t = $('#table').DataTable({
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
