@@ -51,7 +51,7 @@
             <!-- LOGO -->
 
             <a href="Pagina-Principal.html" class="navbar-brand">
-                <img src=" logo.png" alt="" class="d-inline-block align-middle imgres">
+                <img src="../../../../View/User_Admin/logo.png" alt="" class="d-inline-block align-middle imgres">
             </a>
 
             <!-- LOGO -->
@@ -87,7 +87,7 @@
 
     <div class="container">
         <h1>Showing Person Table</h1>
-        <table id="table" class="table table-striped table-bordered">
+        <table id="table" class="table table-striped table-bordered" style="margin-bottom: 10%; margin-top: 10%;">
             <thead>
                 <tr>
                     <th>Name</th>
