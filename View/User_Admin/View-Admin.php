@@ -89,6 +89,7 @@
         <h1>Taula Pares</h1>
         
         <table id="table" class="table table-striped table-bordered">
+        <button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
             <thead>
                 <tr>
                     <th>Name</th>
