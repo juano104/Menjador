@@ -91,8 +91,13 @@
                     <th>Afegir Alumne</th>
                 </tr>
             </thead>
+            <tfoot>
+                <tr>
+                    <td><button class="btn btnaction" id="add" type="button"><span class="texto" data-i18n="panelcontrol.propietario.precios.añadir">Add</span><span class="glyphicon glyphicon-refresh"></span></button></td>
+                </tr>
         </table>
     </div>
+
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -104,45 +109,45 @@
                     </button>
                 </div>
                 <form action="Insert_Stu.php" method="post" id="form" name="f1">
-                <div class="modal-body">
-                
-                    <strong>NOM ALUMNE</strong>
-                    <input type="text" name="nomalumne" id="nomalumne">
-                    <br>
-                    <strong>LLINATGE ALUMNE</strong>
-                    <input type="text" name="llinatgealumne" id="llinatgealumne">
-                    <br>
-                    <br>
-                    <strong>ALERGIA</strong>
-                    <br>
+                    <div class="modal-body">
 
-                    <label for='ous'>Ous</label>
-                    <input type='checkbox' id='ous' name='ous' value='ous'>
+                        <strong>NOM ALUMNE</strong>
+                        <input type="text" name="nomalumne" id="nomalumne">
+                        <br>
+                        <strong>LLINATGE ALUMNE</strong>
+                        <input type="text" name="llinatgealumne" id="llinatgealumne">
+                        <br>
+                        <br>
+                        <strong>ALERGIA</strong>
+                        <br>
 
-                    <label for='marisc'>Marisc</label>
-                    <input type='checkbox' id='marisc' name='marisc' value='marisc'>
+                        <label for='ous'>Ous</label>
+                        <input type='checkbox' id='ous' name='ous' value='ous'>
 
-                    <label for='peix'>Peix</label>
-                    <input type='checkbox' id='peix' name='peix' value='peix'><br>
+                        <label for='marisc'>Marisc</label>
+                        <input type='checkbox' id='marisc' name='marisc' value='marisc'>
 
-                    <label for='frutssecs'>Fruts Secs</label>
-                    <input type='checkbox' id='frutssecs' name='frutssecs' value='frutssecs'>
+                        <label for='peix'>Peix</label>
+                        <input type='checkbox' id='peix' name='peix' value='peix'><br>
 
-                    <label for='llet'>Llet</label>
-                    <input type='checkbox' id='llet' name='llet' value='llet'>
+                        <label for='frutssecs'>Fruts Secs</label>
+                        <input type='checkbox' id='frutssecs' name='frutssecs' value='frutssecs'>
 
-                    <label for='cereals'>Cereals</label>
-                    <input type='checkbox' id='cereals' name='cereals' value='cereals'>
+                        <label for='llet'>Llet</label>
+                        <input type='checkbox' id='llet' name='llet' value='llet'>
 
-                    <input id="pareID" name="pareID" type="hidden" value="0">
-                    <br>
-                    <strong>FECHA DE NAIXAMENT:</strong>
-                    <input type="date" name="date" id="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <input type="submit" value="Afegir Alumne">
-                </div>
+                        <label for='cereals'>Cereals</label>
+                        <input type='checkbox' id='cereals' name='cereals' value='cereals'>
+
+                        <input id="pareID" name="pareID" type="hidden" value="0">
+                        <br>
+                        <strong>FECHA DE NAIXAMENT:</strong>
+                        <input type="date" name="date" id="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" value="Afegir Alumne">
+                    </div>
                 </form>
             </div>
         </div>
@@ -150,6 +155,20 @@
 
     <script>
         $(document).ready(function() {
+
+            //add new row
+            $(document).ready(function() {
+                $("#add").on("click", function() {
+                    $clone = $("table tbody tr:first").clone();
+                    $clone.find("input").each(function() {
+                        $(this).val("");
+                    });
+                    $("table tbody").append($clone);
+                });
+            });
+
+
+
             var t = $('#table').DataTable({
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
@@ -167,9 +186,9 @@
                 select: true
             });
 
-            var obtener_data_editar = function(tbody, table){
-                $(tbody).on("click", "button.editar", function(){
-                    var data = table.row( $(this).parents("tr") ).data();
+            var obtener_data_editar = function(tbody, table) {
+                $(tbody).on("click", "button.editar", function() {
+                    var data = table.row($(this).parents("tr")).data();
                     var DNI = $("#pareID").val(data.DNI);
                 });
             }
@@ -193,13 +212,12 @@
                     },
                     select: true
                 });
-                
+
             }
 
-            
+
 
         });
-
     </script>
     <footer class="page-footer font-small stylish-color-dark pt-4">
 

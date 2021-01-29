@@ -21,7 +21,7 @@ $student->setParent_Id($_POST["pareID"]);
 
 
     if ($student->insertStudent()) {
-        echo json_encode("Student created");
+        header("Location: Insert_Student.php");
     } else {
         echo $_POST["nomalumne"];
         echo $_POST["pareID"];
