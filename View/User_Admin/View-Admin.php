@@ -85,9 +85,9 @@
 
     </div>
 
-    <div class="container">
+    <div class="container" style="margin-bottom: 10%; margin-top: 10%;">
         <h1>Showing Person Table</h1>
-        <table id="table" class="table table-striped table-bordered" style="margin-bottom: 10%; margin-top: 10%;">
+        <table id="table" class="table table-striped table-bordered" >
             <thead>
                 <tr>
                     <th>Name</th>
