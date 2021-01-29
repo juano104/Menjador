@@ -101,7 +101,7 @@
                     <td><input type="text" name="nompare" value=""></td>
                     <td><input type="text" name="llinatgepare" value=""></td>
                     <td><input type="text" name="dnipare" value=""></td>
-                    <td><button type="submit" class="btn btn-success">
+                    <td><button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'>
                     <i class='fas fa-user-plus'></i>
                         </button></td>
                 </tr>
@@ -174,7 +174,9 @@
                 }, {
                     data: 'DNI'
                 }, {
-                    "defaultContent": "<button type='button' class='editar btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
+                    "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
+                    
+                        
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -201,7 +203,7 @@
                     }, {
                         data: 'DNI'
                     }, {
-                        "defaultContent": "<button type='button' class='editar btn btn-primary' data-toggle='modal' data-target='#exampleModal'>Afegir Alumne</button>"
+                        "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
