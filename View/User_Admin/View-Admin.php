@@ -96,15 +96,6 @@
                     <th>Afegir Alumne</th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                    <td><input type="text" name="nompare" value=""></td>
-                    <td><input type="text" name="llinatgepare" value=""></td>
-                    <td><input type="text" name="dnipare" value=""></td>
-                    <td><button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'>
-                    <i class='fas fa-user-plus'></i>
-                        </button></td>
-                </tr>
         </table>
     </div>
 
