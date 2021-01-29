@@ -101,7 +101,9 @@
                     <td><input type="text" name="nompare" value=""></td>
                     <td><input type="text" name="llinatgepare" value=""></td>
                     <td><input type="text" name="dnipare" value=""></td>
-                    <td><input type="submit" value="<i class='fas fa-user-plus'></i>"></td>
+                    <td><button type="submit" class="btn btn-success">
+                    <i class='fas fa-user-plus'></i>
+                        </button></td>
                 </tr>
         </table>
     </div>
