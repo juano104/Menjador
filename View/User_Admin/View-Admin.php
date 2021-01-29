@@ -186,7 +186,7 @@
     <script>
         $(document).ready(function() {
         
-            $("input[type='search']").before("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>");
+            $("#table").before("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>");
 
             var t = $('#table').DataTable({
                 data: <?php echo json_encode($userArr); ?>,
