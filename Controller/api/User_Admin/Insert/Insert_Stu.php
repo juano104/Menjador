@@ -21,9 +21,10 @@ $student->setParent_Id($_POST["pareID"]);
 
 
     if ($student->insertStudent()) {
-        echo json_encode("Student created");
+        header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
     } else {
         echo $_POST["nomalumne"];
         echo $_POST["pareID"];
         echo json_encode("Student not created, maybe already created?");
     }
+
