@@ -17,12 +17,12 @@
 
     <link rel="stylesheet" href="../../../../View/User_Admin/estils.css">
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 
     <!-- js -->
 
-    
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
@@ -87,7 +87,7 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 10%;">
         <h1>Showing Person Table</h1>
-        <table id="table" class="table table-striped table-bordered" >
+        <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -147,7 +147,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" value="Afegir Alumne">
+                        <input type="submit" id="afegir" class="btn btn-success" value="Afegir Alumne">
                     </div>
                 </form>
             </div>
@@ -166,13 +166,17 @@
                     data: 'DNI'
                 }, {
                     "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
-                    
-                        
+
+
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
                 select: true
+            });
+
+            $("#afegir").click(function() {
+                alert("Usuari afegit correctament");
             });
 
             var obtener_data_editar = function(tbody, table) {
