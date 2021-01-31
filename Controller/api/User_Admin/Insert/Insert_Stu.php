@@ -33,7 +33,13 @@ $student->setParent_Id($_POST["pareID"]);
     // for que crida a $student->insertAllergies($last_id, $allergy_id);
 
     foreach($_POST['genero'] as $selected){
-            $student->insertAllergy($last_id,$selected);
+            if($student->insertAllergy($last_id,$selected)){
+                json_encode("Afegit correctament");
+                echo $selected."</br>";
+            }else {
+                json_encode("No sa afegit");
+                echo $selected."</br>";
+            }
         }
 
     header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php"); 
