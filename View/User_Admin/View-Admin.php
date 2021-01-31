@@ -152,22 +152,22 @@
                         <br>
 
                         <label for='ous'>Ous</label>
-                        <input type='checkbox' id='ous' name='ous' value='ous'>
+                        <input type='checkbox' id='ous' name='alergia[]' value='1'>
 
                         <label for='marisc'>Marisc</label>
-                        <input type='checkbox' id='marisc' name='marisc' value='marisc'>
+                        <input type='checkbox' id='marisc' name='alergia[]' value='2'>
 
                         <label for='peix'>Peix</label>
-                        <input type='checkbox' id='peix' name='peix' value='peix'><br>
+                        <input type='checkbox' id='peix' name='alergia[]' value='3'><br>
 
                         <label for='frutssecs'>Fruts Secs</label>
-                        <input type='checkbox' id='frutssecs' name='frutssecs' value='frutssecs'>
+                        <input type='checkbox' id='frutssecs' name='alergia[]' value='4'>
 
                         <label for='llet'>Llet</label>
-                        <input type='checkbox' id='llet' name='llet' value='llet'>
+                        <input type='checkbox' id='llet' name='alergia[]' value='5'>
 
                         <label for='cereals'>Cereals</label>
-                        <input type='checkbox' id='cereals' name='cereals' value='cereals'>
+                        <input type='checkbox' id='cereals' name='alergia[]' value='6'>
 
                         <input id="pareID" name="pareID" type="hidden" value="0">
                         <br>
