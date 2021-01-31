@@ -152,22 +152,22 @@
                         <br>
 
                         <label for='ous'>Ous</label>
-                        <input type='checkbox' id='ous' name='alergia[]' value='1'>
+                        <input type='checkbox' id='ous' name='ous' value='ous'>
 
                         <label for='marisc'>Marisc</label>
-                        <input type='checkbox' id='marisc' name='alergia[]' value='2'>
+                        <input type='checkbox' id='marisc' name='marisc' value='marisc'>
 
                         <label for='peix'>Peix</label>
-                        <input type='checkbox' id='peix' name='alergia[]' value='3'><br>
+                        <input type='checkbox' id='peix' name='peix' value='peix'><br>
 
                         <label for='frutssecs'>Fruts Secs</label>
-                        <input type='checkbox' id='frutssecs' name='alergia[]' value='4'>
+                        <input type='checkbox' id='frutssecs' name='frutssecs' value='frutssecs'>
 
                         <label for='llet'>Llet</label>
-                        <input type='checkbox' id='llet' name='alergia[]' value='5'>
+                        <input type='checkbox' id='llet' name='llet' value='llet'>
 
                         <label for='cereals'>Cereals</label>
-                        <input type='checkbox' id='cereals' name='alergia[]' value='6'>
+                        <input type='checkbox' id='cereals' name='cereals' value='cereals'>
 
                         <input id="pareID" name="pareID" type="hidden" value="0">
                         <br>
@@ -196,9 +196,7 @@
                     data: 'last_name'
                 }, {
                     data: 'DNI'
-                },  {
-                    data: 'DNI'
-                },{
+                }, {
                     "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
 
 

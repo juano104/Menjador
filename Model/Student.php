@@ -89,25 +89,4 @@ class Student
         return false;
     }
 
-    public function insertAllergy($student_ID, $allergy_ID)
-    {
-        $sqlQuery = "INSERT INTO
-                Student_Allergy (student_ID, allergy_ID)
-                values(?, ?)";
-
-        $stmt = $this->conn->prepare($sqlQuery);
-
-        // bind data
-        $stmt->bindParam(1, $this->$student_ID);
-        $stmt->bindParam(2, $this->$allergy_ID);
-
-
-        if ($stmt->execute()) {
-            return true;
-        }
-        return false;
-    }
-
-
-
 }
