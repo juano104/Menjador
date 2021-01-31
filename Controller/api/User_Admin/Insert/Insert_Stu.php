@@ -35,4 +35,4 @@ $student->setParent_Id($_POST["pareID"]);
            json_encode("No funciona D:");
        }
     }
-    header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
+    
