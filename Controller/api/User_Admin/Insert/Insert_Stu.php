@@ -32,8 +32,8 @@ $student->setParent_Id($_POST["pareID"]);
     $checkbox1=$_POST['alergia'];
     // for que crida a $student->insertAllergies($last_id, $allergy_id);
 
-    foreach($_POST['genero'] as $selected){
+    /*foreach($_POST['genero'] as $selected){
             $student->insertAllergy($last_id,$selected);
-        }
+        }*/
 
     header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php"); 
