@@ -21,10 +21,14 @@ $student->setParent_Id($_POST["pareID"]);
 
 
     if ($student->insertStudent()) {
-        header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
+        $last_id = $db_conn->lastInsertId();
     } else {
         echo $_POST["nomalumne"];
         echo $_POST["pareID"];
         echo json_encode("Student not created, maybe already created?");
     }
 
+    foreach($_POST['alergia'] as $selected){
+        $student->insertAllergy($last_id,$selected);
+    }
+    header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
