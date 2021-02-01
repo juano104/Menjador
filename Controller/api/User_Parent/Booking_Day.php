@@ -14,13 +14,8 @@ $parent = new User_Parent($db_conn);
 
 //id, start date, end date
 $parent->setStart_date($_POST["dayform"]);
-$parent->setEnd_Date($_POST["dayform"]);
-$parent->setStudent_ID($_POST["dayform"]);
-
-
-$parent->setName($_POST["nameform"]);
-$parent->setLast_name($_POST["typeform"]);
-$parent->setBirth_Date($_POST["dayform"]);
+$parent->setEnd_Date($parent->getStart_date());
+$parent->setStudent_ID($_POST["idstudent"]);
 
 
 if ($parent->makeReservation()) {
