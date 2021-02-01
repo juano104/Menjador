@@ -104,6 +104,6 @@ class Student
             return true;
         }
         return false;
-        print_r($stmt->__toString());
+        echo $student_ID . "" . $allergy_ID;
     }
 }
