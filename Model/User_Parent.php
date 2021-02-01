@@ -130,8 +130,7 @@ class User_Parent
     //RESERVATIONS
     public function makeReservation()
     {
-        $query = "insert into Booking(start_date, end_date, student_ID)"
-            . "values(?, ?, ?)";
+        $query = "insert into Booking(start_date, end_date, student_ID) values(?, ?, ?)";
 
         $stmt = $this->conn->prepare($query);
 
@@ -139,22 +138,23 @@ class User_Parent
         $stmt->bindParam(2, $this->end_date);
         $stmt->bindParam(3, $this->student_ID);
 
-        $stmt->execute();
-
-        return $stmt;
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
     }
 
     public function makeDayReservation()
     {
-        $query = "insert into Booking_Day(booking_ID)"
-            . "values(?)";
+        $query = "insert into Booking_Day(booking_ID) values(?)";
 
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(1, $this->booking_ID);
 
-        $stmt->execute();
-
-        return $stmt;
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
     }
 }
