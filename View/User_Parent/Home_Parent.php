@@ -104,8 +104,9 @@ include_once "../../Controller/api/User_Parent/Read.php";
                     url: "../../Controller/api/User_Parent/Booking_Day.php",
                     type: "POST",
                     data: {
-                        idstudent: idstudent,
-                        date: date
+                        start_date: date,
+                        end_date: date,
+                        student_ID: idstudent
                     },
                     cache: false,
                     success: function(dataResult) {
