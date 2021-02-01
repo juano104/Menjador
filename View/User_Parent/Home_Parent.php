@@ -76,7 +76,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
 
                     </table>
                 </div>
-                <input id="submit" type="submit" value="Reserve">
+                <input id="submit" name="submit" type="submit" value="Reserve">
             </div>
             <!--<div id="tabs-5">
                 Tab 5 Content
@@ -95,13 +95,14 @@ include_once "../../Controller/api/User_Parent/Read.php";
 <script type="text/javascript">
     $(document).ready(function() {
         //ajax json function:
-        $("#submit").on('click', function() {
+        /*$("#submit").on('click', function() {
             var ID = $("#idstudent").val();
             var date = $("#datepicker").val();
 
             if (ID != "" && date != "") {
                 $.ajax({
                     url: "../../Controller/api/User_Parent/Booking_Day.php",
+                    
                     type: "POST",
                     data: {
                         ID: ID,
@@ -121,7 +122,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
             } else {
                 alert('Please fill all the field !');
             }
-        });
+        });*/
 
 
 
