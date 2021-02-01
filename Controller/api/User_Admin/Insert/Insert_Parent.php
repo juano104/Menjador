@@ -1,6 +1,5 @@
 <?php
 
-if (isset($_POST["submit"])) {
     include_once "../../../../Model/User_Admin.php";
     include_once "../../../../Model/Database.php";
 
@@ -37,6 +36,6 @@ if (isset($_POST["submit"])) {
     } else {
         echo json_encode("User not created, password or DNI is null.");
     }
-}
+
 
 
