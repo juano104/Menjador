@@ -27,7 +27,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
             <li><a href="#tabs-4">Summary</a></li>
             <!--<li><a href="#tabs-5">Monthly/Yearly</a></li>-->
         </ul>
-        <form action="Booking_Day.php" method="post">
+        <form id="bookform" name="bookform" method="post">
             <div id="tabs-1">
                 <h3>For who is it?</h3> <br>
                 <?php
@@ -42,7 +42,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                         );
                         array_push($userArr, $e);
                         echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'>";
-                        echo "<input type='hidden' name='idstudent' value=' . $ID . ' />";
+                        echo "<input type='hidden' id='idstudent' name='idstudent' value=' . $ID . ' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
                     }
                 }
@@ -76,7 +76,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
 
                     </table>
                 </div>
-                <input type="submit" value="Reserve">
+                <input id="submit" type="submit" value="Reserve">
             </div>
             <!--<div id="tabs-5">
                 Tab 5 Content
@@ -94,6 +94,44 @@ include_once "../../Controller/api/User_Parent/Read.php";
 
 <script type="text/javascript">
     $(document).ready(function() {
+        //ajax json function:
+        $("#submit").on('click', function() {
+            var ID = $("#idstudent").val();
+            var date = $("#datepicker").val();
+
+            if (ID != "" && date != "") {
+                $.ajax({
+                    url: "Booking_Day.php",
+                    type: "POST",
+                    data: {
+                        ID: ID,
+                        date: date
+                    },
+                    cache: false,
+                    success: function(dataResult) {
+                        var dataResult = JSON.parse(dataResult);
+                        if (dataResult.statusCode == 200) {
+                            alert('Data added successfully !');
+                        } else if (dataResult.statusCode == 201) {
+                            alert("Error occured !");
+                        }
+
+                    }
+                });
+            } else {
+                alert('Please fill all the field !');
+            }
+        });
+
+
+
+
+
+
+
+
+
+        //button functions
         var student_info = new Array();
         var currentTab = 0;
         $(function() {
@@ -162,23 +200,20 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 //$(".infostudent").html(student_info);
                 $(".table").empty();
                 console.log(student_info);
-            }
-            else if (currentTab == 1) {
+            } else if (currentTab == 1) {
                 //var name = $("input[name='radioname']:checked").val();
                 //student_info.push(name);
                 //$(".infostudent").html(student_info);
                 student_info.slice(2);
                 $(".table tr").slice(2).remove();
                 console.log(student_info);
-            }
-            else if (currentTab == 2) {
+            } else if (currentTab == 2) {
                 //var type = $("input[name='day']:checked").val();
                 //student_info.push(type);
                 //$(".infostudent").html(student_info);
                 $(".table tr").slice(2).remove();
                 console.log(student_info);
-            }
-            else if (currentTab == 3) {
+            } else if (currentTab == 3) {
                 //var day = $("#datepicker").val();
                 //student_info.push(day);
                 //$(".infostudent").html(student_info);
