@@ -106,6 +106,7 @@ class Student
             return true;
         }
         return false;
+        echo $stmt;
     }
 
 
