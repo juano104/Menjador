@@ -196,11 +196,11 @@
                 "bAutoWidth": false,
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
-                    data: 'User.name'
+                    data: 'name'
                 }, {
-                    data: 'User.last_name'
+                    data: 'last_name'
                 }, {
-                    data: 'User.DNI'
+                    data: 'DNI'
                 }, {
                     data: 'Student.name'
                 }, {
@@ -237,11 +237,11 @@
                     "bAutoWidth": false,
                     data: <?php echo json_encode($userArr); ?>,
                     columns: [{
-                        data: 'User.name'
+                        data: 'name'
                     }, {
-                        data: 'User.last_name'
+                        data: 'last_name'
                     }, {
-                        data: 'User.DNI'
+                        data: 'DNI'
                     }, {
                         data: 'Student.name'
                     }, {
