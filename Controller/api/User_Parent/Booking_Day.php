@@ -19,8 +19,9 @@ $parent->setStudent_ID($_POST["idstudent"]);
 
 
 if ($parent->makeReservation()) {
+    echo json_encode(array("statusCode"=>200));
     $parent->setBooking_ID($db_conn->lastInsertId());
-    echo json_encode("Made a Booking reservation!");
+    //echo json_encode("Made a Booking reservation!");
     if ($parent->makeDayReservation()) {
         echo json_encode("Made reservation for ONE day!");
     }
@@ -29,7 +30,8 @@ if ($parent->makeReservation()) {
 } else {
     /* echo $_POST["nomalumne"];
       echo $_POST["pareID"]; */
-    echo json_encode("ERROR");
+    echo json_encode(array("statusCode"=>201));
+    //echo json_encode("ERROR");
 }
     
     
