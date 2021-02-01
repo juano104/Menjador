@@ -36,6 +36,8 @@ if (isset($_POST["submit"])) {
     } else {
         echo json_encode("Error");
     }
+}else{
+    echo json_encode("Error in form");
 }
 
 
