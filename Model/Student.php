@@ -102,8 +102,9 @@ class Student
 
         if ($stmt->execute()) {
             return true;
+            echo "funciona" . $student_ID . "" . $allergy_ID;
         }
         return false;
-        echo $student_ID . "" . $allergy_ID;
+        echo "no funciona" . $student_ID . "" . $allergy_ID;
     }
 }
