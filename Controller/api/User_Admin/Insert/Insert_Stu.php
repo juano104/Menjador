@@ -28,11 +28,15 @@ $student->setParent_Id($_POST["pareID"]);
         echo json_encode("Student not created, maybe already created?");
     }
 
-    foreach($_POST['alergia'] as $selected){
+    $checkbox = $_POST["alergia"];
+
+    foreach($checkbox as $selected){
        if( $student->insertAllergy($last_id,$selected)){
            json_encode("funciona :D");
+           echo $selected;
        }else{
            json_encode("No funciona D:");
+           echo $selected;
        }
     }
     
