@@ -11,7 +11,7 @@ $db_conn = $db->connect();
 
 $parent = new User_Parent($db_conn);
 $redir = $parent->setUsername(isset($_GET["username"]) ? $_GET["username"] : die());
-$properties = json_decode(file_get_contents("http://menjadorescola.me/Menjador/View/User_Parent/Home_Parent.php?username=" . $redir));
+$properties = json_decode(file_get_contents("php://input"));
 
 $parent->setStart_date($properties->date);
 $parent->setEnd_date($properties->date);
