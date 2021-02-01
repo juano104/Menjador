@@ -87,7 +87,7 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
         <h1>Taula Pares</h1>
-        
+
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -100,35 +100,35 @@
         </table>
     </div>
 
-<!--MODAL FORMULARI PARE-->
+    <!--MODAL FORMULARI PARE-->
     <div class="modal fade" id="ModalPare" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Inserir Pare</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-            <strong>NOM PARE:</strong> 
-            <input type="text" name="nompare" id="nompare">
-            <br>
-            <strong>LLINATGE PARE:</strong> 
-            <input type="text" name="llinatgepare" id="llinatgepare">
-            <br>
-            <strong>DNI PARE:</strong> 
-            <input type="text" name="dnipare" id="dnipare">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inserir Pare</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <strong>NOM PARE:</strong>
+                    <input type="text" name="nompare" id="nompare">
+                    <br>
+                    <strong>LLINATGE PARE:</strong>
+                    <input type="text" name="llinatgepare" id="llinatgepare">
+                    <br>
+                    <strong>DNI PARE:</strong>
+                    <input type="text" name="dnipare" id="dnipare">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<!--MODAL FORMULARI FILL-->
+    <!--MODAL FORMULARI FILL-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -185,10 +185,15 @@
 
     <script>
         $(document).ready(function() {
-        
+
             $('#table_filter').before("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>");
 
             var t = $('#table').DataTable({
+                "bPaginate": false,
+                "bLengthChange": false,
+                "bFilter": true,
+                "bInfo": false,
+                "bAutoWidth": false,
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
                     data: 'name'
@@ -205,6 +210,7 @@
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
                 select: true
+
             });
 
             $("#afegir").click(function() {
@@ -222,6 +228,11 @@
 
             function loadData() {
                 t = $('#table').DataTable({
+                    "bPaginate": false,
+                    "bLengthChange": false,
+                    "bFilter": true,
+                    "bInfo": false,
+                    "bAutoWidth": false,
                     data: <?php echo json_encode($userArr); ?>,
                     columns: [{
                         data: 'name'
