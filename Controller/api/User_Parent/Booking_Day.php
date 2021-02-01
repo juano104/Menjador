@@ -1,5 +1,11 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 //Headers
 include_once '../../../Model/Database.php';
 include_once '../../../Model/User_Parent.php';
@@ -7,7 +13,44 @@ include_once '../../../Model/User_Parent.php';
 //DB
 $db = new Database();
 $db_conn = $db->connect();
-if (isset($_POST["submit"])) {
+
+$parent = new User_Parent($db_conn);
+
+$properties = json_decode(file_get_contents("php://input"));
+
+$parent->setStudent_ID($properties->studentID);
+$parent->setStart_date($properties->date);
+$parent->setEnd_date($properties->date);
+
+if($parent->makeReservation()){
+    json_encode("Made reservation");
+    if($parent->makeDayReservation()){
+        json_encode("Made DAY reservation");
+    }else{
+        json_encode("Error in day reservation");
+    }
+}else{
+    echo json_encode("Error");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*if (isset($_POST["submit"])) {
     //User
     $parent = new User_Parent($db_conn);
 
@@ -25,7 +68,7 @@ if (isset($_POST["submit"])) {
             }
         } else {
             /* echo $_POST["nomalumne"];
-      echo $_POST["pareID"]; */
+      echo $_POST["pareID"]; 
             echo json_encode("Error");
             //echo json_encode("ERROR");
         }
@@ -36,5 +79,5 @@ if (isset($_POST["submit"])) {
 
 }else{
     json_encode("Something wrong with form");
-}
+}*/
 //header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
