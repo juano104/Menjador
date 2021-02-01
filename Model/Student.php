@@ -100,6 +100,6 @@ class Student
         $stmt->bindParam(1, $this->$student_ID);
         $stmt->bindParam(2, $this->$allergy_ID);
 
-        if(!$stmt->execute()) echo $stmt->error;
+        if(!$stmt->execute()) print_r($stmt->errorInfo());;
     }
 }
