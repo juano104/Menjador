@@ -193,13 +193,6 @@
                 "bFilter": true,
                 "bInfo": false,
                 "bAutoWidth": false,
-                dom: 'Bfrtip',
-                buttons: [{
-                    text: 'My button',
-                    action: function(e, dt, node, config) {
-                        alert('Button activated');
-                    }
-                }]
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
                     data: 'name'
@@ -239,13 +232,6 @@
                     "bFilter": true,
                     "bInfo": false,
                     "bAutoWidth": false,
-                    dom: 'Bfrtip',
-                    buttons: [{
-                        text: 'My button',
-                        action: function(e, dt, node, config) {
-                            alert('Button activated');
-                        }
-                    }]
                     data: <?php echo json_encode($userArr); ?>,
                     columns: [{
                         data: 'name'
