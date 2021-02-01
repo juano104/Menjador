@@ -97,8 +97,8 @@ class Student
         $stmt = $this->conn->prepare($sqlQuery);
 
         // bind data
-        $stmt->bindParam(1, $this->$student_ID);
-        $stmt->bindParam(2, $this->$allergy_ID);
+        $stmt->bindParam(1, $student_ID);
+        $stmt->bindParam(2, $allergy_ID);
 
         if(!$stmt->execute()) print_r($stmt->errorInfo());;
     }
