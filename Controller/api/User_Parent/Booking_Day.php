@@ -36,6 +36,7 @@ if (isset($_POST["submit"])) {
 } else {
     echo json_encode("Error in form");
 }
+//header("Location: http://menjadorescola.me/Menjador/View/User_Parent/Home_Parent.php?username=56142879E");
 
 
 
