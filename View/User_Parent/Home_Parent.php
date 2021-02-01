@@ -27,7 +27,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
             <li><a href="#tabs-4">Summary</a></li>
             <!--<li><a href="#tabs-5">Monthly/Yearly</a></li>-->
         </ul>
-        <form id="bookform" name="bookform" method="post">
+        <form action="../../Controller/api/User_Parent/Booking_Day.php" id="bookform" name="bookform" method="post">
             <div id="tabs-1">
                 <h3>For who is it?</h3> <br>
                 <?php
@@ -101,7 +101,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
 
             if (ID != "" && daydate != "") {
                 $.ajax({
-                    url: "http://menjadorescola.me/Menjador/Controller/api/User_Parent/Booking_Day.php",
+                    url: "../../Controller/api/User_Parent/Booking_Day.php",
                     type: "POST",
                     data: {
                         studentID: ID,
