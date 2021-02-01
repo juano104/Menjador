@@ -18,7 +18,7 @@ $parent->setEnd_date($properties->date);
 $parent->setStudent_ID($properties->student_ID);*/
 //
 $parent->setStart_date($_POST['date']);
-$parent->setEnd_date($$_POST['date']);
+$parent->setEnd_date($_POST['date']);
 $parent->setStudent_ID($_POST['idstudent']);
 
 
