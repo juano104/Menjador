@@ -126,12 +126,6 @@ include_once "../../Controller/api/User_Parent/Read.php";
 
 
 
-
-
-
-
-
-
         //button functions
         var student_info = new Array();
         var currentTab = 0;
