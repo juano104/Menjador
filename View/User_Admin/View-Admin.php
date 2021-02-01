@@ -196,13 +196,13 @@
                 "bAutoWidth": false,
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
-                    data: 'name'
+                    data: 'User.name'
                 }, {
-                    data: 'last_name'
+                    data: 'User.last_name'
                 }, {
-                    data: 'DNI'
+                    data: 'User.DNI'
                 }, {
-                    data: 'name'
+                    data: 'Student.name'
                 }, {
                     "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
 
