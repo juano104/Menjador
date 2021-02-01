@@ -30,10 +30,11 @@ $student->setParent_Id($_POST["pareID"]);
 
     $checkbox = $_POST["alergia"];
     $i = 0;
-    foreach($checkbox as $selected=>$item){
+    $maxindex = count($checkBox);
+    foreach($checkbox as $selected){
        $student->insertAllergy($last_id ,$selected);
        $i++;
-       if($i > $item[$index]){
+       if($i > $maxindex){
         header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
        }
     }
