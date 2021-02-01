@@ -103,10 +103,10 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 $.ajax({
                     url: "../../Controller/api/User_Parent/Booking_Day.php",
                     type: "POST",
-                    data: {
+                    data: JSON.stringify({
                         date: date,
                         student_ID: idstudent
-                    },
+                    }),
                     dataType: "json",
                     cache: false,
                     success: function(dataResult) {
