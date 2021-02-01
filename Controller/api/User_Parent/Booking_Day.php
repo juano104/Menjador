@@ -24,7 +24,7 @@ $parent->setEnd_date($_POST['date']);
 
 if ($parent->makeReservation()) {
     //json_encode("Made reservation");
-        echo json_encode(array("statusCode bad RES" => 200));
+        echo json_encode(array("statusCode bad RES" => 201));
     if ($parent->makeDayReservation()) {
         //json_encode("Made DAY reservation");
         echo json_encode(array("statusCode" => 200));
