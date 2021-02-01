@@ -186,7 +186,6 @@
     <script>
         $(document).ready(function() {
 
-            $('#table_filter').before("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>");
 
             var t = $('#table').DataTable({
                 "bPaginate": false,
@@ -252,6 +251,7 @@
             }
 
 
+            $('#table_filter').before("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>");
 
         });
     </script>
