@@ -9,12 +9,11 @@ include_once "../../Controller/api/User_Parent/Read.php";
 </head>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
 <script>
     $(function() {
         $("#datepicker").datepicker({
-            dateFormat: 'yy-mm-dd'
+            dateFormat: 'yy/mm/dd'
         });
     });
 </script>
