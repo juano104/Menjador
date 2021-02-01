@@ -1,10 +1,8 @@
 <?php
-
 //Headers
 include_once '../../../../Model/Database.php';
 include_once '../../../../Model/User.php';
 include_once '../../../../Model/Student.php';
-
 
 //DB
 $db = new Database();
@@ -12,27 +10,32 @@ $db_conn = $db->connect();
 
 //User
 $user = new User($db_conn);
+$student = new Student($db_conn);
 
-$stmt = $user->readParent();
-$count = $stmt->rowCount();
 
-if ($count > 0) {
+$student->setName($_POST["nomalumne"]);
+$student->setLast_name($_POST["llinatgealumne"]);
+$student->setBirth_Date($_POST["date"]);
+$student->setParent_Id($_POST["pareID"]);
 
-    $userArr = array();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
-        $e = array(
-            "name" => $name,
-            "last_name" => $last_name,
-            "DNI" => $DNI,
-            "student_name" => $student_name,
-        );
 
-        array_push($userArr, $e);
+    if ($student->insertStudent()) {
+        $last_id = $db_conn->lastInsertId();
+    } else {
+        echo $_POST["nomalumne"];
+        echo $_POST["pareID"];
+        echo json_encode("Student not created, maybe already created?");
     }
-    //echo json_encode($userArr);
-}
 
-//INCLUDE VIEW PHP
-include "../../../../View/User_Admin/View-Admin.php";
+    $checkbox = $_POST["alergia"];
+    $i = 0;
+    $maxindex = count($checkBox);
+    foreach($checkbox as $selected){
+       $student->insertAllergy($last_id ,$selected);
+       $i++;
+       if($i > $maxindex){
+        header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
+       }
+    }
+    
