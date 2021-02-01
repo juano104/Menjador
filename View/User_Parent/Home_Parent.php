@@ -27,7 +27,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
             <li><a href="#tabs-4">Summary</a></li>
             <!--<li><a href="#tabs-5">Monthly/Yearly</a></li>-->
         </ul>
-        <form action="../../Controller/api/User_Parent/Booking_Day.php" id="bookform" name="bookform" method="post">
+        <form id="bookform" name="bookform" method="post">
             <div id="tabs-1">
                 <h3>For who is it?</h3> <br>
                 <?php
@@ -96,16 +96,16 @@ include_once "../../Controller/api/User_Parent/Read.php";
     $(document).ready(function() {
         //ajax json function:
         $("#submit").on('click', function() {
-            var ID = $("#idstudent").val();
-            var daydate = $("#datepicker").val();
+            var idstudent = $("#idstudent").val();
+            var date = $("#datepicker").val();
 
-            if (ID != "" && daydate != "") {
+            if (idstudent != "" && date != "") {
                 $.ajax({
                     url: "../../Controller/api/User_Parent/Booking_Day.php",
                     type: "POST",
                     data: {
-                        studentID: ID,
-                        date: daydate
+                        idstudent: idstudent,
+                        date: date
                     },
                     cache: false,
                     success: function(dataResult) {
