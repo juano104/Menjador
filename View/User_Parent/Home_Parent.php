@@ -101,7 +101,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
 
             if (ID != "" && date != "") {
                 $.ajax({
-                    url: "Booking_Day.php",
+                    url: "../../Controller/api/User_Parent/Booking_Day.php",
                     type: "POST",
                     data: {
                         ID: ID,
