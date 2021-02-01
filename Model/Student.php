@@ -99,11 +99,14 @@ class Student
         // bind data
         $stmt->bindParam(1, $this->$student_ID);
         $stmt->bindParam(2, $this->$allergy_ID);
-
+        echo $student_ID;
+        echo "";
+        echo $allergy_ID;
 
         if ($stmt->execute()) {
             return true;
         }
         return false;
+
     }
 }
