@@ -10,7 +10,44 @@ Class User_Parent {
     private $end_date;
     private $student_ID;
     private $booking_ID;
+    //these properties for reading student
+    private $username;
+    private $ID;
+    private $name;
+    private $last_name;
     
+    function getID() {
+        return $this->ID;
+    }
+
+    function setID($ID): void {
+        $this->ID = $ID;
+    }
+
+        function getUsername() {
+        return $this->username;
+    }
+
+    function getName() {
+        return $this->name;
+    }
+
+    function getLast_name() {
+        return $this->last_name;
+    }
+
+    function setUsername($username): void {
+        $this->username = $username;
+    }
+
+    function setName($name): void {
+        $this->name = $name;
+    }
+
+    function setLast_name($last_name): void {
+        $this->last_name = $last_name;
+    }
+
     function getBooking_ID() {
         return $this->booking_ID;
     }
@@ -19,7 +56,7 @@ Class User_Parent {
         $this->booking_ID = $booking_ID;
     }
 
-        /* function getID() {
+    /* function getID() {
       return $this->ID;
       } */
 
@@ -55,6 +92,23 @@ Class User_Parent {
         $this->conn = $db;
     }
 
+    //Read
+
+    public function read() {
+        $query = "select ID, name, last_name from Student 
+        inner join User_Parent on 
+        Student.parent_DNI = User_Parent.username
+        where User_Parent.username = ?";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(1, $this->username);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+    //RESERVATIONS
     public function makeReservation() {
         $query = "insert into Booking(start_date, end_date, student_ID)"
                 . "values(?, ?, ?)";
@@ -70,11 +124,11 @@ Class User_Parent {
         }
         return false;
     }
-    
-    public function makeDayReservation(){
+
+    public function makeDayReservation() {
         $query = "insert into Booking_Day(booking_ID)"
                 . "values(?)";
-        
+
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(1, $this->booking_ID);
