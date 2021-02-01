@@ -42,7 +42,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                         );
                         array_push($userArr, $e);
                         echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'>";
-                        echo "<input type='hidden' id='idstudent' name='idstudent' value=' . $ID . ' />";
+                        echo "<input type='hidden' id='idstudent' name='idstudent' value='" . $ID . "' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
                     }
                 }
@@ -103,10 +103,10 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 $.ajax({
                     url: "../../Controller/api/User_Parent/Booking_Day.php",
                     type: "POST",
-                    data: JSON.stringify({
+                    data: {
                         date: date,
                         student_ID: idstudent
-                    }),
+                    },
                     dataType: "json",
                     cache: false,
                     success: function(dataResult) {
