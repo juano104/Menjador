@@ -10,7 +10,7 @@ $db_conn = $db->connect();
 
 
 $parent = new User_Parent($db_conn);
-$properties = json_decode(file_get_contents("php://input"));
+$properties = json_decode(file_get_contents("../../../View/User_Parent/Home_Parent.php"));
 
 $parent->setStart_date($properties->date);
 $parent->setEnd_date($properties->date);
@@ -32,53 +32,3 @@ if ($parent->makeReservation()) {
     echo json_encode("Error");
 }
 //header("Location: http://menjadorescola.me/Menjador/View/User_Parent/Home_Parent.php?username=56142879E");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*if (isset($_POST["submit"])) {
-    //User
-    $parent = new User_Parent($db_conn);
-
-    //id, start date, end date
-    $parent->setStudent_ID($_POST["idstudent"]);
-    $parent->setStart_date($_POST["date"]);
-    $parent->setEnd_Date($_POST["date"]);
-
-    //if ($parent->getStudent_ID() != "") {
-        if ($parent->makeReservation()) {
-            $parent->setBooking_ID($db_conn->lastInsertId());
-            echo json_encode("Made a Booking reservation!");
-            if ($parent->makeDayReservation()) {
-                echo json_encode("Made reservation for ONE day!");
-            }
-        } else {
-            /* echo $_POST["nomalumne"];
-      echo $_POST["pareID"]; 
-            echo json_encode("Error");
-            //echo json_encode("ERROR");
-        }
-    //}
-
-
-    //$last_id = $db_conn->lastInsertId();
-
-}else{
-    json_encode("Something wrong with form");
-}*/
-//header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
