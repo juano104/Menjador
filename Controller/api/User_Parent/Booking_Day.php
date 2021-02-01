@@ -16,25 +16,28 @@ $db_conn = $db->connect();
 
 $parent = new User_Parent($db_conn);
 
-//$properties = json_decode(file_get_contents("php://input"));
-$parent->setStart_date($_POST['date']);
-$parent->setEnd_date($_POST['date']);
-$parent->setStudent_ID($_POST['idstudent']);
+if (isset($_POST["submit"])) {
+    //$properties = json_decode(file_get_contents("php://input"));
+    $parent->setStart_date($_POST['date']);
+    $parent->setEnd_date($_POST['date']);
+    $parent->setStudent_ID($_POST['idstudent']);
 
 
-if ($parent->makeReservation()) {
-    //json_encode("Made reservation");
+    if ($parent->makeReservation()) {
+        //json_encode("Made reservation");
         echo json_encode(array("statusCode bad RES" => 201));
-    if ($parent->makeDayReservation()) {
-        //json_encode("Made DAY reservation");
-        echo json_encode(array("statusCode" => 200));
+        if ($parent->makeDayReservation()) {
+            //json_encode("Made DAY reservation");
+            echo json_encode(array("statusCode" => 200));
+        } else {
+            //json_encode("Error in day reservation");
+            echo json_encode(array("statusCode" => 201));
+        }
     } else {
-        //json_encode("Error in day reservation");
-        echo json_encode(array("statusCode" => 201));
+        echo json_encode("Error");
     }
-} else {
-    echo json_encode("Error");
 }
+
 
 
 
