@@ -16,7 +16,7 @@ $db_conn = $db->connect();
     $parent->setStart_date($_POST["date"]);
     $parent->setEnd_Date($_POST["date"]);
 
-    if ($parent->getStudent_ID() != "") {
+    //if ($parent->getStudent_ID() != "") {
         if ($parent->makeReservation()) {
             $parent->setBooking_ID($db_conn->lastInsertId());
             echo json_encode("Made a Booking reservation!");
@@ -29,7 +29,7 @@ $db_conn = $db->connect();
             echo json_encode("Error");
             //echo json_encode("ERROR");
         }
-    }
+    //}
 
 
     //$last_id = $db_conn->lastInsertId();
