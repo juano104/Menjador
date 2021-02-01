@@ -32,10 +32,10 @@ $student->setParent_Id($_POST["pareID"]);
 
     foreach($checkbox as $selected){
        if( $student->insertAllergy($last_id,$selected)){
-           json_encode("funciona :D");
+           echo json_encode("funciona :D");
            echo $selected;
        }else{
-           json_encode("No funciona D:");
+           echo json_encode("No funciona D:");
            echo $selected;
        }
     }
