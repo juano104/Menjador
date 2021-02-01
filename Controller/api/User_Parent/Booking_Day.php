@@ -10,7 +10,7 @@ $db_conn = $db->connect();
 
 
 $parent = new User_Parent($db_conn);
-$redir = $parent->setUsername(isset($_GET["username"]) ? $_GET["username"] : die());
+//$redir = $parent->setUsername(isset($_GET["username"]) ? $_GET["username"] : die());
 $properties = json_decode(file_get_contents("php://input"));
 
 $parent->setStart_date($properties->date);
