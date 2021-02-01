@@ -23,10 +23,10 @@ if ($count > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $e = array(
-            "name" => $name,
-            "last_name" => $last_name,
-            "DNI" => $DNI,
-            "name" => $Student_Name,
+            "User.name" => $name,
+            "User.last_name" => $last_name,
+            "User.DNI" => $DNI,
+            "User.name" => $Student_Name,
         );
 
         array_push($userArr, $e);
