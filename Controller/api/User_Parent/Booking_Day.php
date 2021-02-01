@@ -17,10 +17,10 @@ $db_conn = $db->connect();
 $parent = new User_Parent($db_conn);
 
 //$properties = json_decode(file_get_contents("php://input"));
-
-$parent->setStudent_ID($_POST['idstudent']);
 $parent->setStart_date($_POST['date']);
 $parent->setEnd_date($_POST['date']);
+$parent->setStudent_ID($_POST['idstudent']);
+
 
 if ($parent->makeReservation()) {
     //json_encode("Made reservation");
