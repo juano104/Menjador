@@ -32,8 +32,8 @@ $student->setParent_Id($_POST["pareID"]);
 
     foreach($checkbox as $selected){
        if( $student->insertAllergy($last_id,$checkbox[$selected])){
-        header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
-       }else{
+        echo json_encode("  funciona :D  ");       
+    }else{
            echo json_encode("No funciona D:");
            echo $selected;
        }
