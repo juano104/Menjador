@@ -35,7 +35,7 @@ $student->setParent_Id($_POST["pareID"]);
        $student->insertAllergy($last_id ,$selected);
        $i++;
        if($i > $maxindex){
-        header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
+        header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/View_Student.php");
        }
     }
     
