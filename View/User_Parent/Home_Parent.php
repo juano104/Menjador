@@ -107,6 +107,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                         date: date,
                         student_ID: idstudent
                     },
+                    dataType: "json",
                     cache: false,
                     success: function(dataResult) {
                         var dataResult = JSON.parse(dataResult);
