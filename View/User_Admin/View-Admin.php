@@ -86,8 +86,8 @@
     </div>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
-        <h1>Taula Pares</h1>
-
+        <h1>Administrar Pares</h1>
+        <button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
