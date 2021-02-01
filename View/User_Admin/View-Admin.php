@@ -95,7 +95,7 @@
                     <th>Llinatge</th>
                     <th>DNI</th>
                     <th>Fills</th>
-                    <th>Afegir Alumne</th>
+                    <th></th>
                 </tr>
             </thead>
         </table>
