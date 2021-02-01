@@ -94,7 +94,8 @@
                     <th>Name</th>
                     <th>Llinatge</th>
                     <th>DNI</th>
-                    <th>Afegir Alumne</th>
+                    <th>Fills</th>
+                    <th></th>
                 </tr>
             </thead>
         </table>
@@ -201,6 +202,8 @@
                 }, {
                     data: 'DNI'
                 }, {
+                    data: 'student_name'
+                }, {
                     "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
 
 
@@ -239,6 +242,8 @@
                         data: 'last_name'
                     }, {
                         data: 'DNI'
+                    }, {
+                        data: 'student_name'
                     }, {
                         "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
                     }],

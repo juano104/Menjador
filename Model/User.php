@@ -10,6 +10,12 @@ class User
     private $last_name;
     private $DNI;
     private $role;
+    private $student_name;
+
+    function getstudent_name()
+    {
+        return $this->student_name;
+    }
 
     function getName()
     {
@@ -46,6 +52,11 @@ class User
         $this->DNI = $DNI;
     }
 
+    function setstudent_name($student_name): void
+    {
+        $this->student_name = $student_name;
+    }
+
     function setRole($role): void
     {
         $this->role = $role;
@@ -69,7 +80,7 @@ class User
     //Read Parent
     public function readParent()
     {
-        $query = "Select * from User where role='parent'";
+        $query = "Select User.name, User.last_name, User.DNI, group_concat(Student.name) as student_name from User, Student where User.DNI = Student.parent_DNI and role='parent' GROUP BY User.name, User.last_name, User.DNI";
 
         $result = $this->conn->query($query);
 
