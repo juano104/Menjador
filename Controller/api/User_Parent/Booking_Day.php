@@ -10,7 +10,7 @@ $db_conn = $db->connect();
 
 
 $parent = new User_Parent($db_conn);
-$properties = json_decode(file_get_contents("../../../View/User_Parent/Home_Parent.php"));
+$properties = json_decode(file_get_contents("php://input"));
 
 $parent->setStart_date($properties->date);
 $parent->setEnd_date($properties->date);
