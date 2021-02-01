@@ -10,11 +10,16 @@ $db_conn = $db->connect();
 
 
 $parent = new User_Parent($db_conn);
+$redir = $parent->setUsername(isset($_GET["username"]) ? $_GET["username"] : die());
 $properties = json_decode(file_get_contents("php://input"));
 
-$parent->setStart_date($properties->date);
+/*$parent->setStart_date($properties->date);
 $parent->setEnd_date($properties->date);
-$parent->setStudent_ID($properties->student_ID);
+$parent->setStudent_ID($properties->student_ID);*/
+//
+$parent->setStart_date($_POST['date']);
+$parent->setEnd_date($$_POST['date']);
+$parent->setStudent_ID($_POST['idstudent']);
 
 
 if ($parent->makeReservation()) {
@@ -31,4 +36,4 @@ if ($parent->makeReservation()) {
 } else {
     echo json_encode("Error");
 }
-//header("Location: http://menjadorescola.me/Menjador/View/User_Parent/Home_Parent.php?username=56142879E");
+//header("Location: http://menjadorescola.me/Menjador/View/User_Parent/Home_Parent.php?username=" . $redir);
