@@ -80,7 +80,7 @@ class User
     //Read Parent
     public function readParent()
     {
-        $query = "Select User.name, User.last_name, User.DNI, group_concat(Student.name) as student_name from User, Student where User.DNI = Student.parent_DNI and role='parent' GROUP BY User.name, User.last_name, User.DNI";
+        $query = "Select User.name, User.last_name, User.DNI, group_concat(Student.name) as student_name from User left join Student  on User.DNI = Student.parent_DNI where role='parent' GROUP BY User.name, User.last_name, User.DNI";
 
         $result = $this->conn->query($query);
 
