@@ -80,7 +80,7 @@ class User
     //Read Parent
     public function readParent()
     {
-        $query = "Select User.name, User.last_name, User.DNI, Student.name from User, Student where User.DNI = Student.parent_DNI and role='parent'";
+        $query = "Select User.name, User.last_name, User.DNI, Student.name as student_name from User, Student where User.DNI = Student.parent_DNI and role='parent'";
 
         $result = $this->conn->query($query);
 

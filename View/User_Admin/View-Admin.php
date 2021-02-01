@@ -202,7 +202,7 @@
                 }, {
                     data: 'DNI'
                 }, {
-                    data: 'Student.name'
+                    data: 'student_name'
                 }, {
                     "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
 
@@ -243,7 +243,7 @@
                     }, {
                         data: 'DNI'
                     }, {
-                        data: 'Student.name'
+                        data: 'student_name'
                     }, {
                         "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
                     }],

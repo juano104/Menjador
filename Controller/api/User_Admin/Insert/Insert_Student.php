@@ -26,7 +26,7 @@ if ($count > 0) {
             "name" => $name,
             "last_name" => $last_name,
             "DNI" => $DNI,
-            "Student.name" => $Student_Name,
+            "student_name" => $Student_Name,
         );
 
         array_push($userArr, $e);
