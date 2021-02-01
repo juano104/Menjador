@@ -1,7 +1,6 @@
 <?php
 
-class User_Parent
-{
+Class User_Parent {
 
     //connection db
     private $conn;
@@ -16,54 +15,44 @@ class User_Parent
     private $ID;
     private $name;
     private $last_name;
-
-    function getID()
-    {
+    
+    function getID() {
         return $this->ID;
     }
 
-    function setID($ID): void
-    {
+    function setID($ID): void {
         $this->ID = $ID;
     }
 
-    function getUsername()
-    {
+        function getUsername() {
         return $this->username;
     }
 
-    function getName()
-    {
+    function getName() {
         return $this->name;
     }
 
-    function getLast_name()
-    {
+    function getLast_name() {
         return $this->last_name;
     }
 
-    function setUsername($username): void
-    {
+    function setUsername($username): void {
         $this->username = $username;
     }
 
-    function setName($name): void
-    {
+    function setName($name): void {
         $this->name = $name;
     }
 
-    function setLast_name($last_name): void
-    {
+    function setLast_name($last_name): void {
         $this->last_name = $last_name;
     }
 
-    function getBooking_ID()
-    {
+    function getBooking_ID() {
         return $this->booking_ID;
     }
 
-    function setBooking_ID($booking_ID): void
-    {
+    function setBooking_ID($booking_ID): void {
         $this->booking_ID = $booking_ID;
     }
 
@@ -71,18 +60,15 @@ class User_Parent
       return $this->ID;
       } */
 
-    function getStart_date()
-    {
+    function getStart_date() {
         return $this->start_date;
     }
 
-    function getEnd_date()
-    {
+    function getEnd_date() {
         return $this->end_date;
     }
 
-    function getStudent_ID()
-    {
+    function getStudent_ID() {
         return $this->student_ID;
     }
 
@@ -90,30 +76,25 @@ class User_Parent
       $this->ID = $ID;
       } */
 
-    function setStart_date($start_date): void
-    {
+    function setStart_date($start_date): void {
         $this->start_date = $start_date;
     }
 
-    function setEnd_date($end_date): void
-    {
+    function setEnd_date($end_date): void {
         $this->end_date = $end_date;
     }
 
-    function setStudent_ID($student_ID): void
-    {
+    function setStudent_ID($student_ID): void {
         $this->student_ID = $student_ID;
     }
 
-    public function __construct($db)
-    {
+    public function __construct($db) {
         $this->conn = $db;
     }
 
     //Read
 
-    public function read()
-    {
+    public function read() {
         $query = "select ID, name, last_name from Student 
         inner join User_Parent on 
         Student.parent_DNI = User_Parent.username
@@ -128,8 +109,7 @@ class User_Parent
         return $stmt;
     }
     //RESERVATIONS
-    public function makeReservation()
-    {
+    public function makeReservation() {
         $query = "insert into Booking(start_date, end_date, student_ID) values(?, ?, ?)";
 
         $stmt = $this->conn->prepare($query);
@@ -138,21 +118,23 @@ class User_Parent
         $stmt->bindParam(2, $this->end_date);
         $stmt->bindParam(3, $this->student_ID);
 
-        $stmt->execute();
-
-        return $stmt;
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
     }
 
-    public function makeDayReservation()
-    {
+    public function makeDayReservation() {
         $query = "insert into Booking_Day(booking_ID) values(?)";
 
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(1, $this->booking_ID);
 
-        $stmt->execute();
-
-        return $stmt;
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
     }
+
 }
