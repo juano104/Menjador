@@ -251,7 +251,7 @@
             }
 
 
-            $('#table_filter').before("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>");
+            $("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>").appendTo('#table_filter');
 
         });
     </script>
