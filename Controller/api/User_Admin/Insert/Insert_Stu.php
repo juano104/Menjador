@@ -27,7 +27,7 @@ $student->setParent_Id($_POST["pareID"]);
         echo $_POST["pareID"];
         echo json_encode("Student not created, maybe already created?");
     }
-    echo $last_id;
+
     $checkbox = $_POST["alergia"];
 
     foreach($checkbox as $selected){
