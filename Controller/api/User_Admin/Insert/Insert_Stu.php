@@ -32,9 +32,9 @@ $student->setParent_Id($_POST["pareID"]);
     $i = 0;
     foreach($checkbox as $selected=>$item){
        $student->insertAllergy($last_id ,$selected);
-       $i++;
+       /*$i++;
        if($i > $item){
         header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
-       }
+       }*/
     }
     
