@@ -33,8 +33,6 @@ if (isset($_POST["submit"])) {
             //json_encode("Error in day reservation");
             echo json_encode(array("statusCode" => 201));
         }
-    } else {
-        echo json_encode("Error");
     }
 } else {
     echo json_encode("Error in form");
