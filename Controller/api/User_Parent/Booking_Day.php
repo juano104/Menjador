@@ -19,7 +19,7 @@ $parent->setStudent_ID($properties->student_ID);
 
 if ($parent->makeReservation()) {
     //json_encode("Made reservation");
-    echo json_encode(array("statusCode bad RES" => 201));
+    echo json_encode(array("statusCode" => 200));
     $parent->setBooking_ID($db_conn->lastInsertId());
     if ($parent->makeDayReservation()) {
         //json_encode("Made DAY reservation");

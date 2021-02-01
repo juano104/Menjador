@@ -9,7 +9,6 @@ include_once "../../Controller/api/User_Parent/Read.php";
 </head>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
 <script>
     $(function() {
@@ -28,7 +27,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
             <li><a href="#tabs-4">Summary</a></li>
             <!--<li><a href="#tabs-5">Monthly/Yearly</a></li>-->
         </ul>
-        <form method="post">
+        <form>
             <div id="tabs-1">
                 <h3>For who is it?</h3> <br>
                 <?php
@@ -105,7 +104,8 @@ include_once "../../Controller/api/User_Parent/Read.php";
                     url: "../../Controller/api/User_Parent/Booking_Day.php",
                     type: "POST",
                     data: {
-                        date: date,
+                        start_date: date,
+                        end_date: date,
                         student_ID: idstudent
                     },
                     cache: false,
