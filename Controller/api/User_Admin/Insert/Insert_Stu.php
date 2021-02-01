@@ -29,7 +29,7 @@ $student->setParent_Id($_POST["pareID"]);
     }
 
     $checkbox = $_POST["alergia"];
-
+    $i = 0;
     foreach($checkbox as $selected=>$item){
        $student->insertAllergy($last_id ,$selected);
        $i++;
