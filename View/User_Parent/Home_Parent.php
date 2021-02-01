@@ -95,7 +95,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
 <script type="text/javascript">
     $(document).ready(function() {
         //ajax json function:
-        $("#submit").on('click', function() {
+        /*$("#submit").on('click', function() {
             var idstudent = $("#idstudent").val();
             var date = $("#datepicker").val();
 
@@ -122,7 +122,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
             } else {
                 alert('Please fill all the field !');
             }
-        });
+        });*/
 
 
 

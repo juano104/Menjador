@@ -14,9 +14,9 @@ include_once '../../../Model/User_Parent.php';
 $db = new Database();
 $db_conn = $db->connect();
 
-$parent = new User_Parent($db_conn);
 
 if (isset($_POST["submit"])) {
+    $parent = new User_Parent($db_conn);
     //$properties = json_decode(file_get_contents("php://input"));
     $parent->setStart_date($_POST['date']);
     $parent->setEnd_date($_POST['date']);
@@ -36,7 +36,7 @@ if (isset($_POST["submit"])) {
     } else {
         echo json_encode("Error");
     }
-}else{
+} else {
     echo json_encode("Error in form");
 }
 
