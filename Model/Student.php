@@ -84,7 +84,6 @@ class Student
 
         if ($stmt->execute()) {
             return true;
-        
         }
         return false;
     }
@@ -106,9 +105,5 @@ class Student
             return true;
         }
         return false;
-        echo $stmt;
     }
-
-
-
 }
