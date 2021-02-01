@@ -111,20 +111,22 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <strong>NOM PARE:</strong>
-                    <input type="text" name="nompare" id="nompare">
-                    <br>
-                    <strong>LLINATGE PARE:</strong>
-                    <input type="text" name="llinatgepare" id="llinatgepare">
-                    <br>
-                    <strong>DNI PARE:</strong>
-                    <input type="text" name="dnipare" id="dnipare">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form action="Insert_Parent.php" method="post" id="form" name="f1">
+                    <div class="modal-body">
+                        <strong>NOM PARE:</strong>
+                        <input type="text" name="nompare" id="nompare">
+                        <br>
+                        <strong>LLINATGE PARE:</strong>
+                        <input type="text" name="llinatgepare" id="llinatgepare">
+                        <br>
+                        <strong>DNI PARE:</strong>
+                        <input type="text" name="dnipare" id="dnipare">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" id="afegir" class="btn btn-success" value="Afegir Pare">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
