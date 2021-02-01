@@ -18,6 +18,8 @@ $db_conn = $db->connect();
 if (isset($_POST["submit"])) {
     $parent = new User_Parent($db_conn);
     //$properties = json_decode(file_get_contents("php://input"));
+
+    
     $parent->setStart_date($_POST['date']);
     $parent->setEnd_date($_POST['date']);
     $parent->setStudent_ID($_POST['idstudent']);
@@ -33,6 +35,8 @@ if (isset($_POST["submit"])) {
             //json_encode("Error in day reservation");
             echo json_encode(array("statusCode" => 201));
         }
+    } else {
+        echo json_encode("Error");
     }
 } else {
     echo json_encode("Error in form");

@@ -138,10 +138,9 @@ class User_Parent
         $stmt->bindParam(2, $this->end_date);
         $stmt->bindParam(3, $this->student_ID);
 
-        if ($stmt->execute()) {
-            return true;
-        }
-        return false;
+        $stmt->execute();
+
+        return $stmt;
     }
 
     public function makeDayReservation()
@@ -152,9 +151,8 @@ class User_Parent
 
         $stmt->bindParam(1, $this->booking_ID);
 
-        if ($stmt->execute()) {
-            return true;
-        }
-        return false;
+        $stmt->execute();
+
+        return $stmt;
     }
 }
