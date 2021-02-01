@@ -7,7 +7,7 @@ include_once '../../../Model/User_Parent.php';
 //DB
 $db = new Database();
 $db_conn = $db->connect();
-//if (isset($_POST["submit"])) {
+if (isset($_POST["submit"])) {
     //User
     $parent = new User_Parent($db_conn);
 
@@ -34,5 +34,7 @@ $db_conn = $db->connect();
 
     //$last_id = $db_conn->lastInsertId();
 
-//}
+}else{
+    json_encode("Something wrong with form");
+}
 //header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/Insert_Student.php");
