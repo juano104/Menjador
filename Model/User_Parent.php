@@ -109,21 +109,21 @@ Class User_Parent {
         return $stmt;
     }
 
-    /*public function readOne() {
+    public function readOne($studentname) {
         $query = "select ID, name, last_name from Student 
         inner join User_Parent on 
         Student.parent_DNI = User_Parent.username
-        where User_Parent.username = ? and Student.name = ?";
+        where User_Parent.username = ? and Student.name = " . $studentname;
 
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(1, $this->username);
-        $stmt->bindParam(2, $this->name);
+        //$stmt->bindParam(2, $this->name);
 
         $stmt->execute();
 
         return $stmt;
-    }*/
+    }
     //RESERVATIONS
     public function makeReservation() {
         $query = "insert into Booking(start_date, end_date, student_ID) values(?, ?, ?)";

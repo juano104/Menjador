@@ -41,9 +41,11 @@ include_once "../../Controller/api/User_Parent/Read.php";
                             "last_name" => $last_name
                         );
                         array_push($userArr, $e);
+                        echo "<div id='" . $name . "'>";
                         echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'>";
                         echo "<input type='hidden' id='" . $ID . "' name='idstudent' value='" . $ID . "' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                        echo "</div>";
                     }
                 }
                 ?>
@@ -141,14 +143,11 @@ include_once "../../Controller/api/User_Parent/Read.php";
         $("#btnNext").click(function() {
             if (currentTab == 0) {
                 var name = $("input[name='radioname']:checked").val();
-                var idstudent = $("#<?php echo $ID?>").val();
                 student_info.push(name);
-                student_info.push(idstudent);
                 $(".infostudent").html(student_info);
                 var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
                 $(".table").append(newName);
                 console.log(student_info);
-                console.log($(this).find('input:hidden').val())
             }
             if (currentTab == 1) {
                 var type = $("input[name='day']:checked").val();
@@ -156,6 +155,11 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 //$(".infostudent").html(student_info);
                 var newType = $("<tr><th>Type of Reservation</th></tr><tr><td><input type='hidden' name='typeform'>" + type + "</td></tr>");
                 $(".table").append(newType);
+                $("div#<?php echo $name?> input[type=radio]:checked").each(function() {
+                    alert(this.value);
+                });
+                /*var id = $("#<?php echo $name ?>").children();
+                $(".table").append();*/
                 console.log(student_info);
             }
             if (currentTab == 2) {
