@@ -141,6 +141,9 @@ include_once "../../Controller/api/User_Parent/Read.php";
             });
         });
         $("#btnNext").click(function() {
+            $("div#<?php echo $name ?> input[type=radio]:checked").each(function() {
+                alert(this.value);
+            });
             if (currentTab == 0) {
                 var name = $("input[name='radioname']:checked").val();
                 student_info.push(name);
@@ -155,9 +158,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 //$(".infostudent").html(student_info);
                 var newType = $("<tr><th>Type of Reservation</th></tr><tr><td><input type='hidden' name='typeform'>" + type + "</td></tr>");
                 $(".table").append(newType);
-                $("div#<?php echo $name?> input[type=radio]:checked").each(function() {
-                    alert(this.value);
-                });
+
                 /*var id = $("#<?php echo $name ?>").children();
                 $(".table").append();*/
                 console.log(student_info);
