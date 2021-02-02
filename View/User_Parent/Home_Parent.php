@@ -148,6 +148,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
                 $(".table").append(newName);
                 console.log(student_info);
+                console.log($(this).find('input:hidden').val())
             }
             if (currentTab == 1) {
                 var type = $("input[name='day']:checked").val();
