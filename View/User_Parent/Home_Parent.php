@@ -41,11 +41,11 @@ include_once "../../Controller/api/User_Parent/Read.php";
                             "last_name" => $last_name
                         );
                         array_push($userArr, $e);
-                        echo "<div id='id'>";
-                        echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'>";
-                        echo "<input type='hidden' id='" . $ID . "' name='idstudent' value='" . $ID . "' />";
+                        //echo "<div id='id'>";
+                        echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
+                        //echo "<input type='hidden' id='" . $ID . "' name='idstudent' value='" . $ID . "' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                        echo "</div>";
+                        //echo "</div>";
                     }
                 }
                 ?>
@@ -141,10 +141,14 @@ include_once "../../Controller/api/User_Parent/Read.php";
             });
         });
         $("#btnNext").click(function() {
-            $("div#id input[type=radio]:checked").each(function() {
+            /*$("div#id input[type=radio]:checked").each(function() {
                 alert(this.value);
-            });
+            });*/
             if (currentTab == 0) {
+                $("input[type='radio']:checked").each(function() {
+                    var idVal = $(this).attr("id");
+                    alert($("label[for='" + idVal + "']").text());
+                });
                 var name = $("input[name='radioname']:checked").val();
                 student_info.push(name);
                 $(".infostudent").html(student_info);
