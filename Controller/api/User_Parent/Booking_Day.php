@@ -23,14 +23,14 @@ $parent->setStudent_ID($_POST['idstudent']);
 
 
 if ($parent->makeReservation()) {
-    //json_encode("Made reservation");
+    echo json_encode("Made reservation");
     echo json_encode(array("statusCode" => 200));
     $parent->setBooking_ID($db_conn->lastInsertId());
     if ($parent->makeDayReservation()) {
-        //json_encode("Made DAY reservation");
+        echo json_encode("Made DAY reservation");
         echo json_encode(array("statusCode" => 200));
     } else {
-        //json_encode("Error in day reservation");
+        echo json_encode("Error in day reservation");
         echo json_encode(array("statusCode" => 201));
     }
 } else {
