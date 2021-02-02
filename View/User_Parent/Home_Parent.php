@@ -41,11 +41,11 @@ include_once "../../Controller/api/User_Parent/Read.php";
                             "last_name" => $last_name
                         );
                         array_push($userArr, $e);
-                        echo "<div id='" . $name . "'>";
+                        //echo "<div id='" . $name . "'>";
                         echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'>";
                         echo "<input type='hidden' id='" . $ID . "' name='idstudent' value='" . $ID . "' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                        echo "</div>";
+                        //echo "</div>";
                     }
                 }
                 ?>
