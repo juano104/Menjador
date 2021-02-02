@@ -42,7 +42,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                         );
                         array_push($userArr, $e);
                         echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'>";
-                        echo "<input type='hidden' name='idstudent' value='" . $ID . "' />";
+                        echo "<input type='hidden' id='" . $ID . "' name='idstudent' value='" . $ID . "' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
                     }
                 }
@@ -141,10 +141,10 @@ include_once "../../Controller/api/User_Parent/Read.php";
         $("#btnNext").click(function() {
             if (currentTab == 0) {
                 var name = $("input[name='radioname']:checked").val();
-                //var idstudent = $("input[name='idstudent']").val();
+                var idstudent = $("#<?php echo $ID?>").val();
                 student_info.push(name);
-                //student_info.push(idstudent);
-                //$(".infostudent").html(student_info);
+                student_info.push(idstudent);
+                $(".infostudent").html(student_info);
                 var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
                 $(".table").append(newName);
                 console.log(student_info);
