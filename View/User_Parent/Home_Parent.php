@@ -41,8 +41,8 @@ include_once "../../Controller/api/User_Parent/Read.php";
                             "last_name" => $last_name
                         );
                         array_push($userArr, $e);
-                        echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'<input type='hidden' name='idstudent' value='" . $ID . "' />>";
-                        //echo "<input type='hidden' name='idstudent' value='" . $ID . "' />";
+                        echo "<input class='radioname' type='radio' value='" . $name . "' name='radioname' id='" . $name . "'>";
+                        echo "<input type='hidden' name='idstudent' value='" . $ID . "' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
                     }
                 }
