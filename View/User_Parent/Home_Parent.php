@@ -147,9 +147,9 @@ include_once "../../Controller/api/User_Parent/Read.php";
             if (currentTab == 0) {
                 $("input[type='radio']:checked").each(function() {
                     var idVal = $(this).attr("id");
-                    alert($("label[for='" + idVal + "']").text());
+                    //alert($("label[for='" + idVal + "']").text());
                 });
-                var name = $("input[name='radioname']:checked").val();
+                var name = idVal;
                 student_info.push(name);
                 $(".infostudent").html(student_info);
                 var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
