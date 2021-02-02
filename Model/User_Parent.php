@@ -109,7 +109,7 @@ Class User_Parent {
         return $stmt;
     }
 
-    public function readOne() {
+    /*public function readOne() {
         $query = "select ID, name, last_name from Student 
         inner join User_Parent on 
         Student.parent_DNI = User_Parent.username
@@ -123,7 +123,7 @@ Class User_Parent {
         $stmt->execute();
 
         return $stmt;
-    }
+    }*/
     //RESERVATIONS
     public function makeReservation() {
         $query = "insert into Booking(start_date, end_date, student_ID) values(?, ?, ?)";
