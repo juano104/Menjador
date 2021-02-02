@@ -148,7 +148,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                     //alert($("label[for='" + idVal + "']").text());
                     var name = idVal;
                     student_info.push(name);
-                    $(".infostudent").html(student_info);
+                    //$(".infostudent").html(student_info);
                     var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
                     $(".table").append(newName);
                     console.log(student_info);
