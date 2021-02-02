@@ -141,9 +141,9 @@ include_once "../../Controller/api/User_Parent/Read.php";
         $("#btnNext").click(function() {
             if (currentTab == 0) {
                 var name = $("input[name='radioname']:checked").val();
-                var idstudent = $("input[name='idstudent']").val();
+                //var idstudent = $("input[name='idstudent']").val();
                 student_info.push(name);
-                student_info.push(idstudent);
+                //student_info.push(idstudent);
                 //$(".infostudent").html(student_info);
                 var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
                 $(".table").append(newName);
