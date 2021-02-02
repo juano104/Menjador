@@ -41,11 +41,9 @@ include_once "../../Controller/api/User_Parent/Read.php";
                             "last_name" => $last_name
                         );
                         array_push($userArr, $e);
-                        //echo "<div id='id'>";
+
                         echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
-                        //echo "<input type='hidden' id='" . $ID . "' name='idstudent' value='" . $ID . "' />";
                         echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                        //echo "</div>";
                     }
                 }
                 ?>
@@ -155,12 +153,6 @@ include_once "../../Controller/api/User_Parent/Read.php";
                     $(".table").append(newName);
                     console.log(student_info);
                 });
-                /*var name = idVal;
-                student_info.push(name);
-                $(".infostudent").html(student_info);
-                var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
-                $(".table").append(newName);
-                console.log(student_info);*/
             }
             if (currentTab == 1) {
                 var type = $("input[name='day']:checked").val();
@@ -183,17 +175,6 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 //remove from array
                 console.log(student_info);
             }
-            /*for (var i = 0; i < student_info.length; i++) {
-                $(".table").append("<tr><td>" + student_info[i] + "</td></tr>");
-            }*/
-            /*if (currentTab == 3) {
-                    
-
-                    /*var day = $("#datepicker").val();
-                    student_info.push(day);
-                    $(".infostudent").html(student_info);
-                    console.log(student_info);
-            }*/
 
             //
             var tabs = $('#tabs').tabs();
