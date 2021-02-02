@@ -108,6 +108,22 @@ Class User_Parent {
 
         return $stmt;
     }
+
+    public function readOne() {
+        $query = "select ID, name, last_name from Student 
+        inner join User_Parent on 
+        Student.parent_DNI = User_Parent.username
+        where User_Parent.username = ? and Student.name = ?";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(1, $this->username);
+        $stmt->bindParam(2, $this->name);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
     //RESERVATIONS
     public function makeReservation() {
         $query = "insert into Booking(start_date, end_date, student_ID) values(?, ?, ?)";
