@@ -11,7 +11,7 @@ $db_conn = $db->connect();
 
 $parent = new User_Parent($db_conn);
 //$redir = $parent->setUsername(isset($_GET["username"]) ? $_GET["username"] : die());
-$properties = json_decode($_POST["data"]);
+$properties = json_decode($_POST["dataResult"]);
 
 $parent->setStart_date($properties->date);
 $parent->setEnd_date($properties->date);
