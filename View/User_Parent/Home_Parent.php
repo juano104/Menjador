@@ -145,7 +145,7 @@ include_once "../../Controller/api/User_Parent/Read.php";
                 alert(this.value);
             });*/
             if (currentTab == 0) {
-                $("input[type='radio']:checked").each(function() {
+                var idVal = $("input[type='radio']:checked").each(function() {
                     var idVal = $(this).attr("id");
                     //alert($("label[for='" + idVal + "']").text());
                 });
