@@ -1,9 +1,9 @@
 <?php
 
 //Headers
-include_once '/../../../Model/Database.php';
-include_once '/../../../Model/User.php';
-include_once '/../../../Model/Student.php';
+include_once '../../../Model/Database.php';
+include_once '../../../Model/User.php';
+include_once '../../../Model/Student.php';
 
 
 //DB
