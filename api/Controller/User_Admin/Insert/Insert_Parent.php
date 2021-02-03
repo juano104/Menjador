@@ -1,7 +1,7 @@
 <?php
 
-    include_once "../../../../Model/User_Admin.php";
-    include_once "../../../../Model/Database.php";
+    include_once "/../../../Model/User_Admin.php";
+    include_once "/../../../Model/Database.php";
 
     $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
     $password = "";
@@ -27,7 +27,7 @@
     if ($user->getDNI() != "" || $user->getPassword() != "") {
         if ($user->insertUser()) {
             if ($user->insertParent()) {
-                header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/View_Student.php");
+                header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
             }
         } else {
             echo json_encode("User not created, maybe already created?");

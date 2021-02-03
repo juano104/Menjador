@@ -1,8 +1,8 @@
 <?php
 //Headers
-include_once '../../../../Model/Database.php';
-include_once '../../../../Model/User.php';
-include_once '../../../../Model/Student.php';
+include_once '../../../Model/Database.php';
+include_once '../../../Model/User.php';
+include_once '../../../Model/Student.php';
 
 //DB
 $db = new Database();
@@ -35,7 +35,7 @@ $student->setParent_Id($_POST["pareID"]);
        $student->insertAllergy($last_id ,$selected);
        $i++;
        if($i > $maxindex){
-        header("Location: http://www.menjadorescola.me/Menjador/Controller/api/User_Admin/Insert/View_Student.php");
+        header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
        }
     }
     

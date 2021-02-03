@@ -1,9 +1,9 @@
 <?php
 
 //Headers
-include_once '../../../../Model/Database.php';
-include_once '../../../../Model/User.php';
-include_once '../../../../Model/Student.php';
+include_once '/../../../Model/Database.php';
+include_once '/../../../Model/User.php';
+include_once '/../../../Model/Student.php';
 
 
 //DB
@@ -35,4 +35,4 @@ if ($count > 0) {
 }
 
 //INCLUDE VIEW PHP
-include "../../../../View/User_Admin/View-Admin.php";
+include "/../../../View/User_Admin/View-Admin.php";
