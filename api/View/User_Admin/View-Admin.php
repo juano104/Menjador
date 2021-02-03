@@ -113,13 +113,16 @@
                 </div>
                 <form action="Insert_Parent.php" method="post" id="form" name="f1">
                     <div class="modal-body">
-                        <strong>NOM PARE:</strong>
+                        
+                        <label for="nompare"><strong>NOM PARE:</strong></label>
                         <input type="text" name="nompare" id="nompare">
                         <br>
-                        <strong>LLINATGE PARE:</strong>
+                        
+                        <label for="llinatgepare"><strong>LLINATGE PARE:</strong></label>
                         <input type="text" name="llinatgepare" id="llinatgepare">
                         <br>
-                        <strong>DNI PARE:</strong>
+                        
+                        <label for="dnipare"><strong>DNI PARE:</strong></label>
                         <input type="text" name="dnipare" id="dnipare">
                     </div>
                     <div class="modal-footer">
