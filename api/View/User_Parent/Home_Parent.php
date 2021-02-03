@@ -1,5 +1,5 @@
 <?php
-include_once "../../Controller/api/User_Parent/Read.php";
+include_once "../../Controller/User_Parent/Read.php";
 ?>
 
 <html>
