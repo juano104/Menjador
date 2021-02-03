@@ -146,11 +146,11 @@
                 </div>
                 <form action="Insert_Student.php" method="post" id="form" name="f1">
                     <div class="modal-body">
-
-                        <strong>NOM ALUMNE</strong>
+                        <label for="nomalumne"><strong>NOM ALUMNE</strong></label>
                         <input type="text" name="nomalumne" id="nomalumne">
                         <br>
-                        <strong>LLINATGE ALUMNE</strong>
+                        
+                        <label for="lliatgealumne"><strong>LLINATGE ALUMNE</strong></label>
                         <input type="text" name="llinatgealumne" id="llinatgealumne">
                         <br>
                         <br>
@@ -177,8 +177,9 @@
 
                         <input id="pareID" name="pareID" type="hidden" value="0">
                         <br>
-                        <strong>FECHA DE NAIXAMENT:</strong>
-                        <input type="date" name="date" id="">
+                        
+                        <label for="date"><strong>FECHA DE NAIXAMENT:</strong></label>
+                        <input type="date" name="date" id="date">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -231,7 +232,15 @@
                 });
             }
 
+            var obtener_data_alumne = function(tbody, table) {
+                $(tbody).on("click", "button.editar", function() {
+                    var data = table.row($(this).parents("tr")).data();
+                    var student_name = $("#llinatgealumne").val(data.student_name);
+                });
+            }
+
             obtener_data_editar("#table tbody", t);
+            obtener_data_alumne("#table tbody", t);
 
             function loadData() {
                 t = $('#table').DataTable({
