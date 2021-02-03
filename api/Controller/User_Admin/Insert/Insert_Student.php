@@ -27,6 +27,9 @@ if ($student->insertStudent()) {
     echo $_POST["pareID"];
     echo json_encode("Student not created, maybe already created?");
 }
+if (!isset($_POST["alergia"])){
+    header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
+}
 if (isset($_POST["alergia"])) {
     $checkbox = $_POST["alergia"];
     $i = 0;
