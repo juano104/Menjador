@@ -235,7 +235,7 @@
             var obtener_data_alumne = function(tbody, table) {
                 $(tbody).on("click", "button.editar", function() {
                     var data = table.row($(this).parents("tr")).data();
-                    var student_name = $("#llinatgealumne").val(data.student_name);
+                    var last_name = $("#llinatgealumne").val(data.last_name);
                 });
             }
 
