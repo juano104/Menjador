@@ -20,22 +20,22 @@ $student->setParent_Id($_POST["pareID"]);
 
 
 
-    if ($student->insertStudent()) {
-        $last_id = $db_conn->lastInsertId();
-    } else {
-        echo $_POST["nomalumne"];
-        echo $_POST["pareID"];
-        echo json_encode("Student not created, maybe already created?");
-    }
-
+if ($student->insertStudent()) {
+    $last_id = $db_conn->lastInsertId();
+} else {
+    echo $_POST["nomalumne"];
+    echo $_POST["pareID"];
+    echo json_encode("Student not created, maybe already created?");
+}
+if (isset($_POST["alergia"])) {
     $checkbox = $_POST["alergia"];
     $i = 0;
     $maxindex = count($checkBox);
-    foreach($checkbox as $selected){
-       $student->insertAllergy($last_id ,$selected);
-       $i++;
-       if($i > $maxindex){
-        header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
-       }
+    foreach ($checkbox as $selected) {
+        $student->insertAllergy($last_id, $selected);
+        $i++;
+        if ($i > $maxindex) {
+            header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
+        }
     }
-    
+}
