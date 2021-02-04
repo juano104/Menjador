@@ -244,6 +244,7 @@ class User_Parent
             return true;
         }
         return false;
+        if (!$stmt->execute()) print_r($stmt->errorInfo());
     }
 
     //ONE day
