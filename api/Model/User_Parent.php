@@ -1,6 +1,7 @@
 <?php
 
-Class User_Parent {
+class User_Parent
+{
 
     //connection db
     private $conn;
@@ -27,142 +28,176 @@ Class User_Parent {
     private $friday;
 
     //getter setter for reading student
-    function getUsername() {
+    function getUsername()
+    {
         return $this->username;
     }
 
-    function getID() {
+    function getID()
+    {
         return $this->ID;
     }
 
-    function getName() {
+    function getName()
+    {
         return $this->name;
     }
 
-    function getLast_name() {
+    function getLast_name()
+    {
         return $this->last_name;
     }
 
-    function setUsername($username): void {
+    function setUsername($username): void
+    {
         $this->username = $username;
     }
 
-    function setID($ID): void {
+    function setID($ID): void
+    {
         $this->ID = $ID;
     }
 
-    function setName($name): void {
+    function setName($name): void
+    {
         $this->name = $name;
     }
 
-    function setLast_name($last_name): void {
+    function setLast_name($last_name): void
+    {
         $this->last_name = $last_name;
     }
 
     //getter setters for booking
-    function getStudent_ID() {
+    function getStudent_ID()
+    {
         return $this->student_ID;
     }
 
-    function getParent_DNI() {
+    function getParent_DNI()
+    {
         return $this->parent_DNI;
     }
 
-    function getActivity() {
+    function getActivity()
+    {
         return $this->activity;
     }
 
-    function getBooking_ID() {
+    function getBooking_ID()
+    {
         return $this->booking_ID;
     }
 
-    function getDate() {
+    function getDate()
+    {
         return $this->date;
     }
 
-    function getStart_date() {
+    function getStart_date()
+    {
         return $this->start_date;
     }
 
-    function getEnd_date() {
+    function getEnd_date()
+    {
         return $this->end_date;
     }
 
-    function getMonday() {
+    function getMonday()
+    {
         return $this->monday;
     }
 
-    function getTuesday() {
+    function getTuesday()
+    {
         return $this->tuesday;
     }
 
-    function getWednesday() {
+    function getWednesday()
+    {
         return $this->wednesday;
     }
 
-    function getThursday() {
+    function getThursday()
+    {
         return $this->thursday;
     }
 
-    function getFriday() {
+    function getFriday()
+    {
         return $this->friday;
     }
 
-    function setStudent_ID($student_ID): void {
+    function setStudent_ID($student_ID): void
+    {
         $this->student_ID = $student_ID;
     }
 
-    function setParent_DNI($parent_DNI): void {
+    function setParent_DNI($parent_DNI): void
+    {
         $this->parent_DNI = $parent_DNI;
     }
 
-    function setActivity($activity): void {
+    function setActivity($activity): void
+    {
         $this->activity = $activity;
     }
 
-    function setBooking_ID($booking_ID): void {
+    function setBooking_ID($booking_ID): void
+    {
         $this->booking_ID = $booking_ID;
     }
 
-    function setDate($date): void {
+    function setDate($date): void
+    {
         $this->date = $date;
     }
 
-    function setStart_date($start_date): void {
+    function setStart_date($start_date): void
+    {
         $this->start_date = $start_date;
     }
 
-    function setEnd_date($end_date): void {
+    function setEnd_date($end_date): void
+    {
         $this->end_date = $end_date;
     }
 
-    function setMonday($monday): void {
+    function setMonday($monday): void
+    {
         $this->monday = $monday;
     }
 
-    function setTuesday($tuesday): void {
+    function setTuesday($tuesday): void
+    {
         $this->tuesday = $tuesday;
     }
 
-    function setWednesday($wednesday): void {
+    function setWednesday($wednesday): void
+    {
         $this->wednesday = $wednesday;
     }
 
-    function setThursday($thursday): void {
+    function setThursday($thursday): void
+    {
         $this->thursday = $thursday;
     }
 
-    function setFriday($friday): void {
+    function setFriday($friday): void
+    {
         $this->friday = $friday;
     }
 
-    public function __construct($db) {
+    public function __construct($db)
+    {
         $this->conn = $db;
     }
 
     //Read
 
-    public function read() {
+    public function read()
+    {
         $query = "select ID, name, last_name from Student 
         inner join User_Parent on 
         Student.parent_DNI = User_Parent.username
@@ -177,7 +212,8 @@ Class User_Parent {
         return $stmt;
     }
 
-    public function readOne($studentname) {
+    public function readOne($studentname)
+    {
         $query = "select ID, name, last_name from Student 
         inner join User_Parent on 
         Student.parent_DNI = User_Parent.username
@@ -194,7 +230,8 @@ Class User_Parent {
     }
 
     //RESERVATIONS
-    public function makeReservation() {
+    public function makeReservation()
+    {
         $query = "insert into Booking(student_ID, parent_DNI, activity) values(?, ?, ?)";
 
         $stmt = $this->conn->prepare($query);
@@ -210,7 +247,8 @@ Class User_Parent {
     }
 
     //ONE day
-    public function makeDayReservation() {
+    public function makeDayReservation()
+    {
         $query = "insert into Booking_Day values(?, ?)";
 
         $stmt = $this->conn->prepare($query);
@@ -225,7 +263,8 @@ Class User_Parent {
     }
 
     //LOOSE days
-    public function makeLooseReservation() {
+    public function makeLooseReservation()
+    {
         $query = "insert into Booking_Extra values(?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $this->conn->prepare($query);
@@ -244,5 +283,4 @@ Class User_Parent {
         }
         return false;
     }
-
 }
