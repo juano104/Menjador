@@ -23,6 +23,7 @@ if ($count > 0) {
         $e = array(
             "student_ID" => $student_ID,
             "single_day" => $single_day,
+            "count" => $count,
         );
 
         array_push($userArr, $e);

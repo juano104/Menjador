@@ -92,6 +92,21 @@
                 <tr>
                     <th>STUDENT ID</th>
                     <th>Fecha</th>
+                    <th>Total de Dies</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
+        <h1>Reserves de tot l'any</h1>
+        <table id="tableSingle" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>STUDENT ID</th>
+                    <th>Fecha Inici</th>
+                    <th>Fecha Final</th>
+                    <th>Dies</th>
                 </tr>
             </thead>
         </table>
@@ -115,6 +130,8 @@
                     data: 'student_ID'
                 }, {
                     data: 'single_day'
+                }, {
+                    data: 'count'
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -135,6 +152,8 @@
                         data: 'student_ID'
                     }, {
                         data: 'single_day'
+                    }, {
+                        data: 'count'
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
