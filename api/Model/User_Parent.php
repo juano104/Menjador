@@ -243,7 +243,7 @@ class User_Parent
         if ($stmt->execute()) {
             return true;
         }else{
-            echo $stmt->errorInfo();
+            print_r($stmt->errorInfo());
         }
         return false;
     }
