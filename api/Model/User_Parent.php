@@ -242,9 +242,10 @@ class User_Parent
 
         if ($stmt->execute()) {
             return true;
+        }else{
+            echo $stmt->errorInfo();
         }
         return false;
-        if (!$stmt->execute()) print_r($stmt->errorInfo());
     }
 
     //ONE day
