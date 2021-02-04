@@ -87,7 +87,6 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
         <h1>Reserves de un dia</h1>
-        <button class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
         <table id="tableSingle" class="table table-striped table-bordered">
             <thead>
                 <tr>
