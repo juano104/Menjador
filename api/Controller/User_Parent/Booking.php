@@ -35,7 +35,7 @@ if ($_POST['date'] != '') {
     } else {
         echo json_encode("Error");
     }
-}else /*if (isset($_POST['startdate']) && isset($_POST['enddate'])) */{
+} else /*if (isset($_POST['startdate']) && isset($_POST['enddate'])) */ {
     $parent->setParent_DNI($_POST['parent_DNI']);
     $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['radioname']);
