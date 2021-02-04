@@ -20,7 +20,7 @@ $parent->setStudent_ID($properties->student_ID);*/
 
 if ($_POST['date'] != '') {
     $parent->setParent_DNI($_POST['parent_DNI']);
-    $redir = $parent->getParent_DNI();
+    //$redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['radioname']);
     $parent->setActivity('active');
     $parent->setDate($_POST['date']);
@@ -37,7 +37,7 @@ if ($_POST['date'] != '') {
     }
 } else /*if (isset($_POST['startdate']) && isset($_POST['enddate'])) */ {
     $parent->setParent_DNI($_POST['parent_DNI']);
-    $redir = $parent->getParent_DNI();
+    //$redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['radioname']);
     $parent->setActivity('active');
     $parent->setStart_date($_POST['startdate']);
