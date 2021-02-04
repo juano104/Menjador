@@ -242,8 +242,6 @@ class User_Parent
 
         if ($stmt->execute()) {
             return true;
-        }else{
-            print_r($stmt->errorInfo());
         }
         return false;
     }

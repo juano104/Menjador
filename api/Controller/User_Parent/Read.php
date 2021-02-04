@@ -13,7 +13,7 @@ $db_conn = $db->connect();
 $user = new User_Parent($db_conn);
 
 $user->setUsername(isset($_GET["username"]) ? $_GET["username"] : die());
-//$user->setName();
+$parent_DNI = $user->getUsername();
 
 $stmt = $user->read();
 $count = $stmt->rowCount();
