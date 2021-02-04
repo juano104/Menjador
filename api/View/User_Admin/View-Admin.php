@@ -99,7 +99,6 @@
                 </tr>
             </thead>
         </table>
-        <a href="Menjador/AdminPares" target="_blank" rel="noopener noreferrer">prova</a>
     </div>
 
     <!--MODAL FORMULARI PARE-->

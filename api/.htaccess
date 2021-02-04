@@ -1,5 +1,0 @@
-Options +FollowSymLinks
-RewriteEngine on
-
-RewriteRule ^Menjador/AdminPares$ Menjador/api/Controller/User_Admin/Insert/View_Student.php
-
