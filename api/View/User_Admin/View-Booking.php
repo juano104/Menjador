@@ -171,7 +171,7 @@
                 "bFilter": true,
                 "bInfo": false,
                 "bAutoWidth": false,
-                data: <?php echo json_encode($userArr); ?>,
+                data: <?php echo json_encode($BookingsArr); ?>,
                 columns: [{
                     data: 'student_ID'
                 }, {
