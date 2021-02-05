@@ -45,7 +45,6 @@ if ($count2 > 0) {
             "end_date" => $end_date,
             "days" => $days,
         );
-
         array_push($BookingsArr, $e);
     }
 }
