@@ -72,4 +72,4 @@ if ($_POST['date'] != '') {
     }
 }
 
-header("Location: http://localhost/PROJ_MENJADOR_PROVES/api/View/User_Parent/Home_Parent.php?username=" . $redir);
+//header("Location: http://localhost/PROJ_MENJADOR_PROVES/api/View/User_Parent/Home_Parent.php?username=" . $redir);
