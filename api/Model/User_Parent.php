@@ -13,7 +13,7 @@ class User_Parent
     //properties for Booking TABLE in db
     private $student_ID;
     private $parent_DNI;
-    private $activity;
+    private $status;
     //booking id for both tables
     private $booking_ID;
     //properties for only one day
@@ -79,9 +79,9 @@ class User_Parent
         return $this->parent_DNI;
     }
 
-    function getActivity()
+    function getStatus()
     {
-        return $this->activity;
+        return $this->status;
     }
 
     function getBooking_ID()
@@ -139,9 +139,9 @@ class User_Parent
         $this->parent_DNI = $parent_DNI;
     }
 
-    function setActivity($activity): void
+    function setStatus($status): void
     {
-        $this->activity = $activity;
+        $this->status = $status;
     }
 
     function setBooking_ID($booking_ID): void
@@ -232,13 +232,13 @@ class User_Parent
     //RESERVATIONS
     public function makeReservation()
     {
-        $query = "insert into Booking(student_ID, parent_DNI, activity) values(?, ?, ?)";
+        $query = "insert into Booking(student_ID, parent_DNI, status) values(?, ?, ?)";
 
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(1, $this->student_ID);
         $stmt->bindParam(2, $this->parent_DNI);
-        $stmt->bindParam(3, $this->activity);
+        $stmt->bindParam(3, $this->status);
 
         if ($stmt->execute()) {
             return true;

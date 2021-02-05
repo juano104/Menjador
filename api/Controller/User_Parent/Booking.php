@@ -20,9 +20,9 @@ $parent->setStudent_ID($properties->student_ID);*/
 
 if ($_POST['date'] != '') {
     $parent->setParent_DNI($_POST['parent_DNI']);
-    //$redir = $parent->getParent_DNI();
+    $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['radioname']);
-    $parent->setActivity('active');
+    $parent->setStatus('active');
     $parent->setDate($_POST['date']);
     if ($parent->makeReservation()) {
         echo json_encode("Made reservation FOR ONE DAY");
@@ -37,9 +37,9 @@ if ($_POST['date'] != '') {
     }
 } else /*if (isset($_POST['startdate']) && isset($_POST['enddate'])) */ {
     $parent->setParent_DNI($_POST['parent_DNI']);
-    //$redir = $parent->getParent_DNI();
+    $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['radioname']);
-    $parent->setActivity('active');
+    $parent->setStatus('active');
     $parent->setStart_date($_POST['startdate']);
     $parent->setEnd_date($_POST['enddate']);
 
@@ -72,4 +72,4 @@ if ($_POST['date'] != '') {
     }
 }
 
-//header("Location: http://localhost/PROJ_MENJADOR_PROVES/api/View/User_Parent/Home_Parent.php?username=" . $redir);
+header("Location: http://localhost/PROJ_MENJADOR_PROVES/api/View/User_Parent/Home_Parent.php?username=" . $redir);
