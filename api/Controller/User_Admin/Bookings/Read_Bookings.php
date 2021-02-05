@@ -37,7 +37,7 @@ if ($count2 > 0) {
 
     $BookingsArr = array();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $e = array(
             "student_ID" => $student_ID,
