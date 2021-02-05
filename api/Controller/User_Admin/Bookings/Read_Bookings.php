@@ -12,6 +12,8 @@ $db_conn = $db->connect();
 $booking = new Booking($db_conn);
 
 $stmt = $booking->readSingleBooking();
+$stmt2 = $booking->readMultipleBooking();
+$count2 = $stmt2->rowCount();
 $count = $stmt->rowCount();
 
 if ($count > 0) {
@@ -29,6 +31,23 @@ if ($count > 0) {
         array_push($userArr, $e);
     }
     //echo json_encode($userArr);
+}
+
+if ($count2 > 0) {
+
+    $BookingsArr = array();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        extract($row);
+        $e = array(
+            "student_ID" => $student_ID,
+            "start_date" => $start_date,
+            "end_date" => $end_date,
+            "days" => $days,
+        );
+
+        array_push($BookingsArr, $e);
+    }
 }
 
 //INCLUDE VIEW PHP
