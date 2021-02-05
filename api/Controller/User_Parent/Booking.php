@@ -48,19 +48,19 @@ if ($_POST['date'] != '') {
 
         $parent->setBooking_ID($db_conn->lastInsertId());
         if (isset($_POST['monday'])) {
-            $parent->setMonday("1");
+            $parent->setMonday("Monday");
         }
         if (isset($_POST['tuesday'])) {
-            $parent->setTuesday("2");
+            $parent->setTuesday("Tuesday");
         }
         if (isset($_POST['wednesday'])) {
-            $parent->setWednesday("3");
+            $parent->setWednesday("Wednesday");
         }
         if (isset($_POST['thursday'])) {
-            $parent->setThursday("4");
+            $parent->setThursday("Thursday");
         }
         if (isset($_POST['friday'])) {
-            $parent->setFriday("5");
+            $parent->setFriday("Friday");
         }
         if ($parent->makeLooseReservation()) {
             echo json_encode("Made LOOSE reservation");
