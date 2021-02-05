@@ -20,9 +20,9 @@ $parent->setStudent_ID($properties->student_ID);*/
 
 if ($_POST['date'] != '') {
     $parent->setParent_DNI($_POST['parent_DNI']);
-    //$redir = $parent->getParent_DNI();
+    $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['radioname']);
-    $parent->setActivity('active');
+    $parent->setStatus('active');
     $parent->setDate($_POST['date']);
     if ($parent->makeReservation()) {
         echo json_encode("Made reservation FOR ONE DAY");
@@ -37,9 +37,9 @@ if ($_POST['date'] != '') {
     }
 } else /*if (isset($_POST['startdate']) && isset($_POST['enddate'])) */ {
     $parent->setParent_DNI($_POST['parent_DNI']);
-    //$redir = $parent->getParent_DNI();
+    $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['radioname']);
-    $parent->setActivity('active');
+    $parent->setStatus('active');
     $parent->setStart_date($_POST['startdate']);
     $parent->setEnd_date($_POST['enddate']);
 
@@ -48,19 +48,19 @@ if ($_POST['date'] != '') {
 
         $parent->setBooking_ID($db_conn->lastInsertId());
         if (isset($_POST['monday'])) {
-            $parent->setMonday($_POST['monday']);
+            $parent->setMonday("Monday");
         }
         if (isset($_POST['tuesday'])) {
-            $parent->setTuesday($_POST['tuesday']);
+            $parent->setTuesday("Tuesday");
         }
         if (isset($_POST['wednesday'])) {
-            $parent->setWednesday($_POST['wednesday']);
+            $parent->setWednesday("Wednesday");
         }
         if (isset($_POST['thursday'])) {
-            $parent->setThursday($_POST['thursday']);
+            $parent->setThursday("Thursday");
         }
         if (isset($_POST['friday'])) {
-            $parent->setFriday($_POST['friday']);
+            $parent->setFriday("Friday");
         }
         if ($parent->makeLooseReservation()) {
             echo json_encode("Made LOOSE reservation");
