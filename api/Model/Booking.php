@@ -19,7 +19,7 @@ class Booking{
 
     public function readMultipleBooking()
     {
-        $query = "select Booking.student_ID,Booking_Extra.start_date, Booking_Extra.end_date ,concat_ws(' , ', replace(Booking_Extra.monday,'1','monday'), replace(Booking_Extra.tuesday, '1', 'tuesday'), replace(Booking_Extra.wednesday,'1', 'wednesday'), replace(Booking_Extra.thursday, '1', 'thursday'), replace(Booking_Extra.friday, '1', 'friday')) as days from Booking inner join Booking_Extra on Booking.ID = Booking_Extra.booking_ID and date( end_date ) >= CURDATE()  group by  Booking.student_ID, Booking_Extra.start_date, Booking_Extra.end_date, days";
+        $query = "select Booking.student_ID,Booking_Extra.start_date, Booking_Extra.end_date ,concat_ws(' , ',Booking_Extra.monday, Booking_Extra.tuesday, Booking_Extra.wednesday,Booking_Extra.thursday,Booking_Extra.friday) as days from Booking inner join Booking_Extra on Booking.ID = Booking_Extra.booking_ID and date( end_date ) >= CURDATE()  group by  Booking.student_ID, Booking_Extra.start_date, Booking_Extra.end_date, days";
 
         $result = $this->conn->query($query);
 
