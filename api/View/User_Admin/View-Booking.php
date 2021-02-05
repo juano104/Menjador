@@ -100,7 +100,7 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
         <h1>Reserves de tot l'any</h1>
-        <table id="tableSingle" class="table table-striped table-bordered">
+        <table id="tableMultiple" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>STUDENT ID</th>
@@ -164,7 +164,54 @@
             }
 
 
-            $("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>").appendTo("div.panel-heading");
+
+            var t = $('#tableMultiple').DataTable({
+                "bPaginate": false,
+                "bLengthChange": false,
+                "bFilter": true,
+                "bInfo": false,
+                "bAutoWidth": false,
+                data: <?php echo json_encode($userArr); ?>,
+                columns: [{
+                    data: 'student_ID'
+                }, {
+                    data: 'start_date'
+                    }, {
+                    data: 'end_date'
+                }, {
+                    data: 'days'
+                }],
+                language: {
+                    url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
+                },
+                select: true
+
+            });
+
+            function loadData() {
+                t = $('#tableMultiple').DataTable({
+                    "bPaginate": false,
+                    "bLengthChange": false,
+                    "bFilter": true,
+                    "bInfo": false,
+                    "bAutoWidth": false,
+                    data: <?php echo json_encode($userArr); ?>,
+                    columns: [{
+                    data: 'student_ID'
+                }, {
+                    data: 'start_date'
+                    }, {
+                    data: 'end_date'
+                }, {
+                    data: 'days'
+                }],
+                language: {
+                    url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
+                },
+                select: true
+                });
+
+            }
 
         });
     </script>
