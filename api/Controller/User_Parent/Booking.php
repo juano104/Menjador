@@ -11,17 +11,11 @@ $db_conn = $db->connect();
 
 $parent = new User_Parent($db_conn);
 
-//$properties = json_decode(file_get_contents("../../../View/User_Parent/Home_Parent.php"));
-
-/*$parent->setStart_date($properties->date);
-$parent->setEnd_date($properties->date);
-$parent->setStudent_ID($properties->student_ID);*/
-//
 
 if ($_POST['date'] != '') {
     $parent->setParent_DNI($_POST['parent_DNI']);
     $redir = $parent->getParent_DNI();
-    $parent->setStudent_ID($_POST['radioname']);
+    $parent->setStudent_ID($_POST['idstudent']);
     $parent->setStatus('active');
     $parent->setDate($_POST['date']);
     if ($parent->makeReservation()) {
@@ -35,10 +29,10 @@ if ($_POST['date'] != '') {
     } else {
         echo json_encode("Error");
     }
-} else /*if (isset($_POST['startdate']) && isset($_POST['enddate'])) */ {
+} else {
     $parent->setParent_DNI($_POST['parent_DNI']);
     $redir = $parent->getParent_DNI();
-    $parent->setStudent_ID($_POST['radioname']);
+    $parent->setStudent_ID($_POST['idstudent']);
     $parent->setStatus('active');
     $parent->setStart_date($_POST['startdate']);
     $parent->setEnd_date($_POST['enddate']);
@@ -71,5 +65,3 @@ if ($_POST['date'] != '') {
         echo json_encode("Error");
     }
 }
-
-//header("Location: http://localhost/PROJ_MENJADOR_PROVES/api/View/User_Parent/Home_Parent.php?username=" . $redir);
