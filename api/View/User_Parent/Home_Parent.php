@@ -397,38 +397,18 @@ include_once "../../Controller/User_Parent/Read.php";
 
                 e.preventDefault();
 
-                if ($("input[name='idstudent']").val() != "") {
-                    var idstudent = $("input[name='idstudent']").val();
-                }
-                if ($("#datepicker").val() != "") {
-                    var date = $("#datepicker").val();
-                }
-                if ($("#datepickers").val() != "") {
-                    var startdate = $("#datepickers").val();
-                }
-                if ($("#datepickere").val() != "") {
-                    var enddate = $("#datepickere").val();
-                }
-                if ($("#parent_DNI").val() != "") {
-                    var parent_DNI = $("#parent_DNI").val();
-                }
+                var idstudent = $("input[name='idstudent']").val();
+                var date = $("#datepicker").val();
+                var startdate = $("#datepickers").val();
+                var enddate = $("#datepickere").val();
+                var parent_DNI = $("#parent_DNI").val();
 
-                //Days of the Week
-                if ($("input[name='monday']").val() != "") {
-                    var monday = $("input[name='monday']").val();
-                }
-                if ($("input[name='tuesday']").val() != "") {
-                    var tuesday = $("input[name='tuesday']").val();
-                }
-                if ($("input[name='wednesday']").val() != "") {
-                    var wednesday = $("input[name='wednesday']").val();
-                }
-                if ($("input[name='thursday']").val() != "") {
-                    var thursday = $("input[name='thursday']").val();
-                }
-                if ($("input[name='friday']").val() != "") {
-                    var friday = $("input[name='friday']").val();
-                }
+                //Days of the Week\
+                var monday = $("input[name='monday']").val();
+                var tuesday = $("input[name='tuesday']").val();
+                var wednesday = $("input[name='wednesday']").val();
+                var thursday = $("input[name='thursday']").val();
+                var friday = $("input[name='friday']").val();
 
                 $.ajax({
                     url: "../../Controller/User_Parent/Booking.php",

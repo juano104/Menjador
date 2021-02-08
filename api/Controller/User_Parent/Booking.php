@@ -11,8 +11,7 @@ $db_conn = $db->connect();
 
 $parent = new User_Parent($db_conn);
 
-
-if ($_POST['date'] != '') {
+if ($_POST['date'] != "") {
     $parent->setParent_DNI($_POST['parent_DNI']);
     $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['idstudent']);
@@ -41,19 +40,19 @@ if ($_POST['date'] != '') {
         echo json_encode("Made reservation FOR LOOSE");
 
         $parent->setBooking_ID($db_conn->lastInsertId());
-        if (isset($_POST['monday'])) {
+        if ($_POST['monday'] == "1") {
             $parent->setMonday("Monday");
         }
-        if (isset($_POST['tuesday'])) {
+        if ($_POST['tuesday'] == "1") {
             $parent->setTuesday("Tuesday");
         }
-        if (isset($_POST['wednesday'])) {
+        if ($_POST['wednesday'] == "1") {
             $parent->setWednesday("Wednesday");
         }
-        if (isset($_POST['thursday'])) {
+        if ($_POST['thursday'] == "1") {
             $parent->setThursday("Thursday");
         }
-        if (isset($_POST['friday'])) {
+        if ($_POST['friday'] == "1") {
             $parent->setFriday("Friday");
         }
         if ($parent->makeLooseReservation()) {
@@ -65,3 +64,5 @@ if ($_POST['date'] != '') {
         echo json_encode("Error");
     }
 }
+
+//header("Location: http://localhost/PROJ_MENJADOR_PROVES/api/View/User_Parent/Home_Parent.php?username=" . $redir);
