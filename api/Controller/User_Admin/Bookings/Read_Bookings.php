@@ -50,4 +50,4 @@ if ($count2 > 0) {
 }
 
 //INCLUDE VIEW PHP
-include "../../../View/User_Admin/View-Booking.php";
+include "../../../../../Menjador/back/View/View-Booking.php";
