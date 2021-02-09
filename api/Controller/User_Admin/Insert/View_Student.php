@@ -35,4 +35,4 @@ if ($count > 0) {
 }
 
 //INCLUDE VIEW PHP
-include "../../../../../../Pagina-Menjador/Menjad";
+include "../../../../../Menjador/back/View/View-Booking.php";
