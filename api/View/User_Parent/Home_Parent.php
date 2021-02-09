@@ -12,31 +12,35 @@ include_once "../../Controller/User_Parent/Read.php";
 <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
 <script>
     $(function() {
-        $("#datepicker").datepicker({
-            dateFormat: 'yy/mm/dd'
+        $(".datepicker").datepicker({
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
         });
         $("#datepickers").datepicker({
-            dateFormat: 'yy/mm/dd'
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
         });
         $("#datepickere").datepicker({
-            dateFormat: 'yy/mm/dd'
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
         });
     });
 </script>
 
 <body>
-    <div id="tabs">
-        <ul>
-            <li><a href="#tabs-1">Reservation</a></li>
-            <li><a href="#tabs-2">Choose type</a></li>
-            <li><a href="#tabs-3">Day type</a></li>
-            <li><a href="#tabs-4">Monthly/Yearly</a></li>
-            <li><a href="#tabs-5">Summary</a></li>
-        </ul>
-        <form action="../../Controller/User_Parent/Booking.php" method="post">
+    <form>
+        <div id="tabs">
+            <ul>
+                <li><a class="atabs" href="#tabs-1">Reservation</a></li>
+                <li><a class="atabs" href="#tabs-2">Choose type</a></li>
+                <li><a class="atabs" href="#tabs-3">Day type</a></li>
+                <li><a class="atabs" href="#tabs-4">Monthly/Yearly</a></li>
+                <li><a class="atabs" href="#tabs-5">Summary</a></li>
+            </ul>
+
             <div id="tabs-1">
                 <h3>For who is it?</h3> <br>
-                <input type="hidden" name="parent_DNI" value="<?php echo $parent_DNI ?>">
+                <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
                 <?php
                 if ($count > 0) {
                     $userArr = array();
@@ -54,39 +58,95 @@ include_once "../../Controller/User_Parent/Read.php";
                     }
                 }
                 ?>
+                <br>
+                <button type="button" class="b1n">NEXT</button>
+
             </div>
             <div id="tabs-2">
                 <h3>Type</h3>
                 <div>
-                    <table class="table" border="1">
-
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
                     </table>
                 </div>
                 <input type="radio" value="OneDay" name="type" id="Oneday">
-                <label for="Oneday">One Day</label>
+                <label for="Oneday">Loose Days</label>
                 <input type="radio" value="Monthly" name="type" id="Monthly">
                 <label for="Monthly">Monthly</label>
                 <input type="radio" value="Yearly" name="type" id="Yearly">
                 <label for="Yearly">Yearly</label>
+
+                <br>
+
+                <button type="button" class="b2p">PREVIOUS</button>
+                <button type="button" class="b2n">NEXT</button>
             </div>
             <div id="tabs-3">
                 <h3>One Day</h3>
                 <div>
-                    <table class="table" border="1">
-
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
                     </table>
                 </div>
-                <div class="infostudent"></div>
-                <p>Date(yyyy/mm/dd): <input name="date" type="text" id="datepicker"></p>
+                <div class="d1">
+                    <label for="datepicker1">Date:</label>
+                    <input name="date1" type="text" class="datepicker">
+                </div><br>
+
+                <div class="d2">
+                    <label for="datepicker2">Date 2:</label>
+                    <input name="date2" type="text" class="datepicker">
+                </div><br>
+                <div class="d3">
+                    <label for="datepicker3">Date 3:</label>
+                    <input name="date3" type="text" class="datepicker">
+                </div><br>
+                <div class="d4">
+                    <label for="datepicker4">Date 4:</label>
+                    <input name="date4" type="text" class="datepicker">
+                </div><br>
+                <div class="d5">
+                    <label for="datepicker5">Date 5:</label>
+                    <input name="date5" type="text" class="datepicker">
+                </div><br>
+                <br>
+                <button type="button" class="newdate">New Date</button>
+                <button type="button" class="deldate">Remove Date</button>
+                <br><br>
+                <button type="button" class="b3p">PREVIOUS</button>
+                <button type="button" class="b3n">NEXT</button>
             </div>
             <div id="tabs-4">
-                <h3>One Day</h3>
+                <h3>Monthly/Yearly</h3>
                 <div>
-                    <table class="table" border="1">
-
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
                     </table>
                 </div>
-                <div class="infostudent"></div>
                 <p>Start Date(yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
                 <p>End Date(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
                 <input type="checkbox" id="monday" name="monday" value="0">
@@ -103,176 +163,248 @@ include_once "../../Controller/User_Parent/Read.php";
 
                 <input type="checkbox" id="friday" name="friday" value="0">
                 <label for="friday">Friday</label><br>
+                <br>
+                <button type="button" class="b4p">PREVIOUS</button>
+                <button type="button" class="b4n">NEXT</button>
             </div>
             <div id="tabs-5">
                 <h3>Your Reservation:</h3>
                 <div>
-                    <table class="table" border="1">
-
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                                <th class="sd">Start Date</th>
+                                <th class="ed">End Date</th>
+                                <th class="dow">Days of Week</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
                     </table>
                 </div>
+                <br>
                 <input id="submit" name="submit" type="submit" value="Reserve">
+                <br> <br>
+                <button type="button" class="b5p">PREVIOUS</button>
             </div>
-            <!--<div id="tabs-5">
-                Tab 5 Content
-            </div>-->
-            <br />
-            <input type="button" id="btnPrevious" value="Previous" style="display:none" />
-            <input type="button" id="btnNext" value="Next" />
-        </form>
-    </div>
+
+        </div>
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //different dates 
+            $(".d2").hide();
+            $(".d3").hide();
+            $(".d4").hide();
+            $(".d5").hide();
+
+            var visibleDivs = 1;
+            var totalDivs = 5;
 
 
+            function DisplayNextDiv() {
+                if (visibleDivs < totalDivs) {
+                    visibleDivs += 1;
+                    $(".d" + visibleDivs).show();
 
-
-</body>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        //ajax json function:
-        /*$("#submit").on('click', function() {
-            var idstudent = $("#idstudent").val();
-            var date = $("#datepicker").val();
-
-            var json = {
-                "date": date,
-                "student_ID": idstudent,
-            };
-
-            if (idstudent != "" && date != "") {
-                $.ajax({
-                    url: "../../Controller/User_Parent/Booking_Day.php",
-                    type: "POST",
-                    data: json,
-                    dataType: "json",
-                    cache: false,
-                    success: function(dataResult) {
-                        var dataResult = JSON.parse(dataResult);
-                        if (dataResult.statusCode == 200) {
-                            alert('Data added successfully !');
-                        } else if (dataResult.statusCode == 201) {
-                            alert("Error occured !");
-                        }
-
-                    }
-                });
-            } else {
-                alert('Please fill all the field !');
-            }
-        });*/
-
-
-
-        //button functions
-        var student_info = new Array();
-        var currentTab = 0;
-        $(function() {
-            $("#tabs").tabs({
-                select: function(e, i) {
-                    currentTab = i.index;
                 }
-            });
-        });
-        $("#btnNext").click(function() {
-            currentTab++;
-            /*$("div#id input[type=radio]:checked").each(function() {
-                alert(this.value);
-            });*/
-            if (currentTab == 1) { //this is grabbing the kid's name 
-                $("input[type='radio']:checked").each(function() {
-                    var idVal = $(this).attr("id");
-                    //alert($("label[for='" + idVal + "']").text());
-                    var name = idVal;
-                    student_info.push(name);
-                    //$(".infostudent").html(student_info);
-                    var newName = $("<tr><th>Name</th></tr><tr><td><input type='hidden' name='nameform'>" + name + "</td></tr>");
-                    $(".table").append(newName);
-                    console.log(student_info);
-                });
             }
-            if (currentTab == 2) { //this is grabbing the type of reservation
+
+            function DeleteNextDiv() {
+                if (visibleDivs <= totalDivs && visibleDivs > 1) {
+                    $(".d" + visibleDivs + " > input[type='text']").val("");
+                    $(".d" + visibleDivs).hide();
+                    visibleDivs--;
+                }
+            }
+
+            $(".newdate").click(function() {
+                DisplayNextDiv();
+                console.log(visibleDivs);
+            });
+            $(".deldate").click(function() {
+                DeleteNextDiv();
+                console.log(visibleDivs);
+            });
+
+            //tabs
+            $("#tabs").tabs({
+                active: 0,
+                disabled: [1, 2, 3, 4],
+                selected: 0
+            });
+
+            $(".b1n").click(function() {
+                $("#tabs").tabs({
+                    active: 1,
+                    disabled: [0, 2, 3, 4],
+                    selected: 1
+                });
+                $("#tabs").tabs("option", "active", 1);
+
+                $("input[type='radio']:checked").each(function() {
+                    var idstudent = $("input[type='radio']:checked").val();
+                    //console.log(idstudent);
+                    var idVal = $(this).attr("id");
+                    var name = idVal;
+                    $(".t").hide();
+                    $(".d").hide();
+                    $(".sd").hide();
+                    $(".ed").hide();
+                    $(".dow").hide();
+                    var newName = $("<tr><td><input type='hidden' name='idstudent' value='" + idstudent + "'>" + name + "</td></tr>");
+                    $(".tabler > tbody").append(newName);
+                });
+            });
+
+            $(".b2n").click(function() {
+
                 var type = $("input[name='type']:checked").val();
 
                 if (type == "Monthly" || type == "Yearly") {
-                    student_info.push(type);
-                    var extraType = $("<tr><th>Type of Reservation</th></tr><tr><td><input type='hidden' name='typeform'>" + type + "</td></tr>");
-                    $(".table").append(extraType);
-                    console.log(student_info);
-                    currentTab++;
+                    $("#tabs").tabs({
+                        active: 3,
+                        disabled: [0, 1, 2, 4],
+                        selected: 3
+                    });
+
+                    $("#tabs").tabs("option", "active", 3);
+
+                    var extraType = $("<td>" + type + "</td>");
+                    $(".tabler > tbody > tr").append(extraType);
+                    $(".t").show();
+                    $(".d").hide();
+                    $(".sd").hide();
+                    $(".ed").hide();
+                    $(".dow").hide();
                 } else {
-                    student_info.push(type);
-                    var newType = $("<tr><th>Type of Reservation</th></tr><tr><td><input type='hidden' name='typeform'>" + type + "</td></tr>");
-                    $(".table").append(newType);
-                    console.log(student_info);
+                    $("#tabs").tabs({
+                        active: 2,
+                        disabled: [0, 1, 3, 4],
+                        selected: 2
+                    });
+
+                    $("#tabs").tabs("option", "active", 2);
+                    var newType = $("<td>" + type + "</td>");
+                    $(".tabler > tbody > tr").append(newType);
+                    $(".t").show();
+                    $(".d").hide();
+                    $(".sd").hide();
+                    $(".ed").hide();
+                    $(".dow").hide();
                 }
+            });
+            $(".b2p").click(function() {
+                $("#tabs").tabs({
+                    active: 0,
+                    disabled: [1, 2, 3, 4],
+                    selected: 0
+                });
+                $("#tabs").tabs("option", "active", 0);
+                $(".tabler > tbody").empty();
+            });
 
+            $(".b3n").click(function() {
+                var dateArray = new Array();
 
-            }
-            if (currentTab == 3) { //grabbing the dates one day
-                var day = $("#datepicker").val();
-                if (day != "") {
-                    student_info.push(day);
-                    //$(".infostudent").html(student_info);
-                    var newDate = $("<tr><th>Date</th></tr><tr><td><input type='hidden' name='dayform'>" + day + "</td></tr>");
-                    $(".table").append(newDate);
+                var day1 = $("input[name='date1']").val();
+                var day2 = $("input[name='date2']").val();
+                var day3 = $("input[name='date3']").val();
+                var day4 = $("input[name='date4']").val();
+                var day5 = $("input[name='date5']").val();
 
-                    //remove from array
-                    console.log(student_info);
-                    currentTab++;
+                if (day1 != "") {
+                    $("#tabs").tabs({
+                        active: 4,
+                        disabled: [0, 1, 2, 3],
+                        selected: 4
+                    });
+                    $("#tabs").tabs("option", "active", 4);
+                    dateArray.push(day1);
+                    if (day2 != "") {
+                        dateArray.push(day2);
+                    }
+                    if (day3 != "") {
+                        dateArray.push(day3);
+                    }
+                    if (day4 != "") {
+                        dateArray.push(day4);
+                    }
+                    if (day5 != "") {
+                        dateArray.push(day15);
+                    }
+                    var newDate = $("<td>" + dateArray + "</td>");
+                    $(".tabler > tbody > tr").append(newDate);
+                    $(".d").show();
+
+                } else {
+                    alert("Please enter a date");
                 }
+            });
+            $(".b3p").click(function() {
+                $("#tabs").tabs({
+                    active: 1,
+                    disabled: [0, 2, 3, 4],
+                    selected: 1
+                });
+                $("#tabs").tabs("option", "active", 1);
 
 
-            }
-            if (currentTab == 4) { //grabbing the dates monthly/yearly
+                $('.tabler > tbody > tr > td:last-child').remove();
+                $(".t").hide();
+                $("input[name='type']:checked").prop('checked', false);
+                $("input[name='date']").val("");
+            });
+
+            $(".b4n").click(function() {
+                $("#tabs").tabs({
+                    active: 4,
+                    disabled: [0, 1, 2, 3],
+                    selected: 4
+                });
+                $("#tabs").tabs("option", "active", 4);
+
                 var sday = $("#datepickers").val();
                 var eday = $("#datepickere").val();
                 var DoW = new Array();
-
-                //$(".infostudent").html(student_info);
                 if (sday != "" && eday != "") {
-                    var mon = $("input[name='monday']:checked");
-                    var tue = $("input[name='tuesday']:checked");
-                    var wed = $("input[name='wednesday']:checked");
-                    var thu = $("input[name='thursday']:checked");
-                    var fri = $("input[name='friday']:checked");
+                    var mon = $("input[name='monday']");
+                    var tue = $("input[name='tuesday']");
+                    var wed = $("input[name='wednesday']");
+                    var thu = $("input[name='thursday']");
+                    var fri = $("input[name='friday']");
 
                     var m = $("label[for='monday']").text();
                     var t = $("label[for='tuesday']").text();
                     var w = $("label[for='wednesday']").text();
                     var th = $("label[for='thursday']").text();
                     var f = $("label[for='friday']").text();
-                    if (mon) {
+                    if (mon.is(":checked")) {
                         mon.val("1")
-                        student_info.push(mon.val("1"));
                         DoW.push(m);
                     };
-                    if (tue) {
+                    if (tue.is(":checked")) {
                         tue.val("1")
-                        student_info.push(tue.val("1"));
                         DoW.push(t);
                     };
-                    if (wed) {
+                    if (wed.is(":checked")) {
                         wed.val("1")
-                        student_info.push(wed.val("1"));
                         DoW.push(w);
                     };
-                    if (thu) {
+                    if (thu.is(":checked")) {
                         thu.val("1")
-                        student_info.push(thu.val("1"));
                         DoW.push(th);
                     };
-                    if (fri) {
+                    if (fri.is(":checked")) {
                         fri.val("1")
-                        student_info.push(fri.val("1"));
                         DoW.push(f);
                     };
                     //End daysofweek
-                    student_info.push(sday);
-                    student_info.push(eday);
-                    var newSDate = $("<tr><th>Start Date</th></tr><tr><td><input type='hidden' name='dayform'>" + sday + "</td></tr>");
-                    var newEDate = $("<tr><th>End Date</th></tr><tr><td><input type='hidden' name='dayform'>" + eday + "</td></tr>");
-
-                    console.log(DoW);
+                    var newSDate = $("<td>" + sday + "</td>");
+                    var newEDate = $("<td>" + eday + "</td>");
 
                     function runDoW(arr) {
                         var txt = '';
@@ -286,68 +418,115 @@ include_once "../../Controller/User_Parent/Read.php";
                         }
                         return txt;
                     }
-                    var DoWt = $("<tr><th>End Date</th></tr><tr><td><input type='hidden' name='dayform'>" + runDoW(DoW) + "</td></tr>");
-                    $(".table").append(newSDate);
-                    $(".table").append(newEDate);
-                    $(".table").append(DoWt);
+                    var DoWt = $("<td>" + runDoW(DoW) + "</td>");
+                    $(".sd").show();
+                    $(".ed").show();
+                    $(".dow").show();
+                    $(".tabler > tbody >tr").append(newSDate);
+                    $(".tabler > tbody >tr").append(newEDate);
+                    $(".tabler > tbody >tr").append(DoWt);
                 }
 
-                //remove from array
-                console.log(student_info);
-            }
+            });
+            $(".b4p").click(function() {
+                $("#tabs").tabs({
+                    active: 1,
+                    disabled: [0, 2, 3, 4],
+                    selected: 1
+                });
+                $("#tabs").tabs("option", "active", 1);
 
-            //
-            var tabs = $('#tabs').tabs();
-            var c = $('#tabs').tabs("length");
-            tabs.tabs('select', currentTab);
-            $("#btnPrevious").show();
-            if (currentTab == (c - 1)) {
-                $("#btnNext").hide();
-            } else {
-                $("#btnNext").show();
-            }
+                $('.tabler > tbody > tr > td:last-child').remove();
+                $(".t").hide();
+                $("input[name='type']:checked").prop('checked', false);
+                $("input[name='startdate']").val("");
+                $("input[name='enddate']").val("");
+                $("input[type='checkbox']:checked").prop('checked', false);
+            });
+
+            $(".b5p").click(function() {
+                var day = $("#datepicker").val();
+                if (day != "") {
+                    $("#tabs").tabs({
+                        active: 2,
+                        disabled: [0, 1, 3, 4],
+                        selected: 2
+                    });
+                    $("#tabs").tabs("option", "active", 2);
+                    $('.tabler > tbody > tr > td:last-child').remove();
+                    $(".d").hide();
+                } else {
+                    $("#tabs").tabs({
+                        active: 3,
+                        disabled: [0, 1, 2, 4],
+                        selected: 3
+                    });
+                    $("#tabs").tabs("option", "active", 3);
+
+                    $('.tabler > tbody > tr > td:last-child').remove();
+                    $('.tabler > tbody > tr > td:last-child').remove();
+                    $('.tabler > tbody > tr > td:last-child').remove();
+                    $(".sd").hide();
+                    $(".ed").hide();
+                }
+            });
+
+
+            //ajax json function:
+            $("#submit").on("click", function(e) {
+
+                e.preventDefault();
+
+                var idstudent = $("input[name='idstudent']").val();
+                var date1 = $("input[name='date1']").val();
+                var date2 = $("input[name='date2']").val();
+                var date3 = $("input[name='date3']").val();
+                var date4 = $("input[name='date4']").val();
+                var date5 = $("input[name='date5']").val();
+                var startdate = $("#datepickers").val();
+                var enddate = $("#datepickere").val();
+                var parent_DNI = $("#parent_DNI").val();
+
+                //Days of the Week\
+                var monday = $("input[name='monday']").val();
+                var tuesday = $("input[name='tuesday']").val();
+                var wednesday = $("input[name='wednesday']").val();
+                var thursday = $("input[name='thursday']").val();
+                var friday = $("input[name='friday']").val();
+
+                $.ajax({
+                    url: "../../Controller/User_Parent/Booking.php",
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        idstudent: idstudent,
+                        date1: date1,
+                        date2: date2,
+                        date3: date3,
+                        date4: date4,
+                        date5: date5,
+                        startdate: startdate,
+                        enddate: enddate,
+                        parent_DNI: parent_DNI,
+                        monday: monday,
+                        tuesday: tuesday,
+                        wednesday: wednesday,
+                        thursday: thursday,
+                        friday: friday
+                    },
+                    ContentType: "application/json",
+                    success: function(response) {
+                        alert(JSON.stringify(response));
+                    },
+                    error: function(err) {
+                        alert(JSON.stringify(err));
+                    }
+                });
+            });
+
         });
+    </script>
 
-        $("#btnPrevious").click(function() {
-            currentTab--;
-            if (currentTab == 0) {
-                student_info.length = 0;
-                $(".table").empty();
-                console.log(student_info);
-            } else if (currentTab == 1) {
-                student_info.pop();
-                //student_info.splice(student_info.length - 2, 1);
-                /*$('.table tr:last').remove();
-                $('.table tr:last').remove();*/
-                $(".table tr").find('td:last-child').remove();
-                $(".table tr").find('td:last-child').remove();
-                //$(".table tr").slice(2).remove();
-                $("input[name='day']:checked").prop('checked', false);
-                console.log(student_info);
-            } else if (currentTab == 2) {
-                student_info.pop();
-                /*$('.table tr:last').remove();
-                $('.table tr:last').remove();*/
-                $(".table tr").slice(2).remove();
-                console.log(student_info);
-            }
-
-
-            //
-            var tabs = $('#tabs').tabs();
-            var c = $('#tabs').tabs("length");
-
-            tabs.tabs('select', currentTab);
-            if (currentTab == 0) {
-                student_info = [];
-                $("#btnNext").show();
-                $("#btnPrevious").hide();
-            }
-            if (currentTab < (c - 1)) {
-                $("#btnNext").show();
-            }
-        });
-    });
-</script>
+</body>
 
 </html>
