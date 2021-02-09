@@ -263,7 +263,7 @@ class User_Parent
     }
 
     //LOOSE days
-    public function makeLooseReservation()
+    public function makeExtraReservation()
     {
         $query = "insert into Booking_Extra values(?, ?, ?, ?, ?, ?, ?, ?)";
 

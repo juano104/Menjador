@@ -12,14 +12,17 @@ include_once "../../Controller/User_Parent/Read.php";
 <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
 <script>
     $(function() {
-        $("#datepicker").datepicker({
-            dateFormat: 'yy/mm/dd'
+        $(".datepicker").datepicker({
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
         });
         $("#datepickers").datepicker({
-            dateFormat: 'yy/mm/dd'
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
         });
         $("#datepickere").datepicker({
-            dateFormat: 'yy/mm/dd'
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
         });
     });
 </script>
@@ -75,7 +78,7 @@ include_once "../../Controller/User_Parent/Read.php";
                     </table>
                 </div>
                 <input type="radio" value="OneDay" name="type" id="Oneday">
-                <label for="Oneday">One Day</label>
+                <label for="Oneday">Loose Days</label>
                 <input type="radio" value="Monthly" name="type" id="Monthly">
                 <label for="Monthly">Monthly</label>
                 <input type="radio" value="Yearly" name="type" id="Yearly">
@@ -101,9 +104,31 @@ include_once "../../Controller/User_Parent/Read.php";
                         </tbody>
                     </table>
                 </div>
-                <div class="infostudent"></div>
-                <p>Date(yyyy/mm/dd): <input name="date" type="text" id="datepicker"></p>
+                <div class="d1">
+                    <label for="datepicker1">Date:</label>
+                    <input name="date1" type="text" class="datepicker">
+                </div><br>
+
+                <div class="d2">
+                    <label for="datepicker2">Date 2:</label>
+                    <input name="date2" type="text" class="datepicker">
+                </div><br>
+                <div class="d3">
+                    <label for="datepicker3">Date 3:</label>
+                    <input name="date3" type="text" class="datepicker">
+                </div><br>
+                <div class="d4">
+                    <label for="datepicker4">Date 4:</label>
+                    <input name="date4" type="text" class="datepicker">
+                </div><br>
+                <div class="d5">
+                    <label for="datepicker5">Date 5:</label>
+                    <input name="date5" type="text" class="datepicker">
+                </div><br>
                 <br>
+                <button type="button" class="newdate">New Date</button>
+                <button type="button" class="deldate">Remove Date</button>
+                <br><br>
                 <button type="button" class="b3p">PREVIOUS</button>
                 <button type="button" class="b3n">NEXT</button>
             </div>
@@ -122,7 +147,6 @@ include_once "../../Controller/User_Parent/Read.php";
                         </tbody>
                     </table>
                 </div>
-                <div class="infostudent"></div>
                 <p>Start Date(yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
                 <p>End Date(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
                 <input type="checkbox" id="monday" name="monday" value="0">
@@ -171,6 +195,42 @@ include_once "../../Controller/User_Parent/Read.php";
     </form>
     <script type="text/javascript">
         $(document).ready(function() {
+            //different dates 
+            $(".d2").hide();
+            $(".d3").hide();
+            $(".d4").hide();
+            $(".d5").hide();
+
+            var visibleDivs = 1;
+            var totalDivs = 5;
+
+
+            function DisplayNextDiv() {
+                if (visibleDivs < totalDivs) {
+                    visibleDivs += 1;
+                    $(".d" + visibleDivs).show();
+
+                }
+            }
+
+            function DeleteNextDiv() {
+                if (visibleDivs <= totalDivs && visibleDivs > 1) {
+                    $(".d" + visibleDivs + " > input[type='text']").val("");
+                    $(".d" + visibleDivs).hide();
+                    visibleDivs--;
+                }
+            }
+
+            $(".newdate").click(function() {
+                DisplayNextDiv();
+                console.log(visibleDivs);
+            });
+            $(".deldate").click(function() {
+                DeleteNextDiv();
+                console.log(visibleDivs);
+            });
+
+            //tabs
             $("#tabs").tabs({
                 active: 0,
                 disabled: [1, 2, 3, 4],
@@ -248,18 +308,38 @@ include_once "../../Controller/User_Parent/Read.php";
             });
 
             $(".b3n").click(function() {
+                var dateArray = new Array();
 
-                var day = $("#datepicker").val();
-                if (day != "") {
+                var day1 = $("input[name='date1']").val();
+                var day2 = $("input[name='date2']").val();
+                var day3 = $("input[name='date3']").val();
+                var day4 = $("input[name='date4']").val();
+                var day5 = $("input[name='date5']").val();
+
+                if (day1 != "") {
                     $("#tabs").tabs({
                         active: 4,
                         disabled: [0, 1, 2, 3],
                         selected: 4
                     });
-                    $("#tabs").tabs("option", "active", 0);
-                    var newDate = $("<td>" + day + "</td>");
+                    $("#tabs").tabs("option", "active", 4);
+                    dateArray.push(day1);
+                    if (day2 != "") {
+                        dateArray.push(day2);
+                    }
+                    if (day3 != "") {
+                        dateArray.push(day3);
+                    }
+                    if (day4 != "") {
+                        dateArray.push(day4);
+                    }
+                    if (day5 != "") {
+                        dateArray.push(day15);
+                    }
+                    var newDate = $("<td>" + dateArray + "</td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".d").show();
+
                 } else {
                     alert("Please enter a date");
                 }
@@ -398,7 +478,11 @@ include_once "../../Controller/User_Parent/Read.php";
                 e.preventDefault();
 
                 var idstudent = $("input[name='idstudent']").val();
-                var date = $("#datepicker").val();
+                var date1 = $("input[name='date1']").val();
+                var date2 = $("input[name='date2']").val();
+                var date3 = $("input[name='date3']").val();
+                var date4 = $("input[name='date4']").val();
+                var date5 = $("input[name='date5']").val();
                 var startdate = $("#datepickers").val();
                 var enddate = $("#datepickere").val();
                 var parent_DNI = $("#parent_DNI").val();
@@ -416,7 +500,11 @@ include_once "../../Controller/User_Parent/Read.php";
                     dataType: "json",
                     data: {
                         idstudent: idstudent,
-                        date: date,
+                        date1: date1,
+                        date2: date2,
+                        date3: date3,
+                        date4: date4,
+                        date5: date5,
                         startdate: startdate,
                         enddate: enddate,
                         parent_DNI: parent_DNI,
