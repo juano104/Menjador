@@ -44,17 +44,18 @@ $count = $stmt->rowCount();
 
 //$count = $stmt->rowCount();
 
-        /* $userArr = array();
+/* $userArr = array();
 
 
-          if ($user->getName() != null) {
-          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          $e = array(
-          "name" => $user->getName(),
-          "last_name" => $user->getLast_name(),
-          "DNI" => $user->getDNI(),
-          "role" => $user->getRole(),
-          );
-          array_push($userArr, $e);
-          }
-          } */        
+        if ($user->getName() != null) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $e = array(
+        "name" => $user->getName(),
+        "last_name" => $user->getLast_name(),
+        "DNI" => $user->getDNI(),
+        "role" => $user->getRole(),
+        );
+        array_push($userArr, $e);
+        }
+          } */
+include_once "../../../front/View/Index.php";
