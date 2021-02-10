@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="Read.php" method="get">
+    <form action="api/Controller/User_Parent/Read.php" method="get">
         <button type="submit" name="username" value="56142879E">Parent: Fulanito Fulano</button>
     </form>
-    <form action="Read.php" method="get">
+    <form action="api/Controller/User_Parent/Read.php" method="get">
         <button type="submit" name="username" value="79481024P">Parent: Marc Jaume</button>
     </form>
 </body>
