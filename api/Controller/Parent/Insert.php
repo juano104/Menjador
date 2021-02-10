@@ -1,7 +1,7 @@
 <?php
 
-    include_once "../../../Model/User_Admin.php";
-    include_once "../../../Model/Database.php";
+    include_once "../../Model/User_Admin.php";
+    include_once "../../Model/Database.php";
 
     $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
     $password = "";

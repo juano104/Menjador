@@ -1,8 +1,8 @@
 <?php
 
 //Headers
-include_once '../../../Model/Database.php';
-include_once '../../../Model/Booking.php';
+include_once '../../Model/Database.php';
+include_once '../../Model/Booking.php';
 
 //DB
 $db = new Database();
@@ -50,4 +50,4 @@ if ($count2 > 0) {
 }
 
 //INCLUDE VIEW PHP
-include "../../../../../Menjador/back/View/View-Booking.php";
+include "../../../View/View-Booking.php";
