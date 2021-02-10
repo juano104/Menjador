@@ -16,7 +16,6 @@ $stmt2 = $booking->readMultipleBooking();
 $count2 = $stmt2->rowCount();
 $count = $stmt->rowCount();
 
-$arr = array();
 if ($count > 0) {
 
     $userArr = array();
@@ -30,11 +29,10 @@ if ($count > 0) {
         );
 
         array_push($userArr, $e);
-        array_push($arr, $userArr);
     }
     //echo json_encode($userArr);
 }
-$arrMult = array();
+$arr = array();
 
 if ($count2 > 0) {
 
@@ -49,7 +47,7 @@ if ($count2 > 0) {
             "days" => $days,
         );
         array_push($BookingsArr, $e);
-        array_push($arrMult, $BookingsArr);
+        array_push($arr, $BookingsArr);
     }
 }
 
