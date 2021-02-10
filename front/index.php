@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../api/Controller/User_Parent/Read.php" method="get">
+    <form action="../Menjador/api/Controller/User_Parent/Read.php" method="get">
         <button type="submit" name="username" value="56142879E">Parent: Fulanito Fulano</button>
     </form>
     <form action="../api/Controller/User_Parent/Read.php" method="get">
