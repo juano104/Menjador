@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
 
-    <link rel="stylesheet" href="../../../../View/User_Admin/estils.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
@@ -50,9 +49,9 @@
 
             <!-- LOGO -->
 
-            <a href="Pagina-Principal.html" class="navbar-brand">
+            <!--<a href="Pagina-Principal.html" class="navbar-brand">
                 <img src="../../../../View/User_Admin/logo.png" alt="LogoImatge" class="d-inline-block align-middle imgres">
-            </a>
+            </a>-->
 
             <!-- LOGO -->
 
