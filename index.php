@@ -15,8 +15,6 @@
     <br>
     <br>
     
-    <form action="api/Controller/Booking/Read.php" method="get">
-        <button type="submit" name="username" value="79481024P">Profe: Bernadi Dotze</button>
-    </form>
+    <a href="api/Controller/Booking/Read.php">Profe: Bernadi Dotze</a>
 </body>
 </html>
