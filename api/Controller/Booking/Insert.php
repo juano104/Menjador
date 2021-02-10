@@ -121,5 +121,3 @@ if ($_POST['date5'] != "") {
         echo json_encode("Error");
     }
 }
-
-//header("Location: http://localhost/PROJ_MENJADOR_PROVES/api/View/User_Parent/Home_Parent.php?username=" . $redir);
