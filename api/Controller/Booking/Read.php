@@ -50,4 +50,4 @@ if ($count2 > 0) {
 }
 
 //INCLUDE VIEW PHP
-include "../../../View/View-Booking.php";
+include "../../../back/View/View-Booking.php";
