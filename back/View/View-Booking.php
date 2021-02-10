@@ -170,7 +170,7 @@
                 "bFilter": true,
                 "bInfo": false,
                 "bAutoWidth": false,
-                data: <?php echo json_encode($arr); ?>,
+                data: <?php echo json_encode($BookingsArr); ?>,
                 columns: [{
                     data: 'student_ID'
                 }, {
@@ -194,7 +194,7 @@
                     "bFilter": true,
                     "bInfo": false,
                     "bAutoWidth": false,
-                    data: <?php echo json_encode($arr); ?>,
+                    data: <?php echo json_encode($BookingsArr); ?>,
                     columns: [{
                     data: 'student_ID'
                 }, {
