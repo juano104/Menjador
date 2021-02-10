@@ -491,7 +491,7 @@
                 var friday = $("input[name='friday']").val();
 
                 $.ajax({
-                    url: "../../Controller/User_Parent/Booking.php",
+                    url: "../api/Controller/Booking/Insert.php",
                     type: "POST",
                     dataType: "json",
                     data: {
