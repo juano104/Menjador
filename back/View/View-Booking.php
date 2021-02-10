@@ -124,7 +124,7 @@
                 "bFilter": true,
                 "bInfo": false,
                 "bAutoWidth": false,
-                data: <?php echo json_encode($userArr); ?>,
+                data: <?php echo json_encode($arr); ?>,
                 columns: [{
                     data: 'student_ID'
                 }, {
@@ -146,7 +146,7 @@
                     "bFilter": true,
                     "bInfo": false,
                     "bAutoWidth": false,
-                    data: <?php echo json_encode($userArr); ?>,
+                    data: <?php echo json_encode($arr); ?>,
                     columns: [{
                         data: 'student_ID'
                     }, {
@@ -170,7 +170,7 @@
                 "bFilter": true,
                 "bInfo": false,
                 "bAutoWidth": false,
-                data: <?php echo json_encode($arr); ?>,
+                data: <?php echo json_encode($arrMult); ?>,
                 columns: [{
                     data: 'student_ID'
                 }, {
@@ -194,7 +194,7 @@
                     "bFilter": true,
                     "bInfo": false,
                     "bAutoWidth": false,
-                    data: <?php echo json_encode($arr); ?>,
+                    data: <?php echo json_encode($arrMult); ?>,
                     columns: [{
                     data: 'student_ID'
                 }, {
