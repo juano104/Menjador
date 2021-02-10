@@ -1,7 +1,3 @@
-<?php
-include_once "../../Controller/User_Parent/Read.php";
-?>
-
 <html>
 
 <head>
