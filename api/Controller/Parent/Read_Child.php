@@ -35,4 +35,4 @@ if ($count > 0) {
 }
 
 //INCLUDE VIEW PHP
-include "../../../View/View-Admin.php";
+include "../../";
