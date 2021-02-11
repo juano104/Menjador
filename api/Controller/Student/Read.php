@@ -1,9 +1,9 @@
 <?php
 
 //Headers
-include_once '../../Model/Database.php';
-include_once '../../Model/User_Parent.php';
-include_once '../../Model/Student.php';
+include_once 'api/Model/Database.php';
+include_once 'api/Model/User_Parent.php';
+include_once 'api/Model/Student.php';
 
 //DB
 $db = new Database();
@@ -58,4 +58,4 @@ $count = $stmt->rowCount();
         array_push($userArr, $e);
         }
           } */
-include_once "../../../front/View/Index.php";
+include_once "front/View/index.php";
