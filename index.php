@@ -15,6 +15,6 @@
     <br>
     <br>
     
-    <a href="api/Controller/Booking/Read.php">Profe: Bernadi Dotze</a>
+    <!--<a href="api/Controller/Booking/Read.php">Profe: Bernadi Dotze</a>-->
 </body>
 </html>

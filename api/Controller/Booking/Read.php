@@ -32,6 +32,7 @@ if ($count > 0) {
     }
     //echo json_encode($userArr);
 }
+//$arr = array();
 
 if ($count2 > 0) {
 
@@ -46,6 +47,7 @@ if ($count2 > 0) {
             "days" => $days,
         );
         array_push($BookingsArr, $e);
+//        array_push($arr, $BookingsArr);
     }
 }
 
