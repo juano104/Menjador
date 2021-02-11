@@ -1,0 +1,70 @@
+.imgres{
+    height: 100px;
+    width: 50%;
+}
+.navbar-brand{
+    width: 20%;
+
+}
+
+footer{
+    background-color: #2E8E8E !important;
+}
+
+.effect-18{
+    border: 0; 
+    padding: 7px 0; 
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: black solid 1px !important;
+    border-radius: 0px !important;
+    border: 0;
+    padding: 4px 0;
+    background-color: transparent;
+}
+
+.effect-18 ~ label{position: absolute; left: 14px; width: 100%; top: 9px; color: #aaa; transition: 0.3s; z-index: -1; letter-spacing: 0.5px;}
+.effect-18:focus ~ label, .has-content.effect-18 ~ label{top: -16px; font-size: 12px; color: black; transition: 0.3s;}
+
+.enviar{
+    background-color: #EC4C4C;
+    border-radius: 25px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+form{
+    margin-bottom: 15%;
+
+}
+
+.navbar{
+    background-color: #F2BF8D !important;
+}
+input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.img-contacte{
+    width: 15%;
+    height: 73%;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.collapse{
+    margin-right: 10%;
+}
