@@ -7,6 +7,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
 <script>
+    
     $(function() {
         $(".datepicker").datepicker({
             dateFormat: 'yy/mm/dd',
