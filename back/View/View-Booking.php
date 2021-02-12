@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <!-- Hacer un view para cada read?? -->
     <meta charset="UTF-8">
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
 
     <!--<link rel="stylesheet" href="../public/css/estils.css">-->
-
+    <link rel="stylesheet" href="../../back/public/css/estils.css"">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
