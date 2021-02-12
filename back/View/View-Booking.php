@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
 
     <!--<link rel="stylesheet" href="../public/css/estils.css">-->
-    <link rel="stylesheet" href="front/public/css/estils.css">
+    <link rel="stylesheet" href="../../back/public/css/estils.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
@@ -50,7 +50,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
                 <!-- LOGO -->
                 <a href="Pagina-Principal.html" class="navbar-brand">
-                    <img src="front/public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+                    <img src="front/public/img/lo.png" alt="" class="d-inline-block align-middle imgres">
                 </a>
                 <!-- LOGO -->
                 <button
