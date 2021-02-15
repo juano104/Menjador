@@ -111,7 +111,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="Insert_Parent.php" method="post" id="form" name="f1">
+                <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
                         
                         <label for="nompare"><strong>NOM PARE:</strong></label>
