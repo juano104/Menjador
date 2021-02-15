@@ -111,7 +111,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="insert/student" method="post" id="form" name="f1">
+                <form action="insert/parent" method="post" id="form" name="f1">
                     <div class="modal-body">
                         
                         <label for="nompare"><strong>NOM PARE:</strong></label>
@@ -144,7 +144,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="Insert_Student.php" method="post" id="form" name="f1">
+                <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
                         <label for="nomalumne"><strong>NOM ALUMNE</strong><input type="text" name="nomalumne" id="nomalumne"</label>
                         >
