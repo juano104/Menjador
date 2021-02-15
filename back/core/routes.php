@@ -11,5 +11,5 @@ $router->define([
     //
     "principal" => "View/View-Principal.php",
     "reservas" => "../api/Controller/Booking/Read.php",
-    "insertar" => "View/View-Admin.php"
+    "insertar" => "../api/Controller/Parent/Read_Child.php"
 ]);
