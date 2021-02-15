@@ -9,7 +9,7 @@ if(isset($_GET["username"])){
 $router->define([
     "" => "View/index.html",
     //
-    "principal" => "../api/Controller/Booking/Read.php",
-    "reservas" => "View/View-Booking.php",
+    "principal" => "View/View-Principal.php",
+    "reservas" => "../api/Controller/Booking/Read.php",
     "insertar" => "View/View-Admin.php"
 ]);
