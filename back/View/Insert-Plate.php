@@ -45,7 +45,7 @@
     <div class="container-fluid">
 
         <!-- Menu de navegacio -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
 
             <!-- LOGO -->
 

@@ -1,0 +1,15 @@
+<?php
+
+if(isset($_GET["username"])){
+    $username = $_GET["username"];
+}else{
+    $username = null;
+}
+
+$router->define([
+    "" => "View/index.html",
+    
+    "principal" => "View/View-Principal.php",
+    "reservas" => "View/View-Booking.php",
+    "insertar" => "View/View-Admin.php"
+]);
