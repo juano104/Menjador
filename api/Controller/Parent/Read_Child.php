@@ -1,7 +1,7 @@
 <?php
 
 //Headers
-include_once '../apì/Model/Database.php';
+include_once '../api/Model/Database.php';
 include_once '../api/Model/User.php';
 include_once '../api/Model/Student.php';
 
