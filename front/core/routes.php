@@ -10,6 +10,6 @@ $router->define([
     "" => "View/index.html",
     //"login" => "front/login.html",
     //"login" => "api/Controller/Student/Read.php",
-    "home?username=" . $username => "api/Controller/Student/Read.php",
-    "insert" => "api/Controller/Booking/Insert.php"
+    "home?username=" . $username => "../api/Controller/Student/Read.php",
+    "insert" => "../api/Controller/Booking/Insert.php"
 ]);
