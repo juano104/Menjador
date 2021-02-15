@@ -147,10 +147,10 @@
                 <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
                         <label for="nomalumne"><strong>NOM ALUMNE</strong><input type="text" name="nomalumne" id="nomalumne"</label>
-                        >
+                        
                         <br>
                         
-                        <label for="lliatgealumne"><strong>LLINATGE ALUMNE</strong><input type="text" name="llinatgealumne" id="llinatgealumne">
+                        <label for="llinatgealumne"><strong>LLINATGE ALUMNE</strong><input type="text" name="llinatgealumne" id="llinatgealumne">
                         </label>
                         
                         <br>

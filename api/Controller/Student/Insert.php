@@ -28,7 +28,7 @@ if ($student->insertStudent()) {
     echo json_encode("Student not created, maybe already created?");
 }
 if (!isset($_POST["alergia"])){
-    header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
+    header("Location: http://admin.menjadorescola.me/insertar");
 }
 if (isset($_POST["alergia"])) {
     $checkbox = $_POST["alergia"];
@@ -38,7 +38,7 @@ if (isset($_POST["alergia"])) {
         $student->insertAllergy($last_id, $selected);
         $i++;
         if ($i > $maxindex) {
-            header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
+            header("Location: http://admin.menjadorescola.me/insertar");
         }
     }
 }

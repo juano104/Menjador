@@ -27,7 +27,7 @@
     if ($user->getDNI() != "" || $user->getPassword() != "") {
         if ($user->insertUser()) {
             if ($user->insertParent()) {
-                header("Location: http://www.menjadorescola.me/Menjador/api/Controller/User_Admin/Insert/View_Student.php");
+                header("Location: http://admin.menjadorescola.me/insertar");
             }
         } else {
             echo json_encode("User not created, maybe already created?");
