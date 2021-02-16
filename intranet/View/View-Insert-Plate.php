@@ -84,7 +84,7 @@
         <form action="insertar/plate" class="form-inline" method="post">
         <div class="form-group mb-2">
             <label for="nomplat">
-                <h5>Nom: </h5>
+
                 <input type="text" name="nomplat" id="nomplat">
             </label>
         </div>
