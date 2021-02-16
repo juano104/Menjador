@@ -56,7 +56,7 @@
   <script>
     $(document).ready(function() {
       $('#calendar').fullCalendar({
-        select: function(date, allDay, jsEvent, view, start, end) {
+        dayClick: function(date, allDay, jsEvent, view, start, end) {
 
           $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
 
