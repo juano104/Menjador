@@ -55,22 +55,28 @@
 
   <script>
     $(document).ready(function() {
-      $('#calendar').fullCalendar({eventSources: [{
-          url: 'http://intranet.menjadorescola.me/datos',
-          method: 'POST'
-        }],
-        dayClick: function(date, allDay, jsEvent, view, start, end) {
-
-          if (start.isBefore(moment())) {
-            $('#calendar').fullCalendar('unselect');
-            return false;
-          }
+      $('#calendar').fullCalendar({
+        select: function(date, allDay, jsEvent, view, start, end) {
 
           $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
 
-          $('#exampleModal').modal('show');
+          var check = $.fullCalendar.formatDate(start, 'yyyy-MM-dd');
+          var today = $.fullCalendar.formatDate(new Date(), 'yyyy-MM-dd');
+          alert(check);
+          alert(today);
+          if (check < today) {
+            alert("No se pueden crear eventos en el pasado!");
+          } else {
 
+            $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
+            $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
+            $('#exampleModal').modal('show');
+          }
         },
+        eventSources: [{
+          url: 'http://intranet.menjadorescola.me/datos',
+          method: 'POST'
+        }],
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
         eventLimit: true
