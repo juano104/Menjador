@@ -58,19 +58,25 @@
       $('#calendar').fullCalendar({
         dayClick: function(date, allDay, jsEvent, view, start, end) {
 
-          $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
 
+          // leemos las fechas de inicio de evento y hoy
           var check = moment(start).format('YYYY-MM-DD');
           var today = moment(new Date()).format('YYYY-MM-DD');
 
-
+          // si el inicio de evento ocurre hoy o en el futuro mostramos el modal
           if (check >= today) {
-            $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
-            $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
-            $('#exampleModal').modal('show');
-          } else {
+
+            // éste es el código que tenías originalmente en el select
+            $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD'));
+            $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD'));
+            $('#ModalAdd').modal('show');
+          }
+          // si no, mostramos una alerta de error
+          else {
             alert("No se pueden crear eventos en el pasado!");
           }
+          
+          $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
         },
         eventSources: [{
           url: 'http://intranet.menjadorescola.me/datos',
@@ -78,6 +84,7 @@
         }],
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
+        eventLimit: true
 
       })
     });
