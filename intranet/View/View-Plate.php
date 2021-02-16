@@ -36,7 +36,7 @@
 
   <div class="container-fluid">
     <!-- Menu de navegacio -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
       <!-- LOGO -->
       <a href="#" class="navbar-brand">
         <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
