@@ -28,3 +28,4 @@ if ($count > 0) {
     echo json_encode($e);
 }
 
+include_once "View/View-Plate";
