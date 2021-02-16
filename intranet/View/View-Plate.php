@@ -56,6 +56,7 @@
   <script>
     $(document).ready(function() {
       $('#calendar').fullCalendar({
+        minDate: 0,
         dayClick: function(date, allDay, jsEvent, view, start, end) {
 
           $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
