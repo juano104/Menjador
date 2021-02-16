@@ -52,8 +52,7 @@
           }
         },
         eventSources: [{
-          url: 'http://intranet.menjadorescola.me/datos',
-          method: 'GET'
+          url: '../api/Controller/Menu/Read-MenuPlate.php',
         }
         ],
         hiddenDays: [0, 6],
