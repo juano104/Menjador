@@ -8,7 +8,7 @@
 
 .fc-icon, .fc-unselectable {
     -webkit-touch-callout: none;
-    -khtml-user-select: none
+    user-select: none
 }
 
 .fc {

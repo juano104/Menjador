@@ -52,7 +52,7 @@
           }
         },
         eventsSources:[
-          "../api/Controller/Menu/Read-MenuPlate.php"
+          'http://intranet.menjadorescola.me/datos'
         ],
         hiddenDays: [0, 6],
         showNonCurrentDates: false
