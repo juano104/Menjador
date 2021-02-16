@@ -51,7 +51,7 @@
             alert("No se pueden crear eventos en el pasado!");
           }
         },
-        events: 'http://localhost/Menjador/api/Controller/User_Restaurant/Read-MenuPlate.php',
+        events: 'datos',
         hiddenDays: [0, 6],
         showNonCurrentDates: false
 

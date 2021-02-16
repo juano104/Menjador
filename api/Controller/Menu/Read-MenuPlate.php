@@ -1,7 +1,7 @@
 <?php
 
-include_once "../../Model/Plate.php";
-include_once "../../Model/Database.php";
+include_once "../api/Model/Plate.php";
+include_once "../api/Model/Database.php";
 
 //DB
 $db = new Database();
