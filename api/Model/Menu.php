@@ -62,7 +62,7 @@ class Menu{
     public function insertMenuPlate($IDMenu, $IDPlate)
     {
         $sqlQuery = "INSERT INTO
-                menu_day(menu_ID, plate_ID)
+                Menu_Day(menu_ID, plate_ID)
                 values(? , ?)";
 
         $stmt = $this->conn->prepare($sqlQuery);
