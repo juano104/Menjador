@@ -84,14 +84,14 @@
         <form action="insertar/plate" class="form-inline" method="post">
         <div class="form-group mb-2">
             <label for="nomplat">
-                Nom:
+                <h5>Nom: </h5>
                 <input type="text" name="nomplat" id="nomplat">
             </label>
         </div>
         <div class="form-group mx-sm-3 mb-2">
             <label for="tipus">
-                <select class="custom-select mr-sm-2" name="tipus" id="tipus">
-                    <option selected disabled>Elegeix plat...</option>
+                <select class="custom-select mr-sm-3" name="tipus" id="tipus">
+                    <option selected disabled>Tipus plat...</option>
                     <option value="1">Primer Plat</option>
                     <option value="2">Segon Plat</option>
                     <option value="3">Postre</option>
