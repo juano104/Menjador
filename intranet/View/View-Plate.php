@@ -60,17 +60,17 @@
 
           $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
 
-          var check = $.fullCalendar.formatDate(start, 'yyyy-MM-dd');
-          var today = $.fullCalendar.formatDate(new Date(), 'yyyy-MM-dd');
-          alert(check);
-          alert(today);
-          if (check < today) {
-            alert("No se pueden crear eventos en el pasado!");
-          } else {
+          var check = moment(start).format('YYYY-MM-DD');
+          var today = moment(new Date()).format('YYYY-MM-DD');
 
+          
+
+          if (check >= today) {
             $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
             $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
             $('#exampleModal').modal('show');
+          } else {
+            alert("No se pueden crear eventos en el pasado!");
           }
         },
         eventSources: [{
