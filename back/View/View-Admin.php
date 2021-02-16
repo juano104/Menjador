@@ -51,7 +51,7 @@
             <!-- LOGO -->
 
             <a href="#" class="navbar-brand">
-                <img src="../../../../View/User_Admin/logo.png" alt="LogoImatge" class="d-inline-block align-middle imgres">
+                <img src="public/img/logo.png" alt="LogoImatge" class="d-inline-block align-middle imgres">
             </a>
 
             <!-- LOGO -->
