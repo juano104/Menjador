@@ -90,7 +90,7 @@
         <div class="form-group mx-sm-3 mb-2">
             <label for="tipus">
                 <select class="custom-select mr-sm-2" name="tipus" id="tipus">
-                    <option disabled>Elegeix plat...</option>
+                    <option selected disabled>Elegeix plat...</option>
                     <option value="1">Primer Plat</option>
                     <option value="2">Segon Plat</option>
                     <option value="3">Postre</option>
