@@ -33,65 +33,44 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="principal">
+                        Principal(Ver los platos)
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="insertar">
+                        Insertar los platos o menus
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container-fluid">
-
-        <!-- Menu de navegacio -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
-
-            <!-- LOGO -->
-
-            <!--<a href="Pagina-Principal.html" class="navbar-brand">
-                <img src="../../../../View/User_Admin/logo.png" alt="LogoImatge" class="d-inline-block align-middle imgres">
-            </a>-->
-
-            <!-- LOGO -->
-
-
-            <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="Pagina-Principal.html"><i class="fas fa-home"></i>
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-user"></i></a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="Pagina-Montanya.html">Guitarres</a>
-                            <a class="dropdown-item" href="Pagina-Carretera.html">Flautes</a>
-                            <a class="dropdown-item" href="Pagina-Paseig.html">Altaveus</a>
-                        </div>
-                    </li>
-
-                </ul>
-
-            </div>
-        </nav>
-        <!-- Menu de navegacio -->
-
+    <div class="container">
+        <h1>INSERIR PLAT</h1>
+        <form action="insertar/plate" method="post">
+            <label for="nomplat">
+                <input type="text" name="nomplat" id="nomplat">
+            </label>
+            <label for="tipus">
+                <select name="tipus" id="tipus">
+                    <option value="1">Primer Plat</option>
+                    <option value="2">Segon Plat</option>
+                    <option value="3">Postre</option>
+                </select>
+            </label>
+            <input type="submit" value="Afegir">
+        </form>
     </div>
-    
-<div class="container">
-    <h1>INSERIR PLAT</h1>
-    <form action="insertar/plate" method="post">
-        <label for="nomplat">
-            <input type="text" name="nomplat" id="nomplat">
-        </label>
-        <label for="tipus">
-            <select name="tipus" id="tipus">
-                <option value="1">Primer Plat</option>
-                <option value="2">Segon Plat</option>
-                <option value="3">Postre</option>
-            </select>
-        </label>
-        <input type="submit" value="Afegir">
-    </form>
-</div>
     <footer class="page-footer font-small stylish-color-dark pt-4">
 
         <!-- Footer Links -->
