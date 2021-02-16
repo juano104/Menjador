@@ -47,7 +47,7 @@
 
 <body>
 
-
+<div class="container-fluid">
             <!-- Menu de navegacio -->
             <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
                 <!-- LOGO -->
@@ -89,7 +89,7 @@
                 </div>
             </nav>
             <!-- Menu de navegacio -->
-        
+        </div>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
         <h1>Reserves de un dia</h1>

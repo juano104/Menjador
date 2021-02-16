@@ -80,9 +80,9 @@
     </nav>
     <!-- Menu de navegacio -->
   </div>
-
+<div class="container">
   <div id='calendar'></div>
-
+</div>
   <script>
     $(document).ready(function() {
       $('#calendar').fullCalendar({
