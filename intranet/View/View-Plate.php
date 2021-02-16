@@ -36,7 +36,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
       <!-- LOGO -->
       <a href="#" class="navbar-brand">
-        <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+        <img src="../public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
       </a>
       <!-- LOGO -->
       <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
