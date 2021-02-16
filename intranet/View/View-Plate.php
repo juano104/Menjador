@@ -52,7 +52,7 @@
           }
         },
         eventSources: [{
-          url: '../api/Controller/Menu/Read-MenuPlate.php',
+          url: 'http://intranet.menjadorescola.me/datos',
           method: 'POST'
         }
         ],
