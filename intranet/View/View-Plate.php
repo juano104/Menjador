@@ -165,6 +165,7 @@
       </div>
     </div>
   </div>
+  <a href="http://intranet.menjadorescola.me/datos">DATOS</a>
 
 
 </body>
