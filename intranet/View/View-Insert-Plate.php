@@ -81,18 +81,23 @@
 
     <div class="container">
         <h1>INSERIR PLAT</h1>
-        <form action="insertar/plate" method="post">
+        <form action="insertar/plate" class="form-inline" method="post">
+        <div class="form-group mb-2">
             <label for="nomplat">
                 <input type="text" name="nomplat" id="nomplat">
             </label>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
             <label for="tipus">
-                <select name="tipus" id="tipus">
+                <select class="custom-select mr-sm-2" name="tipus" id="tipus">
+                    <option disabled>Elegeix plat...</option>
                     <option value="1">Primer Plat</option>
                     <option value="2">Segon Plat</option>
                     <option value="3">Postre</option>
                 </select>
             </label>
-            <input type="submit" value="Afegir">
+        </div>
+            <input type="submit" class="btn btn-secondary mb-2" value="Afegir">
         </form>
     </div>
     <footer class="page-footer font-small stylish-color-dark pt-4">
