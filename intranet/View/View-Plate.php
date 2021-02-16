@@ -58,22 +58,18 @@
       $('#calendar').fullCalendar({
         dayClick: function(date, allDay, jsEvent, view, start, end) {
 
-
-          // leemos las fechas de inicio de evento y hoy
-          var check = moment(start).format('YYYY-MM-DD');
-          var today = moment(new Date()).format('YYYY-MM-DD');
+          var check = $.fullCalendar.formatDate(start,'yyyy-MM-dd');
+          var today = $.fullCalendar.formatDate(new Date(),'yyyy-MM-dd');
 
           // si el inicio de evento ocurre hoy o en el futuro mostramos el modal
-          if (check >= today) {
-
-            // éste es el código que tenías originalmente en el select
-            $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
-            $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
-            $('#exampleModal').modal('show');
-          }
-          // si no, mostramos una alerta de error
-          else {
-            alert("No se pueden crear eventos en el pasado!");
+          if (check < today) {
+              alert("No se pueden crear eventos en el pasado!");
+            
+          }else {
+              $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
+              $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
+              $('#exampleModal').modal('show');
+              
           }
           
           $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
@@ -83,8 +79,7 @@
           method: 'POST'
         }],
         hiddenDays: [0, 6],
-        showNonCurrentDates: false,
-        eventLimit: true
+        showNonCurrentDates: false
 
       })
     });
