@@ -22,7 +22,7 @@
     }
 
     #calendar {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
     }
   </style>
