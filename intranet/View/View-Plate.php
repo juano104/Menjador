@@ -4,6 +4,7 @@
 <head>
   <meta charset='utf-8' />
   <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
+  <link rel="stylesheet" href="../public/css/estils.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="public/js/jquery.min.js"></script>
   <script src="public/js/moment.min.js"></script>
@@ -29,27 +30,53 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="principal">
-            Principal(Ver los platos)
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="insertar">
-            Insertar los platos o menus
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+
+  <div class="container-fluid">
+    <!-- Menu de navegacio -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
+      <!-- LOGO -->
+      <a href="#" class="navbar-brand">
+        <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+      </a>
+      <!-- LOGO -->
+      <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="principal">
+              Principal(Ver los platos)
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="insertar">
+              Insertar los platos o menus
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              <i class="fas fa-home"></i>
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fas fa-user"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Guitarres</a>
+              <a class="dropdown-item" href="#">Flautes</a>
+              <a class="dropdown-item" href="#">Altaveus</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Menu de navegacio -->
+  </div>
 
   <div id='calendar'></div>
 
