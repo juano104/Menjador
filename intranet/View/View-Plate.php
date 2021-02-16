@@ -33,10 +33,10 @@
   <div id='calendar'></div>
 
   <script>
+    document.addEventListener('touchstart', handler, {
+      passive: true
+    });
     $(function() {
-      document.addEventListener('touchstart', handler, {
-        passive: true
-      });
 
       $('#calendar').fullCalendar({
         dayClick: function(date, allDay, jsEvent, view, start, end) {
