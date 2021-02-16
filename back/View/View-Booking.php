@@ -52,7 +52,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
                 <!-- LOGO -->
                 <a href="#" class="navbar-brand">
-                    <img src="front/public/img/lo.png" alt="" class="d-inline-block align-middle imgres">
+                    <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
                 </a>
                 <!-- LOGO -->
                 <button
