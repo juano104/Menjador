@@ -53,7 +53,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="admin.menjadorescola.me"><i class="fas fa-home"></i>
+                        <a class="nav-link" href="http://admin.menjadorescola.me"><i class="fas fa-home"></i>
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
