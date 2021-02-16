@@ -62,6 +62,8 @@
         showNonCurrentDates: false
 
       })
+      
+      $("#calendar").addEventListener("touchstart", eventsSources, true);
 
     });
   </script>
