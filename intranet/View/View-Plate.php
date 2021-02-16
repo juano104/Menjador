@@ -7,7 +7,7 @@
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../public/css/estils.css">
+
   <script src="public/js/jquery.min.js"></script>
   <script src="public/js/moment.min.js"></script>
   <script src="public/js/fullcalendar.min.js"></script>
