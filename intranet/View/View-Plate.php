@@ -67,9 +67,9 @@
           if (check >= today) {
 
             // éste es el código que tenías originalmente en el select
-            $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD'));
-            $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD'));
-            $('#ModalAdd').modal('show');
+            $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
+            $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
+            $('#exampleModal').modal('show');
           }
           // si no, mostramos una alerta de error
           else {
