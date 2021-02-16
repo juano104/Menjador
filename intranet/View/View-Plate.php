@@ -34,6 +34,10 @@
 
   <script>
     $(function() {
+      document.addEventListener('touchstart', handler, {
+        passive: true
+      });
+
       $('#calendar').fullCalendar({
         dayClick: function(date, allDay, jsEvent, view, start, end) {
 
@@ -51,7 +55,7 @@
             alert("No se pueden crear eventos en el pasado!");
           }
         },
-        eventsSources:[
+        eventsSources: [
           'http://intranet.menjadorescola.me/datos'
         ],
         hiddenDays: [0, 6],
