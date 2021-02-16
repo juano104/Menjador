@@ -55,8 +55,9 @@
             alert("No se pueden crear eventos en el pasado!");
           }
         },
-        eventsSources: [
-          'http://intranet.menjadorescola.me/datos'
+        eventSources: [{
+          url: 'http://localhost/Menjador/api/Controller/User_Restaurant/Read-MenuPlate.php'
+        }
         ],
         hiddenDays: [0, 6],
         showNonCurrentDates: false
