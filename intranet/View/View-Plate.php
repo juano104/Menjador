@@ -52,7 +52,7 @@
           }
         },
         eventSources: [{
-          url: 'http://intranet.menjadorescola.me/datos'
+          url: 'http://intranet.menjadorescola.me/principal'
         }
         ],
         hiddenDays: [0, 6],
