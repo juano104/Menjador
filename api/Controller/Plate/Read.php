@@ -1,8 +1,8 @@
 <?php
 
 //Headers
-include_once "../../Model/Plate.php";
-include_once "../../Model/Database.php";
+include_once "../api/Model/Plate.php";
+include_once "../api/Model/Database.php";
 
 //DB
 $db = new Database();
@@ -54,4 +54,4 @@ if ($count2 > 0) {
 
 
 //INCLUDE VIEW PHP
-include "../../../back/View/View-Plate.php";
+include "View/View-Plate.php";
