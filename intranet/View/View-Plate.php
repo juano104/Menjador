@@ -33,9 +33,9 @@
   <div id='calendar'></div>
 
   <script>
-    document.addEventListener('touchstart', handler, {
+    /*document.addEventListener('touchstart', handler, {
       passive: true
-    });
+    });*/
     $(function() {
 
       $('#calendar').fullCalendar({
