@@ -51,7 +51,7 @@
             alert("No se pueden crear eventos en el pasado!");
           }
         },
-        events: 'BRUH',
+        events: 'datos',
         hiddenDays: [0, 6],
         showNonCurrentDates: false
 
