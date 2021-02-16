@@ -57,10 +57,11 @@
         ],
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
-        passive: true
 
       })
     });
+<<<<<<< HEAD
+=======
     /*$(function() {
 
       $('#calendar').fullCalendar({
@@ -90,6 +91,7 @@
       })
 
     });*/
+>>>>>>> 988f508eaffb1bc93fbf0e3f607f7d75ea9f512f
   </script>
 
   <!-- Modal -->
