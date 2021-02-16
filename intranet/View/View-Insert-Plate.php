@@ -18,10 +18,8 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-
+    <link rel="stylesheet" href="../public/css/estils.css">
     <!-- js -->
-
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
@@ -33,27 +31,53 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="principal">
-                        Principal(Ver los platos)
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="insertar">
-                        Insertar los platos o menus
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
+    <div class="container-fluid">
+        <!-- Menu de navegacio -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand">
+                <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+            </a>
+            <!-- LOGO -->
+            <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="principal">
+                            Principal(Ver los platos)
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insertar">
+                            Insertar los platos o menus
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Guitarres</a>
+                            <a class="dropdown-item" href="#">Flautes</a>
+                            <a class="dropdown-item" href="#">Altaveus</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Menu de navegacio -->
+    </div>
 
     <div class="container">
         <h1>INSERIR PLAT</h1>
@@ -73,84 +97,83 @@
     </div>
     <footer class="page-footer font-small stylish-color-dark pt-4">
 
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
+<!-- Footer Links -->
+<div class="container text-center text-md-left">
 
-            <!-- Grid row -->
-            <div class="row">
+  <!-- Grid row -->
+  <div class="row">
 
-                <hr class="clearfix w-100 d-md-none">
+    <hr class="clearfix w-100 d-md-none">
 
-                <!-- Grid column -->
-                <div class="col-md-2 mx-auto">
+    <!-- Grid column -->
+    <div class="col-md-2 mx-auto">
 
-                    <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+      <!-- Links -->
+      <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
 
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
+      <ul class="list-unstyled">
+        <li>
+          <a href="#!">Link 1</a>
+        </li>
+        <li>
+          <a href="#!">Link 2</a>
+        </li>
+        <li>
+          <a href="#!">Link 3</a>
+        </li>
+        <li>
+          <a href="#!">Link 4</a>
+        </li>
+      </ul>
 
-                </div>
-                <!-- Grid column -->
-                <div class="col-md-4 mx-auto">
+    </div>
+    <!-- Grid column -->
+    <div class="col-md-4 mx-auto">
 
-                    <!-- Content -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-                    <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                        consectetur
-                        adipisicing elit.</p>
+      <!-- Content -->
+      <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+      <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+        consectetur
+        adipisicing elit.</p>
 
-                </div>
+    </div>
 
-                <!-- Social buttons -->
-                <div class="col-md-2 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
-                    <br>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-fb mx-1">
-                                <i class="fab fa-facebook-f"> </i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-tw mx-1">
-                                <i class="fab fa-twitter"> </i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-gplus mx-1">
-                                <i class="fab fa-google-plus-g"> </i>
-                            </a>
-                        </li>
+    <!-- Social buttons -->
+    <div class="col-md-2 mx-auto">
+      <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
+      <br>
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
 
-                    </ul>
-                    <!-- Social buttons -->
+      </ul>
+      <!-- Social buttons -->
 
-                </div>
+    </div>
 
-            </div>
-            <!-- Grid row -->
+  </div>
+  <!-- Grid row -->
 
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">� 2020 Copyright:
-                <a href="https://mdbootstrap.com/">Music</a>
-            </div>
-            <!-- Copyright -->
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">� 2020 Copyright:
+    <a href="https://mdbootstrap.com/">Music</a>
+  </div>
+  <!-- Copyright -->
 
-    </footer>
-    <!-- Footer -->
+</footer>
 
 </body>
 

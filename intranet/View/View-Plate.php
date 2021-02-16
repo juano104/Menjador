@@ -209,8 +209,6 @@
       </div>
     </div>
   </div>
-  <a href="http://intranet.menjadorescola.me/datos">DATOS</a>
-
   <footer class="page-footer font-small stylish-color-dark pt-4">
 
     <!-- Footer Links -->
