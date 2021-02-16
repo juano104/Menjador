@@ -5,10 +5,12 @@
   <meta charset='utf-8' />
   <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
   <link rel="stylesheet" href="../public/css/estils.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="public/js/jquery.min.js"></script>
   <script src="public/js/moment.min.js"></script>
   <script src="public/js/fullcalendar.min.js"></script>
+  
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -36,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
       <!-- LOGO -->
       <a href="#" class="navbar-brand">
-        <img src="../public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+        <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
       </a>
       <!-- LOGO -->
       <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
