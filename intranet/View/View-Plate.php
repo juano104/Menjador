@@ -5,9 +5,9 @@
   <meta charset='utf-8' />
   <link href='../../View/css/fullcalendar.min.css' rel='stylesheet' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="../../View/js/jquery.min.js"></script>
-  <script src="../../View/js/moment.min.js"></script>
-  <script src="../../View/js/fullcalendar.min.js"></script>
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/moment.min.js"></script>
+  <script src="public/js/fullcalendar.min.js"></script>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
