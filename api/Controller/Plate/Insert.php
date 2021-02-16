@@ -21,11 +21,11 @@ if ($resultat === true) {
     echo $_POST["nomplat"];
     $_POST["tipus"];
     if ($plate->insertPlate()) {
-        header("Location: http://localhost/Menjador/front/public/View-Insert-Plate.php");
+        header("Location: http://intranet.menjadorescola.me/insertar");
     } else {
         echo json_encode("Plate not created");
     }
 }else{
     echo '<script>alert("El plat que vol inserir ja existeix")</script>';
-    header("Location: http://localhost/Menjador/front/public/View-Insert-Plate.php");
+    header("Location: http://intranet.menjadorescola.me/insertar");
 }
