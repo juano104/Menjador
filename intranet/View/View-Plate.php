@@ -55,7 +55,10 @@
 
   <script>
     $(document).ready(function() {
-      $('#calendar').fullCalendar({
+      $('#calendar').fullCalendar({eventSources: [{
+          url: 'http://intranet.menjadorescola.me/datos',
+          method: 'POST'
+        }],
         dayClick: function(date, allDay, jsEvent, view, start, end) {
 
           if (start.isBefore(moment())) {
@@ -65,15 +68,9 @@
 
           $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
 
-          $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
-          $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
           $('#exampleModal').modal('show');
 
         },
-        eventSources: [{
-          url: 'http://intranet.menjadorescola.me/datos',
-          method: 'POST'
-        }],
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
         eventLimit: true
