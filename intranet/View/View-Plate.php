@@ -53,6 +53,7 @@
         },
         eventSources: [{
           url: '../api/Controller/Menu/Read-MenuPlate.php',
+          method: 'POST'
         }
         ],
         hiddenDays: [0, 6],
