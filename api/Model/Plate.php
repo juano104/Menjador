@@ -43,7 +43,7 @@ class Plate{
     //Read SingleBooking
     public function readPlate()
     {
-        $query = "select * from plate";
+        $query = "select * from Plate";
 
         $result = $this->conn->query($query);
 
@@ -52,7 +52,7 @@ class Plate{
 
     public function readMenuPlate()
     {
-        $query = "select menu_ID,date, group_concat(distinct plate.name order by plate.type) as title from plate, menu, menu_day where menu_day.menu_ID = menu.ID and menu_day.plate_ID = plate.ID group by menu_ID";
+        $query = "select menu_ID,date, group_concat(distinct Plate.name order by Plate.type) as title from Plate, menu, menu_day where menu_day.menu_ID = menu.ID and menu_day.plate_ID = Plate.ID group by menu_ID";
 
         $result = $this->conn->query($query);
 
@@ -61,7 +61,7 @@ class Plate{
 
     public function ifExistsPlate($nom)
     {
-        $sqlQuery = "SELECT EXISTS (select * from plate where name = ?)";
+        $sqlQuery = "SELECT EXISTS (select * from Plate where name = ?)";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
@@ -88,7 +88,7 @@ class Plate{
     public function insertPlate()
     {
         $sqlQuery = "INSERT INTO
-                plate (name, type)
+                Plate (name, type)
                 values(?, ?)";
 
         $stmt = $this->conn->prepare($sqlQuery);
