@@ -55,7 +55,8 @@
           'http://intranet.menjadorescola.me/datos'
         ],
         hiddenDays: [0, 6],
-        showNonCurrentDates: false
+        showNonCurrentDates: false,
+        passive: true
 
       })
     });
