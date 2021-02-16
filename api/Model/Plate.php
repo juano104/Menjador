@@ -52,7 +52,7 @@ class Plate{
 
     public function readMenuPlate()
     {
-        $query = "select menu_ID,date, group_concat(distinct Plate.name order by Plate.type) as title from Plate, menu, menu_day where menu_day.menu_ID = menu.ID and menu_day.plate_ID = Plate.ID group by menu_ID";
+        $query = "select menu_ID,date, group_concat(distinct Plate.name order by Plate.type) as title from Plate, Menu, Menu_Day where Menu_Day.menu_ID = Menu.ID and Menu_Day.plate_ID = Plate.ID group by menu_ID";
 
         $result = $this->conn->query($query);
 
@@ -105,5 +105,3 @@ class Plate{
 
     
 }
-
-?>

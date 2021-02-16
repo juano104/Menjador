@@ -9,8 +9,8 @@ if(isset($_GET["username"])){
 $router->define([
     "" => "View/index.html",
     //
-    "principal" => "View/View-Plate.php",
-    "datos" => "../api/Controller/Menu/Read-MenuPlate.php",
+    "principal" => "../api/Controller/Menu/Read-MenuPlate.php",
+    //"datos" => "../api/Controller/Menu/Read-MenuPlate.php",
     "insertar" => "View/View-Insert-Plate.php",
     "insertar/plate" => "../api/Controller/Plate/Insert.php",
     "insertar/menu" => "../api/Controller/Menu/Insert.php"
