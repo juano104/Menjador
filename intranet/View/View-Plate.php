@@ -56,38 +56,9 @@
         ],
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
-        passive: true
 
       })
     });
-    /*$(function() {
-
-      $('#calendar').fullCalendar({
-        dayClick: function(date, allDay, jsEvent, view, start, end) {
-
-          $("#date").val($.fullCalendar.formatDate(date, 'YYYY-MM-DD'));
-
-          var check = moment(start).format('YYYY-MM-DD');
-          var today = moment(new Date()).format('YYYY-MM-DD');
-
-
-          if (check >= today) {
-            $('#exampleModal #start').val(moment(start).format('YYYY-MM-DD'));
-            $('#exampleModal #end').val(moment(end).format('YYYY-MM-DD'));
-            $('#exampleModal').modal('show');
-          } else {
-            alert("No se pueden crear eventos en el pasado!");
-          }
-        },
-        eventsSources: [
-          'http://intranet.menjadorescola.me/datos'
-        ],
-        hiddenDays: [0, 6],
-        showNonCurrentDates: false
-
-      })
-
-    });*/
   </script>
 
   <!-- Modal -->
