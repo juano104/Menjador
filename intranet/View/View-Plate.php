@@ -51,7 +51,7 @@
             alert("No se pueden crear eventos en el pasado!");
           }
         },
-        events: 'datos',
+        events: 'http://intranet.menjadorescola.me/datos',
         hiddenDays: [0, 6],
         showNonCurrentDates: false
 
