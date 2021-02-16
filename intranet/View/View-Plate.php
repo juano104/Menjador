@@ -5,7 +5,7 @@
   <meta charset='utf-8' />
   <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="/js/jquery.min.js"></script>
+  <script src="public/js/jquery.min.js"></script>
   <script src="public/js/moment.min.js"></script>
   <script src="public/js/fullcalendar.min.js"></script>
 
