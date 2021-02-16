@@ -68,6 +68,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="principal">
+                            Principal(ver reservas de un dia concreto)
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insertar">insertar padres y alumnos</a>
+                    </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-home"></i>
