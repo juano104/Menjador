@@ -299,7 +299,7 @@
             'image/png');
           var doc = new jsPDF('p', 'mm');
           doc.addImage(imgData, 'PNG', -1, 3);
-          doc.save('sample-file.pdf');
+          doc.save('Menu.pdf');
         }
       });
     });
