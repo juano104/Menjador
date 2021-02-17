@@ -17,8 +17,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script src="public/js/jquery.min.js"></script>
-    <script src="public/js/moment.min.js"></script>
     <script src="public/js/fullcalendar.min.js"></script>
 
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
