@@ -22,6 +22,7 @@
     <script src="public/js/moment.min.js"></script>
     <script src="public/js/fullcalendar.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
 
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
