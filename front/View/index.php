@@ -48,17 +48,6 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fas fa-user"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="Pagina-Montanya.html">Guitarres</a>
-                        <a class="dropdown-item" href="Pagina-Carretera.html">Flautes</a>
-                        <a class="dropdown-item" href="Pagina-Paseig.html">Altaveus</a>
-                    </div>
-                </li>
             </ul>
         </div>
     </nav>
@@ -67,7 +56,9 @@
     <form>
         <div class="container" id="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li><a class="atabs nav-item" href="#tabs-1">Reservation</a></li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tabs1" data-bs-toggle="tab" data-bs-target="#tabs-1" type="button" role="tab" aria-controls="home" aria-selected="true">Reservation</button>
+                </li>
                 <li><a class="atabs nav-item" href="#tabs-2">Choose type</a></li>
                 <li><a class="atabs nav-item" href="#tabs-3">Loose Days</a></li>
                 <li><a class="atabs nav-item" href="#tabs-4">Fixed Days</a></li>
