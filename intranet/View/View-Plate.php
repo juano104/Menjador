@@ -4,14 +4,14 @@
 <head>
   <meta charset='utf-8' />
   <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
-  
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="../public/css/estils.css">
   <script src="public/js/jquery.min.js"></script>
   <script src="public/js/moment.min.js"></script>
   <script src="public/js/fullcalendar.min.js"></script>
-  
+
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -22,7 +22,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
   <style>
-
     #calendar {
       max-width: 1000px;
       margin-top: 5%;
@@ -33,10 +32,11 @@
 
 <body>
 
-<canvas id="canvas" width="0%" height="0%"></canvas> 
-      <button id="print">Download Pdf</button>
-
-  <div id='calendar'></div>
+  <canvas id="canvas" width="0%" height="0%"></canvas>
+  <button id="print"><i class="far fa-file-pdf"></i></button>
+  <div class="container-">
+    <div id='calendar'></div>
+  </div>
 
   <div class="container-fluid">
     <!-- Menu de navegacio -->
@@ -84,9 +84,9 @@
     </nav>
     <!-- Menu de navegacio -->
   </div>
-<div class="container">
-  <div id='calendar'></div>
-</div>
+  <div class="container">
+    <div id='calendar'></div>
+  </div>
   <script>
     $(document).ready(function() {
       $('#calendar').fullCalendar({
@@ -303,14 +303,14 @@
   <script>
     $('#print').click(function() {
       html2canvas($("#calendar"), {
-            onrendered: function(canvas) {         
-                var imgData = canvas.toDataURL(
-                    'image/png');              
-                var doc = new jsPDF('p', 'mm');
-                doc.addImage(imgData, 'PNG', -1, 3);
-                doc.save('sample-file.pdf');
-            }
-        });
+        onrendered: function(canvas) {
+          var imgData = canvas.toDataURL(
+            'image/png');
+          var doc = new jsPDF('p', 'mm');
+          doc.addImage(imgData, 'PNG', -1, 3);
+          doc.save('sample-file.pdf');
+        }
+      });
     });
   </script>
 
