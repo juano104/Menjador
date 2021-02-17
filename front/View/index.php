@@ -7,7 +7,6 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
 <script>
-    
     $(function() {
         $(".datepicker").datepicker({
             dateFormat: 'yy/mm/dd',
@@ -25,17 +24,54 @@
 </script>
 
 <body>
+    <div class="container-fluid">
+        <!-- Menu de navegacio -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-success static-top">
+            <!-- LOGO -->
+            <a href="Pagina-Principal.html" class="navbar-brand">
+                <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+            </a>
+            <!-- LOGO -->
+            <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Pagina-Principal.html">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="Pagina-Montanya.html">Guitarres</a>
+                            <a class="dropdown-item" href="Pagina-Carretera.html">Flautes</a>
+                            <a class="dropdown-item" href="Pagina-Paseig.html">Altaveus</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Menu de navegacio -->
+    </div>
+    <br>
+
     <form>
-        <div id="tabs">
+        <div class="container" id="tabs">
             <ul>
-                <li><a class="atabs" href="#tabs-1">Reservation</a></li>
-                <li><a class="atabs" href="#tabs-2">Choose type</a></li>
-                <li><a class="atabs" href="#tabs-3">Day type</a></li>
-                <li><a class="atabs" href="#tabs-4">Monthly/Yearly</a></li>
-                <li><a class="atabs" href="#tabs-5">Summary</a></li>
+                <li><a class="atabs tab" href="#tabs-1">Reservation</a></li>
+                <li><a class="atabs tab" href="#tabs-2">Choose type</a></li>
+                <li><a class="atabs tab" href="#tabs-3">Day type</a></li>
+                <li><a class="atabs tab" href="#tabs-4">Monthly/Yearly</a></li>
+                <li><a class="atabs tab" href="#tabs-5">Summary</a></li>
             </ul>
 
-            <div id="tabs-1">
+            <div class="tab-content" id="tabs-1">
                 <h3>For who is it?</h3> <br>
                 <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
                 <?php
@@ -59,7 +95,7 @@
                 <button type="button" class="b1n">NEXT</button>
 
             </div>
-            <div id="tabs-2">
+            <div class="tab-content" id="tabs-2">
                 <h3>Type</h3>
                 <div>
                     <table class="tabler" border="1">
@@ -74,19 +110,17 @@
                         </tbody>
                     </table>
                 </div>
-                <input type="radio" value="OneDay" name="type" id="Oneday">
-                <label for="Oneday">Loose Days</label>
-                <input type="radio" value="Monthly" name="type" id="Monthly">
-                <label for="Monthly">Monthly</label>
-                <input type="radio" value="Yearly" name="type" id="Yearly">
-                <label for="Yearly">Yearly</label>
+                <input type="radio" value="Loose" name="type" id="Loose">
+                <label for="Loose">Loose Days</label>
+                <input type="radio" value="Fixed" name="type" id="Fixed">
+                <label for="Fixed">Fixed Days</label>
 
                 <br>
 
                 <button type="button" class="b2p">PREVIOUS</button>
                 <button type="button" class="b2n">NEXT</button>
             </div>
-            <div id="tabs-3">
+            <div class="tab-content" id="tabs-3">
                 <h3>One Day</h3>
                 <div>
                     <table class="tabler" border="1">
@@ -129,8 +163,8 @@
                 <button type="button" class="b3p">PREVIOUS</button>
                 <button type="button" class="b3n">NEXT</button>
             </div>
-            <div id="tabs-4">
-                <h3>Monthly/Yearly</h3>
+            <div class="tab-content" id="tabs-4">
+                <h3>Fixed</h3>
                 <div>
                     <table class="tabler" border="1">
                         <thead>
@@ -164,7 +198,7 @@
                 <button type="button" class="b4p">PREVIOUS</button>
                 <button type="button" class="b4n">NEXT</button>
             </div>
-            <div id="tabs-5">
+            <div class="tab-content" id="tabs-5">
                 <h3>Your Reservation:</h3>
                 <div>
                     <table class="tabler" border="1">
@@ -261,7 +295,7 @@
 
                 var type = $("input[name='type']:checked").val();
 
-                if (type == "Monthly" || type == "Yearly") {
+                if (type == "Fixed") {
                     $("#tabs").tabs({
                         active: 3,
                         disabled: [0, 1, 2, 4],
@@ -523,6 +557,76 @@
 
         });
     </script>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small stylish-color-dark pt-4">
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+                <div class="col-md-4 mx-auto">
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+                    <p>
+                        Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                        consectetur
+                        adipisicing elit.
+                    </p>
+                </div>
+                <!-- Social buttons -->
+                <div class="col-md-2 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
+                    <br>
+                    <ul class="list-unstyled list-inline text-center">
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-fb mx-1">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-tw mx-1">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn-floating btn-gplus mx-1">
+                                <i class="fab fa-google-plus-g"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Social buttons -->
+                </div>
+            </div>
+            <!-- Grid row -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">
+                © 2020 Copyright:
+                <a href="#">Music</a>
+            </div>
+            <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
 </body>
 
