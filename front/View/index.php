@@ -30,35 +30,33 @@
 </script>
 
 <body>
-    <div class="container-fluid">
-        <!-- Menu de navegacio -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-success static-top">
-            <!-- LOGO -->
-            <a href="Pagina-Principal.html" class="navbar-brand">
-                <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
-            </a>
-            <!-- LOGO -->
-            <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="reservas">
-                            Mis Reservas
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Cerrar Sesion
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Menu de navegacio -->
-    </div>
+    <!-- Menu de navegacio -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <!-- LOGO -->
+        <a href="Pagina-Principal.html" class="navbar-brand">
+            <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+        </a>
+        <!-- LOGO -->
+        <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="reservas">
+                        Mis Reservas
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Cerrar Sesion
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Menu de navegacio -->
     <br>
 
     <form>
