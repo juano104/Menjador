@@ -45,19 +45,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="principal">
-                            Principal(Ver los platos)
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="insertar">
+                        <a class="nav-link" href="insertar/platos">
                             Insertar los platos o menus
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://intranet.menjadorescola.me">
+                        <a class="nav-link" href="menu">
                             <i class="fas fa-home"></i>
                             <span class="sr-only">(current)</span>
                         </a>
@@ -68,9 +62,7 @@
                             <i class="fas fa-user"></i>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Guitarres</a>
-                            <a class="dropdown-item" href="#">Flautes</a>
-                            <a class="dropdown-item" href="#">Altaveus</a>
+                            <a class="dropdown-item" href="#">LogOut</a>
                         </div>
                     </li>
                 </ul>
