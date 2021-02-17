@@ -80,7 +80,7 @@
   </div>
   
   <canvas id="canvas" width="0%" height="0%"></canvas>
-  <button id="print"><i class="far fa-file-pdf"></i></button>
+  <a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
   <div class="container">
     <div id='calendar'></div>
   </div>
