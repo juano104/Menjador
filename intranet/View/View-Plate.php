@@ -45,21 +45,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+
           <li class="nav-item active">
-            <a class="nav-link" href="principal">
-              Principal(Ver los platos)
+            <a class="nav-link" href="menu">
+              <i class="fas fa-home"></i>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="insertar">
-              Insertar los platos o menus
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="http://intranet.menjadorescola.me">
-              <i class="fas fa-home"></i>
-              <span class="sr-only">(current)</span>
+            <a class="nav-link" href="insertar/platos">
+              Insertar
             </a>
           </li>
           <!-- Dropdown -->
@@ -68,9 +63,8 @@
               <i class="fas fa-user"></i>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Guitarres</a>
-              <a class="dropdown-item" href="#">Flautes</a>
-              <a class="dropdown-item" href="#">Altaveus</a>
+              <a class="dropdown-item" href="#">LogOut</a>
+
             </div>
           </li>
         </ul>

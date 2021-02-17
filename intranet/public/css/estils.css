@@ -40,9 +40,10 @@ form{
 
 }
 
-/*.navbar{
+.navbar{
     background-color: #F2BF8D !important;
-}*/
+}
+
 input:focus, input.form-control:focus {
     outline:none !important;
     outline-width: 0 !important;
