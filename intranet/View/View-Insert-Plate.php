@@ -52,7 +52,7 @@
                     <!-- Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fas fa-user">LogOut</i>
+                            <i class="fas fa-user"></i>
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">LogOut</a>
