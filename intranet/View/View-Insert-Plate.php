@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <link rel="stylesheet">
+    <link rel="stylesheet" href="public/css/estils.css">
     <!-- js -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
