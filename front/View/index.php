@@ -16,7 +16,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script src="public/js/jquery.min.js"></script>
+
     <script src="public/js/moment.min.js"></script>
     <script src="public/js/fullcalendar.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
