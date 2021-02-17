@@ -36,7 +36,7 @@
     <!-- Menu de navegacio -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
       <!-- LOGO -->
-      <a href="http://intranet.menjadorescola.me" class="navbar-brand">
+      <a href="menu" class="navbar-brand">
         <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
       </a>
       <!-- LOGO -->
