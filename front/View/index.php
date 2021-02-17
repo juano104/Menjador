@@ -10,16 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <link href="bootstrap.min.css" rel="stylesheet">
-
-    <script src="//code.jquery.com/jquery.min.js"></script>
-
-    <link href="bootstrap-tabs-x.css" rel="stylesheet">
-
-    <script src="bootstrap.min.js"></script>
-
-    <script src="bootstrap-tabs-x.js"></script>
-
 
 
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
