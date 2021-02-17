@@ -10,11 +10,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/moment.min.js"></script>
+    <script src="public/js/fullcalendar.min.js"></script>
+
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+
+
     <script>
         $(function() {
             $(".datepicker").datepicker({
@@ -32,6 +44,14 @@
         });
     </script>
 </head>
+
+<style>
+    #calendar {
+        max-width: 1000px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+</style>
 
 <body>
     <!-- Menu de navegacio -->
@@ -52,6 +72,28 @@
         </div>
     </nav>
     <br>
+
+    <canvas id="canvas" width="0%" height="0%"></canvas>
+    <div class="container">
+        <div id='calendar'></div>
+        <h6>DESCARGAR MENU</h6>
+        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+      $('#calendar').fullCalendar({
+        eventSources: [{
+          url: 'http://intranet.menjadorescola.me/datos',
+          method: 'POST'
+        }],
+        hiddenDays: [0, 6],
+        showNonCurrentDates: false,
+        eventLimit: true
+
+      })
+    });
+  </script>
 
     <form>
         <div class="container" id="tabs">
