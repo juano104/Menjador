@@ -1,7 +1,85 @@
 <?php
-class Booking{
+class Booking
+{
     //conn
     private $conn;
+    private $date;
+    private $username;
+    private $dow;
+    private $sum;
+    private $name;
+    private $last_name;
+    private $ID;
+
+    function getID()
+    {
+        return $this->ID;
+    }
+
+    function setID($ID): void
+    {
+        $this->ID = $ID;
+    }
+
+    function getName()
+    {
+        return $this->name;
+    }
+
+    function setName($name): void
+    {
+        $this->name = $name;
+    }
+    function getLast_name()
+    {
+        return $this->last_name;
+    }
+
+    function setLast_name($last_name): void
+    {
+        $this->last_name = $last_name;
+    }
+
+    function getSum()
+    {
+        return $this->sum;
+    }
+
+    function setSum($sum): void
+    {
+        $this->sum = $sum;
+    }
+
+    function getDow()
+    {
+        return $this->dow;
+    }
+
+    function setDow($dow): void
+    {
+        $this->dow = $dow;
+    }
+
+    function getDate()
+    {
+        return $this->date;
+    }
+
+    function setDate($date): void
+    {
+        $this->date = $date;
+    }
+
+    function getUsername()
+    {
+        return $this->username;
+    }
+
+    function setUsername($username): void
+    {
+        $this->username = $username;
+    }
+
 
     public function __construct($db)
     {
@@ -25,6 +103,117 @@ class Booking{
 
         return $result;
     }
-}
 
-?>
+    //read bookings for tables
+    //reads the total by the date picked (for restaurant)
+    public function readTotalByDay()
+    {
+        $query = 'select(select count(*) as total_extra from Booking_Extra where ? is not null and ? between start_date and end_date) + 
+        (select count(*) as total_day from Booking_Day where date = ?) as sum';
+
+        $stmt = $this->conn->prepare($query);
+        // bind data
+        $stmt->bindParam(1, $this->dow);
+        $stmt->bindParam(2, $this->date);
+        $stmt->bindParam(3, $this->date);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    //read for the parents
+    /*public function readAllByDay()
+    {
+        $query = "select Student.name, Student.last_name from Student
+        inner join Booking on Booking.student_ID = Student.ID
+        inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
+        inner join User_Parent on User_Parent.username = Student.parent_DNI
+        where Booking_Day.date = ?
+        and User_Parent.username = ?";
+
+        $stmt = $this->conn->prepare($query);
+        // bind data
+        $stmt->bindParam(1, $this->date);
+        $stmt->bindParam(2, $this->username);
+
+        $stmt->execute();
+
+        return $stmt;
+    }*/
+
+    //read for the parents
+    public function readAllByExtra()
+    {
+        $query = "select Student.name, Student.last_name from Student
+        inner join Booking on Booking.student_ID = Student.ID
+        inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
+        inner join User_Parent on User_Parent.username = Student.parent_DNI
+        where Booking_Day.date = ?
+        and User_Parent.username = ?
+        union
+        select Student.name, Student.last_name from Student
+        inner join Booking on Booking.student_ID = Student.ID
+        inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
+        inner join User_Parent on User_Parent.username = Student.parent_DNI
+        where ? between Booking_Extra.start_date and Booking_Extra.end_date
+        and User_Parent.username = ?
+        and Booking_Extra." . $this->dow . " is not null";
+
+        $stmt = $this->conn->prepare($query);
+        // bind data
+        $stmt->bindParam(1, $this->date);
+        $stmt->bindParam(2, $this->username);
+        $stmt->bindParam(3, $this->date);
+        $stmt->bindParam(4, $this->username);
+        //$stmt->bindParam(5, $this->dow); not working...
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    //this part is for showing all the students data (school)
+    public function readByDay()
+    {
+        $query = "select Student.ID, Student.name, Student.last_name from Student
+        inner join Booking on Booking.student_ID = Student.ID
+        inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
+        where Booking_Day.date = ?
+        group by Student.ID
+        union
+        select Student.ID, Student.name, Student.last_name from Student
+        inner join Booking on Booking.student_ID = Student.ID
+        inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
+        where ? between Booking_Extra.start_date and Booking_Extra.end_date
+        and Booking_Extra." . $this->dow . " is not null
+        group by Student.ID";
+
+        $stmt = $this->conn->prepare($query);
+        // bind data
+        $stmt->bindParam(1, $this->date);
+        $stmt->bindParam(2, $this->date);
+        //$stmt->bindParam(3, $this->dow);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    //this read the allergies for the earlier function (for school)
+    public function readAllergy()
+    {
+        $query = "select group_concat(Allergy.name) as allergy from Student
+        inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
+        inner join Allergy on Allergy.ID = Student_Allergy.allergy_ID
+        where Student.ID = ?";
+
+        $stmt = $this->conn->prepare($query);
+        // bind data
+        $stmt->bindParam(1, $this->ID);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+}
