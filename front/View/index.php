@@ -56,11 +56,11 @@
     <form>
         <div class="container" id="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li><a class="atabs nav-item" href="#tabs-1">Reservation</a></li>
-                <li><a class="atabs nav-item" href="#tabs-2">Choose type</a></li>
-                <li><a class="atabs nav-item" href="#tabs-3">Loose Days</a></li>
-                <li><a class="atabs nav-item" href="#tabs-4">Fixed Days</a></li>
-                <li><a class="atabs nav-item" href="#tabs-5">Summary</a></li>
+                <li><a class="atabs nav-link" href="#tabs-1">Reservation</a></li>
+                <li><a class="atabs nav-link" href="#tabs-2">Choose type</a></li>
+                <li><a class="atabs nav-link" href="#tabs-3">Loose Days</a></li>
+                <li><a class="atabs nav-link" href="#tabs-4">Fixed Days</a></li>
+                <li><a class="atabs nav-link" href="#tabs-5">Summary</a></li>
             </ul>
 
             <div class="tab-content" id="tabs-1">
