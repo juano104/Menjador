@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-    <link rel="stylesheet" href="public/css/estils.css">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
-
-    <script>
-        $(function() {
-            $(".datepicker").datepicker({
-                dateFormat: 'yy/mm/dd',
-                minDate: 0
-            });
-            $("#datepickers").datepicker({
-                dateFormat: 'yy/mm/dd',
-                minDate: 0
-            });
-            $("#datepickere").datepicker({
-                dateFormat: 'yy/mm/dd',
-                minDate: 0
-            });
-        });
-    </script>
 </head>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $(".datepicker").datepicker({
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
+        });
+        $("#datepickers").datepicker({
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
+        });
+        $("#datepickere").datepicker({
+            dateFormat: 'yy/mm/dd',
+            minDate: 0
+        });
+    });
+</script>
 
 <body>
     <div class="container-fluid">
@@ -71,14 +63,15 @@
 
     <form>
         <div class="container" id="tabs">
-            <ul class="nav nav-tabs">
-                <li><a class="atabs" href="#tabs-1">Reservation</a></li>
-                <li><a class="atabs" href="#tabs-2">Choose type</a></li>
-                <li><a class="atabs" href="#tabs-3">Loose Days</a></li>
-                <li><a class="atabs" href="#tabs-4">Fixed Days</a></li>
-                <li><a class="atabs" href="#tabs-5">Summary</a></li>
+            <ul>
+                <li><a class="atabs tab" href="#tabs-1">Reservation</a></li>
+                <li><a class="atabs tab" href="#tabs-2">Choose type</a></li>
+                <li><a class="atabs tab" href="#tabs-3">Loose Days</a></li>
+                <li><a class="atabs tab" href="#tabs-4">Fixed Days</a></li>
+                <li><a class="atabs tab" href="#tabs-5">Summary</a></li>
             </ul>
-            <div class="tab-pane" id="tabs-1">
+
+            <div class="tab-content" id="tabs-1">
                 <h3>For who is it?</h3> <br>
                 <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
                 <?php
@@ -102,7 +95,7 @@
                 <button type="button" class="b1n">NEXT</button>
 
             </div>
-            <div class="tab-pane" id="tabs-2">
+            <div class="tab-content" id="tabs-2">
                 <h3>Type</h3>
                 <div>
                     <table class="tabler" border="1">
@@ -127,7 +120,7 @@
                 <button type="button" class="b2p">PREVIOUS</button>
                 <button type="button" class="b2n">NEXT</button>
             </div>
-            <div class="tab-pane" id="tabs-3">
+            <div class="tab-content" id="tabs-3">
                 <h3>One Day</h3>
                 <div>
                     <table class="tabler" border="1">
@@ -170,7 +163,7 @@
                 <button type="button" class="b3p">PREVIOUS</button>
                 <button type="button" class="b3n">NEXT</button>
             </div>
-            <div class="tab-pane" id="tabs-4">
+            <div class="tab-content" id="tabs-4">
                 <h3>Fixed</h3>
                 <div>
                     <table class="tabler" border="1">
@@ -205,7 +198,7 @@
                 <button type="button" class="b4p">PREVIOUS</button>
                 <button type="button" class="b4n">NEXT</button>
             </div>
-            <div class="tab-pane" id="tabs-5">
+            <div class="tab-content" id="tabs-5">
                 <h3>Your Reservation:</h3>
                 <div>
                     <table class="tabler" border="1">
@@ -228,7 +221,6 @@
                 <br> <br>
                 <button type="button" class="b5p">PREVIOUS</button>
             </div>
-
 
         </div>
     </form>
@@ -635,11 +627,7 @@
             <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    
 
 </body>
 
