@@ -25,6 +25,15 @@
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+    <style>
+        #calendar {
+            max-width: 1000px;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    </style>
+
     <script>
         $(function() {
             $(".datepicker").datepicker({
@@ -62,6 +71,30 @@
         </div>
     </nav>
     <br>
+
+    <canvas id="canvas" width="0%" height="0%"></canvas>
+    <div class="container">
+
+
+        <div id='calendar'></div>
+        <h6>DESCARGAR MENU</h6>
+        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                eventSources: [{
+                    url: 'http://intranet.menjadorescola.me/datos',
+                    method: 'POST'
+                }],
+                hiddenDays: [0, 6],
+                showNonCurrentDates: false,
+                eventLimit: true
+
+            })
+        });
+    </script>
 
     <form>
         <div class="container" id="tabs">
@@ -634,7 +667,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     -->
-
+    <script>
+        $('#print').click(function() {
+            html2canvas($("#calendar"), {
+                onrendered: function(canvas) {
+                    var imgData = canvas.toDataURL(
+                        'image/png');
+                    var doc = new jsPDF('p', 'mm');
+                    doc.addImage(imgData, 'PNG', -1, 3);
+                    doc.save('Menu.pdf');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
