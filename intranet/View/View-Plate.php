@@ -76,7 +76,7 @@
 
     <div id='calendar'></div>
     <h6>DESCARGAR MENU</h6>
-    <a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
+    <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
   </div>
   <script>
     $(document).ready(function() {
