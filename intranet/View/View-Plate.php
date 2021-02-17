@@ -72,9 +72,11 @@
 
   <canvas id="canvas" width="0%" height="0%"></canvas>
   <div class="container">
-    <a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
+    
 
     <div id='calendar'></div>
+    <h6>DESCARGAR MENU</h6>
+    <a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
   </div>
   <script>
     $(document).ready(function() {
