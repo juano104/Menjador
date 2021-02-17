@@ -78,10 +78,11 @@
     </nav>
     <!-- Menu de navegacio -->
   </div>
-  
+
   <canvas id="canvas" width="0%" height="0%"></canvas>
-  <a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
   <div class="container">
+    <a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
+
     <div id='calendar'></div>
   </div>
   <script>
