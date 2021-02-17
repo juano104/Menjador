@@ -31,7 +31,7 @@
 
 <body>
     <!-- Menu de navegacio -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <nav class="navbar navbar-expand-lg navbar-light static-top">
         <!-- LOGO -->
         <a href="Pagina-Principal.html" class="navbar-brand">
             <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
