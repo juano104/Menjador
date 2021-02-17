@@ -17,6 +17,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
   <style>
 
     #calendar {
@@ -28,6 +32,11 @@
 </head>
 
 <body>
+
+<canvas id="canvas" width="0%" height="0%"></canvas> 
+      <button id="print">Download Pdf</button>
+
+  <div id='calendar'></div>
 
   <div class="container-fluid">
     <!-- Menu de navegacio -->
@@ -290,6 +299,20 @@
 
   </footer>
   <!-- Footer -->
+
+  <script>
+    $('#print').click(function() {
+      html2canvas($("#calendar"), {
+            onrendered: function(canvas) {         
+                var imgData = canvas.toDataURL(
+                    'image/png');              
+                var doc = new jsPDF('p', 'mm');
+                doc.addImage(imgData, 'PNG', -1, 3);
+                doc.save('sample-file.pdf');
+            }
+        });
+    });
+  </script>
 
 </body>
 
