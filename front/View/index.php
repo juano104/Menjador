@@ -8,63 +8,57 @@
     <title>Home</title>
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $(".datepicker").datepicker({
+                dateFormat: 'yy/mm/dd',
+                minDate: 0
+            });
+            $("#datepickers").datepicker({
+                dateFormat: 'yy/mm/dd',
+                minDate: 0
+            });
+            $("#datepickere").datepicker({
+                dateFormat: 'yy/mm/dd',
+                minDate: 0
+            });
+        });
+    </script>
 </head>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
-<script>
-    $(function() {
-        $(".datepicker").datepicker({
-            dateFormat: 'yy/mm/dd',
-            minDate: 0
-        });
-        $("#datepickers").datepicker({
-            dateFormat: 'yy/mm/dd',
-            minDate: 0
-        });
-        $("#datepickere").datepicker({
-            dateFormat: 'yy/mm/dd',
-            minDate: 0
-        });
-    });
-</script>
 
 <body>
-    <div class="container-fluid">
-        <!-- Menu de navegacio -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-success static-top">
-            <!-- LOGO -->
-            <a href="Pagina-Principal.html" class="navbar-brand">
-                <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
-            </a>
-            <!-- LOGO -->
-            <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="Pagina-Principal.html">
-                            <i class="fas fa-home"></i>
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="Pagina-Montanya.html">Guitarres</a>
-                            <a class="dropdown-item" href="Pagina-Carretera.html">Flautes</a>
-                            <a class="dropdown-item" href="Pagina-Paseig.html">Altaveus</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Menu de navegacio -->
-    </div>
+    <!-- Menu de navegacio -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+        <!-- LOGO -->
+        <a href="Pagina-Principal.html" class="navbar-brand">
+            <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+        </a>
+        <!-- LOGO -->
+        <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="reservas">
+                        Mis Reservas
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Cerrar Sesion
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Menu de navegacio -->
     <br>
 
     <form>

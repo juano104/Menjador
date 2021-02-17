@@ -54,10 +54,11 @@ form {
     margin-bottom: 15%;
 }
 
-/*
+
 .navbar{
     background-color: #F2BF8D !important;
-}*/
+    /*padding: 0px;*/
+}
 
 input:focus, input.form-control:focus {
     outline: none !important;
