@@ -10,23 +10,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
-    <link href="bootstrap.min.css" rel="stylesheet">
-
-    <script src="//code.jquery.com/jquery.min.js"></script>
-
-    <link href="bootstrap-tabs-x.css" rel="stylesheet">
-
-    <script src="bootstrap.min.js"></script>
-
-    <script src="bootstrap-tabs-x.js"></script>
-
 
 
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 
-    <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>
     <script>
         $(function() {
             $(".datepicker").datepicker({
@@ -79,11 +69,11 @@
     <form>
         <div class="container" id="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li><a class="atabs" href="#tabs-1">Reservation</a></li>
-                <li><a class="atabs" href="#tabs-2">Choose type</a></li>
-                <li><a class="atabs" href="#tabs-3">Loose Days</a></li>
-                <li><a class="atabs" href="#tabs-4">Fixed Days</a></li>
-                <li><a class="atabs" href="#tabs-5">Summary</a></li>
+                <li><a class="atabs nav-item" href="#tabs-1">Reservation</a></li>
+                <li><a class="atabs nav-item" href="#tabs-2">Choose type</a></li>
+                <li><a class="atabs nav-item" href="#tabs-3">Loose Days</a></li>
+                <li><a class="atabs nav-item" href="#tabs-4">Fixed Days</a></li>
+                <li><a class="atabs nav-item" href="#tabs-5">Summary</a></li>
             </ul>
 
             <div class="tab-content" id="tabs-1">
@@ -643,10 +633,10 @@
         </div>
     </footer>
     <!-- Footer -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    -->
 
 </body>
 
