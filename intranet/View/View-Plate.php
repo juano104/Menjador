@@ -36,7 +36,7 @@
     <!-- Menu de navegacio -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
       <!-- LOGO -->
-      <a href="menu" class="navbar-brand">
+      <a href="http://intranet.menjadorescola.me/" class="navbar-brand">
         <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
       </a>
       <!-- LOGO -->
@@ -44,7 +44,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="menu">
+            <a class="nav-link" href="http://intranet.menjadorescola.me/">
               <i class="fas fa-home"></i>
               <span class="sr-only">(current)</span>
             </a>
