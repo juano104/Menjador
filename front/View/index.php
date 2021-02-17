@@ -56,25 +56,11 @@
     <form>
         <div class="container" id="tabs">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tabs1" data-bs-toggle="tab" data-bs-target="#tabs-1" type="button" role="tab" aria-controls="home" aria-selected="true">Reservation</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tabs1" data-bs-toggle="tab" data-bs-target="#tabs-1" type="button" role="tab" aria-controls="home" aria-selected="true">Choose Type</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tabs1" data-bs-toggle="tab" data-bs-target="#tabs-1" type="button" role="tab" aria-controls="home" aria-selected="true">Loose Days</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tabs1" data-bs-toggle="tab" data-bs-target="#tabs-1" type="button" role="tab" aria-controls="home" aria-selected="true">Fixed Days</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tabs1" data-bs-toggle="tab" data-bs-target="#tabs-1" type="button" role="tab" aria-controls="home" aria-selected="true">Summary</button>
-                </li>
-                <!--<li><a class="atabs nav-item" href="#tabs-2">Choose type</a></li>
+                <li><a class="atabs nav-item" href="#tabs-1">Reservation</a></li>
+                <li><a class="atabs nav-item" href="#tabs-2">Choose type</a></li>
                 <li><a class="atabs nav-item" href="#tabs-3">Loose Days</a></li>
                 <li><a class="atabs nav-item" href="#tabs-4">Fixed Days</a></li>
-                <li><a class="atabs nav-item" href="#tabs-5">Summary</a></li>-->
+                <li><a class="atabs nav-item" href="#tabs-5">Summary</a></li>
             </ul>
 
             <div class="tab-content" id="tabs-1">
