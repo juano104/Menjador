@@ -50,7 +50,7 @@
 
             <!-- LOGO -->
 
-            <a href="admin.menjadorescola.me" class="navbar-brand">
+            <a href="http://admin.menjadorescola.me" class="navbar-brand">
                 <img src="public/img/logo.png" alt="LogoImatge" class="d-inline-block align-middle imgres">
             </a>
 
@@ -74,7 +74,7 @@
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="admin.menjadorescola.me"><i class="fas fa-home"></i>
+                        <a class="nav-link" href="http://admin.menjadorescola.me"><i class="fas fa-home"></i>
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
