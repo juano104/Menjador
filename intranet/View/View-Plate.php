@@ -32,12 +32,6 @@
 
 <body>
 
-  <canvas id="canvas" width="0%" height="0%"></canvas>
-  <button id="print"><i class="far fa-file-pdf"></i></button>
-  <div class="container-">
-    <div id='calendar'></div>
-  </div>
-
   <div class="container-fluid">
     <!-- Menu de navegacio -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
@@ -84,6 +78,9 @@
     </nav>
     <!-- Menu de navegacio -->
   </div>
+  
+  <canvas id="canvas" width="0%" height="0%"></canvas>
+  <button id="print"><i class="far fa-file-pdf"></i></button>
   <div class="container">
     <div id='calendar'></div>
   </div>
