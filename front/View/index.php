@@ -87,6 +87,10 @@
     <script>
         $(document).ready(function() {
             $('#calendar').fullCalendar({
+                eventSources: [{
+          url: 'http://intranet.menjadorescola.me/datos',
+          method: 'POST'
+        }],
                 hiddenDays: [0, 6],
                 showNonCurrentDates: false
 
