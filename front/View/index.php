@@ -74,10 +74,10 @@
         </div>
     </nav>
     <br>
-        <h4>Menu mensual</h4>
+        
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">
-
+    <h2>Menu mensual</h2>
 
         <div id='calendar'></div>
         <h6>DESCARGAR MENU</h6>
@@ -98,10 +98,11 @@
         });
     </script>
 
-    <h4>Realitzar Reserva</h4>
+    
 
     <form>
         <div class="container" id="tabs">
+        <h2>Realitzar Reserva</h4>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li><a class="atabs nav-link" href="#tabs-1">Reservation</a></li>
                 <li><a class="atabs nav-link" href="#tabs-2">Choose type</a></li>
