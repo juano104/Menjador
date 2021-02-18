@@ -7,14 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="public/css/estils.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script src="public/js/jquery.min.js"></script>
+    <script>var $j = jQuery.noConflict(true);</script>
+    <script src="public/js/moment.min.js"></script>
+    <script src="public/js/fullcalendar.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+    <style>
+        #calendar {
+            max-width: 1000px;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    </style>
+
     <script>
         $(function() {
             $(".datepicker").datepicker({
@@ -52,9 +74,35 @@
         </div>
     </nav>
     <br>
+        
+    <canvas id="canvas" width="0%" height="0%"></canvas>
+    <div class="container">
+    <h2>Menu mensual</h2>
+
+        <div id='calendar'></div>
+        <h6>DESCARGAR MENU</h6>
+        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                eventSources: [{
+          url: 'http://intranet.menjadorescola.me/datos',
+          method: 'POST'
+        }],
+                hiddenDays: [0, 6],
+                showNonCurrentDates: false
+
+            })
+        });
+    </script>
+
+    
 
     <form>
         <div class="container" id="tabs">
+        <h2>Realitzar Reserva</h4>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li><a class="nav-link" href="#tabs-1">Reservation</a></li>
                 <li><a class="nav-link" href="#tabs-2">Choose type</a></li>
@@ -624,7 +672,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     -->
-
+    <script>
+        $('#print').click(function() {
+            html2canvas($("#calendar"), {
+                onrendered: function(canvas) {
+                    var imgData = canvas.toDataURL(
+                        'image/png');
+                    var doc = new jsPDF('p', 'mm');
+                    doc.addImage(imgData, 'PNG', -1, 10);
+                    doc.save('Menu.pdf');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

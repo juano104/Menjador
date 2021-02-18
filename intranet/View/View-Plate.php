@@ -36,7 +36,7 @@
     <!-- Menu de navegacio -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
       <!-- LOGO -->
-      <a href="http://intranet.menjadorescola.me" class="navbar-brand">
+      <a href="http://intranet.menjadorescola.me/" class="navbar-brand">
         <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
       </a>
       <!-- LOGO -->
@@ -44,7 +44,7 @@
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="menu">
+            <a class="nav-link" href="http://intranet.menjadorescola.me/">
               <i class="fas fa-home"></i>
               <span class="sr-only">(current)</span>
             </a>
@@ -72,9 +72,11 @@
 
   <canvas id="canvas" width="0%" height="0%"></canvas>
   <div class="container">
-    <a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
+    
 
     <div id='calendar'></div>
+    <h6>DESCARGAR MENU</h6>
+    <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
   </div>
   <script>
     $(document).ready(function() {
@@ -297,7 +299,7 @@
             'image/png');
           var doc = new jsPDF('p', 'mm');
           doc.addImage(imgData, 'PNG', -1, 3);
-          doc.save('sample-file.pdf');
+          doc.save('Menu.pdf');
         }
       });
     });
