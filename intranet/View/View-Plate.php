@@ -22,11 +22,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
   <style>
-    #calendar {
-      max-width: 1000px;
-      margin-top: 5%;
-      margin-bottom: 5%;
-    }
+    .container{
+            margin-top: 5%;
+        }
+        #calendar {
+            max-width: 1000px;  
+            margin-bottom: 5%;
+        }
   </style>
 </head>
 
@@ -70,7 +72,7 @@
     <!-- Menu de navegacio -->
   </div>
 
-  <<canvas id="canvas" width="0%" height="0%"></canvas>
+  <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">
     <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
         <div id='calendar'></div>
