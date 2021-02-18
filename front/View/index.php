@@ -18,7 +18,9 @@
 
 
     <script src="public/js/jquery.min.js"></script>
-    <script>var $j = jQuery.noConflict(true);</script>
+    <script>
+        var $j = jQuery.noConflict(true);
+    </script>
     <script src="public/js/moment.min.js"></script>
     <script src="public/js/fullcalendar.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
@@ -74,10 +76,10 @@
         </div>
     </nav>
     <br>
-        
+
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">
-    <h2>Menu mensual</h2>
+        <h2>Menu mensual</h2>
 
         <div id='calendar'></div>
         <h6>DESCARGAR MENU</h6>
@@ -88,9 +90,9 @@
         $(document).ready(function() {
             $('#calendar').fullCalendar({
                 eventSources: [{
-          url: 'http://intranet.menjadorescola.me/datos',
-          method: 'POST'
-        }],
+                    url: 'http://intranet.menjadorescola.me/datos',
+                    method: 'POST'
+                }],
                 hiddenDays: [0, 6],
                 showNonCurrentDates: false
 
@@ -98,169 +100,169 @@
         });
     </script>
 
-    
+
 
     <form>
         <div class="container" id="tabs">
-        <h2>Realitzar Reserva</h4>
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li><a class="atabs nav-link" href="#tabs-1">Reservation</a></li>
-                <li><a class="atabs nav-link" href="#tabs-2">Choose type</a></li>
-                <li><a class="atabs nav-link" href="#tabs-3">Loose Days</a></li>
-                <li><a class="atabs nav-link" href="#tabs-4">Fixed Days</a></li>
-                <li><a class="atabs nav-link" href="#tabs-5">Summary</a></li>
-            </ul>
+            <h2>Realitzar Reserva</h4>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li><a class="atabs nav-link" href="#tabs-1">Reservation</a></li>
+                    <li><a class="atabs nav-link" href="#tabs-2">Choose type</a></li>
+                    <li><a class="atabs nav-link" href="#tabs-3">Loose Days</a></li>
+                    <li><a class="atabs nav-link" href="#tabs-4">Fixed Days</a></li>
+                    <li><a class="atabs nav-link" href="#tabs-5">Summary</a></li>
+                </ul>
 
-            <div class="tab-content" id="tabs-1">
-                <h3>For who is it?</h3> <br>
-                <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
-                <?php
-                if ($count > 0) {
-                    $userArr = array();
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        extract($row);
-                        $e = array(
-                            "ID" => $ID,
-                            "name" => $name,
-                            "last_name" => $last_name
-                        );
-                        array_push($userArr, $e);
+                <div class="tab-content" id="tabs-1">
+                    <h3>For who is it?</h3> <br>
+                    <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
+                    <?php
+                    if ($count > 0) {
+                        $userArr = array();
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            extract($row);
+                            $e = array(
+                                "ID" => $ID,
+                                "name" => $name,
+                                "last_name" => $last_name
+                            );
+                            array_push($userArr, $e);
 
-                        echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
-                        echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                            echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
+                            echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                        }
                     }
-                }
-                ?>
-                <br>
-                <button type="button" class="b1n">NEXT</button>
+                    ?>
+                    <br>
+                    <button type="button" class="b1n">NEXT</button>
 
-            </div>
-            <div class="tab-content" id="tabs-2">
-                <h3>Type</h3>
-                <div>
-                    <table class="tabler" border="1">
-                        <thead>
-                            <tr>
-                                <th class="n">Name</th>
-                                <th class="t">Type of Reservation</th>
-                                <th class="d">Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
                 </div>
-                <input type="radio" value="Loose" name="type" id="Loose">
-                <label for="Loose">Loose Days</label>
-                <input type="radio" value="Fixed" name="type" id="Fixed">
-                <label for="Fixed">Fixed Days</label>
+                <div class="tab-content" id="tabs-2">
+                    <h3>Type</h3>
+                    <div>
+                        <table class="tabler" border="1">
+                            <thead>
+                                <tr>
+                                    <th class="n">Name</th>
+                                    <th class="t">Type of Reservation</th>
+                                    <th class="d">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="radio" value="Loose" name="type" id="Loose">
+                    <label for="Loose">Loose Days</label>
+                    <input type="radio" value="Fixed" name="type" id="Fixed">
+                    <label for="Fixed">Fixed Days</label>
 
-                <br>
+                    <br>
 
-                <button type="button" class="b2p">PREVIOUS</button>
-                <button type="button" class="b2n">NEXT</button>
-            </div>
-            <div class="tab-content" id="tabs-3">
-                <h3>One Day</h3>
-                <div>
-                    <table class="tabler" border="1">
-                        <thead>
-                            <tr>
-                                <th class="n">Name</th>
-                                <th class="t">Type of Reservation</th>
-                                <th class="d">Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <button type="button" class="b2p">PREVIOUS</button>
+                    <button type="button" class="b2n">NEXT</button>
                 </div>
-                <div class="d1">
-                    <label for="datepicker1">Date:</label>
-                    <input name="date1" type="text" class="datepicker">
-                </div><br>
+                <div class="tab-content" id="tabs-3">
+                    <h3>One Day</h3>
+                    <div>
+                        <table class="tabler" border="1">
+                            <thead>
+                                <tr>
+                                    <th class="n">Name</th>
+                                    <th class="t">Type of Reservation</th>
+                                    <th class="d">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="d1">
+                        <label for="datepicker1">Date:</label>
+                        <input name="date1" type="text" class="datepicker">
+                    </div><br>
 
-                <div class="d2">
-                    <label for="datepicker2">Date 2:</label>
-                    <input name="date2" type="text" class="datepicker">
-                </div><br>
-                <div class="d3">
-                    <label for="datepicker3">Date 3:</label>
-                    <input name="date3" type="text" class="datepicker">
-                </div><br>
-                <div class="d4">
-                    <label for="datepicker4">Date 4:</label>
-                    <input name="date4" type="text" class="datepicker">
-                </div><br>
-                <div class="d5">
-                    <label for="datepicker5">Date 5:</label>
-                    <input name="date5" type="text" class="datepicker">
-                </div><br>
-                <br>
-                <button type="button" class="newdate">New Date</button>
-                <button type="button" class="deldate">Remove Date</button>
-                <br><br>
-                <button type="button" class="b3p">PREVIOUS</button>
-                <button type="button" class="b3n">NEXT</button>
-            </div>
-            <div class="tab-content" id="tabs-4">
-                <h3>Fixed</h3>
-                <div>
-                    <table class="tabler" border="1">
-                        <thead>
-                            <tr>
-                                <th class="n">Name</th>
-                                <th class="t">Type of Reservation</th>
-                                <th class="d">Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <div class="d2">
+                        <label for="datepicker2">Date 2:</label>
+                        <input name="date2" type="text" class="datepicker">
+                    </div><br>
+                    <div class="d3">
+                        <label for="datepicker3">Date 3:</label>
+                        <input name="date3" type="text" class="datepicker">
+                    </div><br>
+                    <div class="d4">
+                        <label for="datepicker4">Date 4:</label>
+                        <input name="date4" type="text" class="datepicker">
+                    </div><br>
+                    <div class="d5">
+                        <label for="datepicker5">Date 5:</label>
+                        <input name="date5" type="text" class="datepicker">
+                    </div><br>
+                    <br>
+                    <button type="button" class="newdate">New Date</button>
+                    <button type="button" class="deldate">Remove Date</button>
+                    <br><br>
+                    <button type="button" class="b3p">PREVIOUS</button>
+                    <button type="button" class="b3n">NEXT</button>
                 </div>
-                <p>Start Date(yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
-                <p>End Date(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
-                <input type="checkbox" id="monday" name="monday" value="0">
-                <label for="monday">Monday</label><br>
+                <div class="tab-content" id="tabs-4">
+                    <h3>Fixed</h3>
+                    <div>
+                        <table class="tabler" border="1">
+                            <thead>
+                                <tr>
+                                    <th class="n">Name</th>
+                                    <th class="t">Type of Reservation</th>
+                                    <th class="d">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Start Date(yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
+                    <p>End Date(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
+                    <input type="checkbox" id="monday" name="monday" value="0">
+                    <label for="monday">Monday</label><br>
 
-                <input type="checkbox" id="tuesday" name="tuesday" value="0">
-                <label for="tuesday">Tuesday</label><br>
+                    <input type="checkbox" id="tuesday" name="tuesday" value="0">
+                    <label for="tuesday">Tuesday</label><br>
 
-                <input type="checkbox" id="wednesday" name="wednesday" value="0">
-                <label for="wednesday">Wednesday</label><br>
+                    <input type="checkbox" id="wednesday" name="wednesday" value="0">
+                    <label for="wednesday">Wednesday</label><br>
 
-                <input type="checkbox" id="thursday" name="thursday" value="0">
-                <label for="thursday">Thursday</label><br>
+                    <input type="checkbox" id="thursday" name="thursday" value="0">
+                    <label for="thursday">Thursday</label><br>
 
-                <input type="checkbox" id="friday" name="friday" value="0">
-                <label for="friday">Friday</label><br>
-                <br>
-                <button type="button" class="b4p">PREVIOUS</button>
-                <button type="button" class="b4n">NEXT</button>
-            </div>
-            <div class="tab-content" id="tabs-5">
-                <h3>Your Reservation:</h3>
-                <div>
-                    <table class="tabler" border="1">
-                        <thead>
-                            <tr>
-                                <th class="n">Name</th>
-                                <th class="t">Type of Reservation</th>
-                                <th class="d">Date</th>
-                                <th class="sd">Start Date</th>
-                                <th class="ed">End Date</th>
-                                <th class="dow">Days of Week</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <input type="checkbox" id="friday" name="friday" value="0">
+                    <label for="friday">Friday</label><br>
+                    <br>
+                    <button type="button" class="b4p">PREVIOUS</button>
+                    <button type="button" class="b4n">NEXT</button>
                 </div>
-                <br>
-                <input id="submit" name="submit" type="submit" value="Reserve">
-                <br> <br>
-                <button type="button" class="b5p">PREVIOUS</button>
-            </div>
+                <div class="tab-content" id="tabs-5">
+                    <h3>Your Reservation:</h3>
+                    <div>
+                        <table class="tabler" border="1">
+                            <thead>
+                                <tr>
+                                    <th class="n">Name</th>
+                                    <th class="t">Type of Reservation</th>
+                                    <th class="d">Date</th>
+                                    <th class="sd">Start Date</th>
+                                    <th class="ed">End Date</th>
+                                    <th class="dow">Days of Week</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <input id="submit" name="submit" type="submit" value="Reserve">
+                    <br> <br>
+                    <button type="button" class="b5p">PREVIOUS</button>
+                </div>
 
         </div>
     </form>
@@ -673,14 +675,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     -->
     <script>
-        $('#print').click(function() {
-            html2canvas($("#calendar"), {
+        $("#print").click(function() {
+            //#AEFC is my div for FullCalendar
+            html2canvas($('#calendar'), {
+                logging: true,
+                useCORS: true,
                 onrendered: function(canvas) {
-                    var imgData = canvas.toDataURL(
-                        'image/png');
-                    var doc = new jsPDF('p', 'mm');
-                    doc.addImage(imgData, 'PNG', -1, 10);
-                    doc.save('Menu.pdf');
+                    var imgData = canvas.toDataURL("image/png");
+                    var doc = new jsPDF();
+                    doc.addImage(imgData, 'png', 15, 40, 180, 160);
+                    doc.save('sample-file.pdf');
+
                 }
             });
         });
