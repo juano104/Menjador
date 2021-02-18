@@ -32,11 +32,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <style>
-        .container{
+        .container {
             margin-top: 5%;
         }
+
         #calendar {
-            max-width: 1000px;  
+            max-width: 1000px;
             margin-bottom: 5%;
         }
     </style>
@@ -81,7 +82,7 @@
 
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">
-    <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
         <div id='calendar'></div>
     </div>
 
@@ -102,166 +103,165 @@
 
 
     <form>
-        <div class="container" id="tabs">
-            <h2>Realitzar Reserva</h4>
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li><a class="atabs nav-link" href="#tabs-1">Reservation</a></li>
-                    <li><a class="atabs nav-link" href="#tabs-2">Choose type</a></li>
-                    <li><a class="atabs nav-link" href="#tabs-3">Loose Days</a></li>
-                    <li><a class="atabs nav-link" href="#tabs-4">Fixed Days</a></li>
-                    <li><a class="atabs nav-link" href="#tabs-5">Summary</a></li>
-                </ul>
+        <div class="container reserva col-6" id="tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
+                <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Choose type</a></li>
+                <li><a tabindex="-1" class="tab3 tabs nav-link" href="#tabs-3">Loose Days</a></li>
+                <li><a tabindex="-1" class="tab4 tabs nav-link" href="#tabs-4">Fixed Days</a></li>
+                <li><a tabindex="-1" class="tab5 tabs nav-link" href="#tabs-5">Summary</a></li>
+            </ul>
 
-                <div class="tab-content" id="tabs-1">
-                    <h3>For who is it?</h3> <br>
-                    <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
-                    <?php
-                    if ($count > 0) {
-                        $userArr = array();
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                            extract($row);
-                            $e = array(
-                                "ID" => $ID,
-                                "name" => $name,
-                                "last_name" => $last_name
-                            );
-                            array_push($userArr, $e);
+            <div class="tab-content" id="tabs-1">
+                <h3>For who is it?</h3> <br>
+                <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
+                <?php
+                if ($count > 0) {
+                    $userArr = array();
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        extract($row);
+                        $e = array(
+                            "ID" => $ID,
+                            "name" => $name,
+                            "last_name" => $last_name
+                        );
+                        array_push($userArr, $e);
 
-                            echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
-                            echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                        }
+                        echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
+                        echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
                     }
-                    ?>
-                    <br>
-                    <button type="button" class="b1n">NEXT</button>
+                }
+                ?>
+                <br>
+                <button type="button" class="b1n">NEXT</button>
 
+            </div>
+            <div class="tab-content" id="tabs-2">
+                <h3>Type</h3>
+                <div>
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="tab-content" id="tabs-2">
-                    <h3>Type</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
-                                    <th class="d">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <input type="radio" value="Loose" name="type" id="Loose">
-                    <label for="Loose">Loose Days</label>
-                    <input type="radio" value="Fixed" name="type" id="Fixed">
-                    <label for="Fixed">Fixed Days</label>
+                <input type="radio" value="Loose" name="type" id="Loose">
+                <label for="Loose">Loose Days</label>
+                <input type="radio" value="Fixed" name="type" id="Fixed">
+                <label for="Fixed">Fixed Days</label>
 
-                    <br>
+                <br>
 
-                    <button type="button" class="b2p">PREVIOUS</button>
-                    <button type="button" class="b2n">NEXT</button>
+                <button type="button" class="b2p">PREVIOUS</button>
+                <button type="button" class="b2n">NEXT</button>
+            </div>
+            <div class="tab-content" id="tabs-3">
+                <h3>One Day</h3>
+                <div>
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="tab-content" id="tabs-3">
-                    <h3>One Day</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
-                                    <th class="d">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="d1">
-                        <label for="datepicker1">Date:</label>
-                        <input name="date1" type="text" class="datepicker">
-                    </div><br>
+                <div class="d1">
+                    <label for="datepicker1">Date:</label>
+                    <input name="date1" type="text" class="datepicker">
+                </div><br>
 
-                    <div class="d2">
-                        <label for="datepicker2">Date 2:</label>
-                        <input name="date2" type="text" class="datepicker">
-                    </div><br>
-                    <div class="d3">
-                        <label for="datepicker3">Date 3:</label>
-                        <input name="date3" type="text" class="datepicker">
-                    </div><br>
-                    <div class="d4">
-                        <label for="datepicker4">Date 4:</label>
-                        <input name="date4" type="text" class="datepicker">
-                    </div><br>
-                    <div class="d5">
-                        <label for="datepicker5">Date 5:</label>
-                        <input name="date5" type="text" class="datepicker">
-                    </div><br>
-                    <br>
-                    <button type="button" class="newdate">New Date</button>
-                    <button type="button" class="deldate">Remove Date</button>
-                    <br><br>
-                    <button type="button" class="b3p">PREVIOUS</button>
-                    <button type="button" class="b3n">NEXT</button>
+                <div class="d2">
+                    <label for="datepicker2">Date 2:</label>
+                    <input name="date2" type="text" class="datepicker">
+                </div><br>
+                <div class="d3">
+                    <label for="datepicker3">Date 3:</label>
+                    <input name="date3" type="text" class="datepicker">
+                </div><br>
+                <div class="d4">
+                    <label for="datepicker4">Date 4:</label>
+                    <input name="date4" type="text" class="datepicker">
+                </div><br>
+                <div class="d5">
+                    <label for="datepicker5">Date 5:</label>
+                    <input name="date5" type="text" class="datepicker">
+                </div><br>
+                <br>
+                <button type="button" class="newdate">New Date</button>
+                <button type="button" class="deldate">Remove Date</button>
+                <br><br>
+                <button type="button" class="b3p">PREVIOUS</button>
+                <button type="button" class="b3n">NEXT</button>
+            </div>
+            <div class="tab-content" id="tabs-4">
+                <h3>Fixed</h3>
+                <div>
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="tab-content" id="tabs-4">
-                    <h3>Fixed</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
-                                    <th class="d">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p>Start Date(yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
-                    <p>End Date(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
-                    <input type="checkbox" id="monday" name="monday" value="0">
-                    <label for="monday">Monday</label><br>
+                <p>Start Date(yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
+                <p>End Date(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
+                <input type="checkbox" id="monday" name="monday" value="0">
+                <label for="monday">Monday</label><br>
 
-                    <input type="checkbox" id="tuesday" name="tuesday" value="0">
-                    <label for="tuesday">Tuesday</label><br>
+                <input type="checkbox" id="tuesday" name="tuesday" value="0">
+                <label for="tuesday">Tuesday</label><br>
 
-                    <input type="checkbox" id="wednesday" name="wednesday" value="0">
-                    <label for="wednesday">Wednesday</label><br>
+                <input type="checkbox" id="wednesday" name="wednesday" value="0">
+                <label for="wednesday">Wednesday</label><br>
 
-                    <input type="checkbox" id="thursday" name="thursday" value="0">
-                    <label for="thursday">Thursday</label><br>
+                <input type="checkbox" id="thursday" name="thursday" value="0">
+                <label for="thursday">Thursday</label><br>
 
-                    <input type="checkbox" id="friday" name="friday" value="0">
-                    <label for="friday">Friday</label><br>
-                    <br>
-                    <button type="button" class="b4p">PREVIOUS</button>
-                    <button type="button" class="b4n">NEXT</button>
+                <input type="checkbox" id="friday" name="friday" value="0">
+                <label for="friday">Friday</label><br>
+                <br>
+                <button type="button" class="b4p">PREVIOUS</button>
+                <button type="button" class="b4n">NEXT</button>
+            </div>
+            <div class="tab-content" id="tabs-5">
+                <h3>Your Reservation:</h3>
+                <div>
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                                <th class="sd">Start Date</th>
+                                <th class="ed">End Date</th>
+                                <th class="dow">Days of Week</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="tab-content" id="tabs-5">
-                    <h3>Your Reservation:</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
-                                    <th class="d">Date</th>
-                                    <th class="sd">Start Date</th>
-                                    <th class="ed">End Date</th>
-                                    <th class="dow">Days of Week</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                    <br>
-                    <input id="submit" name="submit" type="submit" value="Reserve">
-                    <br> <br>
-                    <button type="button" class="b5p">PREVIOUS</button>
-                </div>
+                <br>
+                <input id="submit" name="submit" type="submit" value="Reserve">
+                <br> <br>
+                <button type="button" class="b5p">PREVIOUS</button>
+            </div>
 
         </div>
     </form>
@@ -316,6 +316,8 @@
                     selected: 1
                 });
                 $("#tabs").tabs("option", "active", 1);
+                $(".tab1").removeClass("active");
+                $(".tab2").addClass("active");
 
                 $("input[type='radio']:checked").each(function() {
                     var idstudent = $("input[type='radio']:checked").val();
@@ -344,6 +346,8 @@
                     });
 
                     $("#tabs").tabs("option", "active", 3);
+                    $(".tab2").removeClass("active");
+                    $(".tab4").addClass("active");
 
                     var extraType = $("<td>" + type + "</td>");
                     $(".tabler > tbody > tr").append(extraType);
@@ -358,8 +362,10 @@
                         disabled: [0, 1, 3, 4],
                         selected: 2
                     });
-
                     $("#tabs").tabs("option", "active", 2);
+                    $(".tab2").removeClass("active");
+                    $(".tab3").addClass("active");
+
                     var newType = $("<td>" + type + "</td>");
                     $(".tabler > tbody > tr").append(newType);
                     $(".t").show();
@@ -376,6 +382,8 @@
                     selected: 0
                 });
                 $("#tabs").tabs("option", "active", 0);
+                $(".tab2").removeClass("active");
+                $(".tab1").addClass("active");
                 $(".tabler > tbody").empty();
             });
 
@@ -395,6 +403,8 @@
                         selected: 4
                     });
                     $("#tabs").tabs("option", "active", 4);
+                    $(".tab3").removeClass("active");
+                    $(".tab5").addClass("active");
                     dateArray.push(day1);
                     if (day2 != "") {
                         dateArray.push(day2);
@@ -423,6 +433,8 @@
                     selected: 1
                 });
                 $("#tabs").tabs("option", "active", 1);
+                $(".tab3").removeClass("active");
+                $(".tab2").addClass("active");
 
 
                 $('.tabler > tbody > tr > td:last-child').remove();
@@ -432,17 +444,22 @@
             });
 
             $(".b4n").click(function() {
-                $("#tabs").tabs({
-                    active: 4,
-                    disabled: [0, 1, 2, 3],
-                    selected: 4
-                });
-                $("#tabs").tabs("option", "active", 4);
-
                 var sday = $("#datepickers").val();
                 var eday = $("#datepickere").val();
+                var dow = $("input[type='checkbox']")
                 var DoW = new Array();
-                if (sday != "" && eday != "") {
+
+                if (sday != "" && eday != "" && dow != "") {
+                    $("#tabs").tabs({
+                        active: 4,
+                        disabled: [0, 1, 2, 3],
+                        selected: 4
+                    });
+                    $("#tabs").tabs("option", "active", 4);
+                    $(".tab4").removeClass("active");
+                    $(".tab5").addClass("active");
+
+
                     var mon = $("input[name='monday']");
                     var tue = $("input[name='tuesday']");
                     var wed = $("input[name='wednesday']");
@@ -497,6 +514,8 @@
                     $(".tabler > tbody >tr").append(newSDate);
                     $(".tabler > tbody >tr").append(newEDate);
                     $(".tabler > tbody >tr").append(DoWt);
+                } else {
+                    alert("Please enter the dates");
                 }
 
             });
@@ -507,6 +526,8 @@
                     selected: 1
                 });
                 $("#tabs").tabs("option", "active", 1);
+                $(".tab4").removeClass("active");
+                $(".tab2").addClass("active");
 
                 $('.tabler > tbody > tr > td:last-child').remove();
                 $(".t").hide();
@@ -518,13 +539,16 @@
 
             $(".b5p").click(function() {
                 var day = $("#datepicker").val();
-                if (day != "") {
+                var type = $("input[name='type']:checked").val();
+                if (type != "Fixed") {
                     $("#tabs").tabs({
                         active: 2,
                         disabled: [0, 1, 3, 4],
                         selected: 2
                     });
                     $("#tabs").tabs("option", "active", 2);
+                    $(".tab5").removeClass("active");
+                    $(".tab3").addClass("active");
                     $('.tabler > tbody > tr > td:last-child').remove();
                     $(".d").hide();
                 } else {
@@ -534,6 +558,8 @@
                         selected: 3
                     });
                     $("#tabs").tabs("option", "active", 3);
+                    $(".tab5").removeClass("active");
+                    $(".tab4").addClass("active");
 
                     $('.tabler > tbody > tr > td:last-child').remove();
                     $('.tabler > tbody > tr > td:last-child').remove();
@@ -682,7 +708,7 @@
                 onrendered: function(canvas) {
                     var imgData = canvas.toDataURL("image/png");
                     var doc = new jsPDF();
-                    doc.addImage(imgData, 'png',15, 40, 180, 160);
+                    doc.addImage(imgData, 'png', 15, 40, 180, 160);
                     doc.save('sample-file.pdf');
 
                 }
