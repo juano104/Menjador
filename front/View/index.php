@@ -79,9 +79,8 @@
 
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">
+    <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
         <div id='calendar'></div>
-        <h6>DESCARGAR MENU</h6>
-        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
     </div>
 
     <script>
@@ -681,7 +680,7 @@
                 onrendered: function(canvas) {
                     var imgData = canvas.toDataURL("image/png");
                     var doc = new jsPDF();
-                    doc.addImage(imgData, 'png', 15, 40, 180, 200);
+                    doc.addImage(imgData, 'png',15, 40, 180, 160);
                     doc.save('sample-file.pdf');
 
                 }
