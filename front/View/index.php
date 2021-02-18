@@ -74,7 +74,7 @@
         </div>
     </nav>
     <br>
-
+        <h4>Menu mensual</h4>
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">
 
@@ -97,6 +97,8 @@
             })
         });
     </script>
+
+    <h4>Realitzar Reserva</h4>
 
     <form>
         <div class="container" id="tabs">
