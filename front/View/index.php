@@ -33,9 +33,10 @@
 
     <style>
         #calendar {
-            max-width: 1000px;
-            margin-top: 5%;
-            margin-bottom: 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            font-size: 14px;
         }
     </style>
 
