@@ -70,14 +70,11 @@
     <!-- Menu de navegacio -->
   </div>
 
-  <canvas id="canvas" width="0%" height="0%"></canvas>
-  <div class="container">
-    
-
-    <div id='calendar'></div>
-    <h6>DESCARGAR MENU</h6>
+  <<canvas id="canvas" width="0%" height="0%"></canvas>
+    <div class="container">
     <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
-  </div>
+        <div id='calendar'></div>
+    </div>
   <script>
     $(document).ready(function() {
       $('#calendar').fullCalendar({
@@ -292,17 +289,20 @@
   <!-- Footer -->
 
   <script>
-    $('#print').click(function() {
-      html2canvas($("#calendar"), {
-        onrendered: function(canvas) {
-          var imgData = canvas.toDataURL(
-            'image/png');
-          var doc = new jsPDF('p', 'mm');
-          doc.addImage(imgData, 'PNG', -1, 3);
-          doc.save('Menu.pdf');
-        }
-      });
-    });
+    $("#print").click(function() {
+            //#AEFC is my div for FullCalendar
+            html2canvas($('#calendar'), {
+                logging: true,
+                useCORS: true,
+                onrendered: function(canvas) {
+                    var imgData = canvas.toDataURL("image/png");
+                    var doc = new jsPDF();
+                    doc.addImage(imgData, 'png',15, 40, 180, 160);
+                    doc.save('sample-file.pdf');
+
+                }
+            });
+        });
   </script>
 
 </body>
