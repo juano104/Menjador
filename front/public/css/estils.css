@@ -1,10 +1,25 @@
-.imgres{
+.imgres {
     height: 100px;
     width: 100%;
 }
-.navbar-brand{
-    width: 10%;
 
+.navbar-brand {
+    width: 10%;
+}
+
+.container {
+    margin-top: 5%;
+}
+
+#calendar {
+    max-width: 100%;
+    margin-bottom: 5%;
+}
+
+#calendar th {
+    color: white;
+    border: black 1px solid;
+    background-color: #264653;
 }
 
 footer {
@@ -54,8 +69,7 @@ form {
     margin-bottom: 15%;
 }
 
-
-.navbar{
+.navbar {
     background-color: #F2BF8D !important;
     /*padding: 0px;*/
 }
