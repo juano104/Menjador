@@ -142,7 +142,7 @@
                             <thead>
                                 <tr>
                                     <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
+                                    <th class="t">Type</th>
                                     <th class="d">Date</th>
                                 </tr>
                             </thead>
@@ -167,7 +167,7 @@
                             <thead>
                                 <tr>
                                     <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
+                                    <th class="t">Type</th>
                                     <th class="d">Date</th>
                                 </tr>
                             </thead>
@@ -210,7 +210,7 @@
                             <thead>
                                 <tr>
                                     <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
+                                    <th class="t">Type</th>
                                     <th class="d">Date</th>
                                 </tr>
                             </thead>
@@ -245,7 +245,7 @@
                             <thead>
                                 <tr>
                                     <th class="n">Name</th>
-                                    <th class="t">Type of Reservation</th>
+                                    <th class="t">Type</th>
                                     <th class="d">Date</th>
                                     <th class="sd">Start Date</th>
                                     <th class="ed">End Date</th>
