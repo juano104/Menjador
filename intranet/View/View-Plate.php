@@ -22,20 +22,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
   <style>
-    .container {
-      margin-top: 5%;
-    }
-
-    #calendar {
-      max-width: 100%;
-      margin-bottom: 5%;
-    }
-
-    #calendar th {
-      color: white;
-      border: black 1px solid;
-      background-color: #264653;
-    }
+    
   </style>
 </head>
 
