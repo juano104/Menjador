@@ -20,7 +20,7 @@
     $dayofweek = strtolower($dayname);
 
     $booking->setDow($dayofweek);
-    $booking->setUsername($_POST["username"]);
+    $booking->setUsername($_SESSION["username"]);
 
     $stmt2 = $booking->readAllByExtra();
 
