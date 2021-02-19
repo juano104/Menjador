@@ -100,8 +100,7 @@
         });
     </script>
 
-
-
+    <h2>Realizar reserva</h2>
     <form>
         <div class="container col-6" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -133,7 +132,7 @@
                 }
                 ?>
                 <br>
-                <button type="button" class="b1n">NEXT</button>
+                <button type="button" class="b1n btn btn-outline-success">NEXT</button>
 
             </div>
             <div class="tab-content" id="tabs-2">
@@ -158,8 +157,8 @@
 
                 <br>
 
-                <button type="button" class="b2p">PREVIOUS</button>
-                <button type="button" class="b2n">NEXT</button>
+                <button type="button" class="b2p btn btn-outline-danger">PREVIOUS</button>
+                <button type="button" class="b2n btn btn-outline-success">NEXT</button>
             </div>
             <div class="tab-content" id="tabs-3">
                 <h3>One Day</h3>
@@ -198,11 +197,11 @@
                     <input name="date5" type="text" class="datepicker">
                 </div><br>
                 <br>
-                <button type="button" class="newdate">New Date</button>
-                <button type="button" class="deldate">Remove Date</button>
+                <button type="button" class="newdate btn btn-success">New Date</button>
+                <button type="button" class="deldate btn btn-danger">Remove Date</button>
                 <br><br>
-                <button type="button" class="b3p">PREVIOUS</button>
-                <button type="button" class="b3n">NEXT</button>
+                <button type="button" class="b3p btn btn-outline-danger">PREVIOUS</button>
+                <button type="button" class="b3n btn btn-outline-success">NEXT</button>
             </div>
             <div class="tab-content" id="tabs-4">
                 <h3>Fixed</h3>
@@ -236,8 +235,8 @@
                 <input type="checkbox" id="friday" name="friday" value="0">
                 <label for="friday">Friday</label><br>
                 <br>
-                <button type="button" class="b4p">PREVIOUS</button>
-                <button type="button" class="b4n">NEXT</button>
+                <button type="button" class="b4p btn btn-outline-danger">PREVIOUS</button>
+                <button type="button" class="b4n btn btn-outline-success">NEXT</button>
             </div>
             <div class="tab-content" id="tabs-5">
                 <h3>Your Reservation:</h3>
@@ -260,7 +259,7 @@
                 <br>
                 <input id="submit" name="submit" type="submit" value="Reserve">
                 <br> <br>
-                <button type="button" class="b5p">PREVIOUS</button>
+                <button type="button" class="b5p btn btn-outline-danger">PREVIOUS</button>
             </div>
 
         </div>
