@@ -102,7 +102,7 @@
     <div class="container">
         <h2>Realizar reserva</h2>
         <form>
-            <div class="col-6" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">
+            <div class="col-8" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
                     <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Choose type</a></li>
