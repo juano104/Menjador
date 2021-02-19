@@ -2,6 +2,7 @@
 if (isset($_POST["username"])) {
     session_start();
     $_SESSION["username"] = $_POST["username"];
+    $_SESSION["name"] = "login";
     //Headers
     include_once '../api/Model/Database.php';
     include_once '../api/Model/User_Parent.php';

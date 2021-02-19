@@ -1,6 +1,6 @@
 <?php
-
-//if (isset($_SESSION)) {
+session_start();
+if (isset($_SESSION["name"])) {
     $today = date("Y-m-d");
     $_POST['day'] = $today;
     //Headers
@@ -41,4 +41,4 @@
 echo json_encode($dayofweek);*/
 
     include_once "View/reservas.php";
-//}
+}
