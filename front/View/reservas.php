@@ -90,7 +90,7 @@
         <!-- Menu de navegacio -->
     </div>
     <div class="container">
-        <form action="reservas/parent" method="POST">
+        <form action="" method="POST">
             <input name="day" type="text" id="datepicker">
             <label for="datepicker">Date</label>
             <input type="submit" value="SUBMIT">

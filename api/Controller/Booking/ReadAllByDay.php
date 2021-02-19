@@ -34,7 +34,7 @@ while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
     array_push($arrextra, $e);
 }
 
-echo json_encode($arrextra);
-echo json_encode($dayofweek);
+/*echo json_encode($arrextra);
+echo json_encode($dayofweek);*/
 
 include_once "View/reservas.php";
