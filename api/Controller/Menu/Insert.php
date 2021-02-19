@@ -33,7 +33,7 @@ $db_conn = $db->connect();
                 $menu->insertMenuPlate($last_id, $selected);
                 $i++;
                 if ($i > $maxindex) {
-                    header("Location: http://intranet.menjadorescola.me/principal");
+                    header("Location: http://intranet.menjadorescola.me");
                 }
             }
         }
