@@ -1,8 +1,7 @@
 <?php
 if (isset($_POST["username"])) {
     session_start();
-    $today = date("Y-m-d");
-    $_SESSION['day'] = $today;
+    
     //Headers
     include_once '../api/Model/Database.php';
     include_once '../api/Model/User_Parent.php';
