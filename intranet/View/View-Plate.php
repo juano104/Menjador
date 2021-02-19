@@ -22,13 +22,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
   <style>
-    .container{
-            margin-top: 5%;
-        }
-        #calendar {
-            max-width: 100%;  
-            margin-bottom: 5%;
-        }
+    
   </style>
 </head>
 
@@ -73,10 +67,10 @@
   </div>
 
   <canvas id="canvas" width="0%" height="0%"></canvas>
-    <div class="container">
+  <div class="container">
     <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
-        <div id='calendar'></div>
-    </div>
+    <div id='calendar'></div>
+  </div>
   <script>
     $(document).ready(function() {
       $('#calendar').fullCalendar({
@@ -292,19 +286,19 @@
 
   <script>
     $("#print").click(function() {
-            //#AEFC is my div for FullCalendar
-            html2canvas($('#calendar'), {
-                logging: true,
-                useCORS: true,
-                onrendered: function(canvas) {
-                    var imgData = canvas.toDataURL("image/png");
-                    var doc = new jsPDF();
-                    doc.addImage(imgData, 'png',15, 40, 180, 160);
-                    doc.save('sample-file.pdf');
+      //#AEFC is my div for FullCalendar
+      html2canvas($('#calendar'), {
+        logging: true,
+        useCORS: true,
+        onrendered: function(canvas) {
+          var imgData = canvas.toDataURL("image/png");
+          var doc = new jsPDF();
+          doc.addImage(imgData, 'png', 15, 40, 180, 160);
+          doc.save('sample-file.pdf');
 
-                }
-            });
-        });
+        }
+      });
+    });
   </script>
 
 </body>
