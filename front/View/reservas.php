@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Reservas</title>
+    <title>Mis Reservas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
@@ -34,6 +34,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker({
+                dateFormat: 'yy/mm/dd'
+            });
+
+        });
+    </script>
 </head>
 
 <body>
@@ -80,6 +88,13 @@
             </div>
         </nav>
         <!-- Menu de navegacio -->
+    </div>
+    <div class="container">
+        <form action="reservas/parent" method="POST">
+            <input name="day" type="text" id="datepicker">
+            <label for="datepicker">Date</label>
+            <input type="submit" value="SUBMIT">
+        </form>
     </div>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
