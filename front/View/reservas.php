@@ -47,46 +47,7 @@
 <body>
     <div class="container-fluid">
         <!-- Menu de navegacio -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger static-top">
-            <!-- LOGO -->
-            <a href="http://admin.menjadorescola.me" class="navbar-brand">
-                <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
-            </a>
-            <!-- LOGO -->
-            <button class="navbar-toggler botores" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="principal">
-                            Principal(ver reservas de un dia concreto)
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="insertar">insertar padres y alumnos</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="http://admin.menjadorescola.me">
-                            <i class="fas fa-home"></i>
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <!-- Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Guitarres</a>
-                            <a class="dropdown-item" href="#">Flautes</a>
-                            <a class="dropdown-item" href="#">Altaveus</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <?php require_once "navbar.html" ?>
         <!-- Menu de navegacio -->
     </div>
     <div class="container">

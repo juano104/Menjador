@@ -7,7 +7,7 @@ if(isset($_GET["username"])){
 }
 
 $router->define([
-    "" => "View/index.html",
+    "" => "View/login.php",
     "reservas" => "../api/Controller/Booking/ReadAllByDay.php",
     //"reservas/parent" => "../api/Controller/Booking/ReadAllByDay.php",
     //
