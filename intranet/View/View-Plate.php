@@ -30,39 +30,7 @@
 
   <div class="container-fluid">
     <!-- Menu de navegacio -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
-      <!-- LOGO -->
-      <a href="http://intranet.menjadorescola.me/" class="navbar-brand">
-        <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
-      </a>
-      <!-- LOGO -->
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-
-          <li class="nav-item active">
-            <a class="nav-link" href="http://intranet.menjadorescola.me/">
-              <i class="fas fa-home"></i>
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="insertar">
-              Insertar
-            </a>
-          </li>
-          <!-- Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="fas fa-user"></i>
-            </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">LogOut</a>
-
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <?php require_once "navbar.html" ?>
     <!-- Menu de navegacio -->
   </div>
 
