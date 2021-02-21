@@ -69,7 +69,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="reservas">
+                        <a class="nav-link" href="reservasAdmin">
                             todas las reservas(separado por dia o extra)
                         </a>
                     </li>
