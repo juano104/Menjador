@@ -62,29 +62,7 @@
 
 <body>
     <!-- Menu de navegacio -->
-    <nav class="navbar navbar-expand-lg navbar-light static-top">
-        <!-- LOGO -->
-        <a href="Pagina-Principal.html" class="navbar-brand">
-            <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
-        </a>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://www.menjadorescola.me">
-                        <i class="fas fa-home"></i>
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="reservas">
-                        Mis reservas
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
+    <?php require_once "navbar.html" ?>
 
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">
