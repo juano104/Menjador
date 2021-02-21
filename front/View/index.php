@@ -118,7 +118,7 @@
                 </ul>
 
                 <div class="tab-content" id="tabs-1">
-                    <h3>For who is it?</h3> <br>
+                    <h3>Elegeix el fill</h3> <br>
                     <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
                     <?php
                     if ($count > 0) {
@@ -138,18 +138,18 @@
                     }
                     ?>
                     <br>
-                    <button type="button" class="b1n btn btn-outline-success">NEXT</button>
+                    <button type="button" class="b1n btn btn-outline-success">Siguiente</button>
 
                 </div>
                 <div class="tab-content" id="tabs-2">
-                    <h3>Type</h3>
+                    <h3>Tipo</h3>
                     <div>
                         <table class="tabler" border="1">
                             <thead>
                                 <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type</th>
-                                    <th class="d">Date</th>
+                                    <th class="n">Nombre</th>
+                                    <th class="t">Tipo</th>
+                                    <th class="d">Fecha</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -157,14 +157,14 @@
                         </table>
                     </div>
                     <input type="radio" value="Loose" name="type" id="Loose">
-                    <label for="Loose">Loose Days</label>
+                    <label for="Loose">Dia Suelto</label>
                     <input type="radio" value="Fixed" name="type" id="Fixed">
-                    <label for="Fixed">Fixed Days</label>
+                    <label for="Fixed">Multiples dias</label>
 
                     <br>
 
-                    <button type="button" class="b2p btn btn-outline-danger">PREVIOUS</button>
-                    <button type="button" class="b2n btn btn-outline-success">NEXT</button>
+                    <button type="button" class="b2p btn btn-outline-danger">Atras</button>
+                    <button type="button" class="b2n btn btn-outline-success">Siguiente</button>
                 </div>
                 <div class="tab-content" id="tabs-3">
                     <h3>One Day</h3>
@@ -172,9 +172,9 @@
                         <table class="tabler" border="1">
                             <thead>
                                 <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type</th>
-                                    <th class="d">Date</th>
+                                    <th class="n">Nombre</th>
+                                    <th class="t">Tipo</th>
+                                    <th class="d">Fecha</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -182,32 +182,32 @@
                         </table>
                     </div>
                     <div class="d1">
-                        <label for="datepicker1">Date:</label>
+                        <label for="datepicker1">Fecha:</label>
                         <input name="date1" type="text" class="datepicker">
                     </div><br>
 
                     <div class="d2">
-                        <label for="datepicker2">Date 2:</label>
+                        <label for="datepicker2">Fecha 2:</label>
                         <input name="date2" type="text" class="datepicker">
                     </div><br>
                     <div class="d3">
-                        <label for="datepicker3">Date 3:</label>
+                        <label for="datepicker3">Fecha 3:</label>
                         <input name="date3" type="text" class="datepicker">
                     </div><br>
                     <div class="d4">
-                        <label for="datepicker4">Date 4:</label>
+                        <label for="datepicker4">Fecha 4:</label>
                         <input name="date4" type="text" class="datepicker">
                     </div><br>
                     <div class="d5">
-                        <label for="datepicker5">Date 5:</label>
+                        <label for="datepicker5">Fecha 5:</label>
                         <input name="date5" type="text" class="datepicker">
                     </div><br>
                     <br>
-                    <button type="button" class="newdate btn btn-success">New Date</button>
-                    <button type="button" class="deldate btn btn-danger">Remove Date</button>
+                    <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
+                    <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
                     <br><br>
-                    <button type="button" class="b3p btn btn-outline-danger">PREVIOUS</button>
-                    <button type="button" class="b3n btn btn-outline-success">NEXT</button>
+                    <button type="button" class="b3p btn btn-outline-danger">Atras</button>
+                    <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
                 </div>
                 <div class="tab-content" id="tabs-4">
                     <h3>Fixed</h3>
@@ -215,47 +215,47 @@
                         <table class="tabler" border="1">
                             <thead>
                                 <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type</th>
-                                    <th class="d">Date</th>
+                                    <th class="n">Nombre</th>
+                                    <th class="t">Tipo</th>
+                                    <th class="d">Fecha</th>
                                 </tr>
                             </thead>
                             <tbody>
                             </tbody>
                         </table>
                     </div>
-                    <p>Start Date(yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
-                    <p>End Date(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
+                    <p>Fecha (yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
+                    <p>Fecha Final(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
                     <input type="checkbox" id="monday" name="monday" value="0">
-                    <label for="monday">Monday</label><br>
+                    <label for="monday">Lunes</label><br>
 
                     <input type="checkbox" id="tuesday" name="tuesday" value="0">
-                    <label for="tuesday">Tuesday</label><br>
+                    <label for="tuesday">Martes</label><br>
 
                     <input type="checkbox" id="wednesday" name="wednesday" value="0">
-                    <label for="wednesday">Wednesday</label><br>
+                    <label for="wednesday">Miercoles</label><br>
 
                     <input type="checkbox" id="thursday" name="thursday" value="0">
-                    <label for="thursday">Thursday</label><br>
+                    <label for="thursday">Jueves</label><br>
 
                     <input type="checkbox" id="friday" name="friday" value="0">
-                    <label for="friday">Friday</label><br>
+                    <label for="friday">Viernes</label><br>
                     <br>
-                    <button type="button" class="b4p btn btn-outline-danger">PREVIOUS</button>
-                    <button type="button" class="b4n btn btn-outline-success">NEXT</button>
+                    <button type="button" class="b4p btn btn-outline-danger">Atras</button>
+                    <button type="button" class="b4n btn btn-outline-success">Siguiente</button>
                 </div>
                 <div class="tab-content" id="tabs-5">
-                    <h3>Your Reservation:</h3>
+                    <h3>Tu Reserva:</h3>
                     <div>
                         <table class="tabler" border="1">
                             <thead>
                                 <tr>
-                                    <th class="n">Name</th>
-                                    <th class="t">Type</th>
-                                    <th class="d">Date</th>
-                                    <th class="sd">Start Date</th>
-                                    <th class="ed">End Date</th>
-                                    <th class="dow">Days of Week</th>
+                                    <th class="n">Nombre</th>
+                                    <th class="t">Tipo</th>
+                                    <th class="d">Fecha</th>
+                                    <th class="sd">Fecha Inicio</th>
+                                    <th class="ed">Fecha Final</th>
+                                    <th class="dow">Dias de la semana</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -265,7 +265,7 @@
                     <br>
                     <input id="submit" name="submit" type="submit" value="Reserve">
                     <br> <br>
-                    <button type="button" class="b5p btn btn-outline-danger">PREVIOUS</button>
+                    <button type="button" class="b5p btn btn-outline-danger">Atras</button>
                 </div>
 
             </div>
