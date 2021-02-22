@@ -8,6 +8,9 @@
     <title>TOTAL BY DAY</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -22,7 +25,7 @@
 
 <body>
     <form action="view/byday" method="POST">
-        <input name="day" type="text" id="datepicker">
+        <input name="day" type="text" id="datepicker" autocomplete="off">
         <label for="datepicker">Date</label>
         <input type="submit" value="SUBMIT">
     </form>
