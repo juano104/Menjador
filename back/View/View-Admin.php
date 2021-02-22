@@ -126,17 +126,15 @@
                     <div class="modal-body">
                     <div class="form-group">
                         <label for="nompare"><strong>NOM PARE:</strong></label>
-                        <input type="text" name="nompare" id="nompare">
-                        <br>
+                        <input type="text" class="form-control" name="nompare" id="nompare">
                     </div>
                     <div class="form-group">
                         <label for="llinatgepare"><strong>LLINATGE PARE:</strong></label>
-                        <input type="text" name="llinatgepare" id="llinatgepare">
-                        <br>
+                        <input type="text" class="form-control" name="llinatgepare" id="llinatgepare">
                     </div>
                     <div class="form-group">  
                         <label for="dnipare"><strong>DNI PARE:</strong></label>
-                        <input type="text" name="dnipare" id="dnipare">
+                        <input type="text" class="form-control" name="dnipare" id="dnipare">
                     </div>    
                     </div>
                     <div class="modal-footer">
