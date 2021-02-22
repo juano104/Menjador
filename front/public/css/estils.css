@@ -84,7 +84,7 @@ input:focus, input.form-control:focus {
 
 .img-contacte {
     width: 15%;
-    height: 73%;
+    height: auto;
 }
 
 h1 {
