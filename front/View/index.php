@@ -26,6 +26,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <style>
+        .container{
+                margin-top: 0%;
+            }
 
         #calendar {
             max-width: 100%;
@@ -57,7 +60,7 @@
 
 
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <div class="container">
+        <div class="container  margin">
         <h2>Realizar reserva</h2>
         <form>
             <div class="col-8" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">

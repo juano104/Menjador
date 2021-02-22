@@ -25,7 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <style>
-
+        .container {
+            margin-top: 0%;
+        }
 
         #calendar {
             max-width: 100%;
@@ -40,11 +42,11 @@
     <?php require_once "navbar.php" ?>
 
     <canvas id="canvas" width="0%" height="0%"></canvas>
-            <div class="container">
-                <H6>DESCARGAR: </H6>
-                <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
-                <div id='calendar'></div>
-            </div>
+    <div class="container margin">
+        <H6>DESCARGAR: </H6>
+        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+        <div id='calendar'></div>
+    </div>
 
     <script>
         $(document).ready(function() {

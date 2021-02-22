@@ -27,12 +27,6 @@ $today = date("Y-m-d");
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://www.menjadorescola.me">
-                        Inicio
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="reservas">
                         Mis reservas

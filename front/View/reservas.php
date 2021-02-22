@@ -42,7 +42,7 @@
         <?php require_once "navbar.php" ?>
         <!-- Menu de navegacio -->
     </div>
-    <div class="container">
+    <div class="container margin">
         <form action="" method="POST">
             <input name="day" type="text" id="datepicker" autocomplete="off">
             <label for="datepicker">Date</label>
