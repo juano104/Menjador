@@ -63,7 +63,7 @@
     </div>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
-        <h1>Mis Reservas(<?php echo $_POST["day"] ?>)</h1>
+        <h1>Mis Reservas(<?php echo $booking->getDate() ?>)</h1>
         <table id="tableReservas" class="table table-striped table-bordered">
             <thead>
                 <tr>
