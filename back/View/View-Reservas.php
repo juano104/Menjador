@@ -139,7 +139,7 @@
                 }, {
                     data: 'last_name'
                 }, {
-                    data: 'allergy'
+                    data: ''
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -163,7 +163,7 @@
                     }, {
                         data: 'last_name'
                     }, {
-                        data: 'allergy'
+                        data: ''
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
