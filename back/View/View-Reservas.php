@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Reservas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
     <link rel="stylesheet" href="public/css/estils.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
     <!--DATATABLE-->
     <!-- css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
@@ -133,16 +130,12 @@
                 "bAutoWidth": false,
                 data: <?php echo json_encode($arrday); ?>,
                 columns: [{
-                        data: 'ID'
-                    }, {
-                        data: 'name'
-                    }, {
-                        data: 'last_name'
-                    }
-                    /*, {
-                                        data: 'allergy'
-                                    }*/
-                ],
+                    data: 'ID'
+                }, {
+                    data: 'name'
+                }, {
+                    data: 'last_name'
+                }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
@@ -159,16 +152,12 @@
                     "bAutoWidth": false,
                     data: <?php echo json_encode($arrday); ?>,
                     columns: [{
-                            data: 'ID'
-                        }, {
-                            data: 'name'
-                        }, {
-                            data: 'last_name'
-                        }
-                        /*, {
-                                                data: 'allergy'
-                                            }*/
-                    ],
+                        data: 'ID'
+                    }, {
+                        data: 'name'
+                    }, {
+                        data: 'last_name'
+                    }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
