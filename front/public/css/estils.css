@@ -3,10 +3,6 @@
     width: 100%;
 }
 
-.navbar-brand {
-    width: 10%;
-    height: auto;
-}
 
 .container {
     margin-top: 5%;
@@ -72,6 +68,8 @@ form {
 
 .navbar {
     background-color: #F2BF8D !important;
+    font-size: 120%;
+    font-family: 'Fira Sans Condensed';
     /*padding: 0px;*/
 }
 
