@@ -62,7 +62,7 @@
 
 <body>
     <!-- Menu de navegacio -->
-    <?php require_once "navbar.html" ?>
+    <?php require_once "navbar.php" ?>
 
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container">

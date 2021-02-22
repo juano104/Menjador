@@ -15,12 +15,10 @@ $today = date("Y-m-d");
                 </a>
             </li>
             <li class="nav-item ">
-                <form action="reservas" method="POST">
-                    <input type="submit" class="nav-link" name="day" value=" <?php echo $today; ?>">
+                <a class="nav-link" href="reservas">
                     Mis reservas
                     <span class="sr-only">(current)</span>
-                    </input>
-                </form>
+                </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
@@ -28,6 +26,7 @@ $today = date("Y-m-d");
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">LogOut</a>
+
                 </div>
             </li>
         </ul>
