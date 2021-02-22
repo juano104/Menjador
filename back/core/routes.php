@@ -16,7 +16,7 @@ $router->define([
     "insertar" => "../api/Controller/Parent/Read_Child.php",
 
     // to see reservations
-    "byday" => "View/byday.php",
-    "view/byday" => "../api/Controller/Booking/ReadByDay.php",
+    //"reservations" => "View/View-Reservas.php",
+    "reservations" => "../api/Controller/Booking/ReadByDay.php",
 
 ]);

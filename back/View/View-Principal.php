@@ -58,6 +58,12 @@
                         </a>
                     </li>
 
+                    <li class="nav-item ">
+                        <a class="nav-link" href="reservations">
+                        Reservations
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -66,6 +72,8 @@
 
     </div>
     <h2>Aqui se ven las reservas de un dia en concreto</h2>
+
+    
 
 </body>
 
