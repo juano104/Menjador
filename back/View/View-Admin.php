@@ -124,21 +124,26 @@
                 </div>
                 <form action="insert/parent" method="post" id="form" name="f1">
                     <div class="modal-body">
-                        
+                    <div class="form-group">
                         <label for="nompare"><strong>NOM PARE:</strong></label>
                         <input type="text" name="nompare" id="nompare">
                         <br>
-                        
+                    </div>
+                    <div class="form-group">
                         <label for="llinatgepare"><strong>LLINATGE PARE:</strong></label>
                         <input type="text" name="llinatgepare" id="llinatgepare">
                         <br>
-                        
+                    </div>
+                    <div class="form-group">  
                         <label for="dnipare"><strong>DNI PARE:</strong></label>
                         <input type="text" name="dnipare" id="dnipare">
+                    </div>    
                     </div>
                     <div class="modal-footer">
+                    <div class="form-group">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <input type="submit" id="afegir" class="btn btn-success" value="Afegir Pare">
+                    </div>
                     </div>
                 </form>
             </div>
