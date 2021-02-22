@@ -23,25 +23,36 @@ if (isset($_POST['day'])) {
 
 
     $arrday = array();
-    $arrextra = array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $e = array(
+        /*$e = array(
             "ID" => $ID,
             "name" => $name,
             "last_name" => $last_name
-        );
+        );*/
 
         $booking->setID($ID);
         $stmt2 = $booking->readAllergy();
         while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
-            $a = array(
-                "allergy" => $allergy
-            );
+
             if ($allergy != null) {
-                array_push($e, $a);
+                $a = array(
+                    "ID" => $ID,
+                    "name" => $name,
+                    "last_name" => $last_name,
+                    "allergy" => $allergy
+                );
+                array_push($arrday, $a);
+            } else {
+                $a = array(
+                    "ID" => $ID,
+                    "name" => $name,
+                    "last_name" => $last_name,
+                    "allergy" => "none"
+                );
+                array_push($arrday, $a);
             }
         }
 
@@ -62,7 +73,6 @@ if (isset($_POST['day'])) {
 
 
     $arrday = array();
-    $arrextra = array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
