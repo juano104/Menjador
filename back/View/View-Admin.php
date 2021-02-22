@@ -171,28 +171,28 @@
                         <strong>ALERGIA</strong>
                         <br>
                         <div class="form-check form-check-inline">
-                            <label for='ous'>Ous</label>
+                            <label class="form-check-label" for='ous'>Ous</label>
                             <input class="form-check-input" type='checkbox' id='ous' name='alergia[]' value='1'>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label for='marisc'>Marisc</label>
+                            <label class="form-check-label" for='marisc'>Marisc</label>
                             <input class="form-check-input" type='checkbox' id='marisc' name='alergia[]' value='2'>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label for='peix'>Peix</label>
+                            <label class="form-check-label" for='peix'>Peix</label>
                             <input class="form-check-input" type='checkbox' id='peix' name='alergia[]' value='3'>
                         </div>
                         <br>
                         <div class="form-check form-check-inline">
-                            <label for='frutssecs'>Fruts Secs</label>
+                            <label class="form-check-label" for='frutssecs'>Fruts Secs</label>
                             <input class="form-check-input" type='checkbox' id='frutssecs' name='alergia[]' value='4'>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label for='llet'>Llet</label>
+                            <label class="form-check-label" for='llet'>Llet</label>
                             <input class="form-check-input" type='checkbox' id='llet' name='alergia[]' value='5'>
                         </div>
                         <div class="form-check form-check-inline">
-                            <label for='cereals'>Cereals</label>
+                            <label class="form-check-label" for='cereals'>Cereals</label>
                             <input class="form-check-input" type='checkbox' id='cereals' name='alergia[]' value='6'>
                         </div>
                         <input id="pareID" name="pareID" type="hidden" value="0">
