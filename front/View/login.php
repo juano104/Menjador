@@ -22,8 +22,6 @@
     
     <body>
         <!-- Menu de navegacio -->
-        <?php require_once "navbar.php" ?>
-        <!-- Menu de navegacio -->
         <div class="container justify-content-center">
             <div class="row">
                 <div class="col-12 justify-content-center text-center">
