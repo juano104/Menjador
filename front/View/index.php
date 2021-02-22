@@ -8,7 +8,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
@@ -16,11 +15,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
-    <script src="public/js/jquery.min.js"></script>
-    <script>
-        var $j = jQuery.noConflict(true);
-    </script>
     <script src="public/js/moment.min.js"></script>
     <script src="public/js/fullcalendar.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
@@ -64,15 +58,7 @@
     <!-- Menu de navegacio -->
     <?php require_once "navbar.php" ?>
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
+
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container">
         <h2>Realizar reserva</h2>
@@ -241,30 +227,7 @@
         </form>
     </div>
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <canvas id="canvas" width="0%" height="0%"></canvas>
-            <div class="container">
-                <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
-                <div id='calendar'></div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script>
-        $(document).ready(function() {
-            $('#calendar').fullCalendar({
-                eventSources: [{
-                    url: 'http://intranet.menjadorescola.me/datos',
-                    method: 'POST'
-                }],
-                hiddenDays: [0, 6],
-                showNonCurrentDates: false
-
-            })
-        });
-    </script>
+            
     
 
 
@@ -702,22 +665,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     -->
-    <script>
-        $("#print").click(function() {
-            //#AEFC is my div for FullCalendar
-            html2canvas($('#calendar'), {
-                logging: true,
-                useCORS: true,
-                onrendered: function(canvas) {
-                    var imgData = canvas.toDataURL("image/png");
-                    var doc = new jsPDF();
-                    doc.addImage(imgData, 'png', 15, 40, 180, 160);
-                    doc.save('sample-file.pdf');
 
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

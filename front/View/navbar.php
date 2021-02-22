@@ -20,6 +20,18 @@ $today = date("Y-m-d");
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="menu">
+                    Menu
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="home">
+                    Realizar Reserva
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fas fa-user"></i>
