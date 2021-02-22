@@ -1,10 +1,11 @@
 .imgres {
-    height: 100px;
+    height: auto;
     width: 100%;
 }
 
 .navbar-brand {
     width: 10%;
+    height: auto;
 }
 
 .container {
