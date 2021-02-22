@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 
-    <!-- js -->
+    <!-- js 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
@@ -34,6 +34,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script>
         $(function() {
             $("#datepicker").datepicker({
@@ -52,7 +56,7 @@
     </div>
     <div class="container">
         <form action="" method="POST">
-            <input name="day" data-provide="datepicker">
+            <input name="day" type="text" id="datepicker">
             <label for="datepicker">Date</label>
             <input type="submit" value="SUBMIT">
         </form>
