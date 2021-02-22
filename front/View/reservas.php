@@ -52,7 +52,7 @@
     </div>
     <div class="container">
         <form action="" method="POST">
-            <input name="day" type="text" id="datepicker">
+            <input name="day" data-provide="datepicker">
             <label for="datepicker">Date</label>
             <input type="submit" value="SUBMIT">
         </form>
