@@ -26,7 +26,6 @@ $today = date("Y-m-d");
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">LogOut</a>
-
                 </div>
             </li>
         </ul>
