@@ -14,7 +14,7 @@
     </head>
     <body>
         <!-- Menu de navegacio -->
-        <?php require_once "navbar.html" ?>
+        <?php require_once "navbar.php" ?>
         <!-- Menu de navegacio -->
         <div class="container justify-content-center">
             <div class="row">
