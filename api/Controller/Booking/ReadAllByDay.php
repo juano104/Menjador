@@ -35,7 +35,7 @@ if (isset($_SESSION["name"])) {
             array_push($arrextra, $e);
         }
 
-        include_once "View/reservas.php";
+        //include_once "View/reservas.php";
     } else {
         $today = date("Y-m-d");
         $booking->setDate($today);
@@ -60,7 +60,6 @@ if (isset($_SESSION["name"])) {
 
             array_push($arrextra, $e);
         }
-
-        include_once "View/reservas.php";
     }
+    include_once "View/reservas.php";
 }
