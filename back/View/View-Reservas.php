@@ -34,7 +34,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    
+
     <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
@@ -94,9 +94,9 @@
                     data: 'name'
                 }, {
                     data: 'last_name'
-                }, {
+                }/*, {
                     data: 'allergy'
-                }],
+                }*/],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
@@ -113,14 +113,14 @@
                     "bAutoWidth": false,
                     data: <?php echo json_encode($arrextra); ?>,
                     columns: [{
-                    data: 'ID'
-                }, {
-                    data: 'name'
-                }, {
-                    data: 'last_name'
-                }, {
-                    data: 'allergy'
-                }],
+                        data: 'ID'
+                    }, {
+                        data: 'name'
+                    }, {
+                        data: 'last_name'
+                    }/*, {
+                        data: 'allergy'
+                    }*/],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },

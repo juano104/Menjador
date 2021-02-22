@@ -11,83 +11,83 @@ $db_conn = $db->connect();
 //User
 $booking = new Booking($db_conn);
 
-if(isset($_POST['day'])){
+if (isset($_POST['day'])) {
     $booking->setDate($_POST["day"]);
 
-$dayname = date('l', strtotime($booking->getDate()));;
-$dayofweek = strtolower($dayname);
+    $dayname = date('l', strtotime($booking->getDate()));;
+    $dayofweek = strtolower($dayname);
 
-$booking->setDow($dayofweek);
+    $booking->setDow($dayofweek);
 
-$stmt = $booking->readByDay();
+    $stmt = $booking->readByDay();
 
 
-$arrday = array();
-$arrextra = array();
+    $arrday = array();
+    $arrextra = array();
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    extract($row);
-    $e = array(
-        "ID" => $ID,
-        "name" => $name,
-        "last_name" => $last_name
-    );
-
-    $booking->setID($ID);
-    $stmt2 = $booking->readAllergy();
-    while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $a = array(
-            "allergy" => $allergy
+        $e = array(
+            "ID" => $ID,
+            "name" => $name,
+            "last_name" => $last_name
         );
-        if ($allergy != null) {
-            array_push($e, $a);
+
+        $booking->setID($ID);
+        $stmt2 = $booking->readAllergy();
+        while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+            extract($row);
+            $a = array(
+                "allergy" => $allergy
+            );
+            if ($allergy != null) {
+                array_push($e, $a);
+            }
         }
+
+        array_push($arrday, $e);
     }
 
-    array_push($arrday, $e);
-}
-
-echo json_encode($arrday);
-}else{
+    echo json_encode($arrday);
+} else {
     $today = date("Y-m-d");
-        $booking->setDate($today);
+    $booking->setDate($today);
 
-$dayname = date('l', strtotime($booking->getDate()));;
-$dayofweek = strtolower($dayname);
+    $dayname = date('l', strtotime($booking->getDate()));;
+    $dayofweek = strtolower($dayname);
 
-$booking->setDow($dayofweek);
+    $booking->setDow($dayofweek);
 
-$stmt = $booking->readByDay();
+    $stmt = $booking->readByDay();
 
 
-$arrday = array();
-$arrextra = array();
+    $arrday = array();
+    $arrextra = array();
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    extract($row);
-    $e = array(
-        "ID" => $ID,
-        "name" => $name,
-        "last_name" => $last_name
-    );
-
-    $booking->setID($ID);
-    $stmt2 = $booking->readAllergy();
-    while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $a = array(
-            "allergy" => $allergy
+        $e = array(
+            "ID" => $ID,
+            "name" => $name,
+            "last_name" => $last_name
         );
-        if ($allergy != null) {
-            array_push($e, $a);
+
+        $booking->setID($ID);
+        $stmt2 = $booking->readAllergy();
+        while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+            extract($row);
+            $a = array(
+                "allergy" => $allergy
+            );
+            if ($allergy != null) {
+                array_push($e, $a);
+            }
         }
+
+        array_push($arrday, $e);
     }
 
-    array_push($arrday, $e);
-}
-
-echo json_encode($arrday);
+    echo json_encode($arrday);
 }
 
 
