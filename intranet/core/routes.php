@@ -14,7 +14,6 @@ $router->define([
     "insertar/menu" => "../api/Controller/Menu/Insert.php",
     
     //to see reservations (total)
-    "total" => "View/total.php",
-    "view/total" => "../api/Controller/Booking/ReadTotalByDay.php",
+    "total" => "../api/Controller/Booking/ReadTotalByDay.php",
 
 ]);

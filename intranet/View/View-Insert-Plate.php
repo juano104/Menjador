@@ -34,7 +34,7 @@
 
     <div class="container-fluid">
         <!-- Menu de navegacio -->
-        <?php require_once "navbar.html" ?>
+        <?php require_once "navbar.php" ?>
         <!-- Menu de navegacio -->
     </div>
 

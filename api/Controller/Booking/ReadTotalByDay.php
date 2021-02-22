@@ -59,3 +59,4 @@ if (isset($_POST['day'])) {
     }
     echo json_encode($arr);
 }
+require_once "View/total.php";
