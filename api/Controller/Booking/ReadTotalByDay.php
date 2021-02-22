@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //Headers
 include_once '../api/Model/Database.php';
@@ -11,24 +12,50 @@ $db_conn = $db->connect();
 //User
 $booking = new Booking($db_conn);
 
-$booking->setDate($_POST["day"]);
 
-$dayname = date('l', strtotime($booking->getDate()));;
-$dayofweek = strtolower($dayname);
+if (isset($_POST['day'])) {
+    $booking->setDate($_POST["day"]);
 
-$booking->setDow($dayofweek);
+    $dayname = date('l', strtotime($booking->getDate()));;
+    $dayofweek = strtolower($dayname);
 
-$stmt = $booking->readTotalByDay();
+    $booking->setDow($dayofweek);
+
+    $stmt = $booking->readTotalByDay();
 
 
-$arr = array();
+    $arr = array();
 
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    extract($row);
-    $e = array(
-        "sum" => $sum
-    );
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        extract($row);
+        $e = array(
+            "sum" => $sum
+        );
 
-    array_push($arr, $e);
+        array_push($arr, $e);
+    }
+    echo json_encode($arr);
+} else {
+    $today = date("Y-m-d");
+    $booking->setDate($today);
+
+    $dayname = date('l', strtotime($booking->getDate()));;
+    $dayofweek = strtolower($dayname);
+
+    $booking->setDow($dayofweek);
+
+    $stmt = $booking->readTotalByDay();
+
+
+    $arr = array();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        extract($row);
+        $e = array(
+            "sum" => $sum
+        );
+
+        array_push($arr, $e);
+    }
+    echo json_encode($arr);
 }
-echo json_encode($arr);
