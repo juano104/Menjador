@@ -160,41 +160,47 @@
                 </div>
                 <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
-                        <label for="nomalumne"><strong>NOM ALUMNE</strong><input type="text" name="nomalumne" id="nomalumne"</label>
-                        
-                        <br>
-                        
-                        <label for="llinatgealumne"><strong>LLINATGE ALUMNE</strong><input type="text" name="llinatgealumne" id="llinatgealumne">
-                        </label>
-                        
-                        <br>
-                        <br>
+                        <div class="form-group">
+                            <label for="nomalumne"><strong>NOM ALUMNE</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne" ></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="llinatgealumne"><strong>LLINATGE ALUMNE</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
+                            </label>
+                        </div>
+
                         <strong>ALERGIA</strong>
                         <br>
-
-                        <label for='ous'>Ous</label>
-                        <input type='checkbox' id='ous' name='alergia[]' value='1'>
-
-                        <label for='marisc'>Marisc</label>
-                        <input type='checkbox' id='marisc' name='alergia[]' value='2'>
-
-                        <label for='peix'>Peix</label>
-                        <input type='checkbox' id='peix' name='alergia[]' value='3'><br>
-
-                        <label for='frutssecs'>Fruts Secs</label>
-                        <input type='checkbox' id='frutssecs' name='alergia[]' value='4'>
-
-                        <label for='llet'>Llet</label>
-                        <input type='checkbox' id='llet' name='alergia[]' value='5'>
-
-                        <label for='cereals'>Cereals</label>
-                        <input type='checkbox' id='cereals' name='alergia[]' value='6'>
-
-                        <input id="pareID" name="pareID" type="hidden" value="0">
+                        <div class="form-check form-check-inline">
+                            <label for='ous'>Ous</label>
+                            <input class="form-check-input" type='checkbox' id='ous' name='alergia[]' value='1'>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label for='marisc'>Marisc</label>
+                            <input class="form-check-input" type='checkbox' id='marisc' name='alergia[]' value='2'>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label for='peix'>Peix</label>
+                            <input class="form-check-input" type='checkbox' id='peix' name='alergia[]' value='3'>
+                        </div>
                         <br>
+                        <div class="form-check form-check-inline">
+                            <label for='frutssecs'>Fruts Secs</label>
+                            <input class="form-check-input" type='checkbox' id='frutssecs' name='alergia[]' value='4'>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label for='llet'>Llet</label>
+                            <input class="form-check-input" type='checkbox' id='llet' name='alergia[]' value='5'>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label for='cereals'>Cereals</label>
+                            <input class="form-check-input" type='checkbox' id='cereals' name='alergia[]' value='6'>
+                        </div>
+                        <input id="pareID" name="pareID" type="hidden" value="0">
                         
-                        <label for="date"><strong>FECHA DE NAIXAMENT:</strong></label>
-                        <input type="date" name="date" id="date">
+                        <div class="form-group">
+                            <label for="date"><strong>FECHA DE NAIXAMENT:</strong></label>
+                            <input class="form-control" type="date" name="date" id="date">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
