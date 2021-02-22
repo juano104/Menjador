@@ -41,5 +41,5 @@ if (isset($_SESSION["name"])) {
 echo json_encode($dayofweek);*/
 
     include_once "View/reservas.php";
-    header('Location: http://www.menjadorescola.me/reservas');
+    //header('Location: http://www.menjadorescola.me/reservas');
 }

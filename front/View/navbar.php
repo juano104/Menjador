@@ -1,3 +1,6 @@
+<?php
+$today = date("Y-m-d");
+?>
 <nav class="navbar navbar-expand-lg navbar-light static-top">
     <!-- LOGO -->
     <a href="Pagina-Principal.html" class="navbar-brand">
@@ -12,20 +15,21 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="reservas">
+                <form action="reservas" method="POST">
+                    <input type="submit" class="nav-link" name="day" value=" <?php echo $today; ?>">
                     Mis reservas
                     <span class="sr-only">(current)</span>
-                </a>
+                    </input>
+                </form>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
-                  <i class="fas fa-user"></i>
+                    <i class="fas fa-user"></i>
                 </a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">LogOut</a>
-      
+                    <a class="dropdown-item" href="#">LogOut</a>
                 </div>
-              </li>
+            </li>
         </ul>
     </div>
 </nav>
