@@ -51,6 +51,9 @@
             color: red;
         }
     </style>
+    <script>
+        var $j = jQuery.noConflict(true);
+    </script>
 
     <script>
         $(document).ready(function() {
