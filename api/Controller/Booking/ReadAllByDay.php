@@ -11,7 +11,7 @@ if (isset($_SESSION["name"])) {
 
     //User
     $booking = new Booking($db_conn);
-    if (!isset($_POST['day'])) {
+    if (isset($_POST['day'])) {
         $booking->setDate($_POST["day"]);
 
         $dayname = date('l', strtotime($booking->getDate()));;
