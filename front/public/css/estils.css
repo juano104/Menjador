@@ -13,6 +13,10 @@
     margin-bottom: 5%;
   }
 
+  .navbar-collapse{
+      margin: 0;
+  }
+
   #calendar th {
     color: white;
     border: black 1px solid;
