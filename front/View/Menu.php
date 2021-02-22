@@ -25,9 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <style>
-        .container {
-            margin-top: 5%;
-        }
+
 
         #calendar {
             max-width: 100%;
