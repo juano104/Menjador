@@ -1,8 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION["name"])) {
-    $today = date("Y-m-d");
-    $_POST['day'] = $today;
+    /*$today = date("Y-m-d");
+    $_POST['day'] = $today;*/
     //Headers
     include_once '../api/Model/Database.php';
     include_once '../api/Model/Booking.php';
@@ -41,4 +41,5 @@ if (isset($_SESSION["name"])) {
 echo json_encode($dayofweek);*/
 
     include_once "View/reservas.php";
+    header('Location: http://www.menjadorescola.me/reservas');
 }
