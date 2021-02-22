@@ -25,7 +25,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 
-
+    <script>
+        $.noConflict(true);
+    </script>
     <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
     <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
     <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
@@ -51,9 +53,7 @@
             color: red;
         }
     </style>
-    <script>
-        var $j = jQuery.noConflict(true);
-    </script>
+
 
     <script>
         $(document).ready(function() {
