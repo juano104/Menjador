@@ -18,7 +18,7 @@ $today = date("Y-m-d");
     <div class="container na">
         <a href="#" class="navbar-brand">
             <!-- Logo Image -->
-            <img src="logo.png" width="100" alt="" class="d-inline-block align-middle mr-2">
+            <img src="public/img/logo.png" width="100" alt="" class="d-inline-block align-middle mr-2">
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
