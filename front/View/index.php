@@ -64,26 +64,17 @@
     <!-- Menu de navegacio -->
     <?php require_once "navbar.php" ?>
 
-    <canvas id="canvas" width="0%" height="0%"></canvas>
-    <div class="container">
-        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
-        <div id='calendar'></div>
-    </div>
-
-    <script>
-        $(document).ready(function() {
-            $('#calendar').fullCalendar({
-                eventSources: [{
-                    url: 'http://intranet.menjadorescola.me/datos',
-                    method: 'POST'
-                }],
-                hiddenDays: [0, 6],
-                showNonCurrentDates: false
-
-            })
-        });
-    </script>
-    <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container">
         <h2>Realizar reserva</h2>
         <form>
             <div class="col-8" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">
@@ -249,6 +240,33 @@
             </div>
         </form>
     </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <canvas id="canvas" width="0%" height="0%"></canvas>
+            <div class="container">
+                <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+                <div id='calendar'></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                eventSources: [{
+                    url: 'http://intranet.menjadorescola.me/datos',
+                    method: 'POST'
+                }],
+                hiddenDays: [0, 6],
+                showNonCurrentDates: false
+
+            })
+        });
+    </script>
+    
+
 
     <script type="text/javascript">
         $(document).ready(function() {
