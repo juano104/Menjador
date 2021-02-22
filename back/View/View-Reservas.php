@@ -70,7 +70,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Last Name</th>
-                    <th>AlLergy</th>
+                    <th>Allergy</th>
                 </tr>
             </thead>
         </table>
