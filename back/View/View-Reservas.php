@@ -25,7 +25,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 
-
     <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
     <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
     <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
@@ -51,6 +50,7 @@
             color: red;
         }
     </style>
+
 
     <script>
         $(document).ready(function() {
@@ -118,7 +118,6 @@
         </table>
     </div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
 
@@ -139,6 +138,8 @@
                     data: 'name'
                 }, {
                     data: 'last_name'
+                }, {
+                    data: ''
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -161,6 +162,8 @@
                         data: 'name'
                     }, {
                         data: 'last_name'
+                    }, {
+                        data: ''
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
