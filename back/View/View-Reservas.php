@@ -87,7 +87,7 @@
                 "bFilter": true,
                 "bInfo": false,
                 "bAutoWidth": false,
-                data: <?php echo json_encode($arrextra); ?>,
+                data: <?php echo json_encode($arrday); ?>,
                 columns: [{
                     data: 'ID'
                 }, {
@@ -111,7 +111,7 @@
                     "bFilter": true,
                     "bInfo": false,
                     "bAutoWidth": false,
-                    data: <?php echo json_encode($arrextra); ?>,
+                    data: <?php echo json_encode($arrday); ?>,
                     columns: [{
                         data: 'ID'
                     }, {
