@@ -56,7 +56,7 @@ if (isset($_POST['day'])) {
             }
         }
 
-        array_push($arrday, $e);
+        //array_push($arrday, $e);
     }
 
     echo json_encode($arrday);
