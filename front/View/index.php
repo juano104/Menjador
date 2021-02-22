@@ -160,14 +160,8 @@
                         </table>
                     </div>
                     <div class="d1">
-                        <div class="form-group">
-                            <div class='input-group date datepicker'>
-                                <input type='text' class="form-control" readonly="readonly" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
+                        <label for="datepicker1">Fecha:</label>
+                        <input name="date1" type="text" class="datepicker">
                     </div><br>
 
                     <div class="d2">
