@@ -4,7 +4,7 @@ $today = date("Y-m-d");
 <nav class="navbar navbar-expand-lg navbar-light static-top">
     <!-- LOGO -->
     <a href="Pagina-Principal.html" class="navbar-brand">
-        <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+        <img src="public/img/logo.png" alt="" width="200" class="d-inline-block align-middle mr-2">
     </a>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
