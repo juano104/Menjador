@@ -34,41 +34,36 @@ if (isset($_POST['day'])) {
         /*$e = array(
             "sum" => $sumd
         );*/
-        $sumd = $row["sum"];
+        $booking->setSum($row["sum"]);
 
         //array_push($arr, $e);
         //}
         //echo json_encode($arr);
         echo $dayofweek;
-        echo $sumd . "uh";
+        echo $booking->getSum() . "post";
         require_once "View/total.php";
     }
-} /*else {
+} else {
     $today = date("Y-m-d");
     $booking->setDate($today);
 
     $dayname = date('l', strtotime($booking->getDate()));;
     $dayofweek = strtolower($dayname);
+    if ($dayofweek == "saturday" || $dayofweek == "sunday") {
+        echo "No reservations on weekends";
+    } else {
+        $booking->setDow($dayofweek);
 
-    $booking->setDow($dayofweek);
+        $stmt = $booking->readTotalByDay();
+        $arr = array();
 
-    $stmt = $booking->readTotalByDay();
-
-
-    $arr = array();
-
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
         extract($row);
-        /*$e = array(
-            "sum" => $sumn
-        );
-        $sumn = $row["sum"];
 
-        //array_push($arr, $e);
+        $booking->setSum($row["sum"]);
+
+        echo $dayofweek;
+        echo $booking->getSum() . "not post";
+        require_once "View/total.php";
     }
-    //echo json_encode($arr);
-    echo $dayofweek;
-    echo $sumn . "bruh";
-    require_once "View/total.php";
 }
-*/
