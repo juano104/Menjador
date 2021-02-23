@@ -1,8 +1,9 @@
 <?php
-session_start();
 
-if (isset($_POST["username"])) {
-    $_SESSION["username"] = $_POST["username"];
+if (isset($_POST["username"]) || isset($_SESSION["name"])) {
+    $user = $_POST["username"];
+    session_start();
+    $_SESSION["username"] = $user;
 
     $_SESSION["name"] = "login";
     //Headers
