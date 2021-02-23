@@ -80,7 +80,7 @@
                     <div class="form-group row">
                         <div class="col-3 col-lg-4"></div>
                         <div class="col-6 col-lg-4">
-                            <button type="submit" name="submit" class="form-control enviar" value="Sign in">
+                            <button type="submit" name="submit" class="btn enviar">Iniciar Sesion</button>
                         </div>
                         <div class="col-1 col-lg-2"></div>
                     </div>
