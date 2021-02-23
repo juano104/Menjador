@@ -27,9 +27,9 @@ $today = date("Y-m-d");
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="reservas">
-                        Mis reservas
+            <li class="nav-item ">
+                    <a class="nav-link" href="home">
+                        Realizar Reserva
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -40,8 +40,8 @@ $today = date("Y-m-d");
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="home">
-                        Realizar Reserva
+                    <a class="nav-link" href="reservas">
+                        Mis reservas
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
