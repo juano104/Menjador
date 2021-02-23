@@ -70,7 +70,8 @@
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
         eventLimit: true,
-        eventOrder: "type"
+        eventOrder: "type",
+        eventColor: '#FFFFFF'
 
       })
     });
