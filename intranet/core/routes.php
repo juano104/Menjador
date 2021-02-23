@@ -8,7 +8,7 @@ if(isset($_GET["username"])){
 
 $router->define([
     "insertar" => "../api/Controller/Plate/Read.php",
-    //
+    "insertarPlate" => "../api/Controller/Plate/Insertar.php",
     "datos" => "../api/Controller/Menu/Read-MenuPlate.php",
 
     "" => "../api/Controller/Booking/ReadTotalByDay.php",

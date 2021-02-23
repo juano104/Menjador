@@ -2,7 +2,7 @@
   <h2>Inserir Plat</h2>
   <button type="button" style="margin-bottom: 2%;" class="btn btn-info" data-toggle="collapse" data-target="#demo"><i class="fas fa-utensils"></i></button>
   <div id="demo" class="collapse">
-          <form action="insertar/plate" class="form-inline" style="margin: 0%;" method="post">
+          <form action="insertarPlate" class="form-inline" style="margin: 0%;" method="post">
             <div class="form-group mb-2">
               <label for="nomplat">
 
