@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
                 $errorMsg =  "Wrong Email Or Password";
             }
         }
-    } else {
+    } /*else {
         if (isset($_SESSION["name"])) {
 
             //Headers
@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
                 }
             }
         }
-    }
+    }*/
 }
 
 
