@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 //Headers
 include_once '../api/Model/Database.php';
@@ -18,45 +18,52 @@ if (isset($_POST['day'])) {
 
     $dayname = date('l', strtotime($booking->getDate()));;
     $dayofweek = strtolower($dayname);
+    if ($dayofweek == "saturday" || $dayofweek == "sunday") {
+        echo "No reservations on weekends";
+    } else {
+        $booking->setDow($dayofweek);
 
-    $booking->setDow($dayofweek);
-
-    $stmt = $booking->readTotalByDay();
+        $stmt = $booking->readTotalByDay();
 
 
-    $arr = array();
+        $arr = array();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
         extract($row);
-        $e = array(
-            "sum" => $sum
-        );
+        /*$e = array(
+            "sum" => $sumd
+        );*/
+        $booking->setSum($row["sum"]);
 
-        array_push($arr, $e);
+        //array_push($arr, $e);
+        //}
+        //echo json_encode($arr);
+        echo $dayofweek;
+        echo $booking->getSum() . "post";
+        require_once "View/total.php";
     }
-    //echo json_encode($arr);
 } else {
     $today = date("Y-m-d");
     $booking->setDate($today);
 
     $dayname = date('l', strtotime($booking->getDate()));;
     $dayofweek = strtolower($dayname);
+    if ($dayofweek == "saturday" || $dayofweek == "sunday") {
+        echo "No reservations on weekends";
+    } else {
+        $booking->setDow($dayofweek);
 
-    $booking->setDow($dayofweek);
+        $stmt = $booking->readTotalByDay();
+        $arr = array();
 
-    $stmt = $booking->readTotalByDay();
-
-
-    $arr = array();
-
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
         extract($row);
-        $e = array(
-            "sum" => $sum
-        );
 
-        array_push($arr, $e);
+        $booking->setSum($row["sum"]);
+
+        echo $dayofweek;
+        echo $booking->getSum() . "not post";
+        require_once "View/total.php";
     }
-    //echo json_encode($arr);
 }
-require_once "View/total.php";

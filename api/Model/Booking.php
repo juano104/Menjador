@@ -7,6 +7,8 @@ class Booking
     private $username;
     private $dow;
     private $sum;
+    private $sumd;
+    private $sumn;
     private $name;
     private $last_name;
     private $ID;
@@ -44,10 +46,26 @@ class Booking
     {
         return $this->sum;
     }
+    function getSumd()
+    {
+        return $this->sumd;
+    }
+    function getSumn()
+    {
+        return $this->sumn;
+    }
 
     function setSum($sum): void
     {
         $this->sum = $sum;
+    }
+    function setSumd($sumd): void
+    {
+        $this->sumd = $sumd;
+    }
+    function setSumn($sumn): void
+    {
+        $this->sumn = $sumn;
     }
 
     function getDow()
@@ -108,8 +126,8 @@ class Booking
     //reads the total by the date picked (for restaurant)
     public function readTotalByDay()
     {
-        $query = 'select(select count(*) as total_extra from Booking_Extra where ? is not null and ? between start_date and end_date) + 
-        (select count(*) as total_day from Booking_Day where date = ?) as sum';
+        $query = 'select(select count(*) from Booking_Extra where ? is not null and ? between start_date and end_date) + 
+        (select count(*) from Booking_Day where date = ?) as sum';
 
         $stmt = $this->conn->prepare($query);
         // bind data

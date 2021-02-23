@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$_SESSION["date"] = date("Y-m-d");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,6 +68,8 @@
                 container: container,
                 todayHighlight: true,
                 autoclose: true,
+                //minDate: 0,
+                //beforeShowDay: $.datepicker.noWeekends
             })
         })
     </script>
@@ -106,7 +115,7 @@
                     </form>
                 </div>
             </div>
-            <h2>Hay <?php echo $sum ?> reservas para <?php echo $booking->getDate() ?></h2>
+            <h2>Hay <?php echo $booking->getSum(); ?> reservas para <?php echo $booking->getDate() ?></h2>
         </div>
     </div>
 
