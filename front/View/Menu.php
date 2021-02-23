@@ -26,7 +26,7 @@
 
     <style>
         #calendar {
-            max-width: 100%;
+            max-width: 70%;
             margin-bottom: 5%;
         }
     </style>
