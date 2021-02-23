@@ -21,6 +21,9 @@
   .navbar-collapse{
       margin: 0 !important;
   }
+  nav li{
+      margin-left: 6%;
+  }
 
   #calendar th {
     color: white;
@@ -38,6 +41,7 @@ footer {
     height: 50px;
     color: white;
     font-weight: bold;
+    width: 100%;
 }
 
 form {
@@ -51,7 +55,7 @@ form {
     /*padding: 0px;*/
 }
 
-input:focus, input.form-control:focus {
+button:focus, button.enviar:focus {
     outline: none !important;
     outline-width: 0 !important;
     box-shadow: none;

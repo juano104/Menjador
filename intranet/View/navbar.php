@@ -30,10 +30,10 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="insertar">
             Insertar
-            <span class="sr-only">(current)</span>
+            
           </a>
         </li>
         <!-- Dropdown -->
