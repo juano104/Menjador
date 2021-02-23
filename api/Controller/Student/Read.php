@@ -34,45 +34,45 @@ if (isset($_POST['submit'])) {
         while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             if (password_verify($password, $row['password'])) {
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['first_name'] = $row['first_name'];
-                $_SESSION['last_name'] = $row['last_name'];
-
                 header('location:../front/View/index.php');
                 exit;
             } else {
                 $errorMsg =  "Wrong Email Or Password";
             }
         }
+    } else if (isset($_SESSION["name"])) {
 
-        include_once "../front/View/index.php";
+        //Headers
+        include_once '../api/Model/Database.php';
+        include_once '../api/Model/User_Parent.php';
+        include_once '../api/Model/Student.php';
 
+        //DB
+        $db = new Database();
+        $db_conn = $db->connect();
 
+        //User
+        $user = new User_Parent($db_conn);
 
+        $user->setUsername($_SESSION["username"]);
+        $parent_DNI = $user->getUsername();
 
-        /*$sqlEmail = "select * from users where email = '" . $email . "'";
-        $rs = mysqli_query($conn, $sqlEmail);
-        $numRows = mysqli_num_rows($rs);
+        $pass = $user->readPassword();
+        $stmt = $user->read();
+        $count = $stmt->rowCount();
 
-        if ($numRows  == 1) {
-            $row = mysqli_fetch_assoc($rs);
-
+        while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
+            extract($row);
             if (password_verify($password, $row['password'])) {
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['first_name'] = $row['first_name'];
-                $_SESSION['last_name'] = $row['last_name'];
-
-                header('location:dashboard.php');
+                header('location:../front/View/index.php');
                 exit;
             } else {
                 $errorMsg =  "Wrong Email Or Password";
             }
-        } else {
-            $errorMsg =  "No User Found";
         }
-    }*/
     }
 }
+
 
 /*
 if (isset($_POST["username"])) {
