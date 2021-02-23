@@ -22,7 +22,7 @@
       margin: 0 !important;
   }
   nav li{
-      margin-left: 6%;
+      padding-left: 25px;
   }
 
   #calendar th {
