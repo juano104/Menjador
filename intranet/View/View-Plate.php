@@ -36,15 +36,15 @@
 
   <div class="container margin">
     <!-- Menu de navegacio -->
-    <h2>Inserir Plat</h2>
       <?php require_once "View-Insert-Plate.php" ?>
     <!-- Menu de navegacio -->
   </div>
 
   <canvas id="canvas" width="0%" height="0%"></canvas>
   <div class="container margin">
-    <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
-    <h2>Inserir Menu</h2>
+    
+  <h5>Descargar Menu:</h5><a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+    <h1>Inserir Menu</h1>
     <div id='calendar'></div>
   </div>
   <script>
