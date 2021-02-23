@@ -8,8 +8,7 @@ if (isset($_POST['submit'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        $_SESSION["username"] = $username;
-        $_SESSION['password'] = $password;
+        $_SESSION["username"] = $_POST["username"];
 
         $_SESSION["name"] = "login";
 
@@ -35,9 +34,9 @@ if (isset($_POST['submit'])) {
         while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             if (password_verify($password, $row['password'])) {
-                $_SESSION['password'] = $row['password'];
+                //$_SESSION['password'] = $row['password'];
                 //header('location:../front/View/index.php');
-                include_once "../front/View/index.php";
+                include_once "View/index.php";
             } else {
                 $errorMsg =  "Wrong Email Or Password";
             }
@@ -69,7 +68,7 @@ if (isset($_POST['submit'])) {
                 if (password_verify($password, $row['password'])) {
                     $_SESSION['password'] = $row['password'];
                     //header('location:../front/View/index.php');
-                    include_once "../front/View/index.php";
+                    include_once "View/index.php";
                 } else {
                     $errorMsg =  "Wrong Email Or Password";
                 }
