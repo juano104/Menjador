@@ -37,6 +37,7 @@ if (isset($_POST['day'])) {
     }
     //echo json_encode($arr);
     echo $dayofweek;
+    echo $sumd;
 } else {
     $today = date("Y-m-d");
     $booking->setDate($today);
@@ -62,5 +63,6 @@ if (isset($_POST['day'])) {
     }
     //echo json_encode($arr);
     echo $dayofweek;
+    echo $sumn;
 }
 require_once "View/total.php";
