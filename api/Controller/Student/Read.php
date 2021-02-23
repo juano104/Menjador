@@ -28,57 +28,49 @@ if (isset($_POST['submit'])) {
         $parent_DNI = $user->getUsername();
 
         $pass = $user->readPassword();
-        $passcount = $pass->rowCount();
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
         while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
-            if ($passcount == 1) {
-                extract($row);
-                if (password_verify($password, $row['password'])) {
-                    include_once "../front/View/index.php";
-                    //header('location:../front/View/index.php');
-                    exit;
-                } else {
-                    $errorMsg =  "Wrong Email Or Password";
-                }
+            extract($row);
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['password'] = $row['password'];
+
+                header('location:../front/View/index.php');
+                exit;
+            } else {
+                $errorMsg =  "Wrong Email Or Password";
             }
         }
-    } /*else {
-        if (isset($_SESSION["name"])) {
 
-            //Headers
-            include_once '../api/Model/Database.php';
-            include_once '../api/Model/User_Parent.php';
-            include_once '../api/Model/Student.php';
+        include_once "../front/View/index.php";
 
-            //DB
-            $db = new Database();
-            $db_conn = $db->connect();
 
-            //User
-            $user = new User_Parent($db_conn);
 
-            $user->setUsername($_SESSION["username"]);
-            $parent_DNI = $user->getUsername();
 
-            $pass = $user->readPassword();
-            $stmt = $user->read();
-            $count = $stmt->rowCount();
+        /*$sqlEmail = "select * from users where email = '" . $email . "'";
+        $rs = mysqli_query($conn, $sqlEmail);
+        $numRows = mysqli_num_rows($rs);
 
-            while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
-                extract($row);
-                if (password_verify($password, $row['password'])) {
-                    header('location:../front/View/index.php');
-                    exit;
-                } else {
-                    $errorMsg =  "Wrong Email Or Password";
-                }
+        if ($numRows  == 1) {
+            $row = mysqli_fetch_assoc($rs);
+
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['first_name'] = $row['first_name'];
+                $_SESSION['last_name'] = $row['last_name'];
+
+                header('location:dashboard.php');
+                exit;
+            } else {
+                $errorMsg =  "Wrong Email Or Password";
             }
+        } else {
+            $errorMsg =  "No User Found";
         }
     }*/
+    }
 }
-
 
 /*
 if (isset($_POST["username"])) {
