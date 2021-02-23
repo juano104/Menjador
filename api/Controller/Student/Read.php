@@ -32,14 +32,16 @@ if (isset($_POST['submit'])) {
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
-        if ($passcount == 1) {
-            $row = $pass->fetch(PDO::FETCH_ASSOC);
-            extract($row);
-            if (password_verify($password, $row['password'])) {
-                header('location:../front/View/index.php');
-                exit;
-            } else {
-                $errorMsg =  "Wrong Email Or Password";
+        while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
+            if ($passcount == 1) {
+                extract($row);
+                if (password_verify($password, $row['password'])) {
+                    include_once "../front/View/index.php";
+                    //header('location:../front/View/index.php');
+                    exit;
+                } else {
+                    $errorMsg =  "Wrong Email Or Password";
+                }
             }
         }
     } /*else {
