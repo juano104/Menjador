@@ -52,7 +52,7 @@ if (isset($_POST['day'])) {
         }
     }
 
-    echo json_encode($arrday);
+    //echo json_encode($arrday);
 } else {
     $today = date("Y-m-d");
     $booking->setDate($today);
@@ -95,7 +95,7 @@ if (isset($_POST['day'])) {
         }
     }
 
-    echo json_encode($arrday);
+    //echo json_encode($arrday);
 }
 
 
