@@ -21,6 +21,9 @@
   .navbar-collapse{
       margin: 0 !important;
   }
+  nav li{
+      padding-left: 4px;
+  }
 
   #calendar th {
     color: white;

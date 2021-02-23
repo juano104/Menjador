@@ -24,7 +24,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="http://intranet.menjadorescola.me/">
             Inicio
             <span class="sr-only">(current)</span>
