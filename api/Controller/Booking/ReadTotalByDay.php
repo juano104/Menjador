@@ -28,11 +28,12 @@ if (isset($_POST['day'])) {
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $e = array(
+        /*$e = array(
             "sum" => $sumd
-        );
+        );*/
+        $sumd = $row["sum"];
 
-        array_push($arr, $e);
+        //array_push($arr, $e);
     }
     //echo json_encode($arr);
     echo $dayofweek;
@@ -52,11 +53,12 @@ if (isset($_POST['day'])) {
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $e = array(
+        /*$e = array(
             "sum" => $sumn
-        );
+        );*/
+        $sumn = $row["sum"];
 
-        array_push($arr, $e);
+        //array_push($arr, $e);
     }
     //echo json_encode($arr);
     echo $dayofweek;
