@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST["username"], $_SESSION["username"])) {
+if (isset($_POST["username"]) || isset($_SESSION["username"])) {
     session_start();
     $_SESSION["username"] = $_POST["username"];
     
