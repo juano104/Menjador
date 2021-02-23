@@ -1,10 +1,8 @@
 <?php
-
-session_start();
-
-
 if (isset($_POST['submit'])) {
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
+
+        session_start();
         $username = trim($_POST['username']);
         $passwordf = trim($_POST['password']);
 
