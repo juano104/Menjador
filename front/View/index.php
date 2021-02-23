@@ -72,18 +72,6 @@
                         <h3>Elegeix el fill</h3> <br>
                         <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
                         <?php
-                        /*while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
-                            extract($row);
-                            if ($password == $row['password']) {
-                                //$_SESSION['password'] = $row['password'];
-                                //header('location:../front/View/index.php');
-                                include_once "../front/View/index.php";
-                            } else {
-                                $errorMsg =  "Wrong Email Or Password";
-                            }
-                        }*/
-
-
                         if ($count > 0) {
                             $userArr = array();
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -98,8 +86,8 @@
                                 if ($password == $passwordf) {
                                     echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
                                     echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                                } else {
-                                    echo "User doesnt exist";
+                                }else{
+                                    
                                 }
                             }
                         }
