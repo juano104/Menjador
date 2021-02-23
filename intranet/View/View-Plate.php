@@ -71,7 +71,7 @@
         showNonCurrentDates: false,
         eventLimit: true,
         eventOrder: "type",
-        eventColor: '#FFFFFF'
+        eventColor: '#ffffff00'
 
       })
     });
