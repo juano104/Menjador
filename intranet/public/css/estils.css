@@ -51,7 +51,7 @@ form {
     /*padding: 0px;*/
 }
 
-input:focus, input.form-control:focus {
+button:focus, button.enviar:focus {
     outline: none !important;
     outline-width: 0 !important;
     box-shadow: none;
