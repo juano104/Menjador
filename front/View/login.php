@@ -23,7 +23,29 @@
 
 <body>
     <!-- Menu de navegacio -->
-    <div class="container justify-content-center">
+    <style>
+  .navbar {
+    background-color: #F2BF8D !important;
+    font-size: 110%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*padding: 0px;*/
+  }
+
+  .na {
+    padding-top: 0% !important;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light static-top">
+  <div class="container na">
+    <a href="#" class="navbar-brand">
+      <!-- Logo Image -->
+      <img src="public/img/logo.png" width="100" alt="" class="d-inline-block align-middle mr-2">
+    </a>
+  </div>
+</nav>
+<br>
+    <div class="container margin justify-content-center">
         <div class="row">
             <div class="col-12 justify-content-center text-center">
                 <h1>BIENVENIDO</h1>
