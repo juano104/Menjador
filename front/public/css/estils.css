@@ -59,6 +59,10 @@ input:focus, input.form-control:focus {
     height: auto;
 }
 
+.container{
+    margin-top: 0%;
+}
+
 h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
