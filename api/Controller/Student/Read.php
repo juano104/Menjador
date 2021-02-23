@@ -3,11 +3,11 @@ session_start();
 if (isset($_POST['submit'])) {
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
 
-        $username = trim($_POST['username']);
-        $passwordf = trim($_POST['password']);
+        $_SESSION["username"] = trim($_POST['username']);
+        $_SESSION["password"] = trim($_POST['password']);
 
-        $_SESSION["username"] = $_POST["username"];
-        //$_SESSION["username"] = $_POST["password"];
+        $username = $_SESSION["username"];
+        $passwordf = $_SESSION["password"];
 
         $_SESSION["name"] = "login";
 
@@ -36,6 +36,8 @@ if (isset($_POST['submit'])) {
     //session_start();
     //if (isset($_SESSION["username"])) {
     //Headers
+    $username = $_SESSION["username"];
+    $passwordf = $_SESSION["password"];
     include_once '../api/Model/Database.php';
     include_once '../api/Model/User_Parent.php';
     include_once '../api/Model/Student.php';
