@@ -30,19 +30,17 @@ if (isset($_POST['submit'])) {
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
-        if ($count > 0) {
-            $userArr = array();
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                extract($row);
-                if ($password == $row["password"]) {
-                    //$_SESSION['password'] = $row['password'];
-                    //header('location:../front/View/index.php');
-                    include_once "../front/View/index.php";
-                } else {
-                    $errorMsg =  "Wrong Email Or Password";
-                }
+        while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
+            extract($row);
+            if (password_verify($password, $row['password'])) {
+                //$_SESSION['password'] = $row['password'];
+                //header('location:../front/View/index.php');
+                include_once "../front/View/index.php";
+            } else {
+                $errorMsg =  "Wrong Email Or Password";
             }
         }
+        include_once "../front/View/index.php";
     } /*else {
         session_start();
         if (isset($_SESSION["password"])) {
