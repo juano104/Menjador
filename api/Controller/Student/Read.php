@@ -40,34 +40,36 @@ if (isset($_POST['submit'])) {
                 $errorMsg =  "Wrong Email Or Password";
             }
         }
-    } else if (isset($_SESSION["name"])) {
+    } else {
+        if (isset($_SESSION["name"])) {
 
-        //Headers
-        include_once '../api/Model/Database.php';
-        include_once '../api/Model/User_Parent.php';
-        include_once '../api/Model/Student.php';
+            //Headers
+            include_once '../api/Model/Database.php';
+            include_once '../api/Model/User_Parent.php';
+            include_once '../api/Model/Student.php';
 
-        //DB
-        $db = new Database();
-        $db_conn = $db->connect();
+            //DB
+            $db = new Database();
+            $db_conn = $db->connect();
 
-        //User
-        $user = new User_Parent($db_conn);
+            //User
+            $user = new User_Parent($db_conn);
 
-        $user->setUsername($_SESSION["username"]);
-        $parent_DNI = $user->getUsername();
+            $user->setUsername($_SESSION["username"]);
+            $parent_DNI = $user->getUsername();
 
-        $pass = $user->readPassword();
-        $stmt = $user->read();
-        $count = $stmt->rowCount();
+            $pass = $user->readPassword();
+            $stmt = $user->read();
+            $count = $stmt->rowCount();
 
-        while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
-            extract($row);
-            if (password_verify($password, $row['password'])) {
-                header('location:../front/View/index.php');
-                exit;
-            } else {
-                $errorMsg =  "Wrong Email Or Password";
+            while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
+                extract($row);
+                if (password_verify($password, $row['password'])) {
+                    header('location:../front/View/index.php');
+                    exit;
+                } else {
+                    $errorMsg =  "Wrong Email Or Password";
+                }
             }
         }
     }
