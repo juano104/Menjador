@@ -39,7 +39,7 @@ if (isset($_POST['day'])) {
     echo $dayofweek;
     echo $sumd . "uh";
     require_once "View/total.php";
-} else {
+} /*else {
     $today = date("Y-m-d");
     $booking->setDate($today);
 
@@ -57,7 +57,7 @@ if (isset($_POST['day'])) {
         extract($row);
         /*$e = array(
             "sum" => $sumn
-        );*/
+        );
         $sumn = $row["sum"];
 
         //array_push($arr, $e);
@@ -67,3 +67,4 @@ if (isset($_POST['day'])) {
     echo $sumn . "bruh";
     require_once "View/total.php";
 }
+*/
