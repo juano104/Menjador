@@ -27,21 +27,21 @@ if (isset($_POST['submit'])) {
         $user->setUsername($_SESSION["username"]);
         $parent_DNI = $user->getUsername();
 
-        $pass = $user->readPassword();
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
-        while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             if (password_verify($password, $row['password'])) {
                 //$_SESSION['password'] = $row['password'];
                 //header('location:../front/View/index.php');
-                include_once "View/index.php";
+                include_once "../front/View/index.php";
             } else {
                 $errorMsg =  "Wrong Email Or Password";
             }
         }
-    } else {
+        include_once "../front/View/index.php";
+    } /*else {
         session_start();
         if (isset($_SESSION["password"])) {
             //Headers
@@ -65,16 +65,16 @@ if (isset($_POST['submit'])) {
 
             while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
                 extract($row);
-                if (password_verify($password, $row['password'])) {
+                if ($password == $row['password']) {
                     $_SESSION['password'] = $row['password'];
                     //header('location:../front/View/index.php');
-                    include_once "View/index.php";
+                    include_once "../front/View/index.php";
                 } else {
                     $errorMsg =  "Wrong Email Or Password";
                 }
             }
         }
-    }
+    }*/
 }
 
 /*
