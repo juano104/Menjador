@@ -11,6 +11,10 @@ footer{
     background-color: #2E8E8E !important;
 }
 
+nav li{
+    padding-left: 25px;
+}
+
 .effect-18{
     border: 0; 
     padding: 7px 0; 
