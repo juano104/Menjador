@@ -30,16 +30,15 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="insertar">
-            Insertar
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="total">
-            Reservas
-          </a>
-        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Insertar
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="InsertarMenu">Insertar Menu</a>
+          <a class="dropdown-item" href="InsertarPlato">Insertar Plato</a>
+        </div>
+      </li>
         <!-- Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">

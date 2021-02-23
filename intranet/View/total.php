@@ -73,9 +73,9 @@
         <!-- Menu de navegacio -->
     </div>
     <div class="bootstrap-iso">
-        <div class="container-fluid">
+        <div class="container margin">
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-12" style="margin-left: 0%;">
                     <form action="" class="form-horizontal" method="post">
                         <div class="form-group ">
                             <label class="control-label col-sm-2 requiredField" for="date">
@@ -101,9 +101,10 @@
                     </form>
                 </div>
             </div>
+            <h3>Hay <?php echo $sum?> reservas para <?php echo $booking->getDate()?></h3>
         </div>
     </div>
-    <h3>Hay <?php echo $sum?> reservas para <?php echo $booking->getDate()?></h3>
+    
 
     <!--<div class="container" style="margin-bottom: 10%; margin-top: 5%;">
         <h1>Reservas para <?php //echo $booking->getDate() ?></h1>
