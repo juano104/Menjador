@@ -38,7 +38,8 @@ if (isset($_POST['submit'])) {
             if ($passwordf == $row['password']) {
                 include_once "../front/View/index.php";
             } else {
-                echo "alert(Wrong Password)";
+                header("Location: http://www.menjadorescola.me/");
+                echo "<script>alert('Wrong Password')</script>";
             }
         }
     }
