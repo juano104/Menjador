@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
             $userArr = array();
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 extract($row);
-                if (password_verify($password, $row['password'])) {
+                if ($password == $row["password"]) {
                     //$_SESSION['password'] = $row['password'];
                     //header('location:../front/View/index.php');
                     include_once "../front/View/index.php";
