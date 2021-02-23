@@ -28,15 +28,16 @@ if (isset($_POST['day'])) {
 
         $arr = array();
 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            extract($row);
-            /*$e = array(
+        //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        extract($row);
+        /*$e = array(
             "sum" => $sumd
         );*/
-            $sumd = $row["sum"];
+        $sumd = $row["sum"];
 
-            //array_push($arr, $e);
-        }
+        //array_push($arr, $e);
+        //}
         //echo json_encode($arr);
         echo $dayofweek;
         echo $sumd . "uh";
