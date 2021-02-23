@@ -36,6 +36,10 @@ footer {
     width: 100%;
 }
 
+nav li{
+    padding-left: 25px;
+}
+
 form {
     margin-bottom: 15%;
 }
