@@ -52,7 +52,9 @@
                     method: 'POST'
                 }],
                 hiddenDays: [0, 6],
-                showNonCurrentDates: false
+                showNonCurrentDates: false,
+                eventOrder: "type",
+                eventColor: '#ffffff00'
 
             })
         });
