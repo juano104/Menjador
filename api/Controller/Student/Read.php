@@ -28,9 +28,18 @@ if (isset($_POST['submit'])) {
 
         $stmt = $user->read();
         $count = $stmt->rowCount();
+        $pass = $user->readPassword();
+        $countpass = $pass->rowCount();
 
+        if ($countpass  == 1) {
+            $row = mysqli_fetch_assoc($pass);
 
-        include_once "../front/View/index.php";
+            if ($passwordf == $row['password']) {
+                include_once "../front/View/index.php";
+            } else {
+                echo "alert(Wrong Password)";
+            }
+        }
     }
 } else {
     //session_start();
