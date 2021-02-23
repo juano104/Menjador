@@ -61,8 +61,7 @@
                 container: container,
                 todayHighlight: true,
                 autoclose: true,
-                beforeShowDay: noWeekends,
-                minDate: dateToday,
+                minDate: dateToday
             })
         })
     </script>
