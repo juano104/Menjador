@@ -3,7 +3,7 @@
 //if (isset($_POST["username"])) {
 session_start();
 $_SESSION["username"] = $_POST["username"];
-$user = $_SESSION["username"];
+//$user = $_SESSION["username"];
 
 $_SESSION["name"] = "login";
 //Headers
@@ -18,7 +18,7 @@ $db_conn = $db->connect();
 //User
 $user = new User_Parent($db_conn);
 
-$user->setUsername($user);
+$user->setUsername($_SESSION["username"]);
 $parent_DNI = $user->getUsername();
 
 $stmt = $user->read();
