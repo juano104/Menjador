@@ -198,7 +198,7 @@ class User_Parent
 
     public function read()
     {
-        $query = "select ID, name, last_name from Student 
+        $query = "select ID, name, last_name, password from Student 
         inner join User_Parent on 
         Student.parent_DNI = User_Parent.username
         where User_Parent.username = ?";
@@ -212,7 +212,7 @@ class User_Parent
         return $stmt;
     }
 
-    public function readPassword(){
+    /*public function readPassword(){
         $query = "select password from User_Parent where username = ?";
 
         $stmt = $this->conn->prepare($query);
@@ -239,7 +239,7 @@ class User_Parent
         $stmt->execute();
 
         return $stmt;
-    }
+    }*/
 
     //RESERVATIONS
     public function makeReservation()
