@@ -29,7 +29,7 @@ if (isset($_POST['day'])) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $e = array(
-            "sum" => $sum
+            "sum" => $sumd
         );
 
         array_push($arr, $e);
@@ -53,7 +53,7 @@ if (isset($_POST['day'])) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $e = array(
-            "sum" => $sum
+            "sum" => $sumn
         );
 
         array_push($arr, $e);

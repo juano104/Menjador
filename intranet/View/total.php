@@ -108,7 +108,7 @@
                     </form>
                 </div>
             </div>
-            <h2>Hay <?php echo $sum ?> reservas para <?php echo $booking->getDate() ?></h2>
+            <h2>Hay <?php if(isset($_POST["day"])){echo $sumd;}else{echo $sumn;} ?> reservas para <?php echo $booking->getDate() ?></h2>
         </div>
     </div>
 
