@@ -71,8 +71,8 @@ if (isset($_POST['submit'])) {
             $errorMsg =  "No User Found";
         }
     }*/
+    }
 }
-
 
 /*
 if (isset($_POST["username"])) {
@@ -123,5 +123,4 @@ if (isset($_POST["username"])) {
 
         include_once "../front/View/index.php";
     }
-}
-*/
+}*/
