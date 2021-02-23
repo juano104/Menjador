@@ -6,7 +6,7 @@ session_start();
 if (isset($_POST['submit'])) {
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
         $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
+        $passwordf = trim($_POST['password']);
 
         $_SESSION["username"] = $_POST["username"];
 
@@ -30,16 +30,7 @@ if (isset($_POST['submit'])) {
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            extract($row);
-            if (password_verify($password, $row['password'])) {
-                //$_SESSION['password'] = $row['password'];
-                //header('location:../front/View/index.php');
-                include_once "../front/View/index.php";
-            } else {
-                $errorMsg =  "Wrong Email Or Password";
-            }
-        }
+
         include_once "../front/View/index.php";
     } /*else {
         session_start();
