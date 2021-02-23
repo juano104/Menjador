@@ -69,7 +69,8 @@
         }],
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
-        eventLimit: true
+        eventLimit: true,
+        editable: false
 
       })
     });
