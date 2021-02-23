@@ -70,7 +70,7 @@
         hiddenDays: [0, 6],
         showNonCurrentDates: false,
         eventLimit: true,
-        resourceOrder: 'type',
+        eventOrder: "type"
 
       })
     });
