@@ -18,27 +18,30 @@ if (isset($_POST['day'])) {
 
     $dayname = date('l', strtotime($booking->getDate()));;
     $dayofweek = strtolower($dayname);
+    if ($dayofweek == "saturday" || $dayofweek == "sunday") {
+        echo "No reservations on weekends";
+    } else {
+        $booking->setDow($dayofweek);
 
-    $booking->setDow($dayofweek);
-
-    $stmt = $booking->readTotalByDay();
+        $stmt = $booking->readTotalByDay();
 
 
-    $arr = array();
+        $arr = array();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
-        /*$e = array(
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            extract($row);
+            /*$e = array(
             "sum" => $sumd
         );*/
-        $sumd = $row["sum"];
+            $sumd = $row["sum"];
 
-        //array_push($arr, $e);
+            //array_push($arr, $e);
+        }
+        //echo json_encode($arr);
+        echo $dayofweek;
+        echo $sumd . "uh";
+        require_once "View/total.php";
     }
-    //echo json_encode($arr);
-    echo $dayofweek;
-    echo $sumd . "uh";
-    require_once "View/total.php";
 } /*else {
     $today = date("Y-m-d");
     $booking->setDate($today);
