@@ -32,7 +32,10 @@ if (isset($_POST['submit'])) {
 
 
         include_once "../front/View/index.php";
-    } else if (isset($_SESSION["username"]) && isset($_SESSION["password"])) {
+    }
+} else {
+    session_start();
+    if (isset($_SESSION["name"])) {
         //Headers
         include_once '../api/Model/Database.php';
         include_once '../api/Model/User_Parent.php';
