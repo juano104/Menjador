@@ -35,6 +35,7 @@ if (isset($_POST['day'])) {
         array_push($arr, $e);
     }
     //echo json_encode($arr);
+    require_once "View/total.php";
 } else {
     $today = date("Y-m-d");
     $booking->setDate($today);
@@ -58,5 +59,5 @@ if (isset($_POST['day'])) {
         array_push($arr, $e);
     }
     //echo json_encode($arr);
+    require_once "View/total.php";
 }
-require_once "View/total.php";
