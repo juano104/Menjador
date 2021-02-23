@@ -34,13 +34,13 @@ if (isset($_POST['submit'])) {
         while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             if (password_verify($password, $row['password'])) {
-                header('location:../front/View/index.php');
+                include_once "../front/View/index.php";
                 exit;
             } else {
                 $errorMsg =  "Wrong Email Or Password";
             }
         }
-    } /*else {
+    } else {
         if (isset($_SESSION["name"])) {
 
             //Headers
@@ -65,14 +65,14 @@ if (isset($_POST['submit'])) {
             while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
                 extract($row);
                 if (password_verify($password, $row['password'])) {
-                    header('location:../front/View/index.php');
+                    include_once "../front/View/index.php";
                     exit;
                 } else {
                     $errorMsg =  "Wrong Email Or Password";
                 }
             }
         }
-    }*/
+    }
 }
 
 
