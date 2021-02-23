@@ -34,7 +34,7 @@
     <!-- Menu de navegacio -->
   </div>
 
-  <div class="container margin">
+  <div class="container margin" style="margin-bottom: 2%;">
     <!-- Menu de navegacio -->
     <?php require_once "View-Insert-Plate.php" ?>
     <!-- Menu de navegacio -->
