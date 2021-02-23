@@ -222,7 +222,7 @@ class User_Parent
         return $stmt;
     }
 
-    /*public function readPassword(){
+    public function readPassword(){
         $query = "select password from User_Parent where username = ?";
 
         $stmt = $this->conn->prepare($query);
