@@ -1,9 +1,9 @@
 <?php
 
-session_start();
-$_SESSION["username"] = $_POST["username"];
-if (isset($_SESSION["username"])) {
-    //session_start();
+if (isset($_POST["username"], $_SESSION["username"])) {
+    session_start();
+    $_SESSION["username"] = $_POST["username"];
+    
     $_SESSION["name"] = "login";
     //Headers
     include_once '../api/Model/Database.php';
