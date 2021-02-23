@@ -1,7 +1,9 @@
 <?php
-if (isset($_POST["username"])) {
-    session_start();
-    $_SESSION["username"] = $_POST["username"];
+
+session_start();
+$_SESSION["username"] = $_POST["username"];
+if (isset($_SESSION["username"])) {
+    //session_start();
     $_SESSION["name"] = "login";
     //Headers
     include_once '../api/Model/Database.php';
@@ -21,6 +23,6 @@ if (isset($_POST["username"])) {
 
     $stmt = $user->read();
     $count = $stmt->rowCount();
-    
+
     include_once "../front/View/index.php";
 }
