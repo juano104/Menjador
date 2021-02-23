@@ -35,7 +35,7 @@
   </div>
 
   <canvas id="canvas" width="0%" height="0%"></canvas>
-  <div class="container">
+  <div class="container margin">
     <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
     <div id='calendar'></div>
   </div>

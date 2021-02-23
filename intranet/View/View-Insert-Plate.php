@@ -38,7 +38,7 @@
         <!-- Menu de navegacio -->
     </div>
 
-    <div class="container">
+    <div class="container margin">
         <h1>INSERIR PLAT</h1>
         <form action="insertar/plate" class="form-inline" method="post">
         <div class="form-group mb-2">
