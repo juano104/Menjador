@@ -10,7 +10,7 @@ $router->define([
     "insertar" => "../api/Controller/Plate/Read.php",
     "insertarPlate" => "../api/Controller/Plate/Insert.php",
     "datos" => "../api/Controller/Menu/Read-MenuPlate.php",
-
+    "insertar/menu" => "../api/Controller/Menu/Insert.php",
     "" => "../api/Controller/Booking/ReadTotalByDay.php",
 
 ]);
