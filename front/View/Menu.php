@@ -26,7 +26,7 @@
 
     <style>
         #calendar {
-            max-width: 100%;
+            max-width: 70%;
             margin-bottom: 5%;
         }
     </style>
@@ -52,7 +52,9 @@
                     method: 'POST'
                 }],
                 hiddenDays: [0, 6],
-                showNonCurrentDates: false
+                showNonCurrentDates: false,
+                eventOrder: "type",
+                eventColor: '#ffffff00'
 
             })
         });
