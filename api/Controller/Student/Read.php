@@ -8,7 +8,8 @@ if (isset($_POST['submit'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["username"] = $username;
+        $_SESSION['password'] = $password;
 
         $_SESSION["name"] = "login";
 
