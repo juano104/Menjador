@@ -86,10 +86,10 @@
                                 if ($password == $passwordf) {
                                     echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
                                     echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                                }/*else{
-                                    header("Location:http://www.menjadorescola.me/");
+                                }else{
+                                    header("Location:http://www.menjadorescola.me");
                                     echo "alert(Wrong Password)";
-                                }*/
+                                }
                             }
                         }
                         ?>
