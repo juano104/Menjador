@@ -212,6 +212,18 @@ class User_Parent
         return $stmt;
     }
 
+    public function readPassword(){
+        $query = "select password from User_Parent where username = ?";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(1, $this->username);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
     public function readOne($studentname)
     {
         $query = "select ID, name, last_name from Student 
