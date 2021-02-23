@@ -13,7 +13,7 @@ $db_conn = $db->connect();
 $booking = new Booking($db_conn);
 
 $today = date("Y-m-d");
-$booking->setDate($today);
+$booking->setDate($_POST['day']);
 
 $dayname = date('l', strtotime($booking->getDate()));;
 $dayofweek = strtolower($dayname);
@@ -27,37 +27,13 @@ $arr = array();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     extract($row);
-    $sumn = $row["sum"];
+    $e = array(
+        "sum" => $sum
+    );
+    //$sumn = $row["sum"];
 }
 
 echo $dayofweek;
-echo $sumn . "bruh";
+echo $sum . " bruh";
 
 require_once "View/total.php";
-
-if (isset($_POST['day'])) {
-    $booking->setDate($_POST["day"]);
-
-    $dayname = date('l', strtotime($booking->getDate()));;
-    $dayofweek = strtolower($dayname);
-
-    $booking->setDow($dayofweek);
-
-    $stmt = $booking->readTotalByDay();
-
-    $arr = array();
-
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
-        /*$e = array(
-            "sum" => $sumd
-        );*/
-        $sumd = $row["sum"];
-
-        //array_push($arr, $e);
-    }
-    //echo json_encode($arr);
-    echo $dayofweek;
-    echo $sumd . "uh";
-    require_once "View/total.php";
-}
