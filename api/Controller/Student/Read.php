@@ -30,8 +30,24 @@ if (isset($_POST['submit'])) {
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
-
-        include_once "../front/View/index.php";
+        if ($count > 0) {
+            $userArr = array();
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                extract($row);
+                $e = array(
+                    "ID" => $ID,
+                    "name" => $name,
+                    "last_name" => $last_name,
+                    "password" => $password
+                );
+                array_push($userArr, $e);
+                if ($password == $passwordf) {
+                    include_once "../front/View/index.php";
+                } else {
+                    echo "alert(Wrong Password)";
+                }
+            }
+        }
     } else {
         session_start();
         if (isset($_SESSION["name"])) {
