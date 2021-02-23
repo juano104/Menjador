@@ -10,6 +10,7 @@ class User_Parent
     private $ID;
     private $name;
     private $last_name;
+    private $password;
     //properties for Booking TABLE in db
     private $student_ID;
     private $parent_DNI;
@@ -31,6 +32,10 @@ class User_Parent
     function getUsername()
     {
         return $this->username;
+    }
+    function getPassword()
+    {
+        return $this->password;
     }
 
     function getID()
@@ -61,6 +66,11 @@ class User_Parent
     function setName($name): void
     {
         $this->name = $name;
+    }
+
+    function setPassword($password): void
+    {
+        $this->password = $password;
     }
 
     function setLast_name($last_name): void
@@ -224,7 +234,7 @@ class User_Parent
         return $stmt;
     }
 
-    public function readOne($studentname)
+    /*public function readOne($studentname)
     {
         $query = "select ID, name, last_name from Student 
         inner join User_Parent on 

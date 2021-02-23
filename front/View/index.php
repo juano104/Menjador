@@ -26,8 +26,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <style>
-        
-
         #calendar {
             max-width: 100%;
             margin-bottom: 5%;
@@ -57,176 +55,192 @@
     <?php require_once "navbar.php" ?>
 
 
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-        <h2>Realizar reserva</h2>
-        <form>
-            <div class="col-8" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
-                    <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Choose type</a></li>
-                    <li><a tabindex="-1" class="tab3 tabs nav-link" href="#tabs-3">Loose Days</a></li>
-                    <li><a tabindex="-1" class="tab4 tabs nav-link" href="#tabs-4">Fixed Days</a></li>
-                    <li><a tabindex="-1" class="tab5 tabs nav-link" href="#tabs-5">Summary</a></li>
-                </ul>
+            <h2>Realizar reserva</h2>
+            <form>
+                <div class="col-8" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
+                        <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Choose type</a></li>
+                        <li><a tabindex="-1" class="tab3 tabs nav-link" href="#tabs-3">Loose Days</a></li>
+                        <li><a tabindex="-1" class="tab4 tabs nav-link" href="#tabs-4">Fixed Days</a></li>
+                        <li><a tabindex="-1" class="tab5 tabs nav-link" href="#tabs-5">Summary</a></li>
+                    </ul>
 
-                <div class="tab-content" id="tabs-1">
-                    <h3>Elegeix el fill</h3> <br>
-                    <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
-                    <?php
-                    if ($count > 0) {
-                        $userArr = array();
-                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    <div class="tab-content" id="tabs-1">
+                        <h3>Elegeix el fill</h3> <br>
+                        <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
+                        <?php
+                        /*while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
                             extract($row);
-                            $e = array(
-                                "ID" => $ID,
-                                "name" => $name,
-                                "last_name" => $last_name
-                            );
-                            array_push($userArr, $e);
+                            if ($password == $row['password']) {
+                                //$_SESSION['password'] = $row['password'];
+                                //header('location:../front/View/index.php');
+                                include_once "../front/View/index.php";
+                            } else {
+                                $errorMsg =  "Wrong Email Or Password";
+                            }
+                        }*/
 
-                            echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
-                            echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+
+                        if ($count > 0) {
+                            $userArr = array();
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                extract($row);
+                                $e = array(
+                                    "ID" => $ID,
+                                    "name" => $name,
+                                    "last_name" => $last_name,
+                                    "password" => $password
+                                );
+                                array_push($userArr, $e);
+                                if ($password == $passwordf) {
+                                    echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
+                                    echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                                } else {
+                                    echo "User doesnt exist";
+                                }
+                            }
                         }
-                    }
-                    ?>
-                    <br>
-                    <button type="button" class="b1n btn btn-outline-success">Siguiente</button>
+                        ?>
+                        <br>
+                        <button type="button" class="b1n btn btn-outline-success">Siguiente</button>
 
-                </div>
-                <div class="tab-content" id="tabs-2">
-                    <h3>Tipo</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Nombre</th>
-                                    <th class="t">Tipo</th>
-                                    <th class="d">Fecha</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
                     </div>
-                    <input type="radio" value="Loose" name="type" id="Loose">
-                    <label for="Loose">Dia Suelto</label>
-                    <input type="radio" value="Fixed" name="type" id="Fixed">
-                    <label for="Fixed">Multiples dias</label>
+                    <div class="tab-content" id="tabs-2">
+                        <h3>Tipo</h3>
+                        <div>
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <input type="radio" value="Loose" name="type" id="Loose">
+                        <label for="Loose">Dia Suelto</label>
+                        <input type="radio" value="Fixed" name="type" id="Fixed">
+                        <label for="Fixed">Multiples dias</label>
 
-                    <br>
+                        <br>
 
-                    <button type="button" class="b2p btn btn-outline-danger">Atras</button>
-                    <button type="button" class="b2n btn btn-outline-success">Siguiente</button>
-                </div>
-                <div class="tab-content" id="tabs-3">
-                    <h3>One Day</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Nombre</th>
-                                    <th class="t">Tipo</th>
-                                    <th class="d">Fecha</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <button type="button" class="b2p btn btn-outline-danger">Atras</button>
+                        <button type="button" class="b2n btn btn-outline-success">Siguiente</button>
                     </div>
-                    <div class="d1">
-                        <label for="datepicker1">Fecha:</label>
-                        <input name="date1" type="text" class="datepicker">
-                    </div><br>
+                    <div class="tab-content" id="tabs-3">
+                        <h3>One Day</h3>
+                        <div>
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d1">
+                            <label for="datepicker1">Fecha:</label>
+                            <input name="date1" type="text" class="datepicker">
+                        </div><br>
 
-                    <div class="d2">
-                        <label for="datepicker2">Fecha 2:</label>
-                        <input name="date2" type="text" class="datepicker">
-                    </div><br>
-                    <div class="d3">
-                        <label for="datepicker3">Fecha 3:</label>
-                        <input name="date3" type="text" class="datepicker">
-                    </div><br>
-                    <div class="d4">
-                        <label for="datepicker4">Fecha 4:</label>
-                        <input name="date4" type="text" class="datepicker">
-                    </div><br>
-                    <div class="d5">
-                        <label for="datepicker5">Fecha 5:</label>
-                        <input name="date5" type="text" class="datepicker">
-                    </div><br>
-                    <br>
-                    <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
-                    <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
-                    <br><br>
-                    <button type="button" class="b3p btn btn-outline-danger">Atras</button>
-                    <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
-                </div>
-                <div class="tab-content" id="tabs-4">
-                    <h3>Fixed</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Nombre</th>
-                                    <th class="t">Tipo</th>
-                                    <th class="d">Fecha</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <div class="d2">
+                            <label for="datepicker2">Fecha 2:</label>
+                            <input name="date2" type="text" class="datepicker">
+                        </div><br>
+                        <div class="d3">
+                            <label for="datepicker3">Fecha 3:</label>
+                            <input name="date3" type="text" class="datepicker">
+                        </div><br>
+                        <div class="d4">
+                            <label for="datepicker4">Fecha 4:</label>
+                            <input name="date4" type="text" class="datepicker">
+                        </div><br>
+                        <div class="d5">
+                            <label for="datepicker5">Fecha 5:</label>
+                            <input name="date5" type="text" class="datepicker">
+                        </div><br>
+                        <br>
+                        <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
+                        <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
+                        <br><br>
+                        <button type="button" class="b3p btn btn-outline-danger">Atras</button>
+                        <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
                     </div>
-                    <p>Fecha (yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
-                    <p>Fecha Final(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
-                    <input type="checkbox" id="monday" name="monday" value="0">
-                    <label for="monday">Lunes</label><br>
+                    <div class="tab-content" id="tabs-4">
+                        <h3>Fixed</h3>
+                        <div>
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Fecha (yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
+                        <p>Fecha Final(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
+                        <input type="checkbox" id="monday" name="monday" value="0">
+                        <label for="monday">Lunes</label><br>
 
-                    <input type="checkbox" id="tuesday" name="tuesday" value="0">
-                    <label for="tuesday">Martes</label><br>
+                        <input type="checkbox" id="tuesday" name="tuesday" value="0">
+                        <label for="tuesday">Martes</label><br>
 
-                    <input type="checkbox" id="wednesday" name="wednesday" value="0">
-                    <label for="wednesday">Miercoles</label><br>
+                        <input type="checkbox" id="wednesday" name="wednesday" value="0">
+                        <label for="wednesday">Miercoles</label><br>
 
-                    <input type="checkbox" id="thursday" name="thursday" value="0">
-                    <label for="thursday">Jueves</label><br>
+                        <input type="checkbox" id="thursday" name="thursday" value="0">
+                        <label for="thursday">Jueves</label><br>
 
-                    <input type="checkbox" id="friday" name="friday" value="0">
-                    <label for="friday">Viernes</label><br>
-                    <br>
-                    <button type="button" class="b4p btn btn-outline-danger">Atras</button>
-                    <button type="button" class="b4n btn btn-outline-success">Siguiente</button>
-                </div>
-                <div class="tab-content" id="tabs-5">
-                    <h3>Tu Reserva:</h3>
-                    <div>
-                        <table class="tabler" border="1">
-                            <thead>
-                                <tr>
-                                    <th class="n">Nombre</th>
-                                    <th class="t">Tipo</th>
-                                    <th class="d">Fecha</th>
-                                    <th class="sd">Fecha Inicio</th>
-                                    <th class="ed">Fecha Final</th>
-                                    <th class="dow">Dias de la semana</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <input type="checkbox" id="friday" name="friday" value="0">
+                        <label for="friday">Viernes</label><br>
+                        <br>
+                        <button type="button" class="b4p btn btn-outline-danger">Atras</button>
+                        <button type="button" class="b4n btn btn-outline-success">Siguiente</button>
                     </div>
-                    <br>
-                    <input id="submit" name="submit" type="submit" value="Reserve">
-                    <br> <br>
-                    <button type="button" class="b5p btn btn-outline-danger">Atras</button>
-                </div>
+                    <div class="tab-content" id="tabs-5">
+                        <h3>Tu Reserva:</h3>
+                        <div>
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                        <th class="sd">Fecha Inicio</th>
+                                        <th class="ed">Fecha Final</th>
+                                        <th class="dow">Dias de la semana</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <input id="submit" name="submit" type="submit" value="Reserve">
+                        <br> <br>
+                        <button type="button" class="b5p btn btn-outline-danger">Atras</button>
+                    </div>
 
-            </div>
-        </form>
-    </div>
+                </div>
+            </form>
         </div>
-            
-    
+    </div>
+
+
 
 
     <script type="text/javascript">
