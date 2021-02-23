@@ -7,6 +7,8 @@ class Booking
     private $username;
     private $dow;
     private $sum;
+    private $sumd;
+    private $sumn;
     private $name;
     private $last_name;
     private $ID;
@@ -44,10 +46,26 @@ class Booking
     {
         return $this->sum;
     }
+    function getSumd()
+    {
+        return $this->sumd;
+    }
+    function getSumn()
+    {
+        return $this->sumn;
+    }
 
     function setSum($sum): void
     {
         $this->sum = $sum;
+    }
+    function setSumd($sumd): void
+    {
+        $this->sumd = $sumd;
+    }
+    function setSumn($sumn): void
+    {
+        $this->sumn = $sumn;
     }
 
     function getDow()
