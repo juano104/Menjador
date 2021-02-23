@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
-        while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             if (password_verify($password, $row['password'])) {
                 //$_SESSION['password'] = $row['password'];
