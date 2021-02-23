@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container margin">
   <h2>Inserir Plat</h2>
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo"><i class="fas fa-utensils"></i></button>
   <div id="demo" class="collapse">
   
           <h1>INSERIR PLAT</h1>
-          <form action="insertar/plate" class="form-inline" method="post">
+          <form action="insertar/plate" class="form-inline" style="margin: 0%;" method="post">
             <div class="form-group mb-2">
               <label for="nomplat">
 
@@ -23,20 +23,5 @@
             </div>
             <input type="submit" class="btn btn-secondary mb-2" value="Afegir">
           </form>
-  </div>
-</div>
-
-<div class="accordion accordion-flush" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        <i class="far fa-utensils"></i>
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-mdb-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        
-      </div>
-    </div>
   </div>
 </div>
