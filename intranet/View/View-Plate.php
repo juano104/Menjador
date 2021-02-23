@@ -42,9 +42,9 @@
 
   <canvas id="canvas" width="0%" height="0%"></canvas>
   <div class="container margin">
-    <div class="row">
+    
       <h5>Descargar Menu:</h5><a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
-    </div>
+    
     <h1>Inserir Menu</h1>
     <div id='calendar'></div>
   </div>
