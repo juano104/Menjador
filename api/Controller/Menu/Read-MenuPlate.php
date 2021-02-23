@@ -23,6 +23,7 @@ if ($count > 0) {
         $e[] = array(
             "date" => $date,
             "title" => $title,
+            "type" => $type,
         );  
     }
     echo json_encode($e);

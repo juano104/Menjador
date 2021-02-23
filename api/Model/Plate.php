@@ -52,7 +52,7 @@ class Plate{
 
     public function readMenuPlate()
     {
-        $query = "select menu_ID,date, p.name as title from Plate p, Menu m, Menu_Day md where md.menu_ID = m.ID and md.plate_ID = p.ID  order by date, p.type desc;";
+        $query = "select menu_ID,date, p.name as title, p.type from Plate p, Menu m, Menu_Day md where md.menu_ID = m.ID and md.plate_ID = p.ID  order by date, p.type;";
 
         $result = $this->conn->query($query);
 
