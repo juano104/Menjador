@@ -1,5 +1,5 @@
 <div class="container margin">
-  <h2>Inserir Plat</h2>
+  <h1>Inserir Plat</h1>
   <button type="button" style="margin-bottom: 2%;" class="btn btn-info" data-toggle="collapse" data-target="#demo"><i class="fas fa-utensils"></i></button>
   <div id="demo" class="collapse">
           <form action="insertarPlate" class="form-inline" style="margin: 0%;" method="post">
