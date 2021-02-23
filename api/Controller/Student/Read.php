@@ -32,7 +32,8 @@ if (isset($_POST['submit'])) {
         $countpass = $pass->rowCount();
 
         if ($countpass  == 1) {
-            $row = mysqli_fetch_assoc($pass);
+            $row = $pass->fetch(PDO::FETCH_ASSOC);
+            extract($row);
 
             if ($passwordf == $row['password']) {
                 include_once "../front/View/index.php";
