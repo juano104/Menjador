@@ -61,7 +61,7 @@
                 container: container,
                 todayHighlight: true,
                 autoclose: true,
-                beforeShowDay: $.datepicker.noWeekends,
+                beforeShowDay: noWeekends,
                 minDate: dateToday,
             })
         })
