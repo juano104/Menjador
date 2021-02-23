@@ -36,13 +36,11 @@ $today = date("Y-m-d");
                 <li class="nav-item ">
                     <a class="nav-link" href="menu">
                         Menu
-                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="reservas">
                         Mis reservas
-                        <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
