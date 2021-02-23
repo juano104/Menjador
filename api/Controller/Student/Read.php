@@ -28,19 +28,21 @@ if (isset($_POST['submit'])) {
         $parent_DNI = $user->getUsername();
 
         $pass = $user->readPassword();
+        $passcount = $pass->rowCount();
         $stmt = $user->read();
         $count = $stmt->rowCount();
 
-        while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
+        if ($passcount == 1) {
+            $row = $pass->fetch(PDO::FETCH_ASSOC);
             extract($row);
             if (password_verify($password, $row['password'])) {
-                include_once "../front/View/index.php";
+                header('location:../front/View/index.php');
                 exit;
             } else {
                 $errorMsg =  "Wrong Email Or Password";
             }
         }
-    } else {
+    } /*else {
         if (isset($_SESSION["name"])) {
 
             //Headers
@@ -65,14 +67,14 @@ if (isset($_POST['submit'])) {
             while ($row = $pass->fetch(PDO::FETCH_ASSOC)) {
                 extract($row);
                 if (password_verify($password, $row['password'])) {
-                    include_once "../front/View/index.php";
+                    header('location:../front/View/index.php');
                     exit;
                 } else {
                     $errorMsg =  "Wrong Email Or Password";
                 }
             }
         }
-    }
+    }*/
 }
 
 
