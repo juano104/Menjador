@@ -32,20 +32,19 @@ if (isset($_POST['submit'])) {
 
         if ($count > 0) {
             $userArr = array();
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                extract($row);
-                $e = array(
-                    "ID" => $ID,
-                    "name" => $name,
-                    "last_name" => $last_name,
-                    "password" => $password
-                );
-                array_push($userArr, $e);
-                if ($password == $passwordf) {
-                    include_once "../front/View/index.php";
-                } else {
-                    echo "alert(Wrong Password)";
-                }
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            extract($row);
+            $e = array(
+                "ID" => $ID,
+                "name" => $name,
+                "last_name" => $last_name,
+                "password" => $password
+            );
+            array_push($userArr, $e);
+            if ($password == $passwordf) {
+                include_once "../front/View/index.php";
+            } else {
+                echo "alert(Wrong Password)";
             }
         }
     } else {
