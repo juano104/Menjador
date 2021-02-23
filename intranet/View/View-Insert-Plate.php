@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container margin">
   <h2>Inserir Plat</h2>
   <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo"><i class="fas fa-utensils"></i></button>
   <div id="demo" class="collapse">
