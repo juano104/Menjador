@@ -75,11 +75,13 @@
     <div class="bootstrap-iso">
         <div class="container margin">
             <div class="row">
-            <h4>ELIJE UN DIA</h4>
+                <div class="col-12">
+                    <h4>ELIJE UN DIA</h4>
+                </div>
                 <div class="col-md-6 col-sm-6 col-xs-12" style="padding-left: 0%;">
                     <form action="" class="form-horizontal" method="post">
                         <div class="form-group ">
-                            
+
                             <br>
                             <label class="control-label col-sm-2 requiredField" for="date">
                                 Fecha
@@ -104,13 +106,14 @@
                     </form>
                 </div>
             </div>
-            <h3>Hay <?php echo $sum?> reservas para <?php echo $booking->getDate()?></h3>
+            <h3>Hay <?php echo $sum ?> reservas para <?php echo $booking->getDate() ?></h3>
         </div>
     </div>
-    
+
 
     <!--<div class="container" style="margin-bottom: 10%; margin-top: 5%;">
-        <h1>Reservas para <?php //echo $booking->getDate() ?></h1>
+        <h1>Reservas para <?php //echo $booking->getDate() 
+                            ?></h1>
         <table id="tableReservas" class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -136,7 +139,8 @@
                 "bFilter": true,
                 "bInfo": false,
                 "bAutoWidth": false,
-                data: <?php //echo json_encode($arrday); ?>,
+                data: <?php //echo json_encode($arrday); 
+                        ?>,
                 columns: [{
                     data: 'sum'
                 }, {
@@ -160,7 +164,8 @@
                     "bFilter": true,
                     "bInfo": false,
                     "bAutoWidth": false,
-                    data: <?php //echo json_encode($arrday); ?>,
+                    data: <?php //echo json_encode($arrday); 
+                            ?>,
                     columns: [{
                         data: 'ID'
                     }, {
