@@ -1,7 +1,7 @@
 <?php
-session_start();
+/*session_start();
 
-$_SESSION["date"] = date("Y-m-d");
+$_SESSION["date"] = date("Y-m-d");*/
 
 ?>
 
