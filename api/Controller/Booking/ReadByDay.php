@@ -63,7 +63,7 @@ if (isset($_POST['day'])) {
     $booking->setDow($dayofweek);
 
     $stmt = $booking->readByDay();
-
+    
 
     $arrday = array();
 

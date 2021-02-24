@@ -132,7 +132,7 @@ class Booking
                 (
                     SELECT booking_ID
                     FROM Booking_Extra
-                    where Booking_Extra.' . $dow .' is not null and "' . $date . '" 
+                    where Booking_Extra.' . $dow . ' is not null and "' . $date . '" 
                     between start_date and end_date
                     UNION ALL
                     SELECT booking_ID
@@ -141,7 +141,7 @@ class Booking
                 ) as sum';
 
         $stmt = $this->conn->prepare($query);
-        
+
         $stmt->execute();
 
         return $stmt;
@@ -236,6 +236,32 @@ class Booking
         $stmt = $this->conn->prepare($query);
         // bind data
         $stmt->bindParam(1, $this->ID);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    public function readTotalAllergy($dow, $date)
+    {
+        $query = 'select Allergy.name,count(Allergy.name) as allergy from Student
+        inner join Booking on Booking.student_ID = Student.ID
+        inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
+        inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
+        inner join Allergy on Allergy.ID = Student_Allergy.allergy_ID
+        and Booking_Day.date = ' . $date .'
+        group by Allergy.name
+        union
+        select Allergy.name,count(Allergy.name) as allergy from Student
+        inner join Booking on Booking.student_ID = Student.ID
+        inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
+        inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
+        inner join Allergy on Allergy.ID = Student_Allergy.allergy_ID
+        and ' . $date . ' between Booking_Extra.start_date and Booking_Extra.end_date
+        and Booking_Extra.'. $dow .' is not null
+        group by Allergy.name';
+
+        $stmt = $this->conn->prepare($query);
 
         $stmt->execute();
 
