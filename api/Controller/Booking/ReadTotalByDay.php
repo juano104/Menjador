@@ -29,4 +29,4 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     );
 }
 echo json_encode($e);
-include_once "View/total.php";
+//include_once "View/total.php";
