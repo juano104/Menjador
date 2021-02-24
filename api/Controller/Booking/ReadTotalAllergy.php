@@ -39,7 +39,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
         "title" => $row["title"],
 
     );
-    array_push($e, $Alergias);
+    array_push($Alergias, $e);
 }
 
 }
