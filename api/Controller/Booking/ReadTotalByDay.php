@@ -13,31 +13,27 @@ $db_conn = $db->connect();
 $booking = new Booking($db_conn);
 
 
-if (isset($_POST['day'])) {
-    $booking->setDate($_POST["day"]);
+//if (isset($_POST['day'])) {
+//$booking->setDate($_POST["day"]);
+$today = date("Y-m-d");
+$booking->setDate($today);
 
-    $dayname = date('l', strtotime($booking->getDate()));;
-    $dayofweek = strtolower($dayname);
-    if ($dayofweek == "saturday" || $dayofweek == "sunday") {
-        echo "No reservations on weekends";
-    } else {
-        $booking->setDow($dayofweek);
+$dayname = date('l', strtotime($booking->getDate()));;
+$dayofweek = strtolower($dayname);
+$booking->setDow($dayofweek);
 
-        $stmt = $booking->readTotalByDay();
+$stmt = $booking->readTotalByDay();
 
-        $arr = array();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+extract($row);
 
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        extract($row);
+$booking->setSum($row["sum"]);
 
-        $booking->setSum($row["sum"]/2);
-
-        echo $dayofweek;
-        echo $booking->getSum() . "post";
-        require_once "View/total.php";
-    }
-} else {
-    $today = date("Y-m-d");
+echo $dayofweek;
+echo $booking->getSum() . "post";
+require_once "View/total.php";
+//} else {
+    /*$today = date("Y-m-d");
     $booking->setDate($today);
 
     $dayname = date('l', strtotime($booking->getDate()));;
@@ -53,10 +49,10 @@ if (isset($_POST['day'])) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         extract($row);
 
-        $booking->setSum($row["sum"]/2);
+        $booking->setSum($row["sum"]);
 
         echo $dayofweek;
         echo $booking->getSum() . "not post";
         require_once "View/total.php";
     }
-}
+}*/
