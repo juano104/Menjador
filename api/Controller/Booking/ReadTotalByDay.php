@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 
 //Headers
 include_once '../api/Model/Database.php';
@@ -25,20 +25,13 @@ if (isset($_POST['day'])) {
 
         $stmt = $booking->readTotalByDay();
 
-
         $arr = array();
 
-        //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         extract($row);
-        /*$e = array(
-            "sum" => $sumd
-        );*/
+
         $booking->setSum($row["sum"]);
 
-        //array_push($arr, $e);
-        //}
-        //echo json_encode($arr);
         echo $dayofweek;
         echo $booking->getSum() . "post";
         require_once "View/total.php";
