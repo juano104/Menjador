@@ -27,11 +27,11 @@ $stmt = $booking->readTotalByDay();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 extract($row);
 
-$booking->setSum($row["total"]);
+$booking->setSum($row["sum"]);
 
 echo $dayofweek;
 echo $booking->getSum() . "post";
-echo $row["total"];
+
 require_once "View/total.php";
 //} else {
     /*$today = date("Y-m-d");
