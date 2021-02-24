@@ -127,7 +127,7 @@ class Booking
     public function readTotalByDay()
     {
         $query = 'SELECT
-                COUNT(*) as total
+                COUNT(*) as "total"
                 FROM
                 (
                     SELECT booking_ID
