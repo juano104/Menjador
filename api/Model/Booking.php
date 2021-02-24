@@ -249,7 +249,7 @@ class Booking
         inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
         inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
         inner join Allergy on Allergy.ID = Student_Allergy.allergy_ID
-        and Booking_Day.date = ' . $date .'
+        and Booking_Day.date = "' . $date .'"
         group by Allergy.name
         union
         select concat(Allergy.name, ": " ,count(Allergy.name)) as title from Student
@@ -257,7 +257,7 @@ class Booking
         inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
         inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
         inner join Allergy on Allergy.ID = Student_Allergy.allergy_ID
-        and ' . $date . ' between Booking_Extra.start_date and Booking_Extra.end_date
+        and "' . $date .'" between Booking_Extra.start_date and Booking_Extra.end_date
         and Booking_Extra.'. $dow .' is not null
         group by Allergy.name';
 

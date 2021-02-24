@@ -36,12 +36,11 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     extract($row);
     $e[] = array(
         "date" => $i,
-        "title" => $row["title"],
+        "title" => $title,
 
     );
-    array_push($Alergias, $e);
 }
 
 }
-echo json_encode($Alergias);
+echo json_encode($e);
 
