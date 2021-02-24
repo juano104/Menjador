@@ -11,59 +11,22 @@ $db_conn = $db->connect();
 
 //User
 $booking = new Booking($db_conn);
+$fecha1 = date('Y').'-01-01';
+$fecha2 = date('Y').'-06-21';
 
+for($i=$fecha1;$i<=$fecha2;$i = date("Y-m-d", strtotime($i ."+ 1 days"))){
+    $day = date('l', strtotime($i));
+    $dayofweek = strtolower($day);
+    
+    $stmt = $booking->readTotalByDay($dayofweek, $i);
 
-if (isset($_POST['day'])) {
-    $booking->setDate($_POST["day"]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $booking->setSum($row["title"] ?? '');
+  
+    $e[] = array(
+        "date" => $i,
+        "title" => $booking->getSum(),
+    ); 
 
-    $dayname = date('l', strtotime($booking->getDate()));;
-    $dayofweek = strtolower($dayname);
-    if ($dayofweek == "saturday" || $dayofweek == "sunday") {
-        echo "No reservations on weekends";
-    } else {
-        $booking->setDow($dayofweek);
-
-        $stmt = $booking->readTotalByDay();
-
-
-        $arr = array();
-
-        //while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        extract($row);
-        /*$e = array(
-            "sum" => $sumd
-        );*/
-        $booking->setSum($row["sum"]);
-
-        //array_push($arr, $e);
-        //}
-        //echo json_encode($arr);
-        echo $dayofweek;
-        echo $booking->getSum() . "post";
-        require_once "View/total.php";
-    }
-} else {
-    $today = date("Y-m-d");
-    $booking->setDate($today);
-
-    $dayname = date('l', strtotime($booking->getDate()));;
-    $dayofweek = strtolower($dayname);
-    if ($dayofweek == "saturday" || $dayofweek == "sunday") {
-        echo "No reservations on weekends";
-    } else {
-        $booking->setDow($dayofweek);
-
-        $stmt = $booking->readTotalByDay();
-        $arr = array();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        extract($row);
-
-        $booking->setSum($row["sum"]);
-
-        echo $dayofweek;
-        echo $booking->getSum() . "not post";
-        require_once "View/total.php";
-    }
 }
+echo json_encode($e);
