@@ -146,7 +146,7 @@ class Booking
         $stmt->bindParam(2, $this->date);
         $stmt->bindParam(3, $this->date);
 
-        $stmt->execute();
+        //$stmt->execute();
 
         return $stmt;
     }
