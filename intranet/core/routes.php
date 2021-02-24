@@ -12,5 +12,5 @@ $router->define([
     "datosCount" => "../api/Controller/Booking/ReadTotalByDay.php",
     "datos" => "../api/Controller/Menu/Read-MenuPlate.php",
     "insertar/menu" => "../api/Controller/Menu/Insert.php",
-    "" => "../api/Controller/Booking/ReadTotalByDay.php",
+    "" => "View/total.php",
 ]);
