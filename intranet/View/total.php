@@ -1,201 +1,162 @@
-<?php
-/*session_start();
-
-$_SESSION["date"] = date("Y-m-d");*/
-
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
-    <link rel="stylesheet" href="public/css/estils.css">
+  <meta charset='utf-8' />
+  <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
 
-    <!--DATATABLE-->
-    <!-- css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
-    <link rel="stylesheet" href="public/css/estils.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <!-- js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-
-    <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
-    <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
-    <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
-    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css">
-    <!--Font Awesome (added because you use icons in your prepend/append)-->
-    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Inline CSS based on choices in "Settings" tab -->
-
-    <style>
-        .bootstrap-iso .formden_header h2,
-        .bootstrap-iso .formden_header p,
-        .bootstrap-iso form {
-            font-family: Arial, Helvetica, sans-serif;
-            color: black
-        }
-
-        .bootstrap-iso form button,
-        .bootstrap-iso form button:hover {
-            color: white !important;
-        }
-
-        .asteriskField {
-            color: red;
-        }
-    </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/estils.css">
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/moment.min.js"></script>
+  <script src="public/js/fullcalendar.min.js"></script>
 
 
-    <script>
-        $(document).ready(function() {
-            var date_input = $('input[name="day"]'); //our date input has the name "day"
-            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
-            date_input.datepicker({
-                format: 'yyyy/mm/dd',
-                container: container,
-                todayHighlight: true,
-                autoclose: true,
-                //minDate: 0,
-                //beforeShowDay: $.datepicker.noWeekends
-            })
-        })
-    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+  <style>
+
+  </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <!-- Menu de navegacio -->
-        <?php require_once "navbar.php" ?>
-        <!-- Menu de navegacio -->
-    </div>
-    <div class="bootstrap-iso">
-        <div class="container margin">
-            <div class="row">
-                <div class="col-12">
-                    <h4>ELIJE UN DIA</h4>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12" style="padding-left: 0%;">
-                    <form action="" class="form-horizontal" method="post">
-                        <div class="form-group ">
 
-                            <br>
-                            <label class="control-label col-sm-2 requiredField" for="date">
-                                Fecha
-                            </label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                    <input class="form-control" id="date" name="day" placeholder="YYYY/MM/DD" type="text" autocomplete="off">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10 col-sm-offset-2">
-                                <input name="_honey" style="display:none" type="text">
-                                <button class="btn btn-primary " name="submit" type="submit">
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <h2><?php 
-            echo "Hay " . $booking->getSum() . " reservas para " .  $booking->getDate(); 
-            ?>
-            </h2>
+  <div class="container-fluid">
+    <!-- Menu de navegacio -->
+    <?php require_once "navbar.php" ?>
+    <!-- Menu de navegacio -->
+  </div>
+
+  <canvas id="canvas" width="0%" height="0%"></canvas>
+  <div class="container margin">
+    
+      <h5>Descargar Menu:</h5><a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
+
+    <div id='calendar'></div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $('#calendar').fullCalendar({
+        eventSources: [{
+          url: 'http://intranet.menjadorescola.me/datosCount',
+          method: 'POST'
+        }],
+        hiddenDays: [0, 6],
+        showNonCurrentDates: false,
+        eventLimit: true,
+        eventOrder: "type",
+        eventColor: '#ffffff00'
+
+      })
+    });
+  </script>
+
+ 
+  <footer class="page-footer font-small stylish-color-dark pt-4">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Link 1</a>
+            </li>
+            <li>
+              <a href="#!">Link 2</a>
+            </li>
+            <li>
+              <a href="#!">Link 3</a>
+            </li>
+            <li>
+              <a href="#!">Link 4</a>
+            </li>
+          </ul>
+
         </div>
-    </div>
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
 
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+            consectetur
+            adipisicing elit.</p>
 
-    <!--<div class="container" style="margin-bottom: 10%; margin-top: 5%;">
-        <h1>Reservas para <?php //echo $booking->getDate() 
-                            ?></h1>
-        <table id="tableReservas" class="table table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Last Name</th>
-                    <th>Allergy</th>
-                </tr>
-            </thead>
-        </table>
-    </div>-->
+        </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
+        <!-- Social buttons -->
+        <div class="col-md-2 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
+          <br>
+          <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-fb mx-1">
+                <i class="fab fa-facebook-f"> </i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-tw mx-1">
+                <i class="fab fa-twitter"> </i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-gplus mx-1">
+                <i class="fab fa-google-plus-g"> </i>
+              </a>
+            </li>
 
+          </ul>
+          <!-- Social buttons -->
 
-    <!--<script>
-        $(document).ready(function() {
-            //DT
-            var t = $('#tableReservas').DataTable({
-                "bPaginate": false,
-                "bLengthChange": false,
-                "bFilter": true,
-                "bInfo": false,
-                "bAutoWidth": false,
-                data: <?php //echo json_encode($arrday); 
-                        ?>,
-                columns: [{
-                    data: 'sum'
-                }, {
-                    data: 'name'
-                }, {
-                    data: 'last_name'
-                }, {
-                    data: 'allergy'
-                }],
-                language: {
-                    url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
-                },
-                select: true
+        </div>
 
-            });
+      </div>
+      <!-- Grid row -->
 
-            function loadData() {
-                t = $('#tableReservas').DataTable({
-                    "bPaginate": false,
-                    "bLengthChange": false,
-                    "bFilter": true,
-                    "bInfo": false,
-                    "bAutoWidth": false,
-                    data: <?php //echo json_encode($arrday); 
-                            ?>,
-                    columns: [{
-                        data: 'ID'
-                    }, {
-                        data: 'name'
-                    }, {
-                        data: 'last_name'
-                    }, {
-                        data: 'allergy'
-                    }],
-                    language: {
-                        url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
-                    },
-                    select: true
-                });
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">� 2020 Copyright:
+        <a href="https://mdbootstrap.com/">Music</a>
+      </div>
+      <!-- Copyright -->
 
-            }
-        });
-    </script>-->
+  </footer>
+  <!-- Footer -->
+
+  <script>
+    $("#print").click(function() {
+      //#AEFC is my div for FullCalendar
+      html2canvas($('#calendar'), {
+        logging: true,
+        useCORS: true,
+        onrendered: function(canvas) {
+          var imgData = canvas.toDataURL("image/png");
+          var doc = new jsPDF();
+          doc.addImage(imgData, 'png', 15, 40, 180, 160);
+          doc.save('sample-file.pdf');
+
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>
