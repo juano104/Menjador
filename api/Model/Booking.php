@@ -126,8 +126,19 @@ class Booking
     //reads the total by the date picked (for restaurant)
     public function readTotalByDay()
     {
-        $query = 'select(select count(*) from Booking_Extra where ? is not null and ? between start_date and end_date) + 
-        (select count(*) from Booking_Day where date = ?) as sum';
+        $query = 'SELECT
+                COUNT(*) as sum
+                FROM
+                (
+                    SELECT booking_ID
+                    FROM Booking_Extra
+                    where ? is not null and ? 
+                    between start_date and end_date
+                    UNION ALL
+                    SELECT booking_ID
+                    FROM Booking_Day
+                    where date = ?
+                ) as sum';
 
         $stmt = $this->conn->prepare($query);
         // bind data
