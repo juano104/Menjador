@@ -16,7 +16,8 @@ $booking = new Booking($db_conn);
 //if (isset($_POST['day'])) {
 //$booking->setDate($_POST["day"]);
 $today = date("Y-m-d");
-$booking->setDate($today);
+$date = "2021-03-01";
+$booking->setDate($date);
 
 $dayname = date('l', strtotime($booking->getDate()));;
 $dayofweek = strtolower($dayname);
