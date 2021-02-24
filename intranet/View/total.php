@@ -115,7 +115,10 @@ $_SESSION["date"] = date("Y-m-d");*/
                     </form>
                 </div>
             </div>
-            <h2>Hay <?php echo $booking->getSum(); ?> reservas para <?php echo $booking->getDate() ?></h2>
+            <h2><?php 
+            echo "Hay " . $booking->getSum() . " reservas para " .  $booking->getDate(); 
+            ?>
+            </h2>
         </div>
     </div>
 
