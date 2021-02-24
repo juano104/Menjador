@@ -21,8 +21,8 @@ if (date('n') < 6) {
     $byear = $year + 1;
 }
 
-$fecha1 = $year . '-09-01';
-$fecha2 = $year + 1 . '-06-21';
+$fecha1 = $ayear . '-09-01';
+$fecha2 = $byear + 1 . '-06-21';
 
 for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))) {
     $day = date('l', strtotime($i));
