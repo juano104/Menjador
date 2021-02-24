@@ -44,7 +44,7 @@ if (isset($_POST['day'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     extract($row);
 
-    $booking->setSum($row["sum"]);
+    $booking->setSum($row["total"]);
 
     echo $dayofweek;
     echo $booking->getSum() . "not post";
