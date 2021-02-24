@@ -35,7 +35,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
     $e[] = array(
         "date" => $i,
-        "title" => "Reservas: " . $booking->getSum(),
+        "title" => "<strong>Reservas: </strong>" . $booking->getSum(),
     );
 }
 echo json_encode($e);
