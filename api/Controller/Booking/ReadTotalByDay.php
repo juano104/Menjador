@@ -11,41 +11,22 @@ $db_conn = $db->connect();
 
 //User
 $booking = new Booking($db_conn);
+$fecha1 = date('Y').'-01-01';
+$fecha2 = date('Y').'-06-21';
 
-if (isset($_POST['day'])) {
-    $booking->setDate($_POST["day"]);
-    $dayname = date('l', strtotime($booking->getDate()));;
-    $dayofweek = strtolower($dayname);
-    $booking->setDow($dayofweek);
-
-    $stmt = $booking->readTotalByDay();
-    $arr = array();
-
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    $booking->setSum($row["total"]);
-
-    /*echo $dayofweek;
-    echo $booking->getSum() . "not post";*/
-    require_once "View/total.php";
-} else {
-    $today = date("Y-m-d");
-    //$date = "2021-03-01";
-    $booking->setDate($today);
-
-    $dayname = date('l', strtotime($booking->getDate()));;
-    $dayofweek = strtolower($dayname);
-    $booking->setDow($dayofweek);
-
-    $stmt = $booking->readTotalByDay();
+for($i=$fecha1;$i<=$fecha2;$i = date("Y-m-d", strtotime($i ."+ 1 days"))){
+    $day = date('l', strtotime($i));
+    $dayofweek = strtolower($day);
+    
+    $stmt = $booking->readTotalByDay($dayofweek, $i);
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $booking->setSum($row["title"] ?? '');
+  
+    $e[] = array(
+        "date" => $i,
+        "title" => $booking->getSum(),
+    ); 
 
-    $booking->setSum($row["total"]);
-
-   /*echo $dayofweek;
-    echo "...";
-    echo $booking->getSum();*/
-
-    require_once "View/total.php";
 }
+echo json_encode($e);
