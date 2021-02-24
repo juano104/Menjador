@@ -32,7 +32,7 @@ echo "...";
 echo $booking->getSum();
 
 require_once "View/total.php";
-if (isset($_POST['day'])) {
+/*if (isset($_POST['day'])) {
     $booking->setDate($_POST["day"]);
     $dayname = date('l', strtotime($booking->getDate()));;
     $dayofweek = strtolower($dayname);
@@ -49,4 +49,4 @@ if (isset($_POST['day'])) {
     echo $dayofweek;
     echo $booking->getSum() . "not post";
     require_once "View/total.php";
-}
+}*/

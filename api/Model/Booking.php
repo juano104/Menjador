@@ -132,19 +132,19 @@ class Booking
                 (
                     SELECT booking_ID
                     FROM Booking_Extra
-                    where ? is not null and ? 
+                    where Booking_Extra.' . $this->dow .' is not null and "' . $this->date . '" 
                     between start_date and end_date
                     UNION ALL
                     SELECT booking_ID
                     FROM Booking_Day
-                    where date = ?
+                    where date = "' . $this->date . '"
                 ) as sum';
 
         $stmt = $this->conn->prepare($query);
         // bind data
-        $stmt->bindParam(1, $this->dow);
-        $stmt->bindParam(2, $this->date);
-        $stmt->bindParam(3, $this->date);
+        //$stmt->bindParam(1, $this->dow);
+        //$stmt->bindParam(2, $this->date);
+        //$stmt->bindParam(3, $this->date);
 
         $stmt->execute();
 
