@@ -244,7 +244,7 @@ class Booking
 
     public function readTotalAllergy($dow, $date)
     {
-        $query = 'select Allergy.name,count(Allergy.name) as allergy from Student
+        $query = 'select concat(Allergy.name, ": " ,count(Allergy.name)) as title from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
         inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
@@ -252,7 +252,7 @@ class Booking
         and Booking_Day.date = ' . $date .'
         group by Allergy.name
         union
-        select Allergy.name,count(Allergy.name) as allergy from Student
+        select concat(Allergy.name, ": " ,count(Allergy.name)) as title from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
         inner join Student_Allergy on Student_Allergy.student_ID = Student.ID

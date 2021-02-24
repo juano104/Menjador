@@ -28,7 +28,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     $day = date('l', strtotime($i));
     $dayofweek = strtolower($day);
 
-    $stmt = $booking->readTotalByDay($dayofweek, $i);
+    $stmt = $booking->readTotalAllergy($dayofweek, $i);
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $booking->setSum($row["title"] ?? '');
@@ -39,4 +39,4 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     );
 }
 echo json_encode($e);
-
+//include_once "View/total.php";
