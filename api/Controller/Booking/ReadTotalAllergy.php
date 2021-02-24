@@ -30,13 +30,13 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
     $stmt = $booking->readTotalAllergy($dayofweek, $i);
 
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    $booking->setSum($row["title"] ?? '');
-
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    extract($row);
     $e[] = array(
         "date" => $i,
         "title" => $booking->getSum(),
     );
+}
 }
 echo json_encode($e);
 //include_once "View/total.php";
