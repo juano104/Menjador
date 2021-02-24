@@ -46,6 +46,7 @@
             $('#calendar').fullCalendar({
                 eventSources: [{
                     url: 'http://intranet.menjadorescola.me/datosCount',
+                    url: 'http://intranet.menjadorescola.me/AllergyCount',
                     method: 'POST'
                 }],
                 hiddenDays: [0, 6],
