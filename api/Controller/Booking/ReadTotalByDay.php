@@ -25,8 +25,8 @@ if (isset($_POST['day'])) {
 
     $booking->setSum($row["total"]);
 
-    echo $dayofweek;
-    echo $booking->getSum() . "not post";
+    /*echo $dayofweek;
+    echo $booking->getSum() . "not post";*/
     require_once "View/total.php";
 } else {
     $today = date("Y-m-d");
@@ -43,9 +43,9 @@ if (isset($_POST['day'])) {
 
     $booking->setSum($row["total"]);
 
-    echo $dayofweek;
+   /*echo $dayofweek;
     echo "...";
-    echo $booking->getSum();
+    echo $booking->getSum();*/
 
     require_once "View/total.php";
 }
