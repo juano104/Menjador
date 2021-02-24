@@ -124,28 +124,24 @@ class Booking
 
     //read bookings for tables
     //reads the total by the date picked (for restaurant)
-    public function readTotalByDay()
+    public function readTotalByDay($dow, $date)
     {
         $query = 'SELECT
-                COUNT(*) as "total"
+                COUNT(*) as "title"
                 FROM
                 (
                     SELECT booking_ID
                     FROM Booking_Extra
-                    where Booking_Extra.' . $this->dow .' is not null and "' . $this->date . '" 
+                    where Booking_Extra.' . $dow .' is not null and "' . $date . '" 
                     between start_date and end_date
                     UNION ALL
                     SELECT booking_ID
                     FROM Booking_Day
-                    where date = "' . $this->date . '"
+                    where date = "' . $date . '"
                 ) as sum';
 
         $stmt = $this->conn->prepare($query);
-        // bind data
-        //$stmt->bindParam(1, $this->dow);
-        //$stmt->bindParam(2, $this->date);
-        //$stmt->bindParam(3, $this->date);
-
+        
         $stmt->execute();
 
         return $stmt;
