@@ -11,22 +11,22 @@ $db_conn = $db->connect();
 
 //User
 $booking = new Booking($db_conn);
-$fecha1 = date('Y').'-01-01';
-$fecha2 = date('Y').'-06-21';
+$fecha1 = date('Y') . '-01-01';
+$fecha2 = date('Y') . '-06-21';
 
-for($i=$fecha1;$i<=$fecha2;$i = date("Y-m-d", strtotime($i ."+ 1 days"))){
+for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))) {
     $day = date('l', strtotime($i));
     $dayofweek = strtolower($day);
-    
+
     $stmt = $booking->readTotalByDay($dayofweek, $i);
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $booking->setSum($row["title"] ?? '');
-  
+
     $e[] = array(
         "date" => $i,
         "title" => $booking->getSum(),
-    ); 
-
+    );
 }
 echo json_encode($e);
+include_once "View/total.php";
