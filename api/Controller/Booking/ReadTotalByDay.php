@@ -31,6 +31,7 @@ $booking->setSum($row["total"]);
 
 echo $dayofweek;
 echo $booking->getSum() . "post";
+echo $row["total"];
 require_once "View/total.php";
 //} else {
     /*$today = date("Y-m-d");
