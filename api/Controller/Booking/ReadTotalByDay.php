@@ -12,27 +12,7 @@ $db_conn = $db->connect();
 //User
 $booking = new Booking($db_conn);
 
-$today = date("Y-m-d");
-//$date = "2021-03-01";
-$booking->setDate($today);
-
-$dayname = date('l', strtotime($booking->getDate()));;
-$dayofweek = strtolower($dayname);
-$booking->setDow($dayofweek);
-
-$stmt = $booking->readTotalByDay();
-
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-//extract($row);
-
-$booking->setSum($row["total"]);
-
-echo $dayofweek;
-echo "...";
-echo $booking->getSum();
-
-require_once "View/total.php";
-/*if (isset($_POST['day'])) {
+if (isset($_POST['day'])) {
     $booking->setDate($_POST["day"]);
     $dayname = date('l', strtotime($booking->getDate()));;
     $dayofweek = strtolower($dayname);
@@ -42,11 +22,30 @@ require_once "View/total.php";
     $arr = array();
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    extract($row);
 
     $booking->setSum($row["total"]);
 
     echo $dayofweek;
     echo $booking->getSum() . "not post";
     require_once "View/total.php";
-}*/
+} else {
+    $today = date("Y-m-d");
+    //$date = "2021-03-01";
+    $booking->setDate($today);
+
+    $dayname = date('l', strtotime($booking->getDate()));;
+    $dayofweek = strtolower($dayname);
+    $booking->setDow($dayofweek);
+
+    $stmt = $booking->readTotalByDay();
+
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $booking->setSum($row["total"]);
+
+    echo $dayofweek;
+    echo "...";
+    echo $booking->getSum();
+
+    require_once "View/total.php";
+}
