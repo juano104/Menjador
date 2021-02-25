@@ -80,10 +80,7 @@
                                 if ($password == $passwordf) {
                                     echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
                                     echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                                }/*else{
-                                    header("Location:http://www.menjadorescola.me/");
-                                    echo "alert(Wrong Password)";
-                                }*/
+                                }
                             }
                         }
                         ?>
@@ -271,6 +268,7 @@
             });
 
             $(".b1n").click(function() {
+                var studentname = $("input[name='radioname']:checked").val();
                 $("#tabs").tabs({
                     active: 1,
                     disabled: [0, 2, 3, 4],
@@ -279,20 +277,25 @@
                 $("#tabs").tabs("option", "active", 1);
                 $(".tab1").removeClass("active");
                 $(".tab2").addClass("active");
+                if (studentname != null) {
+                    $("input[type='radio']:checked").each(function() {
+                        var idstudent = $("input[type='radio']:checked").val();
+                        //console.log(idstudent);
+                        var idVal = $(this).attr("id");
+                        var name = idVal;
+                        $(".t").hide();
+                        $(".d").hide();
+                        $(".sd").hide();
+                        $(".ed").hide();
+                        $(".dow").hide();
+                        var newName = $("<tr><td><input type='hidden' name='idstudent' value='" + idstudent + "'>" + name + "</td></tr>");
+                        $(".tabler > tbody").append(newName);
+                    });
+                } else {
+                    alert("Porfavor elija un hijo");
+                }
 
-                $("input[type='radio']:checked").each(function() {
-                    var idstudent = $("input[type='radio']:checked").val();
-                    //console.log(idstudent);
-                    var idVal = $(this).attr("id");
-                    var name = idVal;
-                    $(".t").hide();
-                    $(".d").hide();
-                    $(".sd").hide();
-                    $(".ed").hide();
-                    $(".dow").hide();
-                    var newName = $("<tr><td><input type='hidden' name='idstudent' value='" + idstudent + "'>" + name + "</td></tr>");
-                    $(".tabler > tbody").append(newName);
-                });
+
             });
 
             $(".b2n").click(function() {
@@ -317,7 +320,7 @@
                     $(".sd").hide();
                     $(".ed").hide();
                     $(".dow").hide();
-                } else {
+                } else if (type == "Loose") {
                     $("#tabs").tabs({
                         active: 2,
                         disabled: [0, 1, 3, 4],
@@ -334,6 +337,8 @@
                     $(".sd").hide();
                     $(".ed").hide();
                     $(".dow").hide();
+                } else {
+                    alert("Porfavor elija un tipo");
                 }
             });
             $(".b2p").click(function() {
@@ -342,6 +347,7 @@
                     disabled: [1, 2, 3, 4],
                     selected: 0
                 });
+                $("input[name='radioname']:checked").prop('checked', false);
                 $("#tabs").tabs("option", "active", 0);
                 $(".tab2").removeClass("active");
                 $(".tab1").addClass("active");
@@ -384,7 +390,7 @@
                     $(".d").show();
 
                 } else {
-                    alert("Please enter a date");
+                    alert("Porfavor elija un dia");
                 }
             });
             $(".b3p").click(function() {
@@ -476,7 +482,7 @@
                     $(".tabler > tbody >tr").append(newEDate);
                     $(".tabler > tbody >tr").append(DoWt);
                 } else {
-                    alert("Please enter the dates");
+                    alert("Porfavor elija los dias");
                 }
 
             });
