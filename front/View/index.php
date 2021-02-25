@@ -269,15 +269,16 @@
 
             $(".b1n").click(function() {
                 var studentname = $("input[name='radioname']:checked").val();
-                $("#tabs").tabs({
-                    active: 1,
-                    disabled: [0, 2, 3, 4],
-                    selected: 1
-                });
-                $("#tabs").tabs("option", "active", 1);
-                $(".tab1").removeClass("active");
-                $(".tab2").addClass("active");
+
                 if (studentname != null) {
+                    $("#tabs").tabs({
+                        active: 1,
+                        disabled: [0, 2, 3, 4],
+                        selected: 1
+                    });
+                    $("#tabs").tabs("option", "active", 1);
+                    $(".tab1").removeClass("active");
+                    $(".tab2").addClass("active");
                     $("input[type='radio']:checked").each(function() {
                         var idstudent = $("input[type='radio']:checked").val();
                         //console.log(idstudent);
