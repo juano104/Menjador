@@ -349,6 +349,7 @@
                     selected: 0
                 });
                 $("input[name='radioname']:checked").prop('checked', false);
+                $("input[name='type']:checked").prop('checked', false);
                 $("#tabs").tabs("option", "active", 0);
                 $(".tab2").removeClass("active");
                 $(".tab1").addClass("active");
