@@ -1,6 +1,6 @@
 <style>
   .navbar {
-    background-color: #F2BF8D !important;
+    background-color: #fcbe68 !important;
     font-size: 110%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /*padding: 0px;*/
