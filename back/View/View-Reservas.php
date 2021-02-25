@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <h4>Selecciona una fecha</h4>
+                    <h3>Selecciona una fecha</h3>
                     <form action="" class="form-horizontal" method="post">
                         <div class="form-group ">
                             <div class="col-sm-10">
