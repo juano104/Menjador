@@ -76,11 +76,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h4>Selecciona una fecha</h4>
                     <form action="" class="form-horizontal" method="post">
                         <div class="form-group ">
-                            <label class="control-label col-sm-2 requiredField" for="date">
-                                Date
-                            </label>
                             <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
