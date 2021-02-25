@@ -73,7 +73,7 @@
         <!-- Menu de navegacio -->
     </div>
     <div class="bootstrap-iso">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <h4>Selecciona una fecha</h4>
