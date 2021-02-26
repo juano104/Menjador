@@ -51,15 +51,14 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <h2>Realizar reserva</h2>
             <form>
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
-                        <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Choose type</a></li>
-                        <li><a tabindex="-1" class="tab3 tabs nav-link" href="#tabs-3">Loose Days</a></li>
-                        <li><a tabindex="-1" class="tab4 tabs nav-link" href="#tabs-4">Fixed Days</a></li>
-                        <li><a tabindex="-1" class="tab5 tabs nav-link" href="#tabs-5">Summary</a></li>
+                        <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
+                        <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Tipo de reserva</a></li>
+                        <li><a tabindex="-1" class="tab3 tabs nav-link" href="#tabs-3">Dias Sueltos</a></li>
+                        <li><a tabindex="-1" class="tab4 tabs nav-link" href="#tabs-4">Dias Fijos</a></li>
+                        <li><a tabindex="-1" class="tab5 tabs nav-link" href="#tabs-5">Finalizar</a></li>
                     </ul>
 
                     <div class="tab-content" id="tabs-1">
