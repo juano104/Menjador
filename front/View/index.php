@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="public/css/estils.css">
+    <link rel="stylesheet" href="estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -46,14 +46,14 @@
 
 <body>
     <!-- Menu de navegacio -->
+    
     <?php require_once "navbar.php" ?>
-
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
             <h2>Realizar reserva</h2>
             <form>
-                <div class="col-8" id="tabs" style="border:1px solid #cecece; border-radius: 10px;">
+                <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
                         <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Choose type</a></li>
@@ -219,10 +219,6 @@
             </form>
         </div>
     </div>
-
-
-
-
     <script type="text/javascript">
         $(document).ready(function() {
             //different dates 

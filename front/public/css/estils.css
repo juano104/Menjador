@@ -93,7 +93,7 @@ a:focus{
 .tab .nav-tabs li a{
     color: #999B9D;
     background: #F7F7F7;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
     padding: 14px 30px 11px;
@@ -106,14 +106,14 @@ a:focus{
 .tab .nav-tabs li a:hover,
 .tab .nav-tabs li.active a,
 .tab .nav-tabs li.active a:hover{
-    color: #6d7ae0;
+    color: #EC4C4C;
     background-color: #f7f7f7;
     border: none;
 }
 .tab .nav-tabs li a:before,
 .tab .nav-tabs li a:after{
     content: '';
-    background-color: #6d7ae0;
+    background-color: #EC4C4C;
     height: 3px;
     width: 0;
     position: absolute;
@@ -147,6 +147,7 @@ a:focus{
     line-height: 25px;
     padding: 30px 25px 20px;
     border: 3px solid #e1e1e1;
+    width: 100%;
 }
 @media only screen and (max-width: 479px){
     .tab .nav-tabs li{
