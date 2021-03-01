@@ -54,7 +54,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
     $e[] = array(
         "date" => $i,
-        "title" => "Reservas: " . $row["name"],
+        "title" => "Reservas: " . $title,
     );
 }
 echo json_encode($e);
