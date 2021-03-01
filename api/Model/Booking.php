@@ -170,14 +170,14 @@ class Booking
     //read for the parents
     public function readAllByExtra()
     {
-        $query = "select Student.name, Student.last_name from Student
+        $query = "select name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
         inner join User_Parent on User_Parent.username = Student.parent_DNI
         where Booking_Day.date = ?
         and User_Parent.username = ?
         union
-        select Student.name, Student.last_name from Student
+        select name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
         inner join User_Parent on User_Parent.username = Student.parent_DNI
@@ -191,7 +191,7 @@ class Booking
         $stmt->bindParam(2, $this->username);
         $stmt->bindParam(3, $this->date);
         $stmt->bindParam(4, $this->username);
-        //$stmt->bindParam(5, $this->dow); not working...
+        //$stmt->bindParam(5, $this->dow); not working.......
 
         $stmt->execute();
 
