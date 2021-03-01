@@ -34,26 +34,17 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     $booking->setDate($day);
     $booking->setUsername("79481024P");
 
-
     $stmt = $booking->readAllByExtra();
-    $arrextra = array();
+    
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
-        $e = array(
-            "date" => $i,
-            "title" => "Tus Reservas: " . $name
-        );
-        array_push($arrextra, $e);
-    }
-
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $e[] = array(
         "date" => $i,
         "title" => "Reservas: " . $row["name"],
     );
 }
-echo json_encode($arrextra);
+echo json_encode($e);
 
 
 
