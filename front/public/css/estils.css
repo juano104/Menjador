@@ -1,80 +1,81 @@
 .imgres {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }
 
 .margin {
-    margin-top: 5%;
-  }
+  margin-top: 5%;
+  padding: 0;
+}
 
-  #calendar {
-    max-width: 100%;
-    margin-bottom: 5%;
-  }
+.container {
+  margin-top: 0%;
+}
 
-  .navbar-collapse{
-      margin: 0 !important;
-  }
+#calendar {
+  max-width: 100%;
+  margin-bottom: 5%;
+}
 
-  #calendar th {
-    color: white;
-    border: black 1px solid;
-    background-color: #264653;
-  }
+.navbar-collapse {
+  margin: 0 !important;
+}
+
+nav li {
+  padding-left: 25px;
+}
+
+#calendar th {
+  color: white;
+  border: black 1px solid;
+  background-color: #264653;
+}
 
 footer {
-    background-color: #2E8E8E !important;
+  background-color: #2E8E8E !important;
 }
 
 .enviar {
-    background-color: #EC4C4C;
-    border-radius: 25px;
-    height: 50px;
-    color: white;
-    font-weight: bold;
-    width: 100%;
-}
-
-nav li{
-    padding-left: 25px;
+  background-color: #EC4C4C;
+  border-radius: 25px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  width: 100%;
 }
 
 form {
-    margin-bottom: 15%;
+  margin-bottom: 15%;
 }
 
 .navbar {
-    background-color: rgb(194, 112, 31) !important;
-    font-size: 120%;
-    font-family: 'Fira Sans Condensed';
-    /*padding: 0px;*/
+  background-color: #F2BF8D !important;
+  font-size: 120%;
+  font-family: 'Fira Sans Condensed';
+  /*padding: 0px;*/
 }
 
 button:focus, button.enviar:focus {
-    outline: none !important;
-    outline-width: 0 !important;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
+  outline: none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 .img-contacte {
-    width: 15%;
-    height: auto;
-}
-
-.container{
-    margin-top: 0%;
+  width: 15%;
+  height: auto;
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    margin-top: 2%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-top: 2%;
 }
 
 .container-fluid {
-    padding: 0;
+  padding: 0;
 }
 
 .collapse {
