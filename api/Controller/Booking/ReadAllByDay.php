@@ -40,7 +40,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $e = array(
+        $e[] = array(
             "date" => $i,
             "title" => "Tus Reservas: " . $title
         );
