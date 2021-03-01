@@ -31,8 +31,8 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
     $booking->setDow($dayofweek);
     $booking->setDate($i);
-    $booking->setUsername("56142879E");
-    //$booking->setUsername($_SESSION["username"]);
+    //$booking->setUsername("56142879E");
+    $booking->setUsername($_SESSION["username"]);
 
 
     $stmt = $booking->readAllByExtra();
@@ -43,18 +43,9 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
             "date" => $i,
             "title" => "Tus Reservas: " . $row["title"]
         );
-        //array_push($arrextra, $e);
+        
     }
-
-
-    /*$row = $stmt->fetch(PDO::FETCH_ASSOC);
-    //extract($row);
-    //$booking->setSum($row["title"] ?? '');
-
-    $e[] = array(
-        "date" => $i,
-        "title" => "Reservas: " . $row["title"],
-    );*/
+    
 }
 echo json_encode($e);
 
