@@ -31,6 +31,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     $dayofweek = strtolower($day);
 
     $booking->setDow($dayofweek);
+    $booking->setDate($day);
     $booking->setUsername($_SESSION["username"]);
 
 

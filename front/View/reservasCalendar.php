@@ -44,16 +44,10 @@
     <script>
         $(document).ready(function() {
             $('#calendar').fullCalendar({
-                eventSources: [
-                    {
+                eventSources: [{
                     url: 'http://www.menjadorescola.me/ReadReservas',
                     method: 'POST'
-                }/*,
-                {
-                    url: 'http://www.menjadorescola.me/AllergyCount',
-                    method: 'POST'
-                }*/
-                ],
+                }],
                 hiddenDays: [0, 6],
                 showNonCurrentDates: false,
                 eventLimit: true,
