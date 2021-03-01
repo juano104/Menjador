@@ -33,8 +33,8 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
     $booking->setDow($dayofweek);
     $booking->setDate($day);
-    $booking->setUsername($_SESSION["username"]);
-    
+    $booking->setUsername("56142879E");
+
     $stmt = $booking->readAllByExtra();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
