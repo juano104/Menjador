@@ -47,12 +47,12 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
 
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    extract($row);
+    //extract($row);
     //$booking->setSum($row["title"] ?? '');
 
     $e[] = array(
         "date" => $i,
-        "title" => "Reservas: " . $title,
+        "title" => "Reservas: " . $row["title"],
     );
 }
 echo json_encode($e);
