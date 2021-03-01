@@ -12,6 +12,7 @@ $db = new Database();
 $db_conn = $db->connect();
 
 //User
+$booking = new Booking($db_conn);
 
 $year = date('Y');
 if (date('n') < 6) {
@@ -24,37 +25,36 @@ if (date('n') < 6) {
 
 $fecha1 = $ayear . '-09-01';
 $fecha2 = $byear . '-06-21';
-$arr = array();
 
 for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))) {
     $day = date('l', strtotime($i));
     $dayofweek = strtolower($day);
 
-
-    $booking = new Booking($db_conn);
     $booking->setDow($dayofweek);
     $booking->setDate($day);
     $booking->setUsername("79481024P");
 
 
     $stmt = $booking->readAllByExtra();
-    /*$arrextra = array();
+    $arrextra = array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $e = array(
             "date" => $i,
-            "title" => "Tus Reservas: " . $row['name']
+            "title" => "Tus Reservas: " . $name
         );
-        array_push($arrextra, $e);
-    }*/
+        //array_push($arrextra, $e);
+    }
 
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    //$row = $stmt->fetch(PDO::FETCH_ASSOC);
     //$booking->setSum($row["title"] ?? '');
 
     $e[] = array(
         "date" => $i,
-        "title" => "Tus Reservas: " . $row["name"],
+        "title" => "Reservas: " . $row["name"],
     );
 }
 echo json_encode($e);
