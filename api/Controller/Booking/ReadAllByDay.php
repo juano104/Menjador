@@ -12,7 +12,6 @@ $db = new Database();
 $db_conn = $db->connect();
 
 //User
-$booking = new Booking($db_conn);
 
 $year = date('Y');
 if (date('n') < 6) {
@@ -31,6 +30,8 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     $day = date('l', strtotime($i));
     $dayofweek = strtolower($day);
 
+
+    $booking = new Booking($db_conn);
     $booking->setDow($dayofweek);
     $booking->setDate($day);
     $booking->setUsername("79481024P");
