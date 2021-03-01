@@ -32,7 +32,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
 
     $booking->setDow($dayofweek);
     $booking->setDate($day);
-    $booking->setUsername($_SESSION["username"]);
+    $booking->setUsername("79481024P");
 
 
     $stmt = $booking->readAllByExtra();
