@@ -193,7 +193,8 @@ class Booking
         $stmt->bindParam(4, $this->username);
         //$stmt->bindParam(5, $this->dow); not working.......
 
-        $stmt->execute();
+        //$stmt->execute();
+        if(!$stmt->execute()) print_r($stmt->errorInfo());
 
         return $stmt;
     }
