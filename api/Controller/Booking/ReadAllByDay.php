@@ -25,6 +25,7 @@ if (date('n') < 6) {
 
 $fecha1 = $ayear . '-09-01';
 $fecha2 = $byear . '-06-21';
+$arr = array();
 
 for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))) {
     $day = date('l', strtotime($i));
@@ -34,17 +35,31 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
     $booking->setDate($day);
     $booking->setUsername("79481024P");
 
+
     $stmt = $booking->readAllByExtra();
-    
+    $arrextra = array();
 
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        extract($row);
+        $e = array(
+            "date" => $i,
+            "title" => "Tus Reservas: " . $name
+        );
+        array_push($arrextra, $e);
+    }
 
-    $e[] = array(
+
+
+    //$row = $stmt->fetch(PDO::FETCH_ASSOC);
+    //$booking->setSum($row["title"] ?? '');
+
+    /*$e[] = array(
         "date" => $i,
         "title" => "Reservas: " . $row["name"],
-    );
+    );*/
+    array_push($arr, $arrextra);
 }
-echo json_encode($e);
+echo json_encode($arr);
 
 
 

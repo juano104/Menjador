@@ -170,14 +170,14 @@ class Booking
     //read for the parents
     public function readAllByExtra()
     {
-        $query = "select group_concat(name) as name from Student
+        $query = "select name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
         inner join User_Parent on User_Parent.username = Student.parent_DNI
         where Booking_Day.date = ?
         and User_Parent.username = ?
         union
-        select group_concat(name) as name from Student
+        select name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
         inner join User_Parent on User_Parent.username = Student.parent_DNI
