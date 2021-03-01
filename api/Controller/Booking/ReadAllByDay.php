@@ -41,7 +41,7 @@ for ($i = $fecha1; $i <= $fecha2; $i = date("Y-m-d", strtotime($i . "+ 1 days"))
         //extract($row);
         $e[] = array(
             "date" => $i,
-            "title" => "Tus Reservas: " . $row["title"]
+            "title" => "Reserva para: " . $row["title"]
         );
         
     }
