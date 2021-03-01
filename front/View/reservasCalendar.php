@@ -52,7 +52,7 @@
                 showNonCurrentDates: false,
                 eventLimit: true,
                 eventOrder: "type",
-                eventColor: '#f0d0b1'
+                eventColor: '#f2c9a0'
 
             })
         });
