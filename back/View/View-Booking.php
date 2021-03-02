@@ -53,9 +53,9 @@
         <table id="tableSingle" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>STUDENT ID</th>
-                    <th>Fecha</th>
-                    <th>Total de Dies</th>
+                    <th class="head">STUDENT ID</th>
+                    <th class="head">Fecha</th>
+                    <th class="head">Total de Dies</th>
                 </tr>
             </thead>
         </table>
@@ -66,10 +66,10 @@
         <table id="tableMultiple" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>STUDENT ID</th>
-                    <th>Fecha Inici</th>
-                    <th>Fecha Final</th>
-                    <th>Dies</th>
+                    <th class="head">STUDENT ID</th>
+                    <th class="head">Fecha Inici</th>
+                    <th class="head">Fecha Final</th>
+                    <th class="head">Dies</th>
                 </tr>
             </thead>
         </table>
