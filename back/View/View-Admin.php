@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
 
-    <link rel="stylesheet" href="public/css/estils.css">
+    <link rel="stylesheet" href="../public/css/estils.css">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
@@ -47,17 +47,21 @@
         <?php require_once "navbar.php" ?>
     </div>
 
-    <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
+    <style>
+        
+    </style>
+
+    <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
         <h1>Administrar Pares</h1>
         <button class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Llinatge</th>
-                    <th>DNI</th>
-                    <th>Fills</th>
-                    <th></th>
+                    <th class="head">Name</th>
+                    <th class="head">Llinatge</th>
+                    <th class="head">DNI</th>
+                    <th class="head">Fills</th>
+                    <th class="head"></th>
                 </tr>
             </thead>
         </table>
@@ -75,24 +79,24 @@
                 </div>
                 <form action="insert/parent" method="post" id="form" name="f1">
                     <div class="modal-body">
-                    <div class="form-group">
-                        <label for="nompare"><strong>NOM PARE:</strong></label>
-                        <input type="text" class="form-control" name="nompare" id="nompare">
-                    </div>
-                    <div class="form-group">
-                        <label for="llinatgepare"><strong>LLINATGE PARE:</strong></label>
-                        <input type="text" class="form-control" name="llinatgepare" id="llinatgepare">
-                    </div>
-                    <div class="form-group">  
-                        <label for="dnipare"><strong>DNI PARE:</strong></label>
-                        <input type="text" class="form-control" name="dnipare" id="dnipare">
-                    </div>    
+                        <div class="form-group">
+                            <label for="nompare"><strong>NOM PARE:</strong></label>
+                            <input type="text" class="form-control" name="nompare" id="nompare">
+                        </div>
+                        <div class="form-group">
+                            <label for="llinatgepare"><strong>LLINATGE PARE:</strong></label>
+                            <input type="text" class="form-control" name="llinatgepare" id="llinatgepare">
+                        </div>
+                        <div class="form-group">
+                            <label for="dnipare"><strong>DNI PARE:</strong></label>
+                            <input type="text" class="form-control" name="dnipare" id="dnipare">
+                        </div>
                     </div>
                     <div class="modal-footer">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" id="afegir" class="btn btn-success" value="Afegir Pare">
-                    </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" id="afegir" class="btn btn-success" value="Afegir Pare">
+                        </div>
                     </div>
                 </form>
             </div>
@@ -112,7 +116,7 @@
                 <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="nomalumne"><strong>NOM ALUMNE</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne" ></label>
+                            <label for="nomalumne"><strong>NOM ALUMNE</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne"></label>
                         </div>
                         <div class="form-group">
                             <label for="llinatgealumne"><strong>LLINATGE ALUMNE</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
@@ -147,7 +151,7 @@
                             <input class="form-check-input" type='checkbox' id='cereals' name='alergia[]' value='6'>
                         </div>
                         <input id="pareID" name="pareID" type="hidden" value="0">
-                        
+
                         <div class="form-group">
                             <label for="date"><strong>FECHA DE NAIXAMENT:</strong></label>
                             <input class="form-control" type="date" name="date" id="date">
@@ -231,7 +235,7 @@
                     }, {
                         data: 'student_name'
                     }, {
-                        "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
+                        "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -242,7 +246,7 @@
             }
 
 
-            $("<button class='btn btn-success' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>").appendTo("div.panel-heading");
+            $("<button class='btn btn-info' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>").appendTo("div.panel-heading");
 
         });
     </script>

@@ -107,10 +107,10 @@
         <table id="tableReservas" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Last Name</th>
-                    <th>Allergy</th>
+                    <th class="head" >ID</th>
+                    <th class="head">Name</th>
+                    <th class="head">Last Name</th>
+                    <th class="head">Allergy</th>
                 </tr>
             </thead>
         </table>

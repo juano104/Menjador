@@ -2,6 +2,11 @@
     height: 100px;
     width: 100%;
 }
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .navbar-brand{
     width: 10%;
 
@@ -71,6 +76,12 @@ h1{
 
 .collapse{
     margin-right: 10%;
+}
+
+.head {
+    border: 1px black solid !important;
+    background-color: #264653;
+    color: white;
 }
 
 .form-horizontal{

@@ -48,28 +48,28 @@
         <?php require_once "navbar.php" ?>
     </div>
 
-    <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
+    <div class="container" style="margin-top: 2%;">
         <h1>Reserves de un dia</h1>
         <table id="tableSingle" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>STUDENT ID</th>
-                    <th>Fecha</th>
-                    <th>Total de Dies</th>
+                    <th class="head">STUDENT ID</th>
+                    <th class="head">Fecha</th>
+                    <th class="head">Total de Dies</th>
                 </tr>
             </thead>
         </table>
     </div>
 
-    <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
+    <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
         <h1>Reserves de tot l'any</h1>
         <table id="tableMultiple" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>STUDENT ID</th>
-                    <th>Fecha Inici</th>
-                    <th>Fecha Final</th>
-                    <th>Dies</th>
+                    <th class="head">STUDENT ID</th>
+                    <th class="head">Fecha Inici</th>
+                    <th class="head">Fecha Final</th>
+                    <th class="head">Dies</th>
                 </tr>
             </thead>
         </table>
