@@ -20,18 +20,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $user->setRole($row["role"]);
 
 if($user->getDNI() == $row["DNI"] && $user->getRole() == "admin"){
-    header('location: http://admin.menjadorescola.me/');
+    //header('location: http://admin.menjadorescola.me/');
+    header('location: https://www.google.com/');
 }else if($user->getDNI() == $row["DNI"] && $user->getRole() == "restaurant"){
-    header('location: http://intranet.menjadorescola.me/');
+    //header('location: http://intranet.menjadorescola.me/');
+    header('location: https://www.google.com/');
 }else if($user->getDNI() == $row["DNI"] && $user->getRole() == "parent"){
-    header('location: http://www.menjadorescola.me/home');
+    //header('location: http://www.menjadorescola.me/home');
+    header('location: https://www.google.com/');
+}else{
+    echo "<script>
+            alert('Access Denied!');
+        </script>";
 }
-
-
-
-$booking->setSum($row["title"] ?? '');
-
-$e[] = array(
-    "date" => $i,
-    "title" => "Reservas: " . $booking->getSum(),
-);
