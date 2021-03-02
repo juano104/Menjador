@@ -1,6 +1,6 @@
 <?php
 
-class User_Admin {
+class Login {
 
     //conn
     private $conn;
