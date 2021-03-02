@@ -107,14 +107,14 @@ a:focus{
 .tab .nav-tabs li a:hover,
 .tab .nav-tabs li.active a,
 .tab .nav-tabs li.active a:hover{
-    color: #EC4C4C;
+    color: #E9C46A;
     background-color: #f7f7f7;
     border: none;
 }
 .tab .nav-tabs li a:before,
 .tab .nav-tabs li a:after{
     content: '';
-    background-color: #EC4C4C;
+    background-color: #E9C46A;
     height: 3px;
     width: 0;
     position: absolute;
