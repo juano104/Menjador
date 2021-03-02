@@ -29,6 +29,7 @@ class Login {
 
         $result = $this->conn->query($query);
 
+        $result->execute();
         return $result;
     }
 
