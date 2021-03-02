@@ -54,7 +54,7 @@
                 <img src="public/img/contacto.png" class="img-contacte" alt="">
             </div>
             <div class="col-12 justify-content-center">
-                <form action="home" method="POST" class="needs-validation" novalidate>
+                <form action="login" method="POST" class="needs-validation" novalidate>
                     <div class="form-group row">
                         <div class="col-3 col-lg-4"></div>
                         <div class="col-6 col-lg-4">
