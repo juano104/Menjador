@@ -53,7 +53,7 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
         <h1>Administrar Pares</h1>
-        <button class='btn btn-info' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
+        <button class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -235,7 +235,7 @@
                     }, {
                         data: 'student_name'
                     }, {
-                        "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
+                        "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
