@@ -19,11 +19,11 @@ $stmt = $user->read();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $user->setRole($row["role"]);
 
-if($user->getDNI() == $row["DNI"] $user->getRole() == "admin"){
+if($user->getDNI() == $row["DNI"] && $user->getRole() == "admin"){
     header('location: http://admin.menjadorescola.me/');
-}else if($user->getDNI() == $row["DNI"] $user->getRole() == "restaurant"){
+}else if($user->getDNI() == $row["DNI"] && $user->getRole() == "restaurant"){
     header('location: http://intranet.menjadorescola.me/');
-}else if($user->getDNI() == $row["DNI"] $user->getRole() == "parent"){
+}else if($user->getDNI() == $row["DNI"] && $user->getRole() == "parent"){
     header('location: http://www.menjadorescola.me/home');
 }
 
