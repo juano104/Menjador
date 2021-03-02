@@ -14,9 +14,9 @@ $user = new Login($db_conn);
 $username = $_POST["username"];
 $user->setDNI($username);
 
-$stmt = $user->read();
+//$stmt = $user->read();
 
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$row = $user->read()->fetch(PDO::FETCH_ASSOC);
 $user->setRole($row["role"]);
 
 if($user->getDNI() == $row["DNI"] && $user->getRole() == "admin"){
