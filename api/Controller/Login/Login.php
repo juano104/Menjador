@@ -2,7 +2,7 @@
 
 //Headers
 include_once '../api/Model/Database.php';
-include_once '../api/Model/User_Parent.php';
+include_once '../api/Model/Login.php';
 
 //DB
 $db = new Database();
