@@ -73,6 +73,12 @@ h1{
     margin-right: 10%;
 }
 
+.head {
+    border: 1px black solid !important;
+    background-color: #264653;
+    color: white;
+}
+
 .form-horizontal{
     margin-bottom: 0%;
     margin-top: 5%;
