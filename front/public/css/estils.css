@@ -82,7 +82,11 @@ h1 {
     margin-right: 10%;
 }
 
-
+.head {
+  border: 1px black solid !important;
+  background-color: #264653;
+  color: white;
+}
 
 a:hover,
 a:focus{

@@ -35,6 +35,12 @@ footer {
     background-color: #2E8E8E !important;
 }
 
+.head {
+    border: 1px black solid !important;
+    background-color: #264653;
+    color: white;
+  }
+
 .enviar {
     background-color: #EC4C4C;
     border-radius: 25px;

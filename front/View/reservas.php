@@ -109,8 +109,8 @@
         <table id="tableReservas" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Last Name</th>
+                    <th class="head">Name</th>
+                    <th class="head">Last Name</th>
                 </tr>
             </thead>
         </table>
