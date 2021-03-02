@@ -27,7 +27,7 @@ class Login {
     public function read() {
         $query = "Select DNI, role from User where DNI = '" . $this->DNI . "'" ;
 
-        $stmt = $this->conn->query($query);
+        $stmt = $this->conn->prepare($query);
 
         $stmt->execute();
 
