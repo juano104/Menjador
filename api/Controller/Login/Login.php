@@ -24,10 +24,10 @@ if($user->getDNI() == $row["DNI"] && $user->getRole() == "admin"){
     header('location: https://www.google.com/');
 }else if($user->getDNI() == $row["DNI"] && $user->getRole() == "restaurant"){
     //header('location: http://intranet.menjadorescola.me/');
-    header('location: https://www.google.com/');
+    header('location: https://www.youtube.com/');
 }else if($user->getDNI() == $row["DNI"] && $user->getRole() == "parent"){
     //header('location: http://www.menjadorescola.me/home');
-    header('location: https://www.google.com/');
+    header('location: https://www.amazon.com/');
 }else{
     echo "<script>
             alert('Access Denied!');
