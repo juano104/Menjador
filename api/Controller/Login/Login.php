@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
         //for login
         $login = new Login($db_conn);
         $login->setDNI($_SESSION["username"]);
-        $rowlog = $user->read()->fetch(PDO::FETCH_ASSOC);
+        $rowlog = $login->read()->fetch(PDO::FETCH_ASSOC);
         $login->setRole($row["role"]);
         $passparent = $login->readPasswordParent($_SESSION["username"]);
         $passadmin = $login->readPasswordAdmin($_SESSION["username"]);
