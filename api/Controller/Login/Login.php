@@ -57,6 +57,11 @@ if (isset($_POST['submit'])) {
                 window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
+        } else {
+            echo "<script>
+            alert('Access Denied');
+            window.location.replace('http://www.menjadorescola.me/');
+            </script>";
         }
         if ($countpassa  == 1) {
             $row = $passadmin->fetch(PDO::FETCH_ASSOC);
@@ -72,6 +77,11 @@ if (isset($_POST['submit'])) {
                 window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
+        } else {
+            echo "<script>
+            alert('Access Denied');
+            window.location.replace('http://www.menjadorescola.me/');
+            </script>";
         }
         if ($countpassr  == 1) {
             $row = $passrest->fetch(PDO::FETCH_ASSOC);
@@ -87,6 +97,11 @@ if (isset($_POST['submit'])) {
                 window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
+        } else {
+            echo "<script>
+            alert('Access Denied');
+            window.location.replace('http://www.menjadorescola.me/');
+            </script>";
         }
     }
 } else {
