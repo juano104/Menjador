@@ -143,9 +143,10 @@
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
                 select: true,
+                dom: 'Bfrtip',
                 buttons: [
-                    'pdf',
-                ],
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
 
             });
 
