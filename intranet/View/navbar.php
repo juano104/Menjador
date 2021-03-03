@@ -31,7 +31,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="insertar">
-            Insertar
+            Administrar Menu
             
           </a>
         </li>

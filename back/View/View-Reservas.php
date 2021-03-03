@@ -92,7 +92,7 @@
                             <div class="col-sm-10 col-sm-offset-2">
                                 <input name="_honey" style="display:none" type="text">
                                 <button class="btn btn-primary " name="submit" type="submit">
-                                    Submit
+                                    Enviar
                                 </button>
                             </div>
                         </div>
@@ -108,9 +108,9 @@
             <thead>
                 <tr>
                     <th class="head" >ID</th>
-                    <th class="head">Name</th>
-                    <th class="head">Last Name</th>
-                    <th class="head">Allergy</th>
+                    <th class="head">Nombre</th>
+                    <th class="head">Apellidos</th>
+                    <th class="head">Alergias</th>
                 </tr>
             </thead>
         </table>

@@ -49,27 +49,27 @@
     </div>
 
     <div class="container" style="margin-top: 2%;">
-        <h1>Reserves de un dia</h1>
+        <h1>Reservas Fijas</h1>
         <table id="tableSingle" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th class="head">STUDENT ID</th>
+                    <th class="head">ID ESTUDIANTE</th>
                     <th class="head">Fecha</th>
-                    <th class="head">Total de Dies</th>
+                    <th class="head">Total Dias</th>
                 </tr>
             </thead>
         </table>
     </div>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
-        <h1>Reserves de tot l'any</h1>
+        <h1>Reservas Mixtas</h1>
         <table id="tableMultiple" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th class="head">STUDENT ID</th>
-                    <th class="head">Fecha Inici</th>
+                    <th class="head">ID ESTUDIANTE</th>
+                    <th class="head">Fecha Inicio</th>
                     <th class="head">Fecha Final</th>
-                    <th class="head">Dies</th>
+                    <th class="head">Dias</th>
                 </tr>
             </thead>
         </table>
