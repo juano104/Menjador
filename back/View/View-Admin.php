@@ -72,7 +72,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Inserir Pare</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Insertar Padre</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -80,15 +80,15 @@
                 <form action="insert/parent" method="post" id="form" name="f1">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="nompare"><strong>NOM PARE:</strong></label>
+                            <label for="nompare"><strong>NOMBRE PADRE:</strong></label>
                             <input type="text" class="form-control" name="nompare" id="nompare">
                         </div>
                         <div class="form-group">
-                            <label for="llinatgepare"><strong>LLINATGE PARE:</strong></label>
+                            <label for="llinatgepare"><strong>APELLIDO PADRE:</strong></label>
                             <input type="text" class="form-control" name="llinatgepare" id="llinatgepare">
                         </div>
                         <div class="form-group">
-                            <label for="dnipare"><strong>DNI PARE:</strong></label>
+                            <label for="dnipare"><strong>DNI PADRE:</strong></label>
                             <input type="text" class="form-control" name="dnipare" id="dnipare">
                         </div>
                     </div>
@@ -108,7 +108,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Inserir Alumne</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Insertar Alumno</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -116,49 +116,49 @@
                 <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="nomalumne"><strong>NOM ALUMNE</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne"></label>
+                            <label for="nomalumne"><strong>NOMBRE ALUMNO</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne"></label>
                         </div>
                         <div class="form-group">
-                            <label for="llinatgealumne"><strong>LLINATGE ALUMNE</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
+                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
                             </label>
                         </div>
 
                         <strong>ALERGIA</strong>
                         <br>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='ous'>Ous</label>
+                            <label class="form-check-label" for='ous'>Huevos</label>
                             <input class="form-check-input" type='checkbox' id='ous' name='alergia[]' value='1'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='marisc'>Marisc</label>
+                            <label class="form-check-label" for='marisc'>Marisco</label>
                             <input class="form-check-input" type='checkbox' id='marisc' name='alergia[]' value='2'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='peix'>Peix</label>
+                            <label class="form-check-label" for='peix'>Pescado</label>
                             <input class="form-check-input" type='checkbox' id='peix' name='alergia[]' value='3'>
                         </div>
                         <br>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='frutssecs'>Fruts Secs</label>
+                            <label class="form-check-label" for='frutssecs'>Frutos Secos</label>
                             <input class="form-check-input" type='checkbox' id='frutssecs' name='alergia[]' value='4'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='llet'>Llet</label>
+                            <label class="form-check-label" for='llet'>Leche</label>
                             <input class="form-check-input" type='checkbox' id='llet' name='alergia[]' value='5'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='cereals'>Cereals</label>
+                            <label class="form-check-label" for='cereals'>Cereales</label>
                             <input class="form-check-input" type='checkbox' id='cereals' name='alergia[]' value='6'>
                         </div>
                         <input id="pareID" name="pareID" type="hidden" value="0">
 
                         <div class="form-group">
-                            <label for="date"><strong>FECHA DE NAIXAMENT:</strong></label>
+                            <label for="date"><strong>FECHA DE NACIMIENTO:</strong></label>
                             <input class="form-control" type="date" name="date" id="date">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                         <input type="submit" id="afegir" class="btn btn-success" value="Afegir Alumne">
                     </div>
                 </form>
