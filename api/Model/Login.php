@@ -45,7 +45,7 @@ class Login
     }
     public function readPasswordParent($u)
     {
-        $query = "select password from User_Parent where username = " . $u;
+        $query = "select password from User_Parent where username = '" . $u . "'";
 
         $stmt = $this->conn->query($query);
 
@@ -55,7 +55,7 @@ class Login
     }
     public function readPasswordAdmin($u)
     {
-        $query = "select password from User_Admin where username = " . $u;
+        $query = "select password from User_Admin where username = '" . $u . "'";
 
         $stmt = $this->conn->query($query);
 
@@ -65,7 +65,7 @@ class Login
     }
     public function readPasswordRest($u)
     {
-        $query = "select password from User_Restaurant where username = " . $u;
+        $query = "select password from User_Restaurant where username = '" . $u . "'";
 
         $stmt = $this->conn->query($query);
 
