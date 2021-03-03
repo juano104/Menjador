@@ -79,7 +79,7 @@
                     <form action="" class="form-horizontal" method="post">
                         <div class="form-group ">
                             <label class="control-label col-sm-2 requiredField" for="date">
-                                Date
+                                Fecha
                             </label>
                             <div class="col-sm-10">
                                 <div class="input-group">
@@ -94,7 +94,7 @@
                             <div class="col-sm-10 col-sm-offset-2">
                                 <input name="_honey" style="display:none" type="text">
                                 <button class="btn btn-primary " name="submit" type="submit">
-                                    Submit
+                                    Enviar
                                 </button>
                             </div>
                         </div>
@@ -109,8 +109,8 @@
         <table id="tableReservas" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th class="head">Name</th>
-                    <th class="head">Last Name</th>
+                    <th class="head">Nombre</th>
+                    <th class="head">Apellidos</th>
                 </tr>
             </thead>
         </table>
