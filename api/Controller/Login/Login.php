@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.href=' ';
+                window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
         }
@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.href=' ';
+                window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
         }
@@ -84,7 +84,7 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.href=' ';
+                window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
         }
