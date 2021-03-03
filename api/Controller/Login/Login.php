@@ -57,11 +57,6 @@ if (isset($_POST['submit'])) {
                 window.location.href=' ';
                 </script>";
             }
-        } else {
-            echo "<script>
-            alert('Your username or password is incorrect');
-            window.location.href=' ';
-            </script>";
         }
         if ($countpassa  == 1) {
             $row = $passadmin->fetch(PDO::FETCH_ASSOC);
@@ -77,11 +72,6 @@ if (isset($_POST['submit'])) {
                 window.location.href=' ';
                 </script>";
             }
-        } else {
-            echo "<script>
-            alert('Your username or password is incorrect');
-            window.location.href=' ';
-            </script>";
         }
         if ($countpassr  == 1) {
             $row = $passrest->fetch(PDO::FETCH_ASSOC);
@@ -97,11 +87,6 @@ if (isset($_POST['submit'])) {
                 window.location.href=' ';
                 </script>";
             }
-        } else {
-            echo "<script>
-            alert('Your username or password is incorrect');
-            window.location.href=' ';
-            </script>";
         }
     }
 } else {
