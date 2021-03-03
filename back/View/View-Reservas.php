@@ -107,7 +107,7 @@
         <table id="tableReservas" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th class="head" >ID</th>
+                    <th class="head">ID</th>
                     <th class="head">Nombre</th>
                     <th class="head">Apellidos</th>
                     <th class="head">Alergias</th>
@@ -166,7 +166,10 @@
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
-                    select: true
+                    select: true,
+                    buttons: [
+                        'pdf',
+                    ],
                 });
 
             }
