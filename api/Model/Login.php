@@ -24,6 +24,11 @@ class Login {
         $this->role = $role;
     }
 
+    public function __construct($db)
+    {
+        $this->conn = $db;
+    }
+
     public function read() {
         $query = "Select DNI, role from User where DNI = '" . $this->DNI . "'" ;
 
