@@ -186,7 +186,7 @@
                 }, {
                     data: 'student_name'
                 }, {
-                    "defaultContent": "<button type='submit' class='editar btn btn-success' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
+                    "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
 
 
                 }],
