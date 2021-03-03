@@ -54,13 +54,13 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.href='';
+                window.location.href=' ';
                 </script>";
             }
         } else {
             echo "<script>
             alert('Your username or password is incorrect');
-            window.location.href='';
+            window.location.href=' ';
             </script>";
         }
         if ($countpassa  == 1) {
@@ -74,13 +74,13 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.href='';
+                window.location.href=' ';
                 </script>";
             }
         } else {
             echo "<script>
             alert('Your username or password is incorrect');
-            window.location.href='';
+            window.location.href=' ';
             </script>";
         }
         if ($countpassr  == 1) {
@@ -94,13 +94,13 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.href='';
+                window.location.href=' ';
                 </script>";
             }
         } else {
             echo "<script>
             alert('Your username or password is incorrect');
-            window.location.href='';
+            window.location.href=' ';
             </script>";
         }
     }
