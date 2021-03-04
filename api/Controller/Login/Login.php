@@ -93,9 +93,7 @@ if (isset($_POST['submit']) || isset($_SESSION["username"])) {
         }
     }
 } else {
-    echo "<script>
-                window.location.replace('http://www.menjadorescola.me/');
-                </script>";
+    header("Location: http://www.menjadorescola.me/");
     //session_start();
     //if (isset($_SESSION["username"])) {
     //Headers
