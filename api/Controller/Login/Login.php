@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) || isset($_SESSION["username"])) {
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
 
         $_SESSION["username"] = trim($_POST['username']);
@@ -57,8 +57,7 @@ if (isset($_POST['submit'])) {
                 window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
-        }
-        else if ($countpassa  == 1) {
+        } else if ($countpassa  == 1) {
             $row = $passadmin->fetch(PDO::FETCH_ASSOC);
             extract($row);
 
@@ -72,8 +71,7 @@ if (isset($_POST['submit'])) {
                 window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
-        }
-        else if ($countpassr  == 1) {
+        } else if ($countpassr  == 1) {
             $row = $passrest->fetch(PDO::FETCH_ASSOC);
             extract($row);
 
@@ -95,10 +93,13 @@ if (isset($_POST['submit'])) {
         }
     }
 } else {
+    echo "<script>
+                window.location.replace('http://www.menjadorescola.me/');
+                </script>";
     //session_start();
     //if (isset($_SESSION["username"])) {
     //Headers
-    $username = $_SESSION["username"];
+    /*$username = $_SESSION["username"];
     $passwordf = $_SESSION["password"];
     include_once '../api/Model/Database.php';
     include_once '../api/Model/User_Parent.php';
@@ -117,6 +118,6 @@ if (isset($_POST['submit'])) {
     $stmt = $user->read();
     $count = $stmt->rowCount();
 
-    include_once "../front/View/index.php";
+    include_once "../front/View/index.php";*/
     //}
 }
