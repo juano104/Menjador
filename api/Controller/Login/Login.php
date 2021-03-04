@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (isset($_POST['submit']) || isset($_SESSION["username"])) {
+if (isset($_POST['submit'])) {
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
 
         $_SESSION["username"] = trim($_POST['username']);
@@ -92,12 +92,11 @@ if (isset($_POST['submit']) || isset($_SESSION["username"])) {
             </script>";
         }
     }
-} else {
-    header("Location: http://www.menjadorescola.me/");
+} else if(isset($_SESSION["username"])){
     //session_start();
     //if (isset($_SESSION["username"])) {
     //Headers
-    /*$username = $_SESSION["username"];
+    $username = $_SESSION["username"];
     $passwordf = $_SESSION["password"];
     include_once '../api/Model/Database.php';
     include_once '../api/Model/User_Parent.php';
@@ -116,6 +115,8 @@ if (isset($_POST['submit']) || isset($_SESSION["username"])) {
     $stmt = $user->read();
     $count = $stmt->rowCount();
 
-    include_once "../front/View/index.php";*/
+    include_once "../front/View/index.php";
     //}
+}else{
+    header("Location: http://www.menjadorescola.me/");
 }
