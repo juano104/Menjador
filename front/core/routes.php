@@ -16,7 +16,7 @@ $router->define([
     //"reservas/parent" => "../api/Controller/Booking/ReadAllByDay.php",
     //
 
-    "home" => "../api/Controller/Student/Read.php",
+    //"home" => "../api/Controller/Student/Read.php",
     "insert" => "../api/Controller/Booking/Insert.php",
     "login" => "../api/Controller/Login/Login.php"
 
