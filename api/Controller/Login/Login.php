@@ -93,9 +93,7 @@ if (isset($_POST['submit'])) {
         }
     }
 } else if(isset($_SESSION["username"])){
-    //session_start();
-    //if (isset($_SESSION["username"])) {
-    //Headers
+    
     $username = $_SESSION["username"];
     $passwordf = $_SESSION["password"];
     include_once '../api/Model/Database.php';
@@ -116,7 +114,7 @@ if (isset($_POST['submit'])) {
     $count = $stmt->rowCount();
 
     include_once "../front/View/index.php";
-    //}
+    
 }else{
     header("Location: http://www.menjadorescola.me/");
 }
