@@ -1,5 +1,6 @@
 <?php
-if(!isset($_SESSION["username"])){
+session_start();
+if($_SESSION["username"] == null){
     header("Location: https://www.menjadorescola.me/");
 }
 ?>
