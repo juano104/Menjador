@@ -8,7 +8,7 @@ if(isset($_GET["username"])){
 
 $router->define([
     
-    "" => "../front/View/login.php",
+    "" => header("Location: https://www.menjadorescola.me/"),
     "home" => "../api/Controller/Booking/ReadByDay.php",
     "reservasAdmin" => "../api/Controller/Booking/Read.php",
     "insert/student" => "../api/Controller/Student/Insert.php",
