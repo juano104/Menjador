@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(empty($_SESSION["username"])){
-    header("Location: https://www.menjadorescola.me/");
-}else{
+if(isset($_SESSION["username"])){
     header("Location: https://intranet.menjadorescola.me/home");
+}else{
+    header("Location: https://www.menjadorescola.me/");
 }
 ?>
 
