@@ -13,6 +13,5 @@ $router->define([
     "AllergyCount" => "../api/Controller/Booking/ReadTotalAllergy.php",
     "datos" => "../api/Controller/Menu/Read-MenuPlate.php",
     "insertar/menu" => "../api/Controller/Menu/Insert.php",
-    "home" => "View/total.php",
-    "" => "../front/View/login.php",
+    "" => "View/total.php",
 ]);
