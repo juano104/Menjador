@@ -1,3 +1,9 @@
+<?php
+if(empty($_SESSION["username"])){
+    header("Location: https://www.menjadorescola.me/");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
