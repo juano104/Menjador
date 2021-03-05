@@ -6,60 +6,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../public/css/estils.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="front/public/css/estils.css">
+    <link rel="stylesheet" href="front/public/css/css.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
+    <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+    <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css">
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <script src="public/js/moment.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var date_input = $(".datepicker");
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            date_input.datepicker({
+                format: 'yyyy/mm/dd',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            });
+            var date_start = $("#datepickers");
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            date_start.datepicker({
+                format: 'yyyy/mm/dd',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            });
+            var date_end = $("#datepickere");
+            var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+            date_end.datepicker({
+                format: 'yyyy/mm/dd',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+            });
+        })
+    </script>
 
     <style>
-        #calendar {
-            max-width: 100%;
-            margin-bottom: 5%;
+        .bootstrap-iso .formden_header h2,
+        .bootstrap-iso .formden_header p,
+        .bootstrap-iso form {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black
+        }
+
+        .bootstrap-iso form button,
+        .bootstrap-iso form button:hover {
+            color: white !important;
+        }
+
+        .asteriskField {
+            color: red;
         }
     </style>
-
-    <script>
-        $(function() {
-            $(".datepicker").datepicker({
-                dateFormat: 'yy/mm/dd',
-                minDate: 0
-            });
-            $("#datepickers").datepicker({
-                dateFormat: 'yy/mm/dd',
-                minDate: 0
-            });
-            $("#datepickere").datepicker({
-                dateFormat: 'yy/mm/dd',
-                minDate: 0
-            });
-        });
-    </script>
 </head>
 
 <body>
     <!-- Menu de navegacio -->
-    
-    <?php require_once "navbar.php" ?>
+    <nav class="navbar navbar-expand-lg navbar-light static-top">
+        <!-- LOGO -->
+        <a href="Pagina-Principal.html" class="navbar-brand">
+            <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://menjadorescola.me">
+                        <i class="fas fa-home"></i>
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
 
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <div class="container  margin">
-            <form>
-                <div class="col-12 tab" id="tabs">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
-                        <li><a tabindex="-1" class="tab2 tabs nav-link" href="#tabs-2">Tipo de reserva</a></li>
-                        <li><a tabindex="-1" class="tab3 tabs nav-link" href="#tabs-3">Dias Sueltos</a></li>
-                        <li><a tabindex="-1" class="tab4 tabs nav-link" href="#tabs-4">Dias Fijos</a></li>
-                        <li><a tabindex="-1" class="tab5 tabs nav-link" href="#tabs-5">Finalizar</a></li>
-                    </ul>
+    <form>
+        <div class="container reserva col-6" style="height: 450px" id="tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li><a class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
+                <li><a class="tab2 tabs nav-link disabled" href="#tabs-2">Choose type</a></li>
+                <li><a class="tab3 tabs nav-link disabled" href="#tabs-3">Loose Days</a></li>
+                <li><a class="tab4 tabs nav-link disabled" href="#tabs-4">Fixed Days</a></li>
+                <li><a class="tab5 tabs nav-link disabled" href="#tabs-5">Summary</a></li>
+            </ul>
+
+            <div class="tab-content" id="tabs-1">
+                <h3>For who is it?</h3> <br>
+                <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
+                <?php
+                if ($count > 0) {
+                    $userArr = array();
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        extract($row);
+                        $e = array(
+                            "ID" => $ID,
+                            "name" => $name,
+                            "last_name" => $last_name
+                        );
+                        array_push($userArr, $e);
+
+                        echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
+                        echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                    }
+                }
+                ?>
+                <br>
+                <button type="button" class="b1n">NEXT</button>
 
                     <div class="tab-content" id="tabs-1">
                         <h3>Elegeix el fill</h3> <br>
@@ -214,10 +277,44 @@
                         <button type="button" class="b5p btn btn-outline-danger">Atras</button>
                     </div>
 
+                <input type="checkbox" id="wednesday" name="wednesday" value="0">
+                <label for="wednesday">Wednesday</label><br>
+
+                <input type="checkbox" id="thursday" name="thursday" value="0">
+                <label for="thursday">Thursday</label><br>
+
+                <input type="checkbox" id="friday" name="friday" value="0">
+                <label for="friday">Friday</label><br>
+                <br>
+                <button type="button" class="b4p">PREVIOUS</button>
+                <button type="button" class="b4n">NEXT</button>
+            </div>
+            <div class="tab-content" id="tabs-5">
+                <h3>Your Reservation:</h3>
+                <div>
+                    <table class="tabler" border="1">
+                        <thead>
+                            <tr>
+                                <th class="n">Name</th>
+                                <th class="t">Type of Reservation</th>
+                                <th class="d">Date</th>
+                                <th class="sd">Start Date</th>
+                                <th class="ed">End Date</th>
+                                <th class="dow">Days of Week</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
-            </form>
+                <br>
+                <input id="submit" name="submit" type="submit" value="Reserve">
+                <br> <br>
+                <button type="button" class="b5p">PREVIOUS</button>
+            </div>
+
         </div>
-    </div>
+    </form>
     <script type="text/javascript">
         $(document).ready(function() {
             //different dates 
@@ -263,78 +360,77 @@
             });
 
             $(".b1n").click(function() {
-                var studentname = $("input[name='radioname']:checked").val();
+                $("#tabs").tabs({
+                    active: 1,
+                    disabled: [0, 2, 3, 4],
+                    selected: 1
+                });
+                $("#tabs").tabs("option", "active", 1);
+                $(".tab1").removeClass("active");
+                $(".tab1").addClass("disabled");
+                $(".tab2").addClass("active");
 
-                if (studentname != null) {
-                    $("#tabs").tabs({
-                        active: 1,
-                        disabled: [0, 2, 3, 4],
-                        selected: 1
-                    });
-                    $("#tabs").tabs("option", "active", 1);
-                    $(".tab1").removeClass("active");
-                    $(".tab2").addClass("active");
-                    $("input[type='radio']:checked").each(function() {
-                        var idstudent = $("input[type='radio']:checked").val();
-                        //console.log(idstudent);
-                        var idVal = $(this).attr("id");
-                        var name = idVal;
-                        $(".t").hide();
+                $("input[type='radio']:checked").each(function() {
+                    var idstudent = $("input[type='radio']:checked").val();
+                    //console.log(idstudent);
+                    var idVal = $(this).attr("id");
+                    var name = idVal;
+                    $(".t").hide();
+                    $(".d").hide();
+                    $(".sd").hide();
+                    $(".ed").hide();
+                    $(".dow").hide();
+                    var newName = $("<tr><td><input type='hidden' name='idstudent' value='" + idstudent + "'>" + name + "</td></tr>");
+                    $(".tabler > tbody").append(newName);
+                });
+            });
+
+            $(".b2n").click(function() {
+                var type = $("input[name='type']:checked").val();
+                if (type != null) {
+                    if (type == "Fixed") {
+                        $("#tabs").tabs({
+                            active: 3,
+                            disabled: [0, 1, 2, 4],
+                            selected: 3
+                        });
+
+                        $("#tabs").tabs("option", "active", 3);
+                        $(".tab2").removeClass("active");
+                        $(".tab2").addClass("disabled");
+                        $(".tab4").addClass("active");
+
+                        var extraType = $("<td>" + type + "</td>");
+                        $(".tabler > tbody > tr").append(extraType);
+                        $(".t").show();
                         $(".d").hide();
                         $(".sd").hide();
                         $(".ed").hide();
                         $(".dow").hide();
-                        var newName = $("<tr><td><input type='hidden' name='idstudent' value='" + idstudent + "'>" + name + "</td></tr>");
-                        $(".tabler > tbody").append(newName);
-                    });
+
+
+
+                    } else {
+                        $("#tabs").tabs({
+                            active: 2,
+                            disabled: [0, 1, 3, 4],
+                            selected: 2
+                        });
+                        $("#tabs").tabs("option", "active", 2);
+                        $(".tab2").removeClass("active");
+                        $(".tab2").addClass("disabled");
+                        $(".tab3").addClass("active");
+
+                        var newType = $("<td>" + type + "</td>");
+                        $(".tabler > tbody > tr").append(newType);
+                        $(".t").show();
+                        $(".d").hide();
+                        $(".sd").hide();
+                        $(".ed").hide();
+                        $(".dow").hide();
+                    }
                 } else {
-                    alert("Porfavor elija un hijo");
-                }
-
-
-            });
-
-            $(".b2n").click(function() {
-
-                var type = $("input[name='type']:checked").val();
-
-                if (type == "Fixed") {
-                    $("#tabs").tabs({
-                        active: 3,
-                        disabled: [0, 1, 2, 4],
-                        selected: 3
-                    });
-
-                    $("#tabs").tabs("option", "active", 3);
-                    $(".tab2").removeClass("active");
-                    $(".tab4").addClass("active");
-
-                    var extraType = $("<td>" + type + "</td>");
-                    $(".tabler > tbody > tr").append(extraType);
-                    $(".t").show();
-                    $(".d").hide();
-                    $(".sd").hide();
-                    $(".ed").hide();
-                    $(".dow").hide();
-                } else if (type == "Loose") {
-                    $("#tabs").tabs({
-                        active: 2,
-                        disabled: [0, 1, 3, 4],
-                        selected: 2
-                    });
-                    $("#tabs").tabs("option", "active", 2);
-                    $(".tab2").removeClass("active");
-                    $(".tab3").addClass("active");
-
-                    var newType = $("<td>" + type + "</td>");
-                    $(".tabler > tbody > tr").append(newType);
-                    $(".t").show();
-                    $(".d").hide();
-                    $(".sd").hide();
-                    $(".ed").hide();
-                    $(".dow").hide();
-                } else {
-                    alert("Porfavor elija un tipo");
+                    alert("Please enter a type");
                 }
             });
             $(".b2p").click(function() {
@@ -343,8 +439,6 @@
                     disabled: [1, 2, 3, 4],
                     selected: 0
                 });
-                $("input[name='radioname']:checked").prop('checked', false);
-                $("input[name='type']:checked").prop('checked', false);
                 $("#tabs").tabs("option", "active", 0);
                 $(".tab2").removeClass("active");
                 $(".tab1").addClass("active");
@@ -368,6 +462,7 @@
                     });
                     $("#tabs").tabs("option", "active", 4);
                     $(".tab3").removeClass("active");
+                    $(".tab3").addClass("disabled");
                     $(".tab5").addClass("active");
                     dateArray.push(day1);
                     if (day2 != "") {
@@ -387,7 +482,7 @@
                     $(".d").show();
 
                 } else {
-                    alert("Porfavor elija un dia");
+                    alert("Please enter a date");
                 }
             });
             $(".b3p").click(function() {
@@ -421,6 +516,7 @@
                     });
                     $("#tabs").tabs("option", "active", 4);
                     $(".tab4").removeClass("active");
+                    $(".tab4").addClass("disabled");
                     $(".tab5").addClass("active");
 
 
@@ -479,7 +575,7 @@
                     $(".tabler > tbody >tr").append(newEDate);
                     $(".tabler > tbody >tr").append(DoWt);
                 } else {
-                    alert("Porfavor elija los dias");
+                    alert("Please enter the dates");
                 }
 
             });
@@ -658,6 +754,9 @@
             <!-- Copyright -->
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
+
     <!-- Footer -->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
