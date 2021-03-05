@@ -10,6 +10,12 @@ class Student
     private $allergy;
     private $birth_date;
     private $parent_id;
+    private $class;
+
+    function getClass()
+    {
+        return $this->class;
+    }
 
     function getName()
     {
@@ -34,6 +40,11 @@ class Student
     function getBirth_Date()
     {
         return $this->birth_date;
+    }
+
+    function setClass($class): void
+    {
+        $this->class = $class;
     }
 
     function setName($name): void
@@ -71,8 +82,8 @@ class Student
     public function insertStudent()
     {
         $sqlQuery = "INSERT INTO
-                Student (name, last_name, birth_date, parent_DNI)
-                values(?, ?, ?, ?)";
+                Student (name, last_name, birth_date, parent_DNI,class_ID)
+                values(?, ?, ?, ?, ?)";
 
         $stmt = $this->conn->prepare($sqlQuery);
 
@@ -81,6 +92,7 @@ class Student
         $stmt->bindParam(2, $this->last_name);
         $stmt->bindParam(3, $this->birth_date);
         $stmt->bindParam(4, $this->parent_id);
+        $stmt->bindParam(5, $this->class);
 
         if ($stmt->execute()) {
             return true;

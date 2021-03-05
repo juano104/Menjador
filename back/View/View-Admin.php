@@ -48,7 +48,7 @@
     </div>
 
     <style>
-        
+
     </style>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
@@ -116,7 +116,25 @@
                 <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="nomalumne"><strong>NOMBRE ALUMNO</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne"></label>
+                            <label for="classe"><strong>Classe</strong>
+                            <select class="form-control" name="classe" id="classe">
+                                    <option value="1">Primero A</option>
+                                    <option value="2">Primero B</option>
+                                    <option value="3">Segundo A</option>
+                                    <option value="4">Segundo B</option>
+                                    <option value="5">Tercero A</option>
+                                    <option value="6">Tercero B</option>
+                                    <option value="7">Cuarto A</option>
+                                    <option value="8">Cuarto B</option>
+                                    <option value="4">Quinto A</option>
+                                    <option value="4">Quinto B</option>
+                                    <option value="4">Sexto A</option>
+                                    <option value="4">Sexto B</option>
+                                </select></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
+                            </label>
                         </div>
                         <div class="form-group">
                             <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
