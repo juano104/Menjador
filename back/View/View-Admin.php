@@ -115,6 +115,16 @@
                 </div>
                 <form action="insert/student" method="post" id="form" name="f1">
                     <div class="modal-body">
+                        
+                        <div class="form-group">
+                            <label for="nomalumne"><strong>NOMBRE ALUMNO</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne">
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
+                            </label>
+                        </div>
+
                         <div class="form-group">
                             <label for="classe"><strong>Classe</strong>
                             <select class="form-control" name="classe" id="classe">
@@ -131,14 +141,6 @@
                                     <option value="4">Sexto A</option>
                                     <option value="4">Sexto B</option>
                                 </select></label>
-                        </div>
-                        <div class="form-group">
-                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
-                            </label>
                         </div>
 
                         <strong>ALERGIA</strong>
