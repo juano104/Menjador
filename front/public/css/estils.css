@@ -174,7 +174,7 @@ input[type="radio"] + label {
     padding: 0;
     width: 100%;
     table-layout: fixed;
-    margin-bottom: 2%;
+    margin-bottom: 6%;
   }
 
   .tabler tr {

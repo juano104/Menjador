@@ -88,10 +88,10 @@
 
                     </div>
                     <div class="tab-content" id="tabs-2">
-                        <h3>Tipo</h3>
                         <div class="col-4" style="padding-left: 0%;">
                             <table class="tabler" border="1">
                                 <thead>
+                                <caption>Tipo</caption>
                                     <tr>
                                         <th class="n">Nombre</th>
                                         <th class="t">Tipo</th>
@@ -113,10 +113,10 @@
                         <button type="button" class="b2n btn btn-outline-success">Siguiente</button>
                     </div>
                     <div class="tab-content" id="tabs-3">
-                        <h3>One Day</h3>
                         <div class="col-4" style="padding-left: 0%;">
                             <table class="tabler" border="1">
                                 <thead>
+                                <caption>Dia Suelto</caption>
                                     <tr>
                                         <th class="n">Nombre</th>
                                         <th class="t">Tipo</th>
@@ -156,11 +156,11 @@
                         <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
                     </div>
                     <div class="tab-content" id="tabs-4">
-                        <h3>Fixed</h3>
                         <div class="col-4" style="padding-left: 0%;">
                             <table class="tabler" border="1">
                                 <thead>
                                     <tr>
+                                        <caption>Dias Mixtos</caption>
                                         <th class="n">Nombre</th>
                                         <th class="t">Tipo</th>
                                         <th class="d">Fecha</th>
@@ -191,11 +191,11 @@
                         <button type="button" class="b4n btn btn-outline-success">Siguiente</button>
                     </div>
                     <div class="tab-content" id="tabs-5">
-                        <h3>Tu Reserva:</h3>
                         <div class="col-6" style="padding-left: 0%;">
                             <table class="tabler" border="1">
                                 <thead>
                                     <tr>
+                                    <caption>Tu Reserva</caption>
                                         <th class="n">Nombre</th>
                                         <th class="t">Tipo</th>
                                         <th class="d">Fecha</th>
