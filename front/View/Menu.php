@@ -48,7 +48,7 @@
         $(document).ready(function() {
             $('#calendar').fullCalendar({
                 eventSources: [{
-                    url: 'http://intranet.menjadorescola.me/datos',
+                    url: 'https://intranet.menjadorescola.me/datos',
                     method: 'POST'
                 }],
                 hiddenDays: [0, 6],

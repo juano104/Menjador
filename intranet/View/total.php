@@ -46,11 +46,11 @@
             $('#calendar').fullCalendar({
                 eventSources: [
                     {
-                    url: 'http://intranet.menjadorescola.me/datosCount',
+                    url: 'https://intranet.menjadorescola.me/datosCount',
                     method: 'POST'
                 },
                 {
-                    url: 'http://intranet.menjadorescola.me/AllergyCount',
+                    url: 'https://intranet.menjadorescola.me/AllergyCount',
                     method: 'POST'
                 }
                 ],

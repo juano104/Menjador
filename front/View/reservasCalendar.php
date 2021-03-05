@@ -45,7 +45,7 @@
         $(document).ready(function() {
             $('#calendar').fullCalendar({
                 eventSources: [{
-                    url: 'http://www.menjadorescola.me/ReadReservas',
+                    url: 'https://www.menjadorescola.me/ReadReservas',
                     method: 'POST'
                 }],
                 hiddenDays: [0, 6],
