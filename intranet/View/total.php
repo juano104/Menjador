@@ -1,8 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["username"])){
-    header("Location: https://intranet.menjadorescola.me/home");
-}else{
+if(empty($_POST["username"])){
     header("Location: https://www.menjadorescola.me/");
 }
 ?>
