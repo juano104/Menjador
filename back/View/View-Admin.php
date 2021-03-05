@@ -77,25 +77,34 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="insert/parent" method="post" id="form" name="f1">
+                <form action="insert/parent" class="needs-validation" method="post" id="form" name="f1" novalidate>
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="nompare"><strong>NOMBRE PADRE:</strong></label>
-                            <input type="text" class="form-control" name="nompare" id="nompare">
+                            <input type="text" class="form-control" required name="nompare" id="nompare">
+                            <div class="invalid-feedback">
+                                Porfavor, ponga un nombre.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="llinatgepare"><strong>APELLIDO PADRE:</strong></label>
-                            <input type="text" class="form-control" name="llinatgepare" id="llinatgepare">
+                            <input type="text" class="form-control" required name="llinatgepare" id="llinatgepare">
+                            <div class="invalid-feedback">
+                                Porfavor, ponga un apellido.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="dnipare"><strong>DNI PADRE:</strong></label>
-                            <input type="text" class="form-control" name="dnipare" id="dnipare">
+                            <input type="text" class="form-control" required name="dnipare" id="dnipare">
+                            <div class="invalid-feedback">
+                                Porfavor, ponga un DNI.
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <div class="form-group">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit" id="afegir" class="btn btn-success" value="Afegir Pare">
+                            <input type="submit" id="afegir" required class="btn btn-success" value="Afegir Pare">
                         </div>
                     </div>
                 </form>
@@ -185,6 +194,27 @@
             </div>
         </div>
     </div>
+
+    <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
 
     <script>
         $(document).ready(function() {
