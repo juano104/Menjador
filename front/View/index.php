@@ -6,11 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="front/public/css/estils.css">
-    <link rel="stylesheet" href="front/public/css/css.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../public/css/estils.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="public/js/moment.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
     <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
     <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
@@ -73,56 +80,6 @@
 
 <body>
     <!-- Menu de navegacio -->
-    <nav class="navbar navbar-expand-lg navbar-light static-top">
-        <!-- LOGO -->
-        <a href="Pagina-Principal.html" class="navbar-brand">
-            <img src="public/img/logo.png" alt="" class="d-inline-block align-middle imgres">
-        </a>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://menjadorescola.me">
-                        <i class="fas fa-home"></i>
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
-
-    <form>
-        <div class="container reserva col-6" style="height: 450px" id="tabs">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li><a class="tab1 tabs nav-link active" href="#tabs-1">Reservation</a></li>
-                <li><a class="tab2 tabs nav-link disabled" href="#tabs-2">Choose type</a></li>
-                <li><a class="tab3 tabs nav-link disabled" href="#tabs-3">Loose Days</a></li>
-                <li><a class="tab4 tabs nav-link disabled" href="#tabs-4">Fixed Days</a></li>
-                <li><a class="tab5 tabs nav-link disabled" href="#tabs-5">Summary</a></li>
-            </ul>
-
-            <div class="tab-content" id="tabs-1">
-                <h3>For who is it?</h3> <br>
-                <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
-                <?php
-                if ($count > 0) {
-                    $userArr = array();
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                        extract($row);
-                        $e = array(
-                            "ID" => $ID,
-                            "name" => $name,
-                            "last_name" => $last_name
-                        );
-                        array_push($userArr, $e);
-
-                        echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
-                        echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
-                    }
-                }
-                ?>
-                <br>
-                <button type="button" class="b1n">NEXT</button>
 
                     <div class="tab-content" id="tabs-1">
                         <h3>Elegeix el fill</h3> <br>
@@ -280,41 +237,163 @@
                 <input type="checkbox" id="wednesday" name="wednesday" value="0">
                 <label for="wednesday">Wednesday</label><br>
 
-                <input type="checkbox" id="thursday" name="thursday" value="0">
-                <label for="thursday">Thursday</label><br>
+                    <div class="tab-content" id="tabs-1">
+                        <h3>Elegeix el fill</h3> <br>
+                        <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
+                        <?php
+                        if ($count > 0) {
+                            $userArr = array();
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                extract($row);
+                                $e = array(
+                                    "ID" => $ID,
+                                    "name" => $name,
+                                    "last_name" => $last_name,
+                                    "password" => $password
+                                );
+                                array_push($userArr, $e);
+                                if ($password == $passwordf) {
+                                    echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
+                                    echo "<label for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                                }
+                            }
+                        }
+                        ?>
+                        <br>
+                        <button type="button" class="b1n btn btn-outline-success">Siguiente</button>
 
-                <input type="checkbox" id="friday" name="friday" value="0">
-                <label for="friday">Friday</label><br>
-                <br>
-                <button type="button" class="b4p">PREVIOUS</button>
-                <button type="button" class="b4n">NEXT</button>
-            </div>
-            <div class="tab-content" id="tabs-5">
-                <h3>Your Reservation:</h3>
-                <div>
-                    <table class="tabler" border="1">
-                        <thead>
-                            <tr>
-                                <th class="n">Name</th>
-                                <th class="t">Type of Reservation</th>
-                                <th class="d">Date</th>
-                                <th class="sd">Start Date</th>
-                                <th class="ed">End Date</th>
-                                <th class="dow">Days of Week</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    </div>
+                    <div class="tab-content" id="tabs-2">
+                        <h3>Tipo</h3>
+                        <div class="col-4" style="padding-left: 0%;">
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <input type="radio" value="Loose" name="type" id="Loose">
+                        <label for="Loose">Dia Suelto</label>
+                        <input type="radio" value="Fixed" name="type" id="Fixed">
+                        <label for="Fixed">Multiples dias</label>
+
+                        <br>
+
+                        <button type="button" class="b2p btn btn-outline-danger">Atras</button>
+                        <button type="button" class="b2n btn btn-outline-success">Siguiente</button>
+                    </div>
+                    <div class="tab-content" id="tabs-3">
+                        <h3>One Day</h3>
+                        <div class="col-4" style="padding-left: 0%;">
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d1">
+                            <label for="datepicker1">Fecha:</label>
+                            <input name="date1" type="text" class="datepicker">
+                        </div><br>
+
+                        <div class="d2">
+                            <label for="datepicker2">Fecha 2:</label>
+                            <input name="date2" type="text" class="datepicker">
+                        </div><br>
+                        <div class="d3">
+                            <label for="datepicker3">Fecha 3:</label>
+                            <input name="date3" type="text" class="datepicker">
+                        </div><br>
+                        <div class="d4">
+                            <label for="datepicker4">Fecha 4:</label>
+                            <input name="date4" type="text" class="datepicker">
+                        </div><br>
+                        <div class="d5">
+                            <label for="datepicker5">Fecha 5:</label>
+                            <input name="date5" type="text" class="datepicker">
+                        </div><br>
+                        <br>
+                        <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
+                        <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
+                        <br><br>
+                        <button type="button" class="b3p btn btn-outline-danger">Atras</button>
+                        <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
+                    </div>
+                    <div class="tab-content" id="tabs-4">
+                        <h3>Fixed</h3>
+                        <div class="col-4" style="padding-left: 0%;">
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Fecha (yyyy/mm/dd): <input name="startdate" type="text" id="datepickers"></p>
+                        <p>Fecha Final(yyyy/mm/dd): <input name="enddate" type="text" id="datepickere"></p>
+                        <input type="checkbox" id="monday" name="monday" value="0">
+                        <label for="monday">Lunes</label><br>
+
+                        <input type="checkbox" id="tuesday" name="tuesday" value="0">
+                        <label for="tuesday">Martes</label><br>
+
+                        <input type="checkbox" id="wednesday" name="wednesday" value="0">
+                        <label for="wednesday">Miercoles</label><br>
+
+                        <input type="checkbox" id="thursday" name="thursday" value="0">
+                        <label for="thursday">Jueves</label><br>
+
+                        <input type="checkbox" id="friday" name="friday" value="0">
+                        <label for="friday">Viernes</label><br>
+                        <br>
+                        <button type="button" class="b4p btn btn-outline-danger">Atras</button>
+                        <button type="button" class="b4n btn btn-outline-success">Siguiente</button>
+                    </div>
+                    <div class="tab-content" id="tabs-5">
+                        <h3>Tu Reserva:</h3>
+                        <div class="col-6" style="padding-left: 0%;">
+                            <table class="tabler" border="1">
+                                <thead>
+                                    <tr>
+                                        <th class="n">Nombre</th>
+                                        <th class="t">Tipo</th>
+                                        <th class="d">Fecha</th>
+                                        <th class="sd">Fecha Inicio</th>
+                                        <th class="ed">Fecha Final</th>
+                                        <th class="dow">Dias de la semana</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <input id="submit" name="submit" type="submit" value="Reserve">
+                        <br> <br>
+                        <button type="button" class="b5p btn btn-outline-danger">Atras</button>
+                    </div>
+
                 </div>
-                <br>
-                <input id="submit" name="submit" type="submit" value="Reserve">
-                <br> <br>
-                <button type="button" class="b5p">PREVIOUS</button>
-            </div>
-
+            </form>
         </div>
-    </form>
+    </div>
     <script type="text/javascript">
         $(document).ready(function() {
             //different dates 
@@ -360,77 +439,78 @@
             });
 
             $(".b1n").click(function() {
-                $("#tabs").tabs({
-                    active: 1,
-                    disabled: [0, 2, 3, 4],
-                    selected: 1
-                });
-                $("#tabs").tabs("option", "active", 1);
-                $(".tab1").removeClass("active");
-                $(".tab1").addClass("disabled");
-                $(".tab2").addClass("active");
+                var studentname = $("input[name='radioname']:checked").val();
 
-                $("input[type='radio']:checked").each(function() {
-                    var idstudent = $("input[type='radio']:checked").val();
-                    //console.log(idstudent);
-                    var idVal = $(this).attr("id");
-                    var name = idVal;
-                    $(".t").hide();
+                if (studentname != null) {
+                    $("#tabs").tabs({
+                        active: 1,
+                        disabled: [0, 2, 3, 4],
+                        selected: 1
+                    });
+                    $("#tabs").tabs("option", "active", 1);
+                    $(".tab1").removeClass("active");
+                    $(".tab2").addClass("active");
+                    $("input[type='radio']:checked").each(function() {
+                        var idstudent = $("input[type='radio']:checked").val();
+                        //console.log(idstudent);
+                        var idVal = $(this).attr("id");
+                        var name = idVal;
+                        $(".t").hide();
+                        $(".d").hide();
+                        $(".sd").hide();
+                        $(".ed").hide();
+                        $(".dow").hide();
+                        var newName = $("<tr><td><input type='hidden' name='idstudent' value='" + idstudent + "'>" + name + "</td></tr>");
+                        $(".tabler > tbody").append(newName);
+                    });
+                } else {
+                    alert("Porfavor elija un hijo");
+                }
+
+
+            });
+
+            $(".b2n").click(function() {
+
+                var type = $("input[name='type']:checked").val();
+
+                if (type == "Fixed") {
+                    $("#tabs").tabs({
+                        active: 3,
+                        disabled: [0, 1, 2, 4],
+                        selected: 3
+                    });
+
+                    $("#tabs").tabs("option", "active", 3);
+                    $(".tab2").removeClass("active");
+                    $(".tab4").addClass("active");
+
+                    var extraType = $("<td>" + type + "</td>");
+                    $(".tabler > tbody > tr").append(extraType);
+                    $(".t").show();
                     $(".d").hide();
                     $(".sd").hide();
                     $(".ed").hide();
                     $(".dow").hide();
-                    var newName = $("<tr><td><input type='hidden' name='idstudent' value='" + idstudent + "'>" + name + "</td></tr>");
-                    $(".tabler > tbody").append(newName);
-                });
-            });
+                } else if (type == "Loose") {
+                    $("#tabs").tabs({
+                        active: 2,
+                        disabled: [0, 1, 3, 4],
+                        selected: 2
+                    });
+                    $("#tabs").tabs("option", "active", 2);
+                    $(".tab2").removeClass("active");
+                    $(".tab3").addClass("active");
 
-            $(".b2n").click(function() {
-                var type = $("input[name='type']:checked").val();
-                if (type != null) {
-                    if (type == "Fixed") {
-                        $("#tabs").tabs({
-                            active: 3,
-                            disabled: [0, 1, 2, 4],
-                            selected: 3
-                        });
-
-                        $("#tabs").tabs("option", "active", 3);
-                        $(".tab2").removeClass("active");
-                        $(".tab2").addClass("disabled");
-                        $(".tab4").addClass("active");
-
-                        var extraType = $("<td>" + type + "</td>");
-                        $(".tabler > tbody > tr").append(extraType);
-                        $(".t").show();
-                        $(".d").hide();
-                        $(".sd").hide();
-                        $(".ed").hide();
-                        $(".dow").hide();
-
-
-
-                    } else {
-                        $("#tabs").tabs({
-                            active: 2,
-                            disabled: [0, 1, 3, 4],
-                            selected: 2
-                        });
-                        $("#tabs").tabs("option", "active", 2);
-                        $(".tab2").removeClass("active");
-                        $(".tab2").addClass("disabled");
-                        $(".tab3").addClass("active");
-
-                        var newType = $("<td>" + type + "</td>");
-                        $(".tabler > tbody > tr").append(newType);
-                        $(".t").show();
-                        $(".d").hide();
-                        $(".sd").hide();
-                        $(".ed").hide();
-                        $(".dow").hide();
-                    }
+                    var newType = $("<td>" + type + "</td>");
+                    $(".tabler > tbody > tr").append(newType);
+                    $(".t").show();
+                    $(".d").hide();
+                    $(".sd").hide();
+                    $(".ed").hide();
+                    $(".dow").hide();
                 } else {
-                    alert("Please enter a type");
+                    alert("Porfavor elija un tipo");
                 }
             });
             $(".b2p").click(function() {
@@ -439,6 +519,8 @@
                     disabled: [1, 2, 3, 4],
                     selected: 0
                 });
+                $("input[name='radioname']:checked").prop('checked', false);
+                $("input[name='type']:checked").prop('checked', false);
                 $("#tabs").tabs("option", "active", 0);
                 $(".tab2").removeClass("active");
                 $(".tab1").addClass("active");
@@ -462,7 +544,6 @@
                     });
                     $("#tabs").tabs("option", "active", 4);
                     $(".tab3").removeClass("active");
-                    $(".tab3").addClass("disabled");
                     $(".tab5").addClass("active");
                     dateArray.push(day1);
                     if (day2 != "") {
@@ -482,7 +563,7 @@
                     $(".d").show();
 
                 } else {
-                    alert("Please enter a date");
+                    alert("Porfavor elija un dia");
                 }
             });
             $(".b3p").click(function() {
@@ -516,7 +597,6 @@
                     });
                     $("#tabs").tabs("option", "active", 4);
                     $(".tab4").removeClass("active");
-                    $(".tab4").addClass("disabled");
                     $(".tab5").addClass("active");
 
 
@@ -575,7 +655,7 @@
                     $(".tabler > tbody >tr").append(newEDate);
                     $(".tabler > tbody >tr").append(DoWt);
                 } else {
-                    alert("Please enter the dates");
+                    alert("Porfavor elija los dias");
                 }
 
             });
