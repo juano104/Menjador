@@ -3,7 +3,7 @@ session_start();
 if(empty($_SESSION["username"])){
     header("Location: https://www.menjadorescola.me/");
 }else{
-    break;
+    header("Location: https://intranet.menjadorescola.me/home");
 }
 ?>
 
