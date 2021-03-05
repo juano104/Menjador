@@ -124,7 +124,7 @@
                     <div class="tab-content" id="tabs-2">
                         <h3>Tipo</h3>
                         <div class="col-4" style="padding-left: 0%;">
-                            <table class="tabler" border="1">
+                            <table class="tabler">
                                 <thead>
                                     <tr>
                                         <th class="n">Nombre</th>
@@ -149,7 +149,7 @@
                     <div class="tab-content" id="tabs-3">
                         <h3>One Day</h3>
                         <div class="col-4" style="padding-left: 0%;">
-                            <table class="tabler" border="1">
+                            <table class="tabler">
                                 <thead>
                                     <tr>
                                         <th class="n">Nombre</th>
@@ -192,7 +192,7 @@
                     <div class="tab-content" id="tabs-4">
                         <h3>Fixed</h3>
                         <div class="col-4" style="padding-left: 0%;">
-                            <table class="tabler" border="1">
+                            <table class="tabler">
                                 <thead>
                                     <tr>
                                         <th class="n">Nombre</th>
@@ -227,7 +227,7 @@
                     <div class="tab-content" id="tabs-5">
                         <h3>Tu Reserva:</h3>
                         <div class="col-6" style="padding-left: 0%;">
-                            <table class="tabler" border="1">
+                            <table class="tabler">
                                 <thead>
                                     <tr>
                                         <th class="n">Nombre</th>
