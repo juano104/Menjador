@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "admin") {
-                    header('location: http://admin.menjadorescola.me/home');
+                    header('location: http://admin.menjadorescola.me/');
                 }
             } else {
                 echo "<script>
@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "restaurant") {
-                    header('location: http://intranet.menjadorescola.me/home');
+                    header('location: http://intranet.menjadorescola.me/');
                 }
             } else {
                 echo "<script>
