@@ -57,8 +57,7 @@ if (isset($_POST['submit'])) {
                 window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
-        }
-        else if ($countpassa  == 1) {
+        } else if ($countpassa  == 1) {
             $row = $passadmin->fetch(PDO::FETCH_ASSOC);
             extract($row);
 
@@ -72,8 +71,7 @@ if (isset($_POST['submit'])) {
                 window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
-        }
-        else if ($countpassr  == 1) {
+        } else if ($countpassr  == 1) {
             $row = $passrest->fetch(PDO::FETCH_ASSOC);
             extract($row);
 
@@ -94,10 +92,8 @@ if (isset($_POST['submit'])) {
             </script>";
         }
     }
-} else {
-    //session_start();
-    //if (isset($_SESSION["username"])) {
-    //Headers
+} else if(isset($_SESSION["username"])){
+    
     $username = $_SESSION["username"];
     $passwordf = $_SESSION["password"];
     include_once '../api/Model/Database.php';
@@ -118,5 +114,7 @@ if (isset($_POST['submit'])) {
     $count = $stmt->rowCount();
 
     include_once "../front/View/index.php";
-    //}
+    
+}else{
+    header("Location: http://www.menjadorescola.me/");
 }
