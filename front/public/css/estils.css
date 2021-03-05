@@ -162,6 +162,9 @@ a:focus{
     .tab .nav-tabs li a:before{ bottom: 0; }
 }
 
+input[type="radio"] + label {
+  margin-right: 3%;
+}
 
 
 .tabler {
@@ -194,6 +197,7 @@ a:focus{
   @media screen and (max-width: 600px) {
     .tabler {
       border: 0;
+      margin-bottom: 2%;
     }
   
     .tabler caption {
