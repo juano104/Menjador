@@ -191,6 +191,8 @@ input[type="radio"] + label {
   
   .tabler th {
     font-size: .85em;
+    font-weight: bold;
+    color: black;
     letter-spacing: .1em;
     text-transform: uppercase;
   }
