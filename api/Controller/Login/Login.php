@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.replace('http://www.menjadorescola.me/home');
+                window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
         } else if ($countpassr  == 1) {
@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "restaurant") {
-                    header('location: http://intranet.menjadorescola.me/');
+                    header('location: http://intranet.menjadorescola.me/home');
                 }
             } else {
                 echo "<script>
