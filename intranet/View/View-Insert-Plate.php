@@ -2,7 +2,7 @@
   <h1>Inserir Plat</h1>
   <button type="button" style="margin-bottom: 2%;" class="btn btn-info" data-toggle="collapse" data-target="#demo"><i class="fas fa-utensils"></i></button>
   <div id="demo" class="collapse">
-    <form action="insertarPlate" class="form-inline" style="margin: 0%;" method="post" class="needs-validation" novalidate>
+    <form action="insertarPlate" id="signup-form" class="form-inline" style="margin: 0%;" method="post" class="needs-validation" novalidate>
       <div class="form-group mb-2">
         <label for="nomplat">
           <input type="text" name="nomplat" class="form-control" id="nomplat" required>
@@ -21,8 +21,8 @@
           </select>
         </label>
       </div>
-      <button type="submit" name="submit" class="enviar">Afegir</button>
 
+      <input type="submit" id="submitButton" class="btn btn-secondary mb-2" value="Afegir">
 
     </form>
   </div>
@@ -30,23 +30,19 @@
 
 
 <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function() {
-                'use strict';
-                window.addEventListener('load', function() {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function(form) {
-                        form.addEventListener('submit', function(event) {
-                            if (form.checkValidity() === false) {
-                              document.write("funciona");
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
-        </script>
+  $(document).ready(function() {
+    $("#submitButton").click(function() {
+      //Fetch form to apply custom Bootstrap validation
+      var form = $("#signup-form");
+
+      if (form[0].checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.addClass('was-validated');
+
+      //Make ajax call here
+    })
+  })
+</script>
