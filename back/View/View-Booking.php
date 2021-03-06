@@ -50,7 +50,7 @@
 
     <div class="container" style="margin-top: 2%;">
         <h1>Reservas Fijas</h1>
-        <table id="tableSingle" class="table table-striped table-bordered">
+        <table id="tableSingle" class="display responsive nowrap table table-striped table-bordered">
             <thead>
                 <tr>
                     <th class="head">ID ESTUDIANTE</th>
@@ -63,7 +63,7 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
         <h1>Reservas Mixtas</h1>
-        <table id="tableMultiple" class="table table-striped table-bordered">
+        <table id="tableMultiple" class="display responsive nowrap table table-striped table-bordered">
             <thead>
                 <tr>
                     <th class="head">ID ESTUDIANTE</th>

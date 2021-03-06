@@ -112,7 +112,7 @@ if($_SESSION["name"] != "login"){
 
     <div class="container" style="margin-bottom: 10%; margin-top: 5%;">
         <h1>Reservas para <?php echo $booking->getDate() ?></h1>
-        <table id="tableReservas" class="table table-striped table-bordered">
+        <table id="tableReservas" class="display responsive nowrap table table-striped table-bordered">
             <thead>
                 <tr>
                     <th class="head">ID</th>
