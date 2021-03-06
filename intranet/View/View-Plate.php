@@ -88,10 +88,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="insertar/menu" method="post">
+          <form action="insertar/menu" method="post" class="needs-validation" novalidate>
             <div class="form-group">
               <label for="primerplat">
-                PRIMER PLAT: <select class="form-control" name='idaliment[]' style="width: 200px;" id="primerplat">
+                PRIMER PLAT: <select required class="form-control" name='idaliment[]' style="width: 200px;" id="primerplat">
                   <?php
                   if ($count > 0) {
 
@@ -114,6 +114,9 @@
 
                   ?>
                 </select>
+                <div class="invalid-feedback">
+                                Porfavor, ponga un plato.
+                            </div>
               </label>
             </div>
             <br>
