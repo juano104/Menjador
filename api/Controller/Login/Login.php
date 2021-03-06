@@ -63,12 +63,12 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "admin") {
-                    header('location: http://admin.menjadorescola.me/home');
+                    header('location: http://admin.menjadorescola.me/');
                 }
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.replace('http://www.menjadorescola.me/home');
+                window.location.replace('http://www.menjadorescola.me/');
                 </script>";
             }
         } else if ($countpassr  == 1) {
