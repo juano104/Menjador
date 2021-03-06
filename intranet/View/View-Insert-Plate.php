@@ -21,7 +21,8 @@
           </select>
         </label>
       </div>
-      <input type="submit" class="btn btn-secondary mb-2" value="Afegir">
+      <button type="submit" name="submit" class="enviar">Afegir</button>
+
 
     </form>
   </div>
