@@ -21,11 +21,13 @@
       </div>
 
       <input type="submit" id="submitButton" class="btn btn-secondary mb-2" value="Afegir">
-
-    </form>
-    <div class="invalid-feedback">
+      <div class="col-12">
+      <div class="invalid-feedback">
             Porfavor, ponga un plato.
           </div>
+          </div>
+    </form>
+    
   </div>
 </div>
 
