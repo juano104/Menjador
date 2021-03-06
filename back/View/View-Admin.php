@@ -242,36 +242,24 @@
                 "bAutoWidth": false,
                 data: <?php echo json_encode($userArr); ?>,
                 columns: [{
-                    data: 'name'
+                    data: 'name',
+                    responsivePriority: 1
                 }, {
                     data: 'last_name'
                 }, {
                     data: 'DNI'
                 }, {
-                    data: 'student_name'
+                    data: 'student_name',
+                    responsivePriority: 3
                 }, {
-                    "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
-
-
+                    "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
+                    responsivePriority: 2
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
                 select: true,
                 responsive: true,
-                columnDefs: [{
-                        responsivePriority: 1,
-                        targets: 0
-                    },
-                    {
-                        responsivePriority: 2,
-                        targets: -4
-                    },
-                    {
-                        responsivePriority: 3,
-                        targets: -3
-                    }
-                ]
 
             });
 
@@ -301,15 +289,18 @@
                     "bAutoWidth": false,
                     data: <?php echo json_encode($userArr); ?>,
                     columns: [{
-                        data: 'name'
+                        data: 'name',
+                        responsivePriority: 1
                     }, {
                         data: 'last_name'
                     }, {
                         data: 'DNI'
                     }, {
-                        data: 'student_name'
+                        data: 'student_name',
+                        responsivePriority: 3
                     }, {
-                        "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>"
+                        "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
+                        responsivePriority: 2
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
