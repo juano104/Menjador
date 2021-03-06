@@ -126,11 +126,19 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="nomalumne"><strong>NOMBRE ALUMNO</strong><input class="form-control" required type="text" name="nomalumne" id="nomalumne">
+                            <label for="nomalumne"><strong>NOMBRE ALUMNO</strong>
+                                <input class="form-control" required type="text" name="nomalumne" id="nomalumne">
+                                <div class="invalid-feedback">
+                                    Porfavor, ponga un nombre.
+                                </div>
                             </label>
                         </div>
                         <div class="form-group">
-                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" required type="text" name="llinatgealumne" id="llinatgealumne">
+                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong>
+                                <input class="form-control" required type="text" name="llinatgealumne" id="llinatgealumne">
+                                <div class="invalid-feedback">
+                                    Porfavor, ponga un apellido.
+                                </div>
                             </label>
                         </div>
 
@@ -150,6 +158,9 @@
                                     <option value="4">Sexto A</option>
                                     <option value="4">Sexto B</option>
                                 </select></label>
+                            <div class="invalid-feedback">
+                                Porfavor, ponga una clase.
+                            </div>
                         </div>
 
                         <strong>ALERGIA</strong>
@@ -183,7 +194,10 @@
 
                         <div class="form-group">
                             <label for="date"><strong>FECHA DE NACIMIENTO:</strong></label>
-                            <input class="form-control" type="date" name="date" id="date">
+                            <input class="form-control" type="date" name="date" id="date" required>
+                            <div class="invalid-feedback">
+                                Porfavor, ponga una fecha de nacimiento.
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -214,7 +228,6 @@
                 });
             }, false);
         })();
-
     </script>
 
     <script>
