@@ -122,21 +122,21 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="insert/student" method="post" id="form" name="f1">
+                <form action="insert/student" method="post" id="form" name="f1" class="needs-validation" novalidate>
                     <div class="modal-body">
-                        
+
                         <div class="form-group">
-                            <label for="nomalumne"><strong>NOMBRE ALUMNO</strong><input class="form-control" type="text" name="nomalumne" id="nomalumne">
+                            <label for="nomalumne"><strong>NOMBRE ALUMNO</strong><input class="form-control" required type="text" name="nomalumne" id="nomalumne">
                             </label>
                         </div>
                         <div class="form-group">
-                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" type="text" name="llinatgealumne" id="llinatgealumne">
+                            <label for="llinatgealumne"><strong>APELLIDO ALUMNO</strong><input class="form-control" required type="text" name="llinatgealumne" id="llinatgealumne">
                             </label>
                         </div>
 
                         <div class="form-group">
                             <label for="classe"><strong>Classe</strong>
-                            <select class="form-control" name="classe" id="classe">
+                                <select class="form-control" name="classe" id="classe" required>
                                     <option value="1">Primero A</option>
                                     <option value="2">Primero B</option>
                                     <option value="3">Segundo A</option>
@@ -196,25 +196,26 @@
     </div>
 
     <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function() {
-                'use strict';
-                window.addEventListener('load', function() {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function(form) {
-                        form.addEventListener('submit', function(event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
-        </script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+    </script>
 
     <script>
         $(document).ready(function() {
@@ -245,10 +246,6 @@
                 },
                 select: true
 
-            });
-
-            $("#afegir").click(function() {
-                alert("Usuari afegit correctament");
             });
 
             var obtener_data_editar = function(tbody, table) {
