@@ -54,7 +54,7 @@
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
         <h1>Administrar Pares</h1>
         <button class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
-        <table id="table" class="table table-striped display responsive nowrap table-bordered">
+        <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th class="head">Name</th>
