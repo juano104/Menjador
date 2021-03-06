@@ -6,7 +6,9 @@
       <div class="form-group mb-2">
         <label for="nomplat">
           <input type="text" name="nomplat" class="form-control" id="nomplat" required>
-
+          <div class="invalid-feedback">
+            Porfavor, ponga un plato.
+          </div>
         </label>
       </div>
       <div class="form-group mx-sm-3 mb-2">
@@ -21,11 +23,7 @@
       </div>
 
       <input type="submit" id="submitButton" class="btn btn-secondary mb-2" value="Afegir">
-      <div class="col-12">
-      <div class="invalid-feedback">
-            Porfavor, ponga un plato.
-          </div>
-          </div>
+
     </form>
     
   </div>
@@ -45,7 +43,6 @@
 
       form.addClass('was-validated');
 
-      //Make ajax call here
     })
   })
 </script>
