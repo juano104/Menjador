@@ -151,6 +151,7 @@ if($_SESSION["name"] != "login"){
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                 },
                 select: true,
+                responsive: true,
                 dom: 'Bfrtip',
                 buttons: [
                     'pdf'
@@ -164,6 +165,7 @@ if($_SESSION["name"] != "login"){
                     "bLengthChange": false,
                     "bFilter": true,
                     "bInfo": false,
+                    responsive: true,
                     "bAutoWidth": false,
                     data: <?php echo json_encode($arrday); ?>,
                     columns: [{
