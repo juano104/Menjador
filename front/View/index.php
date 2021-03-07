@@ -418,7 +418,7 @@
                         dateArray.push(day5);
                     }
                     var newDate = $("<td>" + dateArray + "</td>");
-                    var sum = $( dateArray.length * 8 );// 8 is the price for everyday
+                    var sum = dateArray.length * 8;// 8 is the price for everyday
                     var sumtotal = $("<td>" + sum + " € </td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".tabler > tbody > tr").append(sumtotal);
