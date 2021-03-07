@@ -233,6 +233,7 @@
                                         <th class="n">Nombre</th>
                                         <th class="t">Tipo</th>
                                         <th class="d">Fecha</th>
+                                        <th class="total">Total</th>
                                         <th class="sd">Fecha Inicio</th>
                                         <th class="ed">Fecha Final</th>
                                         <th class="dow">Dias de la semana</th>

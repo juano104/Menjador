@@ -3,6 +3,7 @@
 if ($_SESSION["name"] != "login") {
     header("Location: https://www.menjadorescola.me/");
 }*/
+
 ?>
 
 <!DOCTYPE html>
