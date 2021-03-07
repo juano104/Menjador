@@ -415,12 +415,12 @@
                         dateArray.push(day4);
                     }
                     if (day5 != "") {
-                        dateArray.push(day15);
+                        dateArray.push(day5);
                     }
                     var newDate = $("<td>" + dateArray + "</td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".d").show();
-                    console.log(dateArray);
+                    console.log(dateArray.length);
 
                 } else {
                     alert("Porfavor elija un dia");
