@@ -418,8 +418,12 @@
                         dateArray.push(day5);
                     }
                     var newDate = $("<td>" + dateArray + "</td>");
+                    var sum = $( dateArray.length * 8 );// 8 is the price for everyday
+                    var sumtotal = $("<td>" + sum + " € </td>");
                     $(".tabler > tbody > tr").append(newDate);
+                    $(".tabler > tbody > tr").append(sumtotal);
                     $(".d").show();
+                    $(".total").show();
                     console.log(dateArray.length);
 
                 } else {
@@ -549,6 +553,8 @@
                     $("#tabs").tabs("option", "active", 2);
                     $(".tab5").removeClass("active");
                     $(".tab3").addClass("active");
+                    $('.tabler > tbody > tr > td:last-child').remove();
+                    $(".total").hide();
                     $('.tabler > tbody > tr > td:last-child').remove();
                     $(".d").hide();
                 } else {
