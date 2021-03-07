@@ -185,8 +185,8 @@ input[type="radio"] + label {
   
   .tabler th,
   .tabler td {
-    padding: .625em;
     text-align: center;
+    width: auto;
   }
   
   .tabler th {
