@@ -245,7 +245,7 @@
                         </div>
                         <br>
                         <input id="submit" name="submit" type="submit" value="Reserve">
-                        <br> 
+                        <br>
                         <button type="button" class="b5p btn btn-outline-danger">Atras</button>
                     </div>
 
@@ -448,6 +448,7 @@
             });
 
             $(".b4n").click(function() {
+                $(".total").hide();
                 var sday = $("#datepickers").val();
                 var eday = $("#datepickere").val();
                 var dow = $("input[type='checkbox']")
@@ -512,7 +513,6 @@
                         return txt;
                     }
                     var DoWt = $("<td>" + runDoW(DoW) + "</td>");
-                    $(".total").hide();
                     $(".sd").show();
                     $(".ed").show();
                     $(".dow").show();

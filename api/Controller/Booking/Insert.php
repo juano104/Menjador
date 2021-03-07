@@ -122,4 +122,4 @@ if ($_POST['date5'] != "") {
     }
 }
 
-header("Location: https://www.menjadorescola.me/login");
+//header("Location: https://www.menjadorescola.me/login");
