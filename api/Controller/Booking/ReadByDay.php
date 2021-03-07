@@ -37,7 +37,8 @@ if (isset($_POST['day'])) {
                     "ID" => $ID,
                     "name" => $name,
                     "last_name" => $last_name,
-                    "allergy" => $allergy
+                    "allergy" => $allergy,
+                    "class_name" => $class_name
                 );
                 array_push($arrday, $a);
             } else {
@@ -45,7 +46,8 @@ if (isset($_POST['day'])) {
                     "ID" => $ID,
                     "name" => $name,
                     "last_name" => $last_name,
-                    "allergy" => "none"
+                    "allergy" => "none",
+                    "class_name" => $class_name
                 );
                 array_push($arrday, $a);
             }
@@ -80,7 +82,8 @@ if (isset($_POST['day'])) {
                     "ID" => $ID,
                     "name" => $name,
                     "last_name" => $last_name,
-                    "allergy" => $allergy
+                    "allergy" => $allergy,
+                    "class_name" => $class_name
                 );
                 array_push($arrday, $a);
             } else {
@@ -88,7 +91,8 @@ if (isset($_POST['day'])) {
                     "ID" => $ID,
                     "name" => $name,
                     "last_name" => $last_name,
-                    "allergy" => "none"
+                    "allergy" => "none",
+                    "class_name" => $class_name
                 );
                 array_push($arrday, $a);
             }

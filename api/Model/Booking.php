@@ -202,15 +202,17 @@ class Booking
     //this part is for showing all the students data (school)
     public function readByDay()
     {
-        $query = "select Student.ID, Student.name, Student.last_name from Student
+        $query = "select Student.ID, Student.name, Student.last_name, Class.class_name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
+        inner join Class on Class.ID = Student.class_ID
         where Booking_Day.date = ?
         group by Student.ID
         union
-        select Student.ID, Student.name, Student.last_name from Student
+        select Student.ID, Student.name, Student.last_name, Class.class_name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
+        inner join Class on Class.ID = Student.class_ID
         where ? between Booking_Extra.start_date and Booking_Extra.end_date
         and Booking_Extra." . $this->dow . " is not null
         group by Student.ID";
