@@ -17,8 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <style>
@@ -48,14 +47,22 @@
                     url: 'https://www.menjadorescola.me/ReadReservas',
                     method: 'POST'
                 }],
+                eventClick: function(event, element) {
+                    //descripcion
+                    alert(event.description);
+                    //evento
+                    alert(event.title);
+                    //inicio evento
+                    alert(event.start);
+                    //fin evento
+                    alert(event.end);
+                },
                 hiddenDays: [0, 6],
                 showNonCurrentDates: false,
                 eventLimit: true,
                 eventOrder: "type",
-                eventColor: '#f2c9a0',
-                eventClick: function(info) {
-                    console.log(info.event._def.extendedProps.title);
-                }
+                eventColor: '#f2c9a0'
+
 
             })
         });
