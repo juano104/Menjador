@@ -185,7 +185,7 @@
                         <br>
                         <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
                         <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
-                        <br>
+                        <br><br>
                         <button type="button" class="b3p btn btn-outline-danger">Atras</button>
                         <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
                     </div>
@@ -245,7 +245,7 @@
                         </div>
                         <br>
                         <input id="submit" name="submit" type="submit" value="Reserve">
-                        <br> 
+                        <br> <br>
                         <button type="button" class="b5p btn btn-outline-danger">Atras</button>
                     </div>
 
@@ -418,7 +418,7 @@
                         dateArray.push(day5);
                     }
                     var newDate = $("<td>" + dateArray + "</td>");
-                    var sum = dateArray.length * 8; // 8 is the price for everyday
+                    var sum = dateArray.length * 8;// 8 is the price for everyday
                     var sumtotal = $("<td>" + sum + " € </td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".tabler > tbody > tr").append(sumtotal);
@@ -512,7 +512,6 @@
                         return txt;
                     }
                     var DoWt = $("<td>" + runDoW(DoW) + "</td>");
-                    $(".total").hide();
                     $(".sd").show();
                     $(".ed").show();
                     $(".dow").show();
@@ -558,11 +557,6 @@
                     $(".total").hide();
                     $('.tabler > tbody > tr > td:last-child').remove();
                     $(".d").hide();
-                    $("input[name='date1']").val("");
-                    $("input[name='date2']").val("");
-                    $("input[name='date3']").val("");
-                    $("input[name='date4']").val("");
-                    $("input[name='date5']").val("");
                 } else {
                     $("#tabs").tabs({
                         active: 3,
