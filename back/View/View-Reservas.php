@@ -22,8 +22,9 @@ if ($_SESSION["name"] != "login") {
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css"/>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowgroup/1.1.2/css/rowGroup.dataTables.min.css" />
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -39,6 +40,8 @@ if ($_SESSION["name"] != "login") {
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
 
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/rowgroup/1.1.2/js/dataTables.rowGroup.min.js"></script>
     <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
     <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
     <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
@@ -159,13 +162,20 @@ if ($_SESSION["name"] != "login") {
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                buttons: [
-                {
-                    extend:'pdfHtml5',
+                buttons: [{
+                    extend: 'pdfHtml5',
                     text: '<i class="fas fa-file-pdf"></i>',
                     titleAttr: 'Exportar a PDF',
                     className: 'btn btn-danger'
-                }
+                }],
+                responsive: true,
+                columns: [{
+                        responsivePriority: 2
+                    },
+                    {
+                        responsivePriority: 4
+                    },
+
                 ]
 
             });
@@ -192,9 +202,22 @@ if ($_SESSION["name"] != "login") {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
                     select: true,
-                    buttons: [
-                        'pdf',
-                    ],
+                    dom: 'Bfrtip',
+                    buttons: [{
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i>',
+                        titleAttr: 'Exportar a PDF',
+                        className: 'btn btn-danger'
+                    }],
+                    responsive: true,
+                    columns: [{
+                            responsivePriority: 2
+                        },
+                        {
+                            responsivePriority: 4
+                        },
+
+                    ]
                 });
 
             }
