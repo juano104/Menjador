@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.replace('http://www.menjadorescola.me/');
+                window.location.replace('https://www.menjadorescola.me/');
                 </script>";
             }
         } else if ($countpassa  == 1) {
@@ -63,12 +63,12 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "admin") {
-                    header('location: http://admin.menjadorescola.me/');
+                    header('location: https://admin.menjadorescola.me/');
                 }
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.replace('http://www.menjadorescola.me/');
+                window.location.replace('https://www.menjadorescola.me/');
                 </script>";
             }
         } else if ($countpassr  == 1) {
@@ -77,18 +77,18 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "restaurant") {
-                    header('location: http://intranet.menjadorescola.me/');
+                    header('location: https://intranet.menjadorescola.me/');
                 }
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.replace('http://www.menjadorescola.me/');
+                window.location.replace('https://www.menjadorescola.me/');
                 </script>";
             }
         } else {
             echo "<script>
             alert('Access Denied');
-            window.location.replace('http://www.menjadorescola.me/');
+            window.location.replace('https://www.menjadorescola.me/');
             </script>";
         }
     }
@@ -116,5 +116,5 @@ if (isset($_POST['submit'])) {
     include_once "../front/View/index.php";
     
 }else{
-    header("Location: http://www.menjadorescola.me/");
+    header("Location: https://www.menjadorescola.me/");
 }
