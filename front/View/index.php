@@ -164,28 +164,28 @@
                         <div class="d1">
                             <label for="datepicker1">Fecha:</label>
                             <input name="date1" type="text" class="datepicker">
-                        </div><br>
+                        </div>
 
                         <div class="d2">
                             <label for="datepicker2">Fecha 2:</label>
                             <input name="date2" type="text" class="datepicker">
-                        </div><br>
+                        </div>
                         <div class="d3">
                             <label for="datepicker3">Fecha 3:</label>
                             <input name="date3" type="text" class="datepicker">
-                        </div><br>
+                        </div>
                         <div class="d4">
                             <label for="datepicker4">Fecha 4:</label>
                             <input name="date4" type="text" class="datepicker">
-                        </div><br>
+                        </div>
                         <div class="d5">
                             <label for="datepicker5">Fecha 5:</label>
                             <input name="date5" type="text" class="datepicker">
-                        </div><br>
+                        </div>
                         <br>
                         <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
                         <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
-                        <br><br>
+                        <br>
                         <button type="button" class="b3p btn btn-outline-danger">Atras</button>
                         <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
                     </div>
@@ -245,7 +245,7 @@
                         </div>
                         <br>
                         <input id="submit" name="submit" type="submit" value="Reserve">
-                        <br> <br>
+                        <br> 
                         <button type="button" class="b5p btn btn-outline-danger">Atras</button>
                     </div>
 
