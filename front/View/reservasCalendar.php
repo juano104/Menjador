@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset='utf-8' />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
@@ -21,25 +24,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
     <style>
-
+        #calendar {
+            margin-bottom: 5%;
+        }
     </style>
+
 </head>
 
 <body>
-
-    <div class="container-fluid">
-        <!-- Menu de navegacio -->
-        <?php require_once "navbar.php" ?>
-        <!-- Menu de navegacio -->
-    </div>
+    <!-- Menu de navegacio -->
+    <?php require_once "navbar.php" ?>
 
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container margin">
-
-        <h5>Descargar Calendario:</h5><a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
-
+        <H6>DESCARGAR: </H6>
+        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
         <div id='calendar'></div>
     </div>
+
     <script>
         $(document).ready(function() {
             $('#calendar').fullCalendar({
@@ -59,9 +61,8 @@
             })
         });
     </script>
-
-
-<footer class="page-footer font-small stylish-color-dark pt-4">
+    <!-- Footer -->
+    <footer class="page-footer font-small stylish-color-dark pt-4">
         <!-- Footer Links -->
         <div class="container text-center text-md-left">
             <!-- Grid row -->
@@ -130,7 +131,10 @@
         </div>
     </footer>
     <!-- Footer -->
-
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    -->
     <script>
         $("#print").click(function() {
             //#AEFC is my div for FullCalendar
@@ -147,7 +151,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>
