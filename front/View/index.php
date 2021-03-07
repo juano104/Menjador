@@ -558,6 +558,11 @@
                     $(".total").hide();
                     $('.tabler > tbody > tr > td:last-child').remove();
                     $(".d").hide();
+                    $("input[name='date1']").val("");
+                    $("input[name='date2']").val("");
+                    $("input[name='date3']").val("");
+                    $("input[name='date4']").val("");
+                    $("input[name='date5']").val("");
                 } else {
                     $("#tabs").tabs({
                         active: 3,
@@ -567,13 +572,6 @@
                     $("#tabs").tabs("option", "active", 3);
                     $(".tab5").removeClass("active");
                     $(".tab4").addClass("active");
-
-
-                    $("input[name='date1']").val("");
-                    $("input[name='date2']").val("");
-                    $("input[name='date3']").val("");
-                    $("input[name='date4']").val("");
-                    $("input[name='date5']").val("");
 
                     $('.tabler > tbody > tr > td:last-child').remove();
                     $('.tabler > tbody > tr > td:last-child').remove();
