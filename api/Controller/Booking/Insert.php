@@ -121,3 +121,5 @@ if ($_POST['date5'] != "") {
         echo json_encode("Error");
     }
 }
+
+header("Location: https://www.menjadorescola.me/login");
