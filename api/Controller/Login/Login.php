@@ -64,6 +64,7 @@ if (isset($_POST['submit'])) {
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "admin") {
                     header('location: https://admin.menjadorescola.me/');
+                    echo '<script language="javascript">alert("funciona");</script>';
                 }
             } else {
                 echo "<script>
