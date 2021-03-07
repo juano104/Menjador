@@ -64,6 +64,7 @@
                     <th class="head">ID ESTUDIANTE</th>
                     <th class="head">Fecha</th>
                     <th class="head">Total Dias</th>
+                    <th class="head">Clase</th>
                 </tr>
             </thead>
         </table>
@@ -78,6 +79,7 @@
                     <th class="head">Fecha Inicio</th>
                     <th class="head">Fecha Final</th>
                     <th class="head">Dias</th>
+                    <th class="head">Clase</th>
                 </tr>
             </thead>
         </table>
@@ -103,6 +105,8 @@
                     data: 'single_day'
                 }, {
                     data: 'count'
+                }, {
+                    data: 'class_name'
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -110,20 +114,19 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'csvHtml5',
-                            text: '<i class="fas fa-file-excel"></i>',
-                            titleAttr: 'CSV',
-                            className: 'btn btn-success'
-                        },
-                        {
-                            extend: 'pdfHtml5',
-                            text: '<i class="fas fa-file-pdf"></i>',
-                            titleAttr: 'PDF',
-                            className: 'btn btn-danger'
-                        }
-                    ]
+                buttons: [{
+                        extend: 'csvHtml5',
+                        text: '<i class="fas fa-file-excel"></i>',
+                        titleAttr: 'CSV',
+                        className: 'btn btn-success'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i>',
+                        titleAttr: 'PDF',
+                        className: 'btn btn-danger'
+                    }
+                ]
             });
 
             function loadData() {
@@ -140,6 +143,8 @@
                         data: 'single_day'
                     }, {
                         data: 'count'
+                    }, {
+                        data: 'class_name'
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -147,8 +152,7 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [
-                        {
+                    buttons: [{
                             extend: 'csvHtml5',
                             text: '<i class="fas fa-file-excel"></i>',
                             titleAttr: 'CSV',
@@ -182,6 +186,8 @@
                     data: 'end_date'
                 }, {
                     data: 'days'
+                }, {
+                    data: 'class_name'
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -189,20 +195,19 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'csvHtml5',
-                            text: '<i class="fas fa-file-excel"></i>',
-                            titleAttr: 'CSV',
-                            className: 'btn btn-success'
-                        },
-                        {
-                            extend: 'pdfHtml5',
-                            text: '<i class="fas fa-file-pdf"></i>',
-                            titleAttr: 'PDF',
-                            className: 'btn btn-danger'
-                        }
-                    ]
+                buttons: [{
+                        extend: 'csvHtml5',
+                        text: '<i class="fas fa-file-excel"></i>',
+                        titleAttr: 'CSV',
+                        className: 'btn btn-success'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i>',
+                        titleAttr: 'PDF',
+                        className: 'btn btn-danger'
+                    }
+                ]
             });
 
             function loadData() {
@@ -221,6 +226,8 @@
                         data: 'end_date'
                     }, {
                         data: 'days'
+                    }, {
+                        data: 'class_name'
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -228,8 +235,7 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [
-                        {
+                    buttons: [{
                             extend: 'csvHtml5',
                             text: '<i class="fas fa-file-excel"></i>',
                             titleAttr: 'CSV',

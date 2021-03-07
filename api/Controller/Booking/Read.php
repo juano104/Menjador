@@ -26,6 +26,7 @@ if ($count > 0) {
             "student_ID" => $student_ID,
             "single_day" => $single_day,
             "count" => $count,
+            "class_name" => $class_name
         );
 
         array_push($userArr, $e);
@@ -45,6 +46,7 @@ if ($count2 > 0) {
             "start_date" => $start_date,
             "end_date" => $end_date,
             "days" => $days,
+            "class_name" => $class_name
         );
         array_push($BookingsArr, $e);
 //        array_push($arr, $BookingsArr);
