@@ -8,6 +8,7 @@
     <title>Read_All</title>
 
     <!-- css -->
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
 
@@ -20,6 +21,7 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css">
 
     <!-- js -->
 
@@ -40,6 +42,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
 </head>
 
 <body>
@@ -50,7 +54,7 @@
 
     <div class="container" style="margin-top: 2%;">
         <h1>Reservas Fijas</h1>
-        <table id="tableSingle" class="display responsive nowrap table table-striped table-bordered">
+        <table id="tableSingle" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th class="head">ID ESTUDIANTE</th>
@@ -63,7 +67,7 @@
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
         <h1>Reservas Mixtas</h1>
-        <table id="tableMultiple" class="display responsive nowrap table table-striped table-bordered">
+        <table id="tableMultiple" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th class="head">ID ESTUDIANTE</th>

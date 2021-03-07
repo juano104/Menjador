@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION["name"] != "login"){
+if ($_SESSION["name"] != "login") {
     header("Location: https://www.menjadorescola.me/");
 }
 ?>
@@ -22,6 +22,8 @@ if($_SESSION["name"] != "login"){
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css"/>
+
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -31,8 +33,12 @@ if($_SESSION["name"] != "login"){
     <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.1.70/build/pdfmake.min.js"></script>
-    
+    <!-- button Datatable -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+
     <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
     <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
     <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
@@ -154,7 +160,12 @@ if($_SESSION["name"] != "login"){
                 responsive: true,
                 dom: 'Bfrtip',
                 buttons: [
-                    'pdf'
+                {
+                    extend:'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i>',
+                    titleAttr: 'Exportar a PDF',
+                    className: 'btn btn-danger'
+                }
                 ]
 
             });

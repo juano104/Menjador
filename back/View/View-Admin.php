@@ -399,16 +399,7 @@
     </footer>
     <!-- Footer -->
 
-    <script>
-        window.onload = function() {
-            $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
-        };
-
-        // add the responsive classes when navigating with calendar buttons
-        $(document).on('click', '.fc-button', function(e) {
-            $('.fc-toolbar.fc-header-toolbar').addClass('row col-lg-12');
-        });
-    </script>
+    
 
 </body>
 
