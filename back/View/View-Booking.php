@@ -23,8 +23,6 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css" />
-
     <!-- js -->
 
 
@@ -115,7 +113,7 @@
                     buttons: [
                         {
                             extend: 'csvHtml5',
-                            text: '<i class="fa fa-file-text-o"></i>',
+                            text: '<i class="fas fa-file-excel"></i>',
                             titleAttr: 'CSV',
                             className: 'btn btn-success'
                         },
@@ -152,7 +150,7 @@
                     buttons: [
                         {
                             extend: 'csvHtml5',
-                            text: '<i class="fa fa-file-text-o"></i>',
+                            text: '<i class="fas fa-file-excel"></i>',
                             titleAttr: 'CSV',
                             className: 'btn btn-success'
                         },
@@ -194,7 +192,7 @@
                     buttons: [
                         {
                             extend: 'csvHtml5',
-                            text: '<i class="fa fa-file-text-o"></i>',
+                            text: '<i class="fas fa-file-excel"></i>',
                             titleAttr: 'CSV',
                             className: 'btn btn-success'
                         },
