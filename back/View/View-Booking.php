@@ -129,7 +129,7 @@
                         },
                         {
                             extend: 'pdfHtml5',
-                            text: '<i class="fa fa-file-pdf-o"></i>',
+                            text: '<i class="fas fa-file-pdf"></i>',
                             titleAttr: 'PDF'
                         }
                     ]
@@ -173,7 +173,7 @@
                         },
                         {
                             extend: 'pdfHtml5',
-                            text: '<i class="fa fa-file-pdf-o"></i>',
+                            text: '<i class="fas fa-file-pdf"></i>',
                             titleAttr: 'PDF'
                         }
                     ]
@@ -222,7 +222,7 @@
                         },
                         {
                             extend: 'pdfHtml5',
-                            text: '<i class="fa fa-file-pdf-o"></i>',
+                            text: '<i class="fas fa-file-pdf"></i>',
                             titleAttr: 'PDF'
                         }
                     ]
