@@ -147,7 +147,7 @@
                         <button type="button" class="b2n btn btn-outline-success">Siguiente</button>
                     </div>
                     <div class="tab-content" id="tabs-3">
-                        <h3>One Day</h3>
+                        <h3>Dia Fijo</h3>
                         <div class="col-4" style="padding-left: 0%;">
                             <table class="tabler">
                                 <thead>
@@ -230,13 +230,28 @@
                             <table class="tabler">
                                 <thead>
                                     <tr>
-                                        <th class="n">Nombre</th>
+                                        <div class="col-1">
+                                            <th class="n">Nombre</th>
+                                        </div>
+
+                                        <div class="col-1">
                                         <th class="t">Tipo</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="d">Fecha</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="total">Total</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="sd">Fecha Inicio</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="ed">Fecha Final</th>
+                                        </div>
+                                        <div class="col-6">
                                         <th class="dow">Dias de la semana</th>
+                                        </div>
                                     </tr>
                                 </thead>
                                 <tbody>
