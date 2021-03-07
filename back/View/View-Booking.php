@@ -112,25 +112,18 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                    buttons: [{
-                            extend: 'copyHtml5',
-                            text: '<i class="fa fa-files-o"></i>',
-                            titleAttr: 'Copy'
-                        },
-                        {
-                            extend: 'excelHtml5',
-                            text: '<i class="fa fa-file-excel-o"></i>',
-                            titleAttr: 'Excel'
-                        },
+                    buttons: [
                         {
                             extend: 'csvHtml5',
                             text: '<i class="fa fa-file-text-o"></i>',
-                            titleAttr: 'CSV'
+                            titleAttr: 'CSV',
+                            className: 'btn btn-success'
                         },
                         {
                             extend: 'pdfHtml5',
                             text: '<i class="fas fa-file-pdf"></i>',
-                            titleAttr: 'PDF'
+                            titleAttr: 'PDF',
+                            className: 'btn btn-danger'
                         }
                     ]
             });
@@ -156,25 +149,18 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [{
-                            extend: 'copyHtml5',
-                            text: '<i class="fa fa-files-o"></i>',
-                            titleAttr: 'Copy'
-                        },
-                        {
-                            extend: 'excelHtml5',
-                            text: '<i class="fa fa-file-excel-o"></i>',
-                            titleAttr: 'Excel'
-                        },
+                    buttons: [
                         {
                             extend: 'csvHtml5',
                             text: '<i class="fa fa-file-text-o"></i>',
-                            titleAttr: 'CSV'
+                            titleAttr: 'CSV',
+                            className: 'btn btn-success'
                         },
                         {
                             extend: 'pdfHtml5',
                             text: '<i class="fas fa-file-pdf"></i>',
-                            titleAttr: 'PDF'
+                            titleAttr: 'PDF',
+                            className: 'btn btn-danger'
                         }
                     ]
                 });
@@ -205,25 +191,18 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                    buttons: [{
-                            extend: 'copyHtml5',
-                            text: '<i class="fa fa-files-o"></i>',
-                            titleAttr: 'Copy'
-                        },
-                        {
-                            extend: 'excelHtml5',
-                            text: '<i class="fa fa-file-excel-o"></i>',
-                            titleAttr: 'Excel'
-                        },
+                    buttons: [
                         {
                             extend: 'csvHtml5',
                             text: '<i class="fa fa-file-text-o"></i>',
-                            titleAttr: 'CSV'
+                            titleAttr: 'CSV',
+                            className: 'btn btn-success'
                         },
                         {
                             extend: 'pdfHtml5',
                             text: '<i class="fas fa-file-pdf"></i>',
-                            titleAttr: 'PDF'
+                            titleAttr: 'PDF',
+                            className: 'btn btn-danger'
                         }
                     ]
             });
@@ -251,25 +230,18 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [{
-                            extend: 'copyHtml5',
-                            text: '<i class="fa fa-files-o"></i>',
-                            titleAttr: 'Copy'
-                        },
-                        {
-                            extend: 'excelHtml5',
-                            text: '<i class="fa fa-file-excel-o"></i>',
-                            titleAttr: 'Excel'
-                        },
+                    buttons: [
                         {
                             extend: 'csvHtml5',
-                            text: '<i class="fa fa-file-text-o"></i>',
-                            titleAttr: 'CSV'
+                            text: '<i class="fas fa-file-excel"></i>',
+                            titleAttr: 'CSV',
+                            className: 'btn btn-success'
                         },
                         {
                             extend: 'pdfHtml5',
                             text: '<i class="fa fa-file-pdf-o"></i>',
-                            titleAttr: 'PDF'
+                            titleAttr: 'PDF',
+                            className: 'btn btn-danger'
                         }
                     ]
                 });
