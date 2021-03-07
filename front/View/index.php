@@ -226,7 +226,7 @@
                     </div>
                     <div class="tab-content" id="tabs-5">
                         <h3>Tu Reserva:</h3>
-                        <div class="col-6" style="padding-left: 0%;">
+                        <div class="col-12" style="padding-left: 0%;">
                             <table class="tabler">
                                 <thead>
                                     <tr>

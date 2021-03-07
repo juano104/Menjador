@@ -186,6 +186,7 @@ input[type="radio"] + label {
   .tabler th,
   .tabler td {
     text-align: center;
+    width: auto;
   }
   
   .tabler th {
