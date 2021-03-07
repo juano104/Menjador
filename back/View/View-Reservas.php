@@ -95,7 +95,7 @@ if ($_SESSION["name"] != "login") {
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <h3>Selecciona una fecha</h3>
-                    <form action="" class="form-horizontal" method="post">
+                    <form action="" class="form-horizontal" method="post" style="margin: 0;">
                         <div class="form-group ">
                             <div class="col-sm-10">
                                 <div class="input-group">
