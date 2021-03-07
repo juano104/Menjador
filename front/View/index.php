@@ -420,7 +420,7 @@
                     var newDate = $("<td>" + dateArray + "</td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".d").show();
-                    console.log($dateArray);
+                    console.log(dateArray);
 
                 } else {
                     alert("Porfavor elija un dia");
