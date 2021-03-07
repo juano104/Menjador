@@ -129,6 +129,7 @@ if ($_SESSION["name"] != "login") {
                     <th class="head">Nombre</th>
                     <th class="head">Apellidos</th>
                     <th class="head">Alergias</th>
+                    <th class="head">Clase</th>
                 </tr>
             </thead>
         </table>
@@ -156,6 +157,8 @@ if ($_SESSION["name"] != "login") {
                     data: 'last_name'
                 }, {
                     data: 'allergy'
+                }, {
+                    data: 'class_name'
                 }],
                 language: {
                     url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
@@ -190,18 +193,20 @@ if ($_SESSION["name"] != "login") {
                         data: 'last_name'
                     }, {
                         data: 'allergy'
+                    }, {
+                        data: 'class_name'
                     }],
                     language: {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
                     select: true,
                     dom: 'Bfrtip',
-                buttons: [{
-                    extend: 'pdfHtml5',
-                    text: '<i class="fas fa-file-pdf"></i>',
-                    titleAttr: 'Exportar a PDF',
-                    className: 'btn btn-danger'
-                }],
+                    buttons: [{
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i>',
+                        titleAttr: 'Exportar a PDF',
+                        className: 'btn btn-danger'
+                    }],
                     responsive: true,
                 });
 

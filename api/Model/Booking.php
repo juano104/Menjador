@@ -106,7 +106,12 @@ class Booking
     //Read SingleBooking
     public function readSingleBooking()
     {
-        $query = "select Booking.student_ID, group_concat(Booking_Day.date, '') as single_day, count(Booking_Day.date) as count  from Booking join Booking_Day on Booking.ID = Booking_Day.booking_ID group by  Booking.student_ID";
+        $query = "select Booking.student_ID, group_concat(Booking_Day.date, '') 
+        as single_day, count(Booking_Day.date) as count, Class.class_name from Booking 
+        join Booking_Day on Booking.ID = Booking_Day.booking_ID 
+        join Student on Student.ID = Booking.student_ID
+        join Class on Class.ID = Student.class_ID 
+        group by Booking.student_ID";
 
         $result = $this->conn->query($query);
 
@@ -115,7 +120,14 @@ class Booking
 
     public function readMultipleBooking()
     {
-        $query = "select Booking.student_ID,Booking_Extra.start_date, Booking_Extra.end_date ,concat_ws(' , ',Booking_Extra.monday, Booking_Extra.tuesday, Booking_Extra.wednesday,Booking_Extra.thursday,Booking_Extra.friday) as days from Booking inner join Booking_Extra on Booking.ID = Booking_Extra.booking_ID and date( end_date ) >= CURDATE()  group by  Booking.student_ID, Booking_Extra.start_date, Booking_Extra.end_date, days";
+        $query = "select Booking.student_ID,Booking_Extra.start_date, Booking_Extra.end_date,
+        concat_ws(' , ',Booking_Extra.monday, Booking_Extra.tuesday, Booking_Extra.wednesday,Booking_Extra.thursday,
+        Booking_Extra.friday) as days, Class.class_name from Booking 
+        inner join Booking_Extra on Booking.ID = Booking_Extra.booking_ID 
+        inner join Student on Student.ID = Booking.student_ID
+        inner join Class on Class.ID = Student.class_ID 
+        and date( end_date ) >= CURDATE()  
+        group by  Booking.student_ID, Booking_Extra.start_date, Booking_Extra.end_date, days";
 
         $result = $this->conn->query($query);
 
@@ -202,15 +214,17 @@ class Booking
     //this part is for showing all the students data (school)
     public function readByDay()
     {
-        $query = "select Student.ID, Student.name, Student.last_name from Student
+        $query = "select Student.ID, Student.name, Student.last_name, Class.class_name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
+        inner join Class on Class.ID = Student.class_ID
         where Booking_Day.date = ?
         group by Student.ID
         union
-        select Student.ID, Student.name, Student.last_name from Student
+        select Student.ID, Student.name, Student.last_name, Class.class_name from Student
         inner join Booking on Booking.student_ID = Student.ID
         inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
+        inner join Class on Class.ID = Student.class_ID
         where ? between Booking_Extra.start_date and Booking_Extra.end_date
         and Booking_Extra." . $this->dow . " is not null
         group by Student.ID";
@@ -250,7 +264,7 @@ class Booking
         inner join Booking_Day on Booking_Day.booking_ID = Booking.ID
         inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
         inner join Allergy on Allergy.ID = Student_Allergy.allergy_ID
-        and Booking_Day.date = "' . $date .'"
+        and Booking_Day.date = "' . $date . '"
         group by Allergy.name
         union
         select concat(Allergy.name, ": " ,count(Allergy.name)) as title from Student
@@ -258,8 +272,8 @@ class Booking
         inner join Booking_Extra on Booking_Extra.booking_ID = Booking.ID
         inner join Student_Allergy on Student_Allergy.student_ID = Student.ID
         inner join Allergy on Allergy.ID = Student_Allergy.allergy_ID
-        and "' . $date .'" between Booking_Extra.start_date and Booking_Extra.end_date
-        and Booking_Extra.'. $dow .' is not null
+        and "' . $date . '" between Booking_Extra.start_date and Booking_Extra.end_date
+        and Booking_Extra.' . $dow . ' is not null
         group by Allergy.name';
 
         $stmt = $this->conn->prepare($query);
