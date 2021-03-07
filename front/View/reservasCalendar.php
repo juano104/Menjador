@@ -3,19 +3,19 @@
 
 <head>
     <meta charset='utf-8' />
-    <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/estils.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
     <script src="public/js/jquery.min.js"></script>
+
     <script src="public/js/moment.min.js"></script>
     <script src="public/js/fullcalendar.min.js"></script>
-
-
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
@@ -48,22 +48,14 @@
                     method: 'POST'
                 }],
                 eventClick: function(event, element) {
-                    //descripcion
-                    alert(event.description);
-                    //evento
                     alert(event.title);
-                    //inicio evento
                     alert(event.start);
-                    //fin evento
-                    alert(event.end);
                 },
                 hiddenDays: [0, 6],
                 showNonCurrentDates: false,
                 eventLimit: true,
                 eventOrder: "type",
                 eventColor: '#f2c9a0'
-
-
             })
         });
     </script>
