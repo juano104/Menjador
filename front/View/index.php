@@ -233,6 +233,7 @@
                                         <th class="n">Nombre</th>
                                         <th class="t">Tipo</th>
                                         <th class="d">Fecha</th>
+                                        <th class="total">Total</th>
                                         <th class="sd">Fecha Inicio</th>
                                         <th class="ed">Fecha Final</th>
                                         <th class="dow">Dias de la semana</th>
@@ -414,11 +415,12 @@
                         dateArray.push(day4);
                     }
                     if (day5 != "") {
-                        dateArray.push(day15);
+                        dateArray.push(day5);
                     }
                     var newDate = $("<td>" + dateArray + "</td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".d").show();
+                    console.log(dateArray.length);
 
                 } else {
                     alert("Porfavor elija un dia");
