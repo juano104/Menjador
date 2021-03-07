@@ -147,7 +147,7 @@
                         <button type="button" class="b2n btn btn-outline-success">Siguiente</button>
                     </div>
                     <div class="tab-content" id="tabs-3">
-                        <h3>One Day</h3>
+                        <h3>Dia Fijo</h3>
                         <div class="col-4" style="padding-left: 0%;">
                             <table class="tabler">
                                 <thead>
@@ -185,7 +185,7 @@
                         <br>
                         <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
                         <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
-                        <br>
+                        <br><br>
                         <button type="button" class="b3p btn btn-outline-danger">Atras</button>
                         <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
                     </div>
@@ -230,13 +230,28 @@
                             <table class="tabler">
                                 <thead>
                                     <tr>
-                                        <th class="n">Nombre</th>
+                                        <div class="col-1">
+                                            <th class="n">Nombre</th>
+                                        </div>
+
+                                        <div class="col-1">
                                         <th class="t">Tipo</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="d">Fecha</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="total">Total</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="sd">Fecha Inicio</th>
+                                        </div>
+                                        <div class="col-1">
                                         <th class="ed">Fecha Final</th>
+                                        </div>
+                                        <div class="col-6">
                                         <th class="dow">Dias de la semana</th>
+                                        </div>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -418,7 +433,7 @@
                         dateArray.push(day5);
                     }
                     var newDate = $("<td>" + dateArray + "</td>");
-                    var sum = dateArray.length * 8; // 8 is the price for everyday
+                    var sum = dateArray.length * 8;// 8 is the price for everyday
                     var sumtotal = $("<td>" + sum + " € </td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".tabler > tbody > tr").append(sumtotal);
@@ -558,11 +573,6 @@
                     $(".total").hide();
                     $('.tabler > tbody > tr > td:last-child').remove();
                     $(".d").hide();
-                    $("input[name='date1']").val("");
-                    $("input[name='date2']").val("");
-                    $("input[name='date3']").val("");
-                    $("input[name='date4']").val("");
-                    $("input[name='date5']").val("");
                 } else {
                     $("#tabs").tabs({
                         active: 3,
