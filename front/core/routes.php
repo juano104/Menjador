@@ -7,6 +7,7 @@ $router->define([
     "reservas" => "View/reservasCalendar.php",
 
     "insert" => "../api/Controller/Booking/Insert.php",
-    "login" => "../api/Controller/Login/Login.php"
+    "login" => "../api/Controller/Login/Login.php",
+    "mail" => "../api/Controller/Mail/mail.php"
 
 ]);
