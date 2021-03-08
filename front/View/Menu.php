@@ -88,7 +88,7 @@
                     <!-- Content -->
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contacte con nosotros</h5>
                     <p>
-                    <form method="post" action="send_mail">
+                    <form method="post" action="mail">
                         To:<br>
                         <input type="email" name="to"><br>
                         Subject:<br>
