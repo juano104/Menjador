@@ -86,11 +86,17 @@
                 <!-- Grid column -->
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contacte con nosotros</h5>
                     <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                        consectetur
-                        adipisicing elit.
+                    <form method="post" action="send_mail">
+                        To:<br>
+                        <input type="email" name="to"><br>
+                        Subject:<br>
+                        <input type="text" name="subject"><br><br>
+                        Message:
+                        <textarea rows="4" cols="40" name="message"> </textarea>
+                        <input type="submit" name="send">
+                    </form>
                     </p>
                 </div>
                 <!-- Social buttons -->

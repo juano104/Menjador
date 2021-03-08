@@ -233,24 +233,23 @@
                                         <div class="col-1">
                                             <th class="n">Nombre</th>
                                         </div>
-
                                         <div class="col-1">
-                                        <th class="t">Tipo</th>
+                                            <th class="t">Tipo</th>
                                         </div>
                                         <div class="col-1">
-                                        <th class="d">Fecha</th>
+                                            <th class="d">Fecha</th>
                                         </div>
                                         <div class="col-1">
-                                        <th class="total">Total</th>
+                                            <th class="total">Total</th>
                                         </div>
                                         <div class="col-1">
-                                        <th class="sd">Fecha Inicio</th>
+                                            <th class="sd">Fecha Inicio</th>
                                         </div>
                                         <div class="col-1">
-                                        <th class="ed">Fecha Final</th>
+                                            <th class="ed">Fecha Final</th>
                                         </div>
                                         <div class="col-6">
-                                        <th class="dow">Dias de la semana</th>
+                                            <th class="dow">Dias de la semana</th>
                                         </div>
                                     </tr>
                                 </thead>
