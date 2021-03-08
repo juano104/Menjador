@@ -89,13 +89,15 @@
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contacte con nosotros</h5>
                     <p>
                     <form method="post" action="mail">
-                        To:<br>
-                        <input type="email" name="to"><br>
-                        Subject:<br>
-                        <input type="text" name="subject"><br><br>
-                        Message:
-                        <textarea rows="4" cols="40" name="message"> </textarea>
-                        <input type="submit" name="send">
+                        <br>
+                        <input type="text" name="nombre" placeholder="Nombre" required><br>
+                        <br> 
+                        <input type="email" name="correo" placeholder="Correo"><br>
+                        <br>
+                        <input type="text" name="telefono" placeholder="Telefono"><br>
+                        </br>
+                        <textarea rows="4" cols="40" placeholder="Escriba aqui su mensaje" name="mensaje"> </textarea>
+                        <input type="submit" name="ENVIAR" id="boton">
                     </form>
                     </p>
                 </div>
