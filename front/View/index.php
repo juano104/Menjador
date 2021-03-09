@@ -951,12 +951,12 @@
                     },
                     ContentType: "application/json",
                     success: function(response) {
-                        alert(response);
                         //alert("Reserva realizada correctamente");
+                        alert(JSON.stringify(response.json));
                     },
                     error: function(err) {
-                        alert(err);
                         //alert("Ha habido un error");
+                        alert(JSON.stringify(err.json));
                     }
                 });
             });
