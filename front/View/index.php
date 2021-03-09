@@ -283,7 +283,48 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                tarjeta
+                                <div class="form-group owner">
+                                    <label for="owner">Propietari</label>
+                                    <input type="text" class="form-control" id="owner">
+                                </div>
+                                <div class="form-group CVV">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv">
+                                </div>
+                                <div class="form-group" id="card-number-field">
+                                    <label for="cardNumber">Numero de tarjeta</label>
+                                    <input type="text" class="form-control" id="cardNumber">
+                                </div>
+                                <div class="form-group" id="expiration-date">
+                                    <label>Fecha Caducidad</label>
+                                    <select>
+                                        <option value="01">Enero</option>
+                                        <option value="02">Febrero </option>
+                                        <option value="03">Marzo</option>
+                                        <option value="04">Abril</option>
+                                        <option value="05">Mayo</option>
+                                        <option value="06">Junio</option>
+                                        <option value="07">Julio</option>
+                                        <option value="08">Agosto</option>
+                                        <option value="09">Septiembre</option>
+                                        <option value="10">Octubre</option>
+                                        <option value="11">Noviembre</option>
+                                        <option value="12">Diciembre</option>
+                                    </select>
+                                    <select>
+                                        <option value="21"> 2021</option>
+                                        <option value="21"> 2022</option>
+                                        <option value="21"> 2023</option>
+                                        <option value="21"> 2024</option>
+                                        <option value="21"> 2025</option>
+                                        <option value="21"> 2026</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" id="credit_cards">
+                                    <img src="assets/images/visa.jpg" id="visa">
+                                    <img src="assets/images/mastercard.jpg" id="mastercard">
+                                    <img src="assets/images/amex.jpg" id="amex">
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -752,7 +793,63 @@
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
+    <script>
+        var owner = $('#owner'),
+            cardNumber = $('#cardNumber'),
+            cardNumberField = $('#card-number-field'),
+            CVV = $("#cvv"),
+            mastercard = $("#mastercard"),
+            confirmButton = $('#submit'),
+            visa = $("#visa"),
+            amex = $("#amex");
+
+        cardNumber.payform('formatCardNumber');
+        CVV.payform('formatCardCVC');
+
+        cardNumber.keyup(function() {
+            amex.removeClass('transparent');
+            visa.removeClass('transparent');
+            mastercard.removeClass('transparent');
+
+            if ($.payform.validateCardNumber(cardNumber.val()) == false) {
+                cardNumberField.removeClass('has-success');
+                cardNumberField.addClass('has-error');
+            } else {
+                cardNumberField.removeClass('has-error');
+                cardNumberField.addClass('has-success');
+            }
+
+            if ($.payform.parseCardType(cardNumber.val()) == 'visa') {
+                mastercard.addClass('transparent');
+                amex.addClass('transparent');
+            } else if ($.payform.parseCardType(cardNumber.val()) == 'amex') {
+                mastercard.addClass('transparent');
+                visa.addClass('transparent');
+            } else if ($.payform.parseCardType(cardNumber.val()) == 'mastercard') {
+                amex.addClass('transparent');
+                visa.addClass('transparent');
+            }
+        });
+
+        confirmButton.click(function(e) {
+            e.preventDefault();
+
+            var isCardValid = $.payform.validateCardNumber(cardNumber.val());
+            var isCvvValid = $.payform.validateCardCVC(CVV.val());
+
+            if (owner.val().length < 5) {
+                alert("Wrong owner name");
+            } else if (!isCardValid) {
+                alert("Wrong card number");
+            } else if (!isCvvValid) {
+                alert("Wrong CVV");
+            } else {
+                // Everything is correct. Add your form submission code here.
+                alert("Everything is correct");
+            }
+        });
+    </script>
 
 </body>
 
