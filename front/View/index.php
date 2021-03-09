@@ -260,7 +260,7 @@
                         <br>
                         <h3>Metodo de Pago</h3>
                         <br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tarjeta">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#tarjeta">
                             Tarjeta
                         </button>
 
@@ -273,12 +273,7 @@
                     </div>
 
                 </div>
-                
-            </form>
-        </div>
-    </div>
-
-    <div class="modal fade" id="tarjeta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="tarjeta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -298,6 +293,9 @@
                         </div>
                     </div>
                 </div>
+            </form>
+        </div>
+    </div>
 
     <script type="text/javascript">
         $(document).ready(function() {
