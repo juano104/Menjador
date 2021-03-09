@@ -290,26 +290,12 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p>
-                                    <label>Card number</label>
-                                    <input type="text" placeholder="1234 5678 9012 3456" id="card_number">
-                                </p>
-                                <p>
-                                    <label>Expiry month</label>
-                                    <input type="text" placeholder="MM" maxlength="5" id="expiry_month">
-                                </p>
-                                <p>
-                                    <label>Expiry year</label>
-                                    <input type="text" placeholder="YYYY" maxlength="5" id="expiry_year">
-                                </p>
-                                <p>
-                                    <label>CVV</label>
-                                    <input type="text" placeholder="123" maxlength="3" id="cvv">
-                                </p>
-                                <p>
-                                    <label>Name on card</label>
-                                    <input type="text" placeholder="Codex World" id="name_on_card">
-                                </p>
+                                <h2>Card number</h2>
+                                <input id="card_number" type="text" placeholder="1234 5678 9012 3456">
+                                <small class="help">
+                                    <p>This demo supports Visa, Visa Electron, Maestro, MasterCard and Discover.
+                                        + <a href="#card-types">many more...</a></p>
+                                </small>
 
                             </div>
                             <div class="modal-footer">
@@ -704,10 +690,10 @@
                     },
                     ContentType: "application/json",
                     success: function(response) {
-                        alert("Reserva realizada correctamente");
+                        alert(JSON.stringify(response));
                     },
                     error: function(err) {
-                        alert("Error en la reserva");
+                        alert(JSON.stringify(err));
                     }
                 });
             });
