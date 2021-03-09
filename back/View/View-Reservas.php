@@ -168,9 +168,9 @@ if ($_SESSION["name"] != "login") {
                 dom: 'Bfrtip',
                 buttons: [{
                     extend: 'pdfHtml5',
-                    text: '<i class="fas fa-file-pdf"></i>',
+                    text: '',
                     titleAttr: 'Exportar a PDF',
-                    className: 'btn btn-danger'
+                    className: 'btn btn-danger fa fa-file-pdf-o'
                 }],
                 responsive: true,
 
@@ -203,9 +203,9 @@ if ($_SESSION["name"] != "login") {
                     dom: 'Bfrtip',
                     buttons: [{
                         extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i>',
-                        titleAttr: 'Exportar a PDF',
-                        className: 'btn btn-danger'
+                    text: '',
+                    titleAttr: 'Exportar a PDF',
+                    className: 'btn btn-danger fa fa-file-pdf-o'
                     }],
                     responsive: true,
                 });
