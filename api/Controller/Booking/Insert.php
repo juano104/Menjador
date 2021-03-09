@@ -1,5 +1,12 @@
 <?php
 
+if(empty($_SESSION["username"])){
+    header("Location: https://www.menjadorescola.me/");
+}
+//print_r($_SESSION["username"]);
+
+
+
 //Headers
 include_once '../api/Model/Database.php';
 include_once '../api/Model/User_Parent.php';
