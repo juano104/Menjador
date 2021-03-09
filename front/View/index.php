@@ -12,61 +12,8 @@
     <script src="public/js/jquery.creditCardValidator.js"></script>
 
     <script>
-	function validate() {
-		var valid = true;
-		$(".demoInputBox").css('background-color', '');
-		var message = "";
 
-		var cardHolderNameRegex = /^[a-z ,.'-]+$/i;
-		var cvvRegex = /^[0-9]{3,3}$/;
-
-		var cardHolderName = $("#card-holder-name").val();
-		var cardNumber = $("#card-number").val();
-		var cvv = $("#cvv").val();
-
-		if (cardHolderName == "" || cardNumber == "" || cvv == "") {
-			message += "<div>All Fields are Required.</div>";
-			if (cardHolderName == "") {
-				$("#card-holder-name").css('background-color', '#FFFFDF');
-			}
-			if (cardNumber == "") {
-				$("#card-number").css('background-color', '#FFFFDF');
-			}
-			if (cvv == "") {
-				$("#cvv").css('background-color', '#FFFFDF');
-			}
-			valid = false;
-		}
-
-		if (cardHolderName != "" && !cardHolderNameRegex.test(cardHolderName)) {
-			message += "<div>Card Holder Name is Invalid</div>";
-			$("#card-holder-name").css('background-color', '#FFFFDF');
-			valid = false;
-		}
-
-		if (cardNumber != "") {
-			$('#card-number').validateCreditCard(function(result) {
-				if (!(result.valid)) {
-					message += "<div>Card Number is Invalid</div>";
-					$("#card-number").css('background-color', '#FFFFDF');
-					valid = false;
-				}
-			});
-		}
-
-		else if (cvv != "" && !cvvRegex.test(cvv)) {
-			message += "<div>CVV is Invalid</div>";
-			$("#cvv").css('background-color', '#FFFFDF');
-			valid = false;
-		}
-
-		if (message != "") {
-			$("#error-message").show();
-			$("#error-message").html(message);
-		}
-		return valid;
-	}
-</script>
+    </script>
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
@@ -145,7 +92,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form  id="frmContact" action="" method="post" onSubmit="return validate();">
+            <form id="frmContact" action="" method="post" onSubmit="return validate();">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -343,52 +290,16 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="field-row">
-                                    <label style="padding-top: 20px;">Card Holder Name</label> <span id="card-holder-name-info" class="info"></span><br /> <input type="text" id="card-holder-name" class="demoInputBox" />
-                                </div>
-                                <div class="field-row">
-                                    <label>Card Number</label> <span id="card-number-info" class="info"></span><br /> <input type="text" id="card-number" class="demoInputBox">
-                                </div>
-                                <div class="field-row">
-                                    <div class="contact-row column-right">
-                                        <label>Expiry Month / Year</label> <span id="userEmail-info" class="info"></span><br /> <select name="expiryMonth" id="expiryMonth" class="demoSelectBox">
-                                            <?php
-                                            for ($i = date("m"); $i <= 12; $i++) {
-                                                $monthValue = $i;
-                                                if (strlen($i) < 2) {
-                                                    $monthValue = "0" . $monthValue;
-                                                }
-                                            ?>
-                                                <option value="<?php echo $monthValue; ?>"><?php echo $i; ?></option>
-                                            <?php
-                                            }
-                                            ?>
-                                        </select> <select name="expiryMonth" id="expiryMonth" class="demoSelectBox">
-                                            <?php
-                                            for ($i = date("Y"); $i <= 2030; $i++) {
-                                                $yearValue = substr($i, 2);
-                                            ?>
-                                                <option value="<?php echo $yearValue; ?>"><?php echo $i; ?></option>
-                                            <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div class="contact-row cvv-box">
-                                        <label>CVV</label> <span id="cvv-info" class="info"></span><br />
-                                        <input type="text" name="cvv" id="cvv" class="demoInputBox cvv-input">
-                                    </div>
-                                </div>
-                                <div>
-                                    <input type="submit" value="Submit" class="btnAction" />
-                                </div>
-                                <div id="error-message"></div>
+                                <ul>
+                                    <li><input type='text' name='text1' /></li>
+                                    <li>&nbsp;</li>
+                                </ul>
 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                <input id="submit" name="submit" type="submit" value="Reserve" class="btnAction">
+                                <input id="submit" name="submit" type="submit" value="Reserve" class="btnAction" onclick="cardnumber(document.form1.text1)">
                             </div>
                         </div>
                     </div>
@@ -396,6 +307,18 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function cardnumber(inputtxt) {
+            var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+            if (inputtxt.value.match(cardno)) {
+                return true;
+            } else {
+                alert("Not a valid Visa credit card number!");
+                return false;
+            }
+        }
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
