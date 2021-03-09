@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="public/js/jquery.creditCardValidator.js"></script>
+
 
     <script>
 
@@ -92,7 +92,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form id="frmContact" action="" method="post" onSubmit="return validate();">
+            <form id="paymentForm" method="post">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -290,10 +290,26 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <ul>
-                                    <li><input type='text' name='text1' /></li>
-                                    <li>&nbsp;</li>
-                                </ul>
+                                <p>
+                                    <label>Card number</label>
+                                    <input type="text" placeholder="1234 5678 9012 3456" id="card_number">
+                                </p>
+                                <p>
+                                    <label>Expiry month</label>
+                                    <input type="text" placeholder="MM" maxlength="5" id="expiry_month">
+                                </p>
+                                <p>
+                                    <label>Expiry year</label>
+                                    <input type="text" placeholder="YYYY" maxlength="5" id="expiry_year">
+                                </p>
+                                <p>
+                                    <label>CVV</label>
+                                    <input type="text" placeholder="123" maxlength="3" id="cvv">
+                                </p>
+                                <p>
+                                    <label>Name on card</label>
+                                    <input type="text" placeholder="Codex World" id="name_on_card">
+                                </p>
 
                             </div>
                             <div class="modal-footer">
@@ -688,10 +704,10 @@
                     },
                     ContentType: "application/json",
                     success: function(response) {
-                        alert(JSON.stringify(response));
+                        alert("Reserva realizada correctamente");
                     },
                     error: function(err) {
-                        alert(JSON.stringify(err));
+                        alert("Error en la reserva");
                     }
                 });
             });
@@ -775,8 +791,78 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="public/js/jquery.creditCardValidator.js"></script>
 
+    <script>
+        function cardFormValidate() {
+            var cardValid = 0;
 
+            //card number validation
+            $('#card_number').validateCreditCard(function(result) {
+                if (result.valid) {
+                    $("#card_number").removeClass('required');
+                    cardValid = 1;
+                } else {
+                    $("#card_number").addClass('required');
+                    cardValid = 0;
+                }
+            });
+
+            //card details validation
+            var cardName = $("#name_on_card").val();
+            var expMonth = $("#expiry_month").val();
+            var expYear = $("#expiry_year").val();
+            var cvv = $("#cvv").val();
+            var regName = /^[a-z ,.'-]+$/i;
+            var regMonth = /^01|02|03|04|05|06|07|08|09|10|11|12$/;
+            var regYear = /^2017|2018|2019|2020|2021|2022|2023|2024|2025|2026|2027|2028|2029|2030|2031$/;
+            var regCVV = /^[0-9]{3,3}$/;
+            if (cardValid == 0) {
+                $("#card_number").addClass('required');
+                $("#card_number").focus();
+                return false;
+            } else if (!regMonth.test(expMonth)) {
+                $("#card_number").removeClass('required');
+                $("#expiry_month").addClass('required');
+                $("#expiry_month").focus();
+                return false;
+            } else if (!regYear.test(expYear)) {
+                $("#card_number").removeClass('required');
+                $("#expiry_month").removeClass('required');
+                $("#expiry_year").addClass('required');
+                $("#expiry_year").focus();
+                return false;
+            } else if (!regCVV.test(cvv)) {
+                $("#card_number").removeClass('required');
+                $("#expiry_month").removeClass('required');
+                $("#expiry_year").removeClass('required');
+                $("#cvv").addClass('required');
+                $("#cvv").focus();
+                return false;
+            } else if (!regName.test(cardName)) {
+                $("#card_number").removeClass('required');
+                $("#expiry_month").removeClass('required');
+                $("#expiry_year").removeClass('required');
+                $("#cvv").removeClass('required');
+                $("#name_on_card").addClass('required');
+                $("#name_on_card").focus();
+                return false;
+            } else {
+                $("#card_number").removeClass('required');
+                $("#expiry_month").removeClass('required');
+                $("#expiry_year").removeClass('required');
+                $("#cvv").removeClass('required');
+                $("#name_on_card").removeClass('required');
+                return true;
+            }
+        }
+        $(document).ready(function() {
+            //card validation on input fields
+            $('#paymentForm input[type=text]').on('keyup', function() {
+                cardFormValidate();
+            });
+        });
+    </script>
 </body>
 
 </html>
