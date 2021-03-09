@@ -1,3 +1,9 @@
+<?php
+
+print_r($_SESSION["name"]);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
