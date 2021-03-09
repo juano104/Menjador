@@ -23,7 +23,6 @@ if ($_SESSION["name"] != "login") {
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowgroup/1.1.2/css/rowGroup.dataTables.min.css" />
     <!-- js -->
@@ -168,9 +167,9 @@ if ($_SESSION["name"] != "login") {
                 dom: 'Bfrtip',
                 buttons: [{
                     extend: 'pdfHtml5',
-                    text: '',
+                    text: '<i class="fas fa-file-pdf"></i>',
                     titleAttr: 'Exportar a PDF',
-                    className: 'btn btn-danger fa fa-file-pdf-o'
+                    className: 'btn btn-danger'
                 }],
                 responsive: true,
 
@@ -203,9 +202,9 @@ if ($_SESSION["name"] != "login") {
                     dom: 'Bfrtip',
                     buttons: [{
                         extend: 'pdfHtml5',
-                    text: '',
-                    titleAttr: 'Exportar a PDF',
-                    className: 'btn btn-danger fa fa-file-pdf-o'
+                        text: '<i class="fas fa-file-pdf"></i>',
+                        titleAttr: 'Exportar a PDF',
+                        className: 'btn btn-danger'
                     }],
                     responsive: true,
                 });
