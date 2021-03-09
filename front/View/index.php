@@ -292,6 +292,11 @@
                             <div class="modal-body">
                                 <div class='credit-card-validation'>
                                     <p>
+                                        <label>Titular</label>
+                                        <br>
+                                        <input required type="text" class="form-control">
+                                    </p>
+                                    <p>
                                         <label>Card Number</label>
                                         <br>
                                         <input required type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
@@ -303,9 +308,7 @@
                                         <br>
                                         <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
                                     <div id="cardexpiry-error-dialog" class="field-error"></div>
-                                    </p>
 
-                                    <p>
                                         <label>CVV Code</label>
                                         <br>
                                         <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
@@ -327,25 +330,25 @@
     </div>
 
     <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function() {
-                'use strict';
-                window.addEventListener('load', function() {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function(form) {
-                        form.addEventListener('submit', function(event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
-        </script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 
     <script>
         /*
