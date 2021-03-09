@@ -304,19 +304,36 @@
                                     </p>
 
                                     <p>
-                                        <div class="col-6">
+                                    <div class="col-6">
                                         <label>Expiry Date</label>
                                         <br>
                                         <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
-                                    <div id="cardexpiry-error-dialog" class="field-error"></div>
+                                        <div id="cardexpiry-error-dialog" class="field-error"></div>
                                     </div>
                                     <div class="col-">
                                         <label>CVV Code</label>
                                         <br>
                                         <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
-                                    <div id="cardcvv-error-dialog" class="field-error"></div>
+                                        <div id="cardcvv-error-dialog" class="field-error"></div>
                                     </div>
                                     </p>
+                                    <ul class="list-unstyled list-inline text-center">
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-fb mx-1">
+                                                <i class="fab fa-cc-visa"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-tw mx-1">
+                                                <i class="fab fa-cc-mastercard"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-gplus mx-1">
+                                                <i class="fab fa-cc-paypal"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="modal-footer">
