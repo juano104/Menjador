@@ -388,7 +388,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                <input id="submit" name="submit" type="submit" value="Reserve">
+                                <input id="submit" name="submit" type="submit" value="Reserve" class="btnAction">
                             </div>
                         </div>
                     </div>
