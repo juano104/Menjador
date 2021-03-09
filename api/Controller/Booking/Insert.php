@@ -12,13 +12,14 @@ $hoy = date("Y-m-d");
 
 
 $parent = new User_Parent($db_conn);
+$parent->setDate_made($hoy);
 
 if ($_POST['date1'] != "") {
     $parent->setParent_DNI($_POST['parent_DNI']);
     $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['idstudent']);
     $parent->setStatus('active');
-    $parent->setDate_made($hoy);
+    //$parent->setDate_made($hoy);
     $parent->setDate($_POST['date1']);
     if ($parent->makeReservation()) {
         echo json_encode("Made reservation FOR ONE DAY, " . $hoy);
@@ -36,7 +37,7 @@ if ($_POST['date1'] != "") {
     $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['idstudent']);
     $parent->setStatus('active');
-    $parent->setDate_made($hoy);
+    //$parent->setDate_made($hoy);
     $parent->setStart_date($_POST['startdate']);
     $parent->setEnd_date($_POST['enddate']);
 

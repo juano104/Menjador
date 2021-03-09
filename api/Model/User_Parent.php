@@ -270,6 +270,7 @@ class User_Parent
         $stmt->bindParam(1, $this->student_ID);
         $stmt->bindParam(2, $this->parent_DNI);
         $stmt->bindParam(3, $this->status);
+        $stmt->bindParam(4, $this->date_made);
 
         if ($stmt->execute()) {
             return true;
