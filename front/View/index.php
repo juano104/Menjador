@@ -1,7 +1,7 @@
 <?php
-if(empty($_SESSION["username"])){
+/*if(empty($_SESSION["username"])){
     header("Location: https://www.menjadorescola.me/");
-}
+}*/
 //print_r($_SESSION["username"]);
 
 ?>
