@@ -565,26 +565,6 @@
             return (sum % 10) == 0;
         }
 
-        function cgDetectCard(input) {
-            var typeTest = 'u',
-                ltest1 = 16,
-                ltest2 = 16;
-            ltest3 = 'none';
-
-            if (/^4/.test(input)) {
-                typeTest = 'v';
-                ltest1 = 13;
-                ltest3 = 'VISA';
-            } else if (/^5[1-5]/.test(input)) {
-                typeTest = 'm';
-                ltest3 = 'MASTERCARD';
-            } else if (/^6(011|4[4-9]|5)/.test(input)) {
-                typeTest = 'd';
-                ltest3 = 'VISADEBIT';
-            }
-
-            return [typeTest, ltest1, ltest2, ltest3];
-        }
 
         /*
          * Credit card Luhn validation (real-time)
