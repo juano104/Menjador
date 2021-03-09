@@ -102,12 +102,12 @@ if ($_SESSION["name"] != "login") {
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input class="form-control" id="date" name="day" placeholder="YYYY/MM/DD" type="text" autocomplete="off">
+                                    <input class="form-control btn btn-dark" id="date" name="day" placeholder="YYYY/MM/DD" type="text" autocomplete="off">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-10 col-sm-offset-2">
+                            <div class="col-sm-10">
                                 <input name="_honey" style="display:none" type="text">
                                 <button class="btn btn-primary " name="submit" type="submit">
                                     Enviar
