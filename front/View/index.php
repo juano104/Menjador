@@ -293,7 +293,7 @@
                                 <div class='credit-card-validation'>
                                     <p>
                                         <label>Card Number</label>
-                                        <input type="tel" name="cardNumber" class="cardNumber" maxlength="16" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
+                                        <input type="tel" name="cardNumber" class="cardNumber" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
                                     <div id="cardnumber-error-dialog" class="field-error"></div>
                                     </p>
 
