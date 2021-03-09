@@ -114,12 +114,7 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                buttons: [{
-                        extend: 'csvHtml5',
-                        text: '<i class="fas fa-file-excel"></i>',
-                        titleAttr: 'CSV',
-                        className: 'btn btn-success'
-                    },
+                buttons: [
                     {
                         extend: 'pdfHtml5',
                         text: '<i class="fas fa-file-pdf"></i>',
@@ -152,12 +147,7 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [{
-                            extend: 'csvHtml5',
-                            text: '<i class="fas fa-file-excel"></i>',
-                            titleAttr: 'CSV',
-                            className: 'btn btn-success'
-                        },
+                    buttons: [
                         {
                             extend: 'pdfHtml5',
                             text: '<i class="fas fa-file-pdf"></i>',
@@ -195,12 +185,7 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                buttons: [{
-                        extend: 'csvHtml5',
-                        text: '<i class="fas fa-file-excel"></i>',
-                        titleAttr: 'CSV',
-                        className: 'btn btn-success'
-                    },
+                buttons: [
                     {
                         extend: 'pdfHtml5',
                         text: '<i class="fas fa-file-pdf"></i>',
@@ -235,12 +220,7 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [{
-                            extend: 'csvHtml5',
-                            text: '<i class="fas fa-file-excel"></i>',
-                            titleAttr: 'CSV',
-                            className: 'btn btn-success'
-                        },
+                    buttons: [
                         {
                             extend: 'pdfHtml5',
                             text: '<i class="fas fa-file-pdf"></i>',
