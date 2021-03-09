@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         var $x = jQuery.noConflict();
+        alert("Version: " + $x.fn.jquery);
     </script>
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
@@ -37,6 +38,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
         var $y = jQuery.noConflict();
+        alert("Version: " + $y.fn.jquery);
     </script>
     <script src="public/js/jquery.creditCardValidator.js"></script>
     <script>
