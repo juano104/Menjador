@@ -319,19 +319,19 @@
                                     </p>
                                     <ul class="list-unstyled list-inline text-center">
                                         <li class="list-inline-item">
-                                            <a class="btn-floating btn-fb mx-1">
-                                                <i class="fab fa-cc-visa icon-2x"></i>
-                                            </a>
+                                            
+                                                <i class="fab fa-cc-visa fa-lg"></i>
+                                            
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="btn-floating btn-tw mx-1">
-                                                <i class="fab fa-cc-mastercard icon-2x"></i>
-                                            </a>
+                                            
+                                                <i class="fab fa-cc-mastercard fa-lg"></i>
+                                          
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="btn-floating btn-gplus mx-1">
+                                            
                                                 <i class="fab fa-cc-paypal icon-2x"></i>
-                                            </a>
+                                            
                                         </li>
                                     </ul>
                                 </div>
