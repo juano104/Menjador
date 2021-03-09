@@ -1,7 +1,3 @@
-<?php
-if(isset($_SESSION["username"])){
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -162,9 +158,3 @@ if(isset($_SESSION["username"])){
 </body>
 
 </html>
-
-<?php
-}else{
-    header("Location: https://www.menjadorescola.me/");
-}
-?>
