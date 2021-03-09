@@ -1,7 +1,7 @@
 <?php
 
 //echo $_SESSION["username"];
-print_r($_SESSION["name"]);
+print_r($_SESSION["username"]);
 
 ?>
 

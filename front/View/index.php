@@ -1,6 +1,6 @@
 <?php
 
-print_r($_SESSION["name"]);
+print_r($_SESSION["username"]);
 
 ?>
 
