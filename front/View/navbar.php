@@ -3,12 +3,11 @@ $today = date("Y-m-d");
 ?>
 
 <style>
-    .navbar {
+    /*.navbar {
         background-color: #F4A261 !important;
         font-size: 110%;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        /*padding: 0px;*/
-    }
+    }*/
     .na{
         padding-top: 0% !important;
     }
