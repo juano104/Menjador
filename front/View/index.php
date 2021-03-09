@@ -92,7 +92,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form id="paymentForm" method="post" name="form1">
+            <form id="paymentForm" method="post" name="form1" class="needs-validation" novalidate>
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -293,19 +293,22 @@
                                 <div class='credit-card-validation'>
                                     <p>
                                         <label>Card Number</label>
-                                        <input type="tel" name="cardNumber" class="cardNumber" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
+                                        <br>
+                                        <input required type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
                                     <div id="cardnumber-error-dialog" class="field-error"></div>
                                     </p>
 
                                     <p>
                                         <label>Expiry Date</label>
-                                        <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry" placeholder="mm/yy" data-validation-type="alphanumeric">
+                                        <br>
+                                        <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry" placeholder="mm/yy" data-validation-type="alphanumeric">
                                     <div id="cardexpiry-error-dialog" class="field-error"></div>
                                     </p>
 
                                     <p>
                                         <label>CVV Code</label>
-                                        <input type="text" name="cardCVV" maxlength="3" class="cardCVV" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
+                                        <br>
+                                        <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
                                     <div id="cardcvv-error-dialog" class="field-error"></div>
                                     </p>
                                 </div>
@@ -993,78 +996,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="public/js/jquery.creditCardValidator.js"></script>
 
-    <script>
-        function cardFormValidate() {
-            var cardValid = 0;
-
-            //card number validation
-            $('#card_number').validateCreditCard(function(result) {
-                if (result.valid) {
-                    $("#card_number").removeClass('required');
-                    cardValid = 1;
-                } else {
-                    $("#card_number").addClass('required');
-                    cardValid = 0;
-                }
-            });
-
-            //card details validation
-            var cardName = $("#name_on_card").val();
-            var expMonth = $("#expiry_month").val();
-            var expYear = $("#expiry_year").val();
-            var cvv = $("#cvv").val();
-            var regName = /^[a-z ,.'-]+$/i;
-            var regMonth = /^01|02|03|04|05|06|07|08|09|10|11|12$/;
-            var regYear = /^2017|2018|2019|2020|2021|2022|2023|2024|2025|2026|2027|2028|2029|2030|2031$/;
-            var regCVV = /^[0-9]{3,3}$/;
-            if (cardValid == 0) {
-                $("#card_number").addClass('required');
-                $("#card_number").focus();
-                return false;
-            } else if (!regMonth.test(expMonth)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").addClass('required');
-                $("#expiry_month").focus();
-                return false;
-            } else if (!regYear.test(expYear)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").addClass('required');
-                $("#expiry_year").focus();
-                return false;
-            } else if (!regCVV.test(cvv)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").removeClass('required');
-                $("#cvv").addClass('required');
-                $("#cvv").focus();
-                return false;
-            } else if (!regName.test(cardName)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").removeClass('required');
-                $("#cvv").removeClass('required');
-                $("#name_on_card").addClass('required');
-                $("#name_on_card").focus();
-                return false;
-            } else {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").removeClass('required');
-                $("#cvv").removeClass('required');
-                $("#name_on_card").removeClass('required');
-                return true;
-            }
-        }
-        $(document).ready(function() {
-            //card validation on input fields
-            $('#paymentForm input[type=text]').on('keyup', function() {
-                cardFormValidate();
-            });
-        });
-    </script>
 </body>
 
 </html>
