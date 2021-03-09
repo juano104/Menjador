@@ -92,7 +92,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form id="paymentForm" method="post">
+            <form id="paymentForm" method="post" name="form1" class="needs-validation" novalidate>
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -290,13 +290,51 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <h2>Card number</h2>
-                                <input id="card_number" type="text" placeholder="1234 5678 9012 3456">
-                                <small class="help">
-                                    <p>This demo supports Visa, Visa Electron, Maestro, MasterCard and Discover.
-                                        + <a href="#card-types">many more...</a></p>
-                                </small>
+                                <div class='credit-card-validation'>
+                                    <p>
+                                        <label>Titular</label>
+                                        <br>
+                                        <input required type="text" class="form-control">
+                                    </p>
+                                    <p>
+                                        <label>Card Number</label>
+                                        <br>
+                                        <input required type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
+                                    <div id="cardnumber-error-dialog" class="field-error"></div>
+                                    </p>
 
+                                    <p>
+                                    <div class="col-6">
+                                        <label>Expiry Date</label>
+                                        <br>
+                                        <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
+                                        <div id="cardexpiry-error-dialog" class="field-error"></div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>CVV Code</label>
+                                        <br>
+                                        <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
+                                        <div id="cardcvv-error-dialog" class="field-error"></div>
+                                    </div>
+                                    </p>
+                                    <ul class="list-unstyled list-inline text-center">
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-fb mx-1">
+                                                <i class="fab fa-cc-visa"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-tw mx-1">
+                                                <i class="fab fa-cc-mastercard"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-gplus mx-1">
+                                                <i class="fab fa-cc-paypal"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -307,19 +345,242 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 
     <script>
-        function cardnumber(inputtxt) {
-            var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-            if (inputtxt.value.match(cardno)) {
-                return true;
-            } else {
-                alert("Not a valid Visa credit card number!");
-                return false;
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+    <script>
+        /*
+         * Display error message based on current element's data attributes
+         */
+        function cgToggleError(element, status) {
+            var errorMessage = $(element).data('validation-error-msg'),
+                errorContainer = $(element).data('validation-error-msg-container');
+
+            $(element).removeClass().addClass(status);
+
+            if (status === 'valid') {
+                $(errorContainer).html(errorMessage).hide();
+            } else if (status === 'invalid') {
+                $(errorContainer).html(errorMessage).show();
             }
         }
+
+        /*
+         * Format a date as MM/YY
+         */
+        function cgFormatExpiryDate(e) {
+            var inputChar = String.fromCharCode(event.keyCode);
+            var code = event.keyCode;
+            var allowedKeys = [8];
+            if (allowedKeys.indexOf(code) !== -1) {
+                return;
+            }
+
+            event.target.value = event.target.value.replace(
+                /^([1-9]\/|[2-9])$/g, '0$1/' // 3 > 03/
+            ).replace(
+                /^(0[1-9]|1[0-2])$/g, '$1/' // 11 > 11/
+            ).replace(
+                /^([0-1])([3-9])$/g, '0$1/$2' // 13 > 01/3
+            ).replace(
+                /^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2' // 141 > 01/41
+            ).replace(
+                /^([0]+)\/|[0]+$/g, '0' // 0/ > 0 and 00 > 0
+            ).replace(
+                /[^\d\/]|^[\/]*$/g, '' // To allow only digits and `/`
+            ).replace(
+                /\/\//g, '/' // Prevent entering more than 1 `/`
+            );
+        }
+
+        /*
+         * Check if date element is valid and add a visual hint
+         */
+        function cgDateValidate(whatDate) {
+            var currVal = whatDate;
+
+            if (currVal === '') {
+                return false;
+            }
+
+            var rxDatePattern = /^(\d{1,2})(\/|-)(\d{1,2})(\/|-)(\d{4})$/;
+            var dtArray = currVal.match(rxDatePattern);
+
+            if (dtArray == null) {
+                return false;
+            }
+
+            // Check for dd/mm/yyyy format
+            var dtDay = dtArray[1],
+                dtMonth = dtArray[3],
+                dtYear = dtArray[5];
+
+            if (dtMonth < 1 || dtMonth > 12) {
+                return false;
+            } else if (dtDay < 1 || dtDay > 31) {
+                return false;
+            } else if ((dtMonth == 4 || dtMonth == 6 || dtMonth == 9 || dtMonth == 11) && dtDay == 31) {
+                return false;
+            } else if (dtMonth == 2) {
+                var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
+                if (dtDay > 29 || (dtDay == 29 && !isleap)) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        /*
+         * Credit card expiry date formatting (real-time)
+         */
+        $(document).on('keyup blur', '.cardExpiry', function(event) {
+            var currentDate = new Date();
+            var currentMonth = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+            var currentYear = String(currentDate.getFullYear()).slice(-2);
+
+            var cardExpiryArray = $('.cardExpiry').val().split('/');
+            var userMonth = cardExpiryArray[0],
+                userYear = cardExpiryArray[1];
+
+            if ($('.cardExpiry').val().length !== 5) {
+                cgToggleError($(this), 'invalid');
+            } else if (userYear < currentYear) {
+                cgToggleError($(this), 'invalid');
+            } else if (userYear <= currentYear && userMonth < currentMonth) {
+                cgToggleError($(this), 'invalid');
+            } else if (userMonth > 12) {
+                cgToggleError($(this), 'invalid');
+            } else {
+                cgToggleError($(this), 'valid');
+            }
+
+            cgFormatExpiryDate(event);
+        });
+
+        /*
+         * Credit card CVV disallow letters (real-time)
+         */
+        $(document).on('keyup', '.cardCVV', function(event) {
+            event.target.value = event.target.value.replace(/[^\d\/]|^[\/]*$/g, '');
+        });
+
+        /*
+         * Credit card CVV length check
+         */
+        $(document).on('blur', '.cardCVV', function(e) {
+            if ($('#cardCVV').val().length < 3) {
+                cgToggleError($(this), 'invalid');
+            }
+        });
+
+        /*
+         * Credit card validation
+         */
+        function cgCheckLuhn(input) {
+            var sum = 0,
+                numdigits = input.length;
+            var parity = numdigits % 2;
+
+            for (var i = 0; i < numdigits; i++) {
+                var digit = parseInt(input.charAt(i));
+                if (i % 2 == parity) {
+                    digit *= 2;
+                }
+                if (digit > 9) {
+                    digit -= 9;
+                }
+                sum += digit;
+            }
+
+            return (sum % 10) == 0;
+        }
+
+        function cgDetectCard(input) {
+            var typeTest = 'u',
+                ltest1 = 16,
+                ltest2 = 16;
+            ltest3 = 'none';
+
+            if (/^4/.test(input)) {
+                typeTest = 'v';
+                ltest1 = 13;
+                ltest3 = 'VISA';
+            } else if (/^5[1-5]/.test(input)) {
+                typeTest = 'm';
+                ltest3 = 'MASTERCARD';
+            } else if (/^6(011|4[4-9]|5)/.test(input)) {
+                typeTest = 'd';
+                ltest3 = 'VISADEBIT';
+            }
+
+            return [typeTest, ltest1, ltest2, ltest3];
+        }
+
+        /*
+         * Credit card Luhn validation (real-time)
+         */
+        $(document).on('keyup', '.cardNumber', function() {
+            var val = this.value,
+                val = val.replace(/[^0-9]/g, ''),
+                detected = cgDetectCard(val),
+                errorClass = 'invalid',
+                luhnCheck = cgCheckLuhn(val),
+                valueCheck = (val.length == detected[1] || val.length == detected[2]);
+
+            if ($('body').hasClass('inline-ab')) {
+                cgToggleError($(this), 'invalid');
+            }
+
+            if (luhnCheck && valueCheck) {
+                errorClass = 'valid';
+                $('#cardType').val(detected[3]);
+            } else if (valueCheck || val.length > detected[2]) {
+                errorClass = 'invalid';
+            }
+
+            if ($('body').hasClass('inline-ab')) {
+                cgToggleError($(this), errorClass);
+                cgToggleError($(this), 'cc ' + detected[0] + ' ' + errorClass);
+            }
+            $(this).addClass('cc ' + detected[0] + ' ' + errorClass);
+        });
+
+        /*
+         * Credit card digit formatting (real-time)
+         */
+        $(document).on('keypress change blur', '.cardNumber', function() {
+            $(this).val(function(index, value) {
+                return value.replace(/[^a-z0-9]+/gi, '').replace(/(.{4})/g, '$1 ').trim();
+            });
+        });
+        $(document).on('copy cut paste', '.cardNumber', function() {
+            setTimeout(function() {
+                $('.cardNumber').trigger('change');
+            });
+        });
     </script>
 
     <script type="text/javascript">
@@ -779,78 +1040,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="public/js/jquery.creditCardValidator.js"></script>
 
-    <script>
-        function cardFormValidate() {
-            var cardValid = 0;
-
-            //card number validation
-            $('#card_number').validateCreditCard(function(result) {
-                if (result.valid) {
-                    $("#card_number").removeClass('required');
-                    cardValid = 1;
-                } else {
-                    $("#card_number").addClass('required');
-                    cardValid = 0;
-                }
-            });
-
-            //card details validation
-            var cardName = $("#name_on_card").val();
-            var expMonth = $("#expiry_month").val();
-            var expYear = $("#expiry_year").val();
-            var cvv = $("#cvv").val();
-            var regName = /^[a-z ,.'-]+$/i;
-            var regMonth = /^01|02|03|04|05|06|07|08|09|10|11|12$/;
-            var regYear = /^2017|2018|2019|2020|2021|2022|2023|2024|2025|2026|2027|2028|2029|2030|2031$/;
-            var regCVV = /^[0-9]{3,3}$/;
-            if (cardValid == 0) {
-                $("#card_number").addClass('required');
-                $("#card_number").focus();
-                return false;
-            } else if (!regMonth.test(expMonth)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").addClass('required');
-                $("#expiry_month").focus();
-                return false;
-            } else if (!regYear.test(expYear)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").addClass('required');
-                $("#expiry_year").focus();
-                return false;
-            } else if (!regCVV.test(cvv)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").removeClass('required');
-                $("#cvv").addClass('required');
-                $("#cvv").focus();
-                return false;
-            } else if (!regName.test(cardName)) {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").removeClass('required');
-                $("#cvv").removeClass('required');
-                $("#name_on_card").addClass('required');
-                $("#name_on_card").focus();
-                return false;
-            } else {
-                $("#card_number").removeClass('required');
-                $("#expiry_month").removeClass('required');
-                $("#expiry_year").removeClass('required');
-                $("#cvv").removeClass('required');
-                $("#name_on_card").removeClass('required');
-                return true;
-            }
-        }
-        $(document).ready(function() {
-            //card validation on input fields
-            $('#paymentForm input[type=text]').on('keyup', function() {
-                cardFormValidate();
-            });
-        });
-    </script>
 </body>
 
 </html>
