@@ -108,8 +108,8 @@ if ($_SESSION["name"] != "login") {
                         <div class="form-group">
                             <div class="col-sm-10">
                                 <input name="_honey" style="display:none" type="text">
-                                <button class="btn btn-primary " name="submit" type="submit">
-                                    Enviar
+                                <button class="btn btn-dark " name="submit" type="submit">
+                                    Ver reservas
                                 </button>
                             </div>
                         </div>

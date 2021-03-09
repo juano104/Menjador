@@ -92,7 +92,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form id="paymentForm" method="post" name="form1" class="needs-validation" novalidate>
+            <form id="paymentForm" method="post" name="form1">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -295,7 +295,7 @@
                                     <p>
                                         <label>Titular</label>
                                         <br>
-                                        <input required type="text" class="form-control">
+                                        <input  type="text" class="form-control">
                                         <div class="invalid-feedback">
                                             Porfavor, ponga un titular.
                                         </div>
@@ -305,7 +305,7 @@
                                     <p>
                                         <label>Numero de Tarjeta</label>
                                         <br>
-                                        <input required type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
+                                        <input type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
                                         <div class="invalid-feedback">
                                              Porfavor, ponga una Tarjeta.
                                         </div>
@@ -316,7 +316,7 @@
                                     <div class="col-6 form-group">
                                         <label>Fecha de Caducidad</label>
                                         <br>
-                                        <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
+                                        <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
                                         <div class="invalid-feedback">
                                             Porfavor, ponga una fecha de caducidad.
                                         </div>
@@ -325,7 +325,7 @@
                                     
                                         <label>CVV</label>
                                         <br>
-                                        <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
+                                        <input type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
                                         <div class="invalid-feedback">
                                             Porfavor, ponga un CVV.
                                         </div>
@@ -373,7 +373,7 @@
                             <div class="form-group row">
                         <div class="col-12">
                             <label for="nombreEntidad">Nombre de la Entidad</label>
-                            <input name="nombreEntidad" id="nombreEntidad" required type="text" class="form-control">
+                            <input name="nombreEntidad" id="nombreEntidad" type="text" class="form-control">
                             <div class="invalid-feedback">
                                 Porfavor, ponga un nombre.
                             </div>
@@ -383,7 +383,7 @@
 
                         <div class="col-12">
                             <label for="IBAN">IBAN</label>
-                            <input name="IBAN" required id="IBAN" type="text" placeholder="Ej: ES21 1465 0100 72 2030876293" class="form-control">
+                            <input name="IBAN" id="IBAN" type="text" placeholder="Ej: ES21 1465 0100 72 2030876293" class="form-control">
                             <div class="invalid-feedback">
                                 Porfavor, ponga un IBAN.
                             </div>
@@ -393,7 +393,7 @@
 
                         <div class="col-12">
                             <label for="BIC">BIC</label>
-                            <input name="BIC" required id="BIC" type="text" placeholder="Ej: INGDESMMXXX" class="form-control">
+                            <input name="BIC" id="BIC" type="text" placeholder="Ej: INGDESMMXXX" class="form-control">
                             <div class="invalid-feedback">
                                 Porfavor, ponga un BIC.
                             </div>
@@ -403,7 +403,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                <input id="submit" name="submit" type="submit" value="Reserve" class="btn btn-dark">
+                                <input id="submit2" name="submit2" type="submit" value="ReserveB" class="btn btn-dark">
                             </div>
                         </div>
                     </div>
