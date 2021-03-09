@@ -952,11 +952,11 @@
                     ContentType: "application/json",
                     success: function(response) {
                         //alert("Reserva realizada correctamente");
-                        alert(JSON.stringify(response.json));
+                        alert(JSON.stringify(response));
                     },
                     error: function(err) {
                         //alert("Ha habido un error");
-                        alert(JSON.stringify(err.json));
+                        alert(JSON.stringify(err));
                     }
                 });
             });
