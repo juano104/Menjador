@@ -1,7 +1,8 @@
 <?php
 
-session_start();
+
 if (isset($_POST['submit'])) {
+    session_start();
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
 
         $_SESSION["username"] = trim($_POST['username']);
@@ -92,8 +93,8 @@ if (isset($_POST['submit'])) {
             </script>";
         }
     }
-} else if(isset($_SESSION["username"])){
-    
+} else if (isset($_SESSION["username"])) {
+
     $username = $_SESSION["username"];
     $passwordf = $_SESSION["password"];
     include_once '../api/Model/Database.php';
@@ -114,7 +115,6 @@ if (isset($_POST['submit'])) {
     $count = $stmt->rowCount();
 
     include_once "../front/View/index.php";
-    
-}else{
+} else {
     header("Location: https://www.menjadorescola.me/");
 }
