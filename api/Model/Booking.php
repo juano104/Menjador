@@ -106,7 +106,7 @@ class Booking
     //Read SingleBooking
     public function readSingleBooking()
     {
-        $query = "select Booking.student_ID, group_concat(Booking_Day.date, '') 
+        $query = "select Booking.student_ID, group_concat(Booking_Day.date, '  ') 
         as single_day, count(Booking_Day.date) as count, Class.class_name from Booking 
         join Booking_Day on Booking.ID = Booking_Day.booking_ID 
         join Student on Student.ID = Booking.student_ID
