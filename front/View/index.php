@@ -320,17 +320,17 @@
                                     <ul class="list-unstyled list-inline text-center">
                                         <li class="list-inline-item">
                                             
-                                                <i class="fab fa-cc-visa fa-lg"></i>
+                                                <i class="fab fa-cc-visa fa-2x"></i>
                                             
                                         </li>
                                         <li class="list-inline-item">
                                             
-                                                <i class="fab fa-cc-mastercard fa-lg"></i>
+                                                <i class="fab fa-cc-mastercard fa-2x"></i>
                                           
                                         </li>
                                         <li class="list-inline-item">
                                             
-                                                <i class="fab fa-cc-paypal icon-2x"></i>
+                                                <i class="fab fa-cc-paypal fa-2x"></i>
                                             
                                         </li>
                                     </ul>
