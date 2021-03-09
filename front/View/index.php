@@ -92,7 +92,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form id="paymentForm" method="post">
+            <form id="paymentForm" method="post" name="form1">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -290,12 +290,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <h2>Card number</h2>
-                                <input id="card_number" type="text" placeholder="1234 5678 9012 3456">
-                                <small class="help">
-                                    <p>This demo supports Visa, Visa Electron, Maestro, MasterCard and Discover.
-                                        + <a href="#card-types">many more...</a></p>
-                                </small>
+                                Credit Number: <input type='text' name='creditCradNum' /></br></br>
+                                <input type="submit" name="submit" value="Submit" onclick="creditCardValidation(document.form1.creditCradNum)" />
 
                             </div>
                             <div class="modal-footer">
@@ -311,12 +307,12 @@
     </div>
 
     <script>
-        function cardnumber(inputtxt) {
-            var cardno = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-            if (inputtxt.value.match(cardno)) {
+        function creditCardValidation(creditCradNum) {
+            var regEx = /^5[1-5][0-9]{14}$|^2(?:2(?:2[1-9]|[3-9][0-9])|[3-6][0-9][0-9]|7(?:[01][0-9]|20))[0-9]{12}$/;
+            if (creditCradNum.value.match(regEx)) {
                 return true;
             } else {
-                alert("Not a valid Visa credit card number!");
+                alert("Please enter a valid credit card number.");
                 return false;
             }
         }
