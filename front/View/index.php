@@ -304,15 +304,18 @@
                                     </p>
 
                                     <p>
+                                        <div class="col-6">
                                         <label>Expiry Date</label>
                                         <br>
                                         <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
                                     <div id="cardexpiry-error-dialog" class="field-error"></div>
-
+                                    </div>
+                                    <div class="col-">
                                         <label>CVV Code</label>
                                         <br>
                                         <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
                                     <div id="cardcvv-error-dialog" class="field-error"></div>
+                                    </div>
                                     </p>
                                 </div>
                             </div>
