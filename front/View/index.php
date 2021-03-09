@@ -686,10 +686,12 @@
                     },
                     ContentType: "application/json",
                     success: function(response) {
-                        alert(JSON.stringify(response));
+                        //alert(JSON.stringify(response));
+                        alert("Reserva realizada correctamente");
                     },
                     error: function(err) {
-                        alert(JSON.stringify(err));
+                        //alert(JSON.stringify(err));
+                        alert("Ha habido un error");
                     }
                 });
             });
