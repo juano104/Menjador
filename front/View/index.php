@@ -318,19 +318,19 @@
                                     </div>
                                     </p>
                                     <ul class="list-unstyled list-inline text-center">
-                                        <li class="list-inline-item" >
-                                            <a class="btn-floating btn-fb mx-1" style="width: 8%; height: 8%;">
-                                                <i class="fab fa-cc-visa"></i>
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-fb mx-1">
+                                                <i class="fab fa-cc-visa  icon-large"></i>
                                             </a>
                                         </li>
-                                        <li class="list-inline-item" >
-                                            <a class="btn-floating btn-tw mx-1" style="width: 8%; height: 8%;">
-                                                <i class="fab fa-cc-mastercard"></i>
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-tw mx-1">
+                                                <i class="fab fa-cc-mastercard  icon-large"></i>
                                             </a>
                                         </li>
-                                        <li class="list-inline-item" >
-                                            <a class="btn-floating btn-gplus mx-1" style="width: 8%; height: 8%;">
-                                                <i class="fab fa-cc-paypal"></i>
+                                        <li class="list-inline-item">
+                                            <a class="btn-floating btn-gplus mx-1">
+                                                <i class="fab fa-cc-paypal  icon-large"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -951,12 +951,12 @@
                     },
                     ContentType: "application/json",
                     success: function(response) {
-                        //alert("Reserva realizada correctamente");
-                        alert(JSON.stringify(response));
+                        //alert(JSON.stringify(response));
+                        alert("Reserva realizada correctamente");
                     },
                     error: function(err) {
-                        //alert("Ha habido un error");
-                        alert(JSON.stringify(err));
+                        //alert(JSON.stringify(err));
+                        alert("Ha habido un error");
                     }
                 });
             });
