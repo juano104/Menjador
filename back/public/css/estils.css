@@ -168,9 +168,14 @@ a:focus{
     }
     .tab .nav-tabs li a:before{ bottom: 0; }
 
-    #table_filter input {
-      width:"125px" !important;
-    }
+}
+
+@media screen and (max-width: 640px){
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: right !important;
+}
 
 }
 
