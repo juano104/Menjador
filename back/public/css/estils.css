@@ -168,7 +168,7 @@ a:focus{
     }
     .tab .nav-tabs li a:before{ bottom: 0; }
 
-    #example_filter input {
+    #table_filter input {
       width:"125px" !important;
     }
 
