@@ -304,6 +304,7 @@
                                     </p>
 
                                     <p>
+                                    <div class="row">
                                     <div class="col-6">
                                         <label>Expiry Date</label>
                                         <br>
@@ -315,6 +316,7 @@
                                         <br>
                                         <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
                                         <div id="cardcvv-error-dialog" class="field-error"></div>
+                                    </div>
                                     </div>
                                     </p>
                                     <ul class="list-unstyled list-inline text-center">
