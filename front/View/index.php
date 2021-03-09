@@ -299,7 +299,7 @@
 
                                     <p>
                                         <label>Expiry Date</label>
-                                        <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry" placeholder="mm/yy" data-validation-type="alphanumeric" data-validation-error-msg="Please enter a valid card expiry" data-validation-error-msg-container="#cardexpiry-error-dialog">
+                                        <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry" placeholder="mm/yy" data-validation-type="alphanumeric">
                                     <div id="cardexpiry-error-dialog" class="field-error"></div>
                                     </p>
 
