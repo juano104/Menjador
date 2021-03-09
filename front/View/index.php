@@ -258,15 +258,45 @@
                             </table>
                         </div>
                         <br>
-                        <input id="submit" name="submit" type="submit" value="Reserve">
+                        <h3>Metodo de Pago</h3>
+                        <br>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#tarjeta">
+                            Tarjeta
+                        </button>
+
+                        <button type="button" class="btn" data-toggle="modal" data-target="#banco">
+                            Banco
+                        </button>
+                        <br>
                         <br>
                         <button type="button" class="b5p btn btn-outline-danger">Atras</button>
                     </div>
 
                 </div>
+                <div class="modal fade" id="tarjeta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Tarjeta</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                tarjeta
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                <input id="submit" name="submit" type="submit" value="Reserve">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
+
     <script type="text/javascript">
         $(document).ready(function() {
             //different dates 
@@ -432,7 +462,7 @@
                         dateArray.push(day5);
                     }
                     var newDate = $("<td>" + dateArray + "</td>");
-                    var sum = dateArray.length * 8;// 8 is the price for everyday
+                    var sum = dateArray.length * 8; // 8 is the price for everyday
                     var sumtotal = $("<td>" + sum + " € </td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".tabler > tbody > tr").append(sumtotal);
