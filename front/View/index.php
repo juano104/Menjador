@@ -89,7 +89,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form>
+            <form novalidate autocomplete="on">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -287,48 +287,25 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="form-group owner">
-                                    <label for="owner">Propietari</label>
-                                    <input type="text" class="form-control" id="owner">
-                                </div>
-                                <div class="form-group CVV">
-                                    <label for="cvv">CVV</label>
-                                    <input type="text" class="form-control" id="cvv">
-                                </div>
-                                <div class="form-group" id="card-number-field">
-                                    <label for="cardNumber">Numero de tarjeta</label>
-                                    <input type="text" class="form-control" id="cardNumber">
-                                </div>
-                                <div class="form-group" id="expiration-date">
-                                    <label>Fecha Caducidad</label>
-                                    <select>
-                                        <option value="01">Enero</option>
-                                        <option value="02">Febrero </option>
-                                        <option value="03">Marzo</option>
-                                        <option value="04">Abril</option>
-                                        <option value="05">Mayo</option>
-                                        <option value="06">Junio</option>
-                                        <option value="07">Julio</option>
-                                        <option value="08">Agosto</option>
-                                        <option value="09">Septiembre</option>
-                                        <option value="10">Octubre</option>
-                                        <option value="11">Noviembre</option>
-                                        <option value="12">Diciembre</option>
-                                    </select>
-                                    <select>
-                                        <option value="21"> 2021</option>
-                                        <option value="21"> 2022</option>
-                                        <option value="21"> 2023</option>
-                                        <option value="21"> 2024</option>
-                                        <option value="21"> 2025</option>
-                                        <option value="21"> 2026</option>
-                                    </select>
-                                </div>
-                                <div class="form-group" id="credit_cards">
-                                    <img src="assets/images/visa.jpg" id="visa">
-                                    <img src="assets/images/mastercard.jpg" id="mastercard">
-                                    <img src="assets/images/amex.jpg" id="amex">
-                                </div>
+                                <h2>Formato de número de tarjeta</h2>
+                                <input type="text" class="cc-number" pattern="\d*" x-autocompletetype="cc-number" placeholder="Card number" required>
+
+                                <h2>Formato de caducidad</h2>
+
+                                <input type="text" class="cc-exp" pattern="\d*" x-autocompletetype="cc-exp" placeholder="Expires MM/YY" required maxlength="9">
+
+                                <h2>Formato CVC</h2>
+
+                                <input type="text" class="cc-cvc" pattern="\d*" x-autocompletetype="cc-csc" placeholder="Security code" required autocomplete="off">
+
+                                <h2>Restringir numérico</h2>
+
+                                <input type="text" data-numeric>
+
+                                <h2 class="validation"></h2>
+
+                                <button type="submit">Submit</button>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -799,66 +776,58 @@
         var $y = jQuery.noConflict();
         alert("Version: " + $y.fn.jquery);
     </script>
-    <script src="public/js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
 
     <script>
-        var owner = $('#owner'),
-            cardNumber = $('#cardNumber'),
-            cardNumberField = $('#card-number-field'),
-            CVV = $("#cvv"),
-            mastercard = $("#mastercard"),
-            confirmButton = $('#submit'),
-            visa = $("#visa"),
-            amex = $("#amex");
+        var J = Payment.J,
 
-        cardNumber.payform('formatCardNumber');
-        CVV.payform('formatCardCVC');
+            numeric = document.querySelector('[data-numeric]'),
 
-        cardNumber.keyup(function() {
-            amex.removeClass('transparent');
-            visa.removeClass('transparent');
-            mastercard.removeClass('transparent');
+            number = document.querySelector('.cc-number'),
 
-            if ($.payform.validateCardNumber(cardNumber.val()) == false) {
-                cardNumberField.removeClass('has-success');
-                cardNumberField.addClass('has-error');
-            } else {
-                cardNumberField.removeClass('has-error');
-                cardNumberField.addClass('has-success');
-            }
+            exp = document.querySelector('.cc-exp'),
 
-            if ($.payform.parseCardType(cardNumber.val()) == 'visa') {
-                mastercard.addClass('transparent');
-                amex.addClass('transparent');
-            } else if ($.payform.parseCardType(cardNumber.val()) == 'amex') {
-                mastercard.addClass('transparent');
-                visa.addClass('transparent');
-            } else if ($.payform.parseCardType(cardNumber.val()) == 'mastercard') {
-                amex.addClass('transparent');
-                visa.addClass('transparent');
-            }
-        });
+            cvc = document.querySelector('.cc-cvc'),
 
-        confirmButton.click(function(e) {
+            validation = document.querySelector('.validation');
+
+        Payment.restrictNumeric(numeric);
+
+        Payment.formatCardNumber(number);
+
+        Payment.formatCardExpiry(exp);
+
+        Payment.formatCardCVC(cvc);
+
+        document.querySelector('form').onsubmit = function(e) {
+
             e.preventDefault();
 
-            var isCardValid = $.payform.validateCardNumber(cardNumber.val());
-            var isCvvValid = $.payform.validateCardCVC(CVV.val());
+            J.toggleClass(document.querySelectorAll('input'), 'invalid');
 
-            if (owner.val().length < 5) {
-                alert("Wrong owner name");
-            } else if (!isCardValid) {
-                alert("Wrong card number");
-            } else if (!isCvvValid) {
-                alert("Wrong CVV");
+            J.removeClass(validation, 'passed failed');
+
+            var cardType = Payment.fns.cardType(J.val(number));
+
+            J.toggleClass(number, 'invalid', !Payment.fns.validateCardNumber(J.val(number)));
+
+            J.toggleClass(exp, 'invalid', !Payment.fns.validateCardExpiry(Payment.cardExpiryVal(exp)));
+
+            J.toggleClass(cvc, 'invalid', !Payment.fns.validateCardCVC(J.val(cvc), cardType));
+
+            if (document.querySelectorAll('.invalid').length) {
+
+                J.addClass(validation, 'failed');
+
             } else {
-                // Everything is correct. Add your form submission code here.
-                alert("Everything is correct");
+
+                J.addClass(validation, 'passed');
+
             }
-        });
+
+        }
     </script>
 
 </body>
