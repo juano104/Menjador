@@ -310,7 +310,7 @@
                                         <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
                                         <div id="cardexpiry-error-dialog" class="field-error"></div>
                                     </div>
-                                    <div class="col-">
+                                    <div class="col-6">
                                         <label>CVV Code</label>
                                         <br>
                                         <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
