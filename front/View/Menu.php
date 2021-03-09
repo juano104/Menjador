@@ -1,9 +1,5 @@
 <?php
-if(empty($_SESSION["username"])){
-    header("Location: https://www.menjadorescola.me/");
-}else{
-
-
+if(isset($_SESSION["username"])){
 ?>
 
 <!DOCTYPE html>
@@ -168,9 +164,7 @@ if(empty($_SESSION["username"])){
 </html>
 
 <?php
-
-
+}else{
+    header("Location: https://www.menjadorescola.me/");
 }
-
-
 ?>
