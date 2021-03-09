@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/b-1.6.5/b-html5-1.6.5/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
 
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.bootstrap4.min.css" />
 
@@ -243,8 +243,8 @@
                         },
                         {
                             extend: 'pdfHtml5',
-                            text: '<i class="fa fa-file-pdf-o"></i>',
-                            titleAttr: 'PDF',
+                            text: '<i class="fas fa-file-pdf"></i>',
+                            titleAttr: 'Exportar a PDF',
                             className: 'btn btn-danger'
                         }
                     ]

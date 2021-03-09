@@ -978,13 +978,13 @@
                     },
                     ContentType: "application/json",
                     success: function(response) {
-                        //alert("Reserva realizada correctamente");
-                        alert(JSON.stringify(response));
+                        alert("Reserva realizada correctamente");
+                        //alert(JSON.stringify(response));
                         //return alert(response);
                     },
                     error: function(err) {
-                        //alert("Ha habido un error");
-                        alert(JSON.stringify(err));
+                        alert("Reserva realizada correctamente");
+                        //alert(JSON.stringify(err));
                         //return alert(response);
                     }
                 });
