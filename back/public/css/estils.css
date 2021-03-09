@@ -168,9 +168,10 @@ a:focus{
     }
     .tab .nav-tabs li a:before{ bottom: 0; }
 
-    input[type="search"]{
+    #example_filter input {
       width:"125px" !important;
-}
+    }
+
 }
 
 input[type="radio"] + label {
