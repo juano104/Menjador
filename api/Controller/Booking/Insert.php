@@ -8,6 +8,8 @@ include_once '../api/Model/User_Parent.php';
 $db = new Database();
 $db_conn = $db->connect();
 
+$hoy = date("Y-m-d");
+
 
 $parent = new User_Parent($db_conn);
 
@@ -16,9 +18,10 @@ if ($_POST['date1'] != "") {
     $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['idstudent']);
     $parent->setStatus('active');
+    $parent->setDate_made($hoy);
     $parent->setDate($_POST['date1']);
     if ($parent->makeReservation()) {
-        echo json_encode("Made reservation FOR ONE DAY");
+        echo json_encode("Made reservation FOR ONE DAY, " . $hoy);
         $parent->setBooking_ID($db_conn->lastInsertId());
         if ($parent->makeDayReservation()) {
             echo json_encode("Made DAY reservation");
@@ -33,11 +36,12 @@ if ($_POST['date1'] != "") {
     $redir = $parent->getParent_DNI();
     $parent->setStudent_ID($_POST['idstudent']);
     $parent->setStatus('active');
+    $parent->setDate_made($hoy);
     $parent->setStart_date($_POST['startdate']);
     $parent->setEnd_date($_POST['enddate']);
 
     if ($parent->makeReservation()) {
-        echo json_encode("Made reservation FOR EXTRA");
+        echo json_encode("Made reservation FOR EXTRA, " . $hoy);
 
         $parent->setBooking_ID($db_conn->lastInsertId());
         if ($_POST['monday'] == "1") {
@@ -68,7 +72,7 @@ if ($_POST['date1'] != "") {
 if ($_POST['date2'] != "") {
     $parent->setDate($_POST['date2']);
     if ($parent->makeReservation()) {
-        echo json_encode("Made reservation FOR SECOND DAY");
+        echo json_encode("Made reservation FOR SECOND DAY, " . $hoy);
         $parent->setBooking_ID($db_conn->lastInsertId());
         if ($parent->makeDayReservation()) {
             echo json_encode("Made DAY reservation SECOND");
@@ -82,7 +86,7 @@ if ($_POST['date2'] != "") {
 if ($_POST['date3'] != "") {
     $parent->setDate($_POST['date3']);
     if ($parent->makeReservation()) {
-        echo json_encode("Made reservation FOR THIRD DAY");
+        echo json_encode("Made reservation FOR THIRD DAY, " . $hoy);
         $parent->setBooking_ID($db_conn->lastInsertId());
         if ($parent->makeDayReservation()) {
             echo json_encode("Made DAY reservation THIRD");
@@ -96,7 +100,7 @@ if ($_POST['date3'] != "") {
 if ($_POST['date4'] != "") {
     $parent->setDate($_POST['date4']);
     if ($parent->makeReservation()) {
-        echo json_encode("Made reservation FOR FOURTH DAY");
+        echo json_encode("Made reservation FOR FOURTH DAY, " . $hoy);
         $parent->setBooking_ID($db_conn->lastInsertId());
         if ($parent->makeDayReservation()) {
             echo json_encode("Made DAY reservation FOURTH");
@@ -110,7 +114,7 @@ if ($_POST['date4'] != "") {
 if ($_POST['date5'] != "") {
     $parent->setDate($_POST['date5']);
     if ($parent->makeReservation()) {
-        echo json_encode("Made reservation FOR FIFTH DAY");
+        echo json_encode("Made reservation FOR FIFTH DAY, " . $hoy);
         $parent->setBooking_ID($db_conn->lastInsertId());
         if ($parent->makeDayReservation()) {
             echo json_encode("Made DAY reservation FIFTH");

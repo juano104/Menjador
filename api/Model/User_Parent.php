@@ -15,6 +15,7 @@ class User_Parent
     private $student_ID;
     private $parent_DNI;
     private $status;
+    private $date_made;
     //booking id for both tables
     private $booking_ID;
     //properties for only one day
@@ -46,6 +47,10 @@ class User_Parent
     function getName()
     {
         return $this->name;
+    }
+    function getDate_made()
+    {
+        return $this->date_made;
     }
 
     function getLast_name()
@@ -163,6 +168,10 @@ class User_Parent
     {
         $this->date = $date;
     }
+    function setDate_made($date_made): void
+    {
+        $this->date_made = $date_made;
+    }
 
     function setStart_date($start_date): void
     {
@@ -254,7 +263,7 @@ class User_Parent
     //RESERVATIONS
     public function makeReservation()
     {
-        $query = "insert into Booking(student_ID, parent_DNI, status) values(?, ?, ?)";
+        $query = "insert into Booking(student_ID, parent_DNI, status, date_made) values(?, ?, ?, ?)";
 
         $stmt = $this->conn->prepare($query);
 
