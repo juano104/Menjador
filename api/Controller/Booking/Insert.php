@@ -23,12 +23,12 @@ if ($_POST['date1'] != "") {
     $parent->setDate($_POST['date1']);
     if ($parent->makeReservation()) {
         //echo json_encode("Made reservation FOR ONE DAY, " . $hoy);
-        echo json_encode("Se realizo correctamente la reserva de tipo sueltos");
+        echo json_encode("Se realizó correctamente la reserva de tipo sueltos");
         $parent->setBooking_ID($db_conn->lastInsertId());
         if ($parent->makeDayReservation()) {
-            echo json_encode("Made DAY reservation");
+            echo json_encode("Reserva para el dia: " . $parent->getDate());
         } else {
-            echo json_encode("Error in day reservation");
+            echo json_encode("Error en reserva sueltas");
         }
     } else {
         echo json_encode("Error");
