@@ -1,3 +1,11 @@
+<?php
+if(empty($_SESSION["username"])){
+    header("Location: https://www.menjadorescola.me/");
+}else{
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,3 +166,11 @@
 </body>
 
 </html>
+
+<?php
+
+
+}
+
+
+?>
