@@ -1,5 +1,5 @@
 <?php
-echo $_SESSION["login"];
+echo $_SESSION["name"];
 
 ?>
 
