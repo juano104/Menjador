@@ -9,7 +9,64 @@
     <link rel="stylesheet" href="../public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="public/js/jquery.creditCardValidator.js"></script>
 
+    <script>
+	function validate() {
+		var valid = true;
+		$(".demoInputBox").css('background-color', '');
+		var message = "";
+
+		var cardHolderNameRegex = /^[a-z ,.'-]+$/i;
+		var cvvRegex = /^[0-9]{3,3}$/;
+
+		var cardHolderName = $("#card-holder-name").val();
+		var cardNumber = $("#card-number").val();
+		var cvv = $("#cvv").val();
+
+		if (cardHolderName == "" || cardNumber == "" || cvv == "") {
+			message += "<div>All Fields are Required.</div>";
+			if (cardHolderName == "") {
+				$("#card-holder-name").css('background-color', '#FFFFDF');
+			}
+			if (cardNumber == "") {
+				$("#card-number").css('background-color', '#FFFFDF');
+			}
+			if (cvv == "") {
+				$("#cvv").css('background-color', '#FFFFDF');
+			}
+			valid = false;
+		}
+
+		if (cardHolderName != "" && !cardHolderNameRegex.test(cardHolderName)) {
+			message += "<div>Card Holder Name is Invalid</div>";
+			$("#card-holder-name").css('background-color', '#FFFFDF');
+			valid = false;
+		}
+
+		if (cardNumber != "") {
+			$('#card-number').validateCreditCard(function(result) {
+				if (!(result.valid)) {
+					message += "<div>Card Number is Invalid</div>";
+					$("#card-number").css('background-color', '#FFFFDF');
+					valid = false;
+				}
+			});
+		}
+
+		else if (cvv != "" && !cvvRegex.test(cvv)) {
+			message += "<div>CVV is Invalid</div>";
+			$("#cvv").css('background-color', '#FFFFDF');
+			valid = false;
+		}
+
+		if (message != "") {
+			$("#error-message").show();
+			$("#error-message").html(message);
+		}
+		return valid;
+	}
+</script>
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
@@ -32,7 +89,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script src="public/js/jquery.creditCardValidator.js"></script>
+
     <script>
         $(document).ready(function() {
             var date_input = $(".datepicker");
@@ -88,7 +145,7 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <form novalidate autocomplete="on">
+            <form  id="frmContact" action="" method="post" onSubmit="return validate();">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -286,9 +343,46 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <label>CC number <input id="tarjeta"></label>
-
-                                <p class="log"></p>
+                                <div class="field-row">
+                                    <label style="padding-top: 20px;">Card Holder Name</label> <span id="card-holder-name-info" class="info"></span><br /> <input type="text" id="card-holder-name" class="demoInputBox" />
+                                </div>
+                                <div class="field-row">
+                                    <label>Card Number</label> <span id="card-number-info" class="info"></span><br /> <input type="text" id="card-number" class="demoInputBox">
+                                </div>
+                                <div class="field-row">
+                                    <div class="contact-row column-right">
+                                        <label>Expiry Month / Year</label> <span id="userEmail-info" class="info"></span><br /> <select name="expiryMonth" id="expiryMonth" class="demoSelectBox">
+                                            <?php
+                                            for ($i = date("m"); $i <= 12; $i++) {
+                                                $monthValue = $i;
+                                                if (strlen($i) < 2) {
+                                                    $monthValue = "0" . $monthValue;
+                                                }
+                                            ?>
+                                                <option value="<?php echo $monthValue; ?>"><?php echo $i; ?></option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select> <select name="expiryMonth" id="expiryMonth" class="demoSelectBox">
+                                            <?php
+                                            for ($i = date("Y"); $i <= 2030; $i++) {
+                                                $yearValue = substr($i, 2);
+                                            ?>
+                                                <option value="<?php echo $yearValue; ?>"><?php echo $i; ?></option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="contact-row cvv-box">
+                                        <label>CVV</label> <span id="cvv-info" class="info"></span><br />
+                                        <input type="text" name="cvv" id="cvv" class="demoInputBox cvv-input">
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Submit" class="btnAction" />
+                                </div>
+                                <div id="error-message"></div>
 
                             </div>
                             <div class="modal-footer">
@@ -755,21 +849,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
 
     <!-- Footer -->
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-    $(function() {
-        $('#tarjeta').validateCreditCard(function(result) {
-            $('.log').html('Card type: ' + (result.card_type == null ? '-' : result.card_type.name)
-                     + '<br>Valid: ' + result.valid
-                     + '<br>Length valid: ' + result.length_valid
-                     + '<br>Luhn valid: ' + result.luhn_valid);
-        });
-    });
-
-</script>
 
 </body>
 
