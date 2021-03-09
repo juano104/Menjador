@@ -291,31 +291,44 @@
                             </div>
                             <div class="modal-body">
                                 <div class='credit-card-validation'>
+                                <div class="col-12 form-group">
                                     <p>
                                         <label>Titular</label>
                                         <br>
                                         <input required type="text" class="form-control">
+                                        <div class="invalid-feedback">
+                                            Porfavor, ponga un titular.
+                                        </div>
                                     </p>
+                                </div>
+                                <div class="col-6 form-group">
                                     <p>
                                         <label>Numero de Tarjeta</label>
                                         <br>
                                         <input required type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
-                                    <div id="cardnumber-error-dialog" class="field-error"></div>
+                                        <div class="invalid-feedback">
+                                             Porfavor, ponga una Tarjeta.
+                                        </div>
                                     </p>
-
+                                </div>
                                     <p>
                                     <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-6 form-group">
                                         <label>Fecha de Caducidad</label>
                                         <br>
                                         <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
-                                        <div id="cardexpiry-error-dialog" class="field-error"></div>
+                                        <div class="invalid-feedback">
+                                            Porfavor, ponga una fecha de caducidad.
+                                        </div>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-6 form-group">
+                                    
                                         <label>CVV</label>
                                         <br>
                                         <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
-                                        <div id="cardcvv-error-dialog" class="field-error"></div>
+                                        <div class="invalid-feedback">
+                                            Porfavor, ponga un CVV.
+                                        </div>
                                     </div>
                                     </div>
                                     </p>
@@ -401,24 +414,7 @@
     </div>
 
     <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
+        
     </script>
 
     <script>
