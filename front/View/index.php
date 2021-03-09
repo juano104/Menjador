@@ -286,7 +286,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <label>CC number <input></label>
+                                <label>CC number <input id="tarjeta"></label>
 
                                 <p class="log"></p>
 
@@ -761,13 +761,14 @@
 
     <script>
     $(function() {
-        $('input').validateCreditCard(function(result) {
+        $('#tarjeta').validateCreditCard(function(result) {
             $('.log').html('Card type: ' + (result.card_type == null ? '-' : result.card_type.name)
                      + '<br>Valid: ' + result.valid
                      + '<br>Length valid: ' + result.length_valid
                      + '<br>Luhn valid: ' + result.luhn_valid);
         });
     });
+
 </script>
 
 </body>
