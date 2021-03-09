@@ -297,7 +297,7 @@
                                         <input required type="text" class="form-control">
                                     </p>
                                     <p>
-                                        <label>Card Number</label>
+                                        <label>Numero de Tarjeta</label>
                                         <br>
                                         <input required type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
                                     <div id="cardnumber-error-dialog" class="field-error"></div>
@@ -306,13 +306,13 @@
                                     <p>
                                     <div class="row">
                                     <div class="col-6">
-                                        <label>Expiry Date</label>
+                                        <label>Fecha de Caducidad</label>
                                         <br>
                                         <input required type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
                                         <div id="cardexpiry-error-dialog" class="field-error"></div>
                                     </div>
                                     <div class="col-6">
-                                        <label>CVV Code</label>
+                                        <label>CVV</label>
                                         <br>
                                         <input required type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
                                         <div id="cardcvv-error-dialog" class="field-error"></div>
@@ -341,7 +341,56 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                <input id="submit" name="submit" type="submit" value="Reserve" class="btnAction" onclick="cardnumber(document.form1.text1)">
+                                <input id="submit" name="submit" type="submit" value="Reserve" class="btn btn-dark">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="banco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Banco</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            <div class="form-group row">
+                        <div class="col-12">
+                            <label for="nombreEntidad">Nombre de la Entidad</label>
+                            <input name="nombreEntidad" id="nombreEntidad" required type="text" class="form-control">
+                            <div class="invalid-feedback">
+                                Porfavor, ponga un nombre.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+
+                        <div class="col-12">
+                            <label for="IBAN">IBAN</label>
+                            <input name="IBAN" required id="IBAN" type="text" placeholder="Ej: ES21 1465 0100 72 2030876293" class="form-control">
+                            <div class="invalid-feedback">
+                                Porfavor, ponga un IBAN.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+
+                        <div class="col-12">
+                            <label for="BIC">BIC</label>
+                            <input name="BIC" required id="BIC" type="text" placeholder="Ej: INGDESMMXXX" class="form-control">
+                            <div class="invalid-feedback">
+                                Porfavor, ponga un BIC.
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                <input id="submit" name="submit" type="submit" value="Reserve" class="btn btn-dark">
                             </div>
                         </div>
                     </div>
