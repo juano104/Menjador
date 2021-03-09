@@ -13,6 +13,8 @@
   display:block;
 }
 
+
+
 .container {
   margin-top: 0%;
 }
@@ -165,11 +167,18 @@ a:focus{
         text-align: center;
     }
     .tab .nav-tabs li a:before{ bottom: 0; }
+
+    input[type="search"]{
+      width:"125px";
+}
 }
 
 input[type="radio"] + label {
   margin-right: 3%;
+  
 }
+
+
 
 
 .tabler {
