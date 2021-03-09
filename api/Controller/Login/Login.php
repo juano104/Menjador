@@ -1,8 +1,8 @@
 <?php
 
-
+session_start();
+$_SESSION["name"] = "login";
 if (isset($_POST['submit'])) {
-    session_start();
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
 
         $_SESSION["username"] = trim($_POST['username']);
@@ -11,7 +11,6 @@ if (isset($_POST['submit'])) {
         $username = $_SESSION["username"];
         $passwordf = $_SESSION["password"];
 
-        $_SESSION["name"] = "login";
 
         //Headers
         include_once '../api/Model/Database.php';
