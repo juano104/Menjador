@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="../public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        var $x = jQuery.noConflict();
-        alert("Version: " + $x.fn.jquery);
-    </script>
+
 
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
@@ -35,11 +32,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script>
-        var $y = jQuery.noConflict();
-        alert("Version: " + $y.fn.jquery);
-    </script>
     <script src="public/js/jquery.creditCardValidator.js"></script>
     <script>
         $(document).ready(function() {
