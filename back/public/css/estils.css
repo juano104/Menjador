@@ -8,8 +8,9 @@
   padding: 0;
 }
 
-.btn{
+.pdf{
   position: absolute !important;
+  display:block;
 }
 
 .container {
