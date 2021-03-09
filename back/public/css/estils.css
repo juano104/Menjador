@@ -169,7 +169,7 @@ a:focus{
     .tab .nav-tabs li a:before{ bottom: 0; }
 
     input[type="search"]{
-      width:"125px";
+      width:"125px" !important;
 }
 }
 
