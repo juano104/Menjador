@@ -12,7 +12,10 @@
   position: absolute !important;
 }
 
-
+.btn-floating{
+  padding: 0;
+  border-radius: 50%;
+}
 
 .container {
   margin-top: 0%;

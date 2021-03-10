@@ -167,6 +167,11 @@ h1 {
   margin-right: 10%;
 }
 
+.btn-floating{
+  padding: 0;
+  border-radius: 50%;
+}
+
 .head {
   border: 1px black solid !important;
   background-color: #264653;
@@ -495,6 +500,8 @@ input[type="radio"]+label {
 .credit-card-box .back .logo {
   top: 185px;
 }
+
+
 .credit-card-box .chip {
   position: absolute;
   width: 60px;
