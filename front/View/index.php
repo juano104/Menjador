@@ -96,6 +96,12 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
+            <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Pagina Padres</li>
+                    <li class="breadcrumb-item active" aria-current="page">Realizar Reserva</li>
+                </ol>
+            </div>
             <form id="paymentForm" method="post" name="form1">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -195,7 +201,7 @@
                         </div>-->
                         <br>
                         <button type="button" class="deldate btn btn-danger"><i class="fas fa-calendar-times"></i></button>
-                        <button type="button" class="newdate btn btn-dark"><i class="fas fa-calendar-plus"></i></button>   
+                        <button type="button" class="newdate btn btn-dark"><i class="fas fa-calendar-plus"></i></button>
                         <br><br>
                         <button type="button" class="b3p btn btn-outline-danger">Atras</button>
                         <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
@@ -295,62 +301,62 @@
                             </div>
                             <div class="modal-body">
                                 <div class='credit-card-validation'>
-                                <div class="col-12 form-group">
-                                    <p>
-                                        <label>Titular *</label>
-                                        <br>
-                                        <input  type="text" class="form-control">
+                                    <div class="col-12 form-group">
+                                        <p>
+                                            <label>Titular *</label>
+                                            <br>
+                                            <input type="text" class="form-control">
                                         <div class="invalid-feedback">
                                             Porfavor, ponga un titular.
                                         </div>
-                                    </p>
-                                </div>
-                                <div class="col-6 form-group">
-                                    <p>
-                                        <label>Numero de Tarjeta *</label>
-                                        <br>
-                                        <input type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
+                                        </p>
+                                    </div>
+                                    <div class="col-6 form-group">
+                                        <p>
+                                            <label>Numero de Tarjeta *</label>
+                                            <br>
+                                            <input type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
                                         <div class="invalid-feedback">
-                                             Porfavor, ponga una Tarjeta.
+                                            Porfavor, ponga una Tarjeta.
                                         </div>
-                                    </p>
-                                </div>
+                                        </p>
+                                    </div>
                                     <p>
                                     <div class="row">
-                                    <div class="col-6 form-group">
-                                        <label>Fecha de Caducidad *</label>
-                                        <br>
-                                        <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
-                                        <div class="invalid-feedback">
-                                            Porfavor, ponga una fecha de caducidad.
+                                        <div class="col-6 form-group">
+                                            <label>Fecha de Caducidad *</label>
+                                            <br>
+                                            <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
+                                            <div class="invalid-feedback">
+                                                Porfavor, ponga una fecha de caducidad.
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-6 form-group">
-                                    
-                                        <label>CVV *</label>
-                                        <br>
-                                        <input type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
-                                        <div class="invalid-feedback">
-                                            Porfavor, ponga un CVV.
+                                        <div class="col-6 form-group">
+
+                                            <label>CVV *</label>
+                                            <br>
+                                            <input type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
+                                            <div class="invalid-feedback">
+                                                Porfavor, ponga un CVV.
+                                            </div>
                                         </div>
-                                    </div>
                                     </div>
                                     </p>
                                     <ul class="list-unstyled list-inline text-center">
                                         <li class="list-inline-item">
-                                            
-                                                <i class="fab fa-cc-visa fa-2x"></i>
-                                            
+
+                                            <i class="fab fa-cc-visa fa-2x"></i>
+
                                         </li>
                                         <li class="list-inline-item">
-                                            
-                                                <i class="fab fa-cc-mastercard fa-2x"></i>
-                                          
+
+                                            <i class="fab fa-cc-mastercard fa-2x"></i>
+
                                         </li>
                                         <li class="list-inline-item">
-                                            
-                                                <i class="fab fa-cc-paypal fa-2x"></i>
-                                            
+
+                                            <i class="fab fa-cc-paypal fa-2x"></i>
+
                                         </li>
                                     </ul>
                                 </div>
@@ -374,36 +380,36 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                            <p>Introduce aquí la información de tu cuenta bancaria a la que quieras domiciliar el pago.</p>
-                            <div class="form-group row">
-                        <div class="col-12">
-                            <label for="nombreEntidad">Nombre de la Entidad *</label>
-                            <input name="nombreEntidad" id="nombreEntidad" type="text" class="form-control">
-                            <div class="invalid-feedback">
-                                Porfavor, ponga un nombre.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
+                                <p>Introduce aquí la información de tu cuenta bancaria a la que quieras domiciliar el pago.</p>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label for="nombreEntidad">Nombre de la Entidad *</label>
+                                        <input name="nombreEntidad" id="nombreEntidad" type="text" class="form-control">
+                                        <div class="invalid-feedback">
+                                            Porfavor, ponga un nombre.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
 
-                        <div class="col-12">
-                            <label for="IBAN">IBAN *</label>
-                            <input name="IBAN" id="IBAN" type="text" placeholder="Ej: ES21 1465 0100 72 2030876293" class="form-control">
-                            <div class="invalid-feedback">
-                                Porfavor, ponga un IBAN.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
+                                    <div class="col-12">
+                                        <label for="IBAN">IBAN *</label>
+                                        <input name="IBAN" id="IBAN" type="text" placeholder="Ej: ES21 1465 0100 72 2030876293" class="form-control">
+                                        <div class="invalid-feedback">
+                                            Porfavor, ponga un IBAN.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
 
-                        <div class="col-12">
-                            <label for="BIC">BIC *</label>
-                            <input name="BIC" id="BIC" type="text" placeholder="Ej: INGDESMMXXX" class="form-control">
-                            <div class="invalid-feedback">
-                                Porfavor, ponga un BIC.
-                            </div>
-                        </div>
-                    </div>
+                                    <div class="col-12">
+                                        <label for="BIC">BIC *</label>
+                                        <input name="BIC" id="BIC" type="text" placeholder="Ej: INGDESMMXXX" class="form-control">
+                                        <div class="invalid-feedback">
+                                            Porfavor, ponga un BIC.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -419,7 +425,7 @@
     </div>
 
     <script>
-        
+
     </script>
 
     <script>
