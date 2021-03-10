@@ -92,7 +92,7 @@
                     <h1>Ubicacion</h1>
                     <div id="mapid" style="width:400px;height:300px;"></div>
                     <script>
-                        var m = L.map('meuMapa').setView([39.56637682250297, 3.2037112138683597], 15);
+                        var m = L.map('mapid').setView([39.56637682250297, 3.2037112138683597], 15);
 
                         // Imatges del mapa (OpenStreetMap + MapBox)
                         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
