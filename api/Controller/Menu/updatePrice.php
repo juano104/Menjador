@@ -20,7 +20,7 @@ if (isset($_SESSION["username"])) {
     $rowPrice = $readStmt->fetch(PDO::FETCH_ASSOC);
     $_SESSION["price"] = $rowPrice["price"];
     
-    //header("Location: https://admin.menjadorescola.me/home");
+    header("Location: https://admin.menjadorescola.me/home");
 } else {
     header("Location: https://admin.menjadorescola.me/");
 }
