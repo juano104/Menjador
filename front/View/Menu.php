@@ -91,7 +91,9 @@
                     <!-- Content -->
                     <div class="row d-flex justify-content-center">
                     <div class="col-2"></div>
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 col-8">Ubicación</h5>
+                    <div class="col-8">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ubicación</h5>
+                    </div>
                     <div class="col-2"></div>
                     </div>
                     <div class="row">
