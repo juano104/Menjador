@@ -89,8 +89,10 @@
                 <!-- Grid column -->
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
-                    <h1>Ubicacion</h1>
-                    <div id="mapid" style="width:400px;height:300px;"></div>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ubicacion</h5>
+                    <div class="col-2"></div>
+                    <div id="mapid" class="col-6" style="width:auto;height:auto;"></div>
+                    <div class="col-2"></div>
 
                     <script>
                         var map = L.map('mapid').

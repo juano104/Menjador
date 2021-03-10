@@ -301,7 +301,7 @@
                                 <div class='credit-card-validation'>
                                 <div class="col-12 form-group">
                                     <p>
-                                        <label>Titular</label>
+                                        <label>Titular *</label>
                                         <br>
                                         <input  type="text" class="form-control">
                                         <div class="invalid-feedback">
@@ -311,7 +311,7 @@
                                 </div>
                                 <div class="col-6 form-group">
                                     <p>
-                                        <label>Numero de Tarjeta</label>
+                                        <label>Numero de Tarjeta *</label>
                                         <br>
                                         <input type="tel" name="cardNumber" class="cardNumber form-control" maxlength="19" placeholder="0000 0000 0000 0000" data-validation-type="custom" data-validation-error-msg="Please enter a valid card number" data-validation-error-msg-container="#cardnumber-error-dialog">
                                         <div class="invalid-feedback">
@@ -322,7 +322,7 @@
                                     <p>
                                     <div class="row">
                                     <div class="col-6 form-group">
-                                        <label>Fecha de Caducidad</label>
+                                        <label>Fecha de Caducidad *</label>
                                         <br>
                                         <input type="text" name="cardExpiry" maxlength="5" class="cardExpiry form-control" placeholder="mm/yy" data-validation-type="alphanumeric">
                                         <div class="invalid-feedback">
@@ -331,7 +331,7 @@
                                     </div>
                                     <div class="col-6 form-group">
                                     
-                                        <label>CVV</label>
+                                        <label>CVV *</label>
                                         <br>
                                         <input type="text" name="cardCVV" maxlength="3" class="cardCVV form-control" data-validation-type="numeric" data-validation-error-msg="Please enter a valid CVV number" data-validation-error-msg-container="#cardcvv-error-dialog">
                                         <div class="invalid-feedback">
@@ -378,9 +378,10 @@
                                 </button>
                             </div>
                             <div class="modal-body">
+                            <p>Introduce aquí la información de tu cuenta bancaria a la que quieras domiciliar el pago.</p>
                             <div class="form-group row">
                         <div class="col-12">
-                            <label for="nombreEntidad">Nombre de la Entidad</label>
+                            <label for="nombreEntidad">Nombre de la Entidad *</label>
                             <input name="nombreEntidad" id="nombreEntidad" type="text" class="form-control">
                             <div class="invalid-feedback">
                                 Porfavor, ponga un nombre.
@@ -390,7 +391,7 @@
                     <div class="form-group row">
 
                         <div class="col-12">
-                            <label for="IBAN">IBAN</label>
+                            <label for="IBAN">IBAN *</label>
                             <input name="IBAN" id="IBAN" type="text" placeholder="Ej: ES21 1465 0100 72 2030876293" class="form-control">
                             <div class="invalid-feedback">
                                 Porfavor, ponga un IBAN.
@@ -400,7 +401,7 @@
                     <div class="form-group row">
 
                         <div class="col-12">
-                            <label for="BIC">BIC</label>
+                            <label for="BIC">BIC *</label>
                             <input name="BIC" id="BIC" type="text" placeholder="Ej: INGDESMMXXX" class="form-control">
                             <div class="invalid-feedback">
                                 Porfavor, ponga un BIC.
