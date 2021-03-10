@@ -118,6 +118,26 @@ if ($_SESSION["username"] == "") {
                         </div>
                     </form>
                 </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <label for="price">Actualizar Precio:</label>
+                    <form action="actualizar" class="form-horizontal" method="post" style="margin: 0;">
+                        <div class="form-group ">
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input autocomplete="off" name="price" type="text" id="price" placeholder="<?php echo $_SESSION['price'] ?>">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input name="_honey" style="display:none" type="text">
+                                <button class="btn btn-dark " name="submit" type="submit">
+                                    Actualizar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

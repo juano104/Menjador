@@ -29,7 +29,8 @@ if (isset($_POST['submit'])) {
         $readStmt = $updatePrice->readPrice();
         $rowPrice = $readStmt->fetch(PDO::FETCH_ASSOC);
         $actualPrice = $rowPrice["price"];
-        
+
+        $_SESSION["price"] = $actualPrice;
 
 
         //for login
