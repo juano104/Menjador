@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    	   crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
@@ -25,9 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
-    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-    	   crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
     <style>
         #calendar {
@@ -73,41 +70,47 @@
                 <!-- Grid column -->
                 <div class="col-md-2 mx-auto">
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Links</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="http://www.iesmanacor.cat/" style="color: white;">IES Manacor Web</a>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <a href="https://www.menjadorescola.me/menu" style="color: white;">Menu</a>
                         </li>
                         <li>
-                            <a href="#!">Link 3</a>
+                            <a href="https://www.menjadorescola.me/login" style="color: white;">Realizar Reserva</a>
                         </li>
                         <li>
-                            <a href="#!">Link 4</a>
+                            <a href="https://www.menjadorescola.me/reservas" style="color: white;">Mis Reservas</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Grid column -->
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
-                    <h1>Ubicacion</h1>
-                    <div id="meuMapa" style="width:450px;height:400px;"></div>
+
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Ubicación</h5>
+
+                    <div class="row">
+                    <div class="col-2"></div>
+                    <div id="mapid" class="col-8" style="width:400px;height:250px;"></div>
+                    <div class="col-2"></div>
+                    </div>
+
                     <script>
-                        // Mapa centrat a latitud/longuitud i zoom
-                        var m = L.map('meuMapa').setView([39.56093185,3.20064345557848], 15);
+                        var map = L.map('mapid').
+                        setView([39.56093185, 3.20064345557848],
+                            15);
 
-                        // Imatges del mapa (OpenStreetMap + MapBox)
-                        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                            maxZoom: 18,
-                            id: 'mapbox.streets',
-                            accessToken: 'pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g'
-                        }).addTo(m);
+                        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                            maxZoom: 18
+                        }).addTo(map);
 
-                        // Marcador sobre el mapa
-                        var marker = L.marker([39.56093185, 3.20064345557848]).addTo(m);
+                        L.control.scale().addTo(map);
+
+                        var marker = L.marker([39.56093185, 3.20064345557848]).addTo(map);
                     </script>
                 </div>
                 <!-- Social buttons -->
@@ -117,17 +120,17 @@
                     <ul class="list-unstyled list-inline text-center">
                         <li class="list-inline-item">
                             <a class="btn-floating btn-fb mx-1">
-                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-facebook-f" style="color: blue;"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a class="btn-floating btn-tw mx-1">
-                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-twitter" style="color:cornflowerblue;"></i>
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a class="btn-floating btn-gplus mx-1">
-                                <i class="fab fa-google-plus-g"></i>
+                                <i class="fab fa-google-plus-g" style="color: red;"></i>
                             </a>
                         </li>
                     </ul>
