@@ -1,3 +1,9 @@
+<?php
+if ($_SESSION["username"] == "") {
+    header("Location: https://admin.menjadorescola.me/");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -399,7 +405,7 @@
     </footer>
     <!-- Footer -->
 
-    
+
 
 </body>
 

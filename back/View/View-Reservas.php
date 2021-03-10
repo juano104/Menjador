@@ -1,8 +1,10 @@
 <?php
 
 //echo $_SESSION["username"];
-print_r($_SESSION["username"]);
-
+//print_r($_SESSION["username"]);
+if ($_SESSION["username"] == "") {
+    header("Location: https://admin.menjadorescola.me/");
+}
 ?>
 
 <!DOCTYPE html>

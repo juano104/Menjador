@@ -1,3 +1,10 @@
+<?php
+
+if ($_SESSION["username"] == "") {
+    header("Location: https://admin.menjadorescola.me/");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,14 +121,12 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i>',
-                        titleAttr: 'PDF',
-                        className: 'btn btn-danger pdf'
-                    }
-                ]
+                buttons: [{
+                    extend: 'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i>',
+                    titleAttr: 'PDF',
+                    className: 'btn btn-danger pdf'
+                }]
             });
 
             function loadData() {
@@ -147,14 +152,12 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'pdfHtml5',
-                            text: '<i class="fas fa-file-pdf"></i>',
-                            titleAttr: 'PDF',
-                            className: 'btn btn-danger pdf'
-                        }
-                    ]
+                    buttons: [{
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i>',
+                        titleAttr: 'PDF',
+                        className: 'btn btn-danger pdf'
+                    }]
                 });
 
             }
@@ -185,14 +188,12 @@
                 select: true,
                 responsive: true,
                 dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i>',
-                        titleAttr: 'PDF',
-                        className: 'btn btn-danger pdf'
-                    }
-                ]
+                buttons: [{
+                    extend: 'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i>',
+                    titleAttr: 'PDF',
+                    className: 'btn btn-danger pdf'
+                }]
             });
 
             function loadData() {
@@ -220,14 +221,12 @@
                     select: true,
                     responsive: true,
                     dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'pdfHtml5',
-                            text: '<i class="fas fa-file-pdf"></i>',
-                            titleAttr: 'Exportar a PDF',
-                            className: 'btn btn-danger pdf'
-                        }
-                    ]
+                    buttons: [{
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i>',
+                        titleAttr: 'Exportar a PDF',
+                        className: 'btn btn-danger pdf'
+                    }]
                 });
 
             }
