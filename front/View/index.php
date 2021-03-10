@@ -1,11 +1,3 @@
-<?php
-/*if(empty($_SESSION["username"])){
-    header("Location: https://www.menjadorescola.me/");
-}*/
-//print_r($_SESSION["username"]);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -177,7 +169,7 @@
                             </table>
                         </div>
                         <div class="d1">
-                            <label for="datepicker1">Fecha:</label>
+                            <label for="datepicker1">Fecha 1:</label>
                             <input name="date1" type="text" class="datepicker">
                         </div>
 
@@ -189,14 +181,14 @@
                             <label for="datepicker3">Fecha 3:</label>
                             <input name="date3" type="text" class="datepicker">
                         </div>
-                        <div class="d4">
+                        <!--<div class="d4">
                             <label for="datepicker4">Fecha 4:</label>
                             <input name="date4" type="text" class="datepicker">
                         </div>
                         <div class="d5">
                             <label for="datepicker5">Fecha 5:</label>
                             <input name="date5" type="text" class="datepicker">
-                        </div>
+                        </div>-->
                         <br>
                         <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
                         <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
@@ -624,11 +616,11 @@
             //different dates 
             $(".d2").hide();
             $(".d3").hide();
-            $(".d4").hide();
-            $(".d5").hide();
+            /*$(".d4").hide();
+            $(".d5").hide();*/
 
             var visibleDivs = 1;
-            var totalDivs = 5;
+            var totalDivs = 3;
 
 
             function DisplayNextDiv() {
