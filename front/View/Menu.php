@@ -93,10 +93,10 @@
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
                     <h1>LEAFLET - Markers. </h1>
-                    <div id="meuMapa" style="width:600px;height:400px;"></div>
+                    <div id="meuMapa" style="width:300px;height:100px;"></div>
                     <script>
                         // Mapa centrat a latitud/longuitud i zoom
-                        var m = L.map('meuMapa').setView([39.56637682250297, 3.2037112138683597], 15);
+                        var m = L.map('meuMapa').setView([39.56093185,3.20064345557848], 15);
 
                         // Imatges del mapa (OpenStreetMap + MapBox)
                         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -107,7 +107,7 @@
                         }).addTo(m);
 
                         // Marcador sobre el mapa
-                        var marker = L.marker([39.56637682250297, 3.2037112138683597]).addTo(m);
+                        var marker = L.marker([39.56093185, 3.20064345557848]).addTo(m);
                     </script>
                 </div>
                 <!-- Social buttons -->
