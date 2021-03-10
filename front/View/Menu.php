@@ -42,8 +42,8 @@
 
     <div class="container margin">
         <div aria-label="breadcrumb" style="margin-bottom: 3%;">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Pagina Padres</li>
+            <ol class="breadcrumb bg-transparent px-0">
+                <li class="breadcrumb-item active">Pagina Padres</li>
                 <li class="breadcrumb-item active" aria-current="page">Ver Menu</li>
             </ol>
         </div>

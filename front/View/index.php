@@ -96,12 +96,12 @@
 
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <div class="container  margin">
-            <div aria-label="breadcrumb" style="margin-bottom: 3%;">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Pagina Padres</li>
-                    <li class="breadcrumb-item active" aria-current="page">Realizar Reserva</li>
-                </ol>
-            </div>
+        <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+            <ol class="breadcrumb bg-transparent px-0">
+                <li class="breadcrumb-item active">Pagina Padres</li>
+                <li class="breadcrumb-item active" aria-current="page">Realizar Reserva</li>
+            </ol>
+        </div>
             <form id="paymentForm" method="post" name="form1">
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">

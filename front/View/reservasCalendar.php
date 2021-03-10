@@ -50,11 +50,11 @@ if(empty($_SESSION["username"])){
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container margin">
     <div aria-label="breadcrumb" style="margin-bottom: 3%;">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Pagina Padres</li>
-                    <li class="breadcrumb-item active" aria-current="page">Ver tus reservas</li>
-                </ol>
-            </div>
+            <ol class="breadcrumb bg-transparent px-0">
+                <li class="breadcrumb-item active">Pagina Padres</li>
+                <li class="breadcrumb-item active" aria-current="page">Ver tus reservas</li>
+            </ol>
+        </div>
         <H6>DESCARGAR: </H6>
         <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="fas fa-file-pdf"></i></a>
         <div id='calendar'></div>
