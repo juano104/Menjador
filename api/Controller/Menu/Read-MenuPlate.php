@@ -24,9 +24,7 @@ if ($count > 0) {
             "date" => $date,
             "title" => $title,
             "type" => $type,
-        );  
+        );
     }
     echo json_encode($e);
 }
-
-//include_once "View/View-Plate.php";
