@@ -93,9 +93,9 @@
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Ubicación</h5>
 
                     <div class="row">
-                    <div class="col-2"></div>
-                    <div id="mapid" class="col-8" style="width:400px;height:250px;"></div>
-                    <div class="col-2"></div>
+                        <div class="col-2"></div>
+                        <div id="mapid" class="col-8" style="width:400px;height:250px;"></div>
+                        <div class="col-2"></div>
                     </div>
 
                     <script>
@@ -119,19 +119,13 @@
                     <br>
                     <ul class="list-unstyled list-inline text-center">
                         <li class="list-inline-item">
-                            <a class="btn-floating btn-fb mx-1">
-                                <i class="fab fa-facebook-f" style="color: blue;"></i>
-                            </a>
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn-floating btn-tw mx-1">
-                                <i class="fab fa-twitter" style="color:cornflowerblue;"></i>
-                            </a>
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn-floating btn-gplus mx-1">
-                                <i class="fab fa-google-plus-g" style="color: red;"></i>
-                            </a>
+                            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
                         </li>
                     </ul>
                     <!-- Social buttons -->
