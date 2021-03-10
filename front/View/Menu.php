@@ -91,7 +91,7 @@
                     <!-- Content -->
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ubicacion</h5>
                     <div class="col-2"></div>
-                    <div id="mapid" class="col-6" style="width:auto;height:auto;"></div>
+                    <div id="mapid" class="col-6" style="width:400px;height:300px;"></div>
                     <div class="col-2"></div>
 
                     <script>
