@@ -68,7 +68,7 @@
             <div class="row">
                 <hr class="clearfix w-100 d-md-none">
                 <!-- Grid column -->
-                <div class="col-md-2 mx-auto">
+                <div class="col-md-3 mx-auto">
                     <!-- Links -->
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Links</h5>
                     <ul class="list-unstyled">
@@ -114,7 +114,7 @@
                     </script>
                 </div>
                 <!-- Social buttons -->
-                <div class="col-md-2 mx-auto">
+                <div class="col-md-3 mx-auto">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
                     <br>
                     <ul class="list-unstyled list-inline text-center">
