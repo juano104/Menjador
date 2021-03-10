@@ -16,6 +16,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="../public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
@@ -43,6 +45,8 @@
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 
     <script>
@@ -1003,74 +1007,8 @@
     </script>
 
     <!-- Footer -->
-    <footer class="page-footer font-small stylish-color-dark pt-4">
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
-            <!-- Grid row -->
-            <div class="row">
-                <hr class="clearfix w-100 d-md-none">
-                <!-- Grid column -->
-                <div class="col-md-2 mx-auto">
-                    <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-                <div class="col-md-4 mx-auto">
-                    <!-- Content -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
-                    <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                        consectetur
-                        adipisicing elit.
-                    </p>
-                </div>
-                <!-- Social buttons -->
-                <div class="col-md-2 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
-                    <br>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-fb mx-1">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-tw mx-1">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-gplus mx-1">
-                                <i class="fab fa-google-plus-g"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Social buttons -->
-                </div>
-            </div>
-            <!-- Grid row -->
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">
-                © 2020 Copyright:
-                <a href="#">Music</a>
-            </div>
-            <!-- Copyright -->
-        </div>
-    </footer>
+    <?php require_once "footer.php" ?>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
 
