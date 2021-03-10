@@ -760,8 +760,8 @@
                 var day1 = $("input[name='date1']").val();
                 var day2 = $("input[name='date2']").val();
                 var day3 = $("input[name='date3']").val();
-                var day4 = $("input[name='date4']").val();
-                var day5 = $("input[name='date5']").val();
+                /*var day4 = $("input[name='date4']").val();
+                var day5 = $("input[name='date5']").val();*/
 
                 if (day1 != "") {
                     $("#tabs").tabs({
@@ -779,12 +779,12 @@
                     if (day3 != "") {
                         dateArray.push(day3);
                     }
-                    if (day4 != "") {
+                    /*if (day4 != "") {
                         dateArray.push(day4);
                     }
                     if (day5 != "") {
                         dateArray.push(day5);
-                    }
+                    }*/
                     var newDate = $("<td>" + dateArray + "</td>");
                     var sum = dateArray.length * 8; // 8 is the price for everyday
                     var sumtotal = $("<td>" + sum + " € </td>");
