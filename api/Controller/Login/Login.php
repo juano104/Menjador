@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 $_SESSION["name"] = "login";
 if (isset($_POST['submit'])) {
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
@@ -17,10 +18,20 @@ if (isset($_POST['submit'])) {
         include_once '../api/Model/User_Parent.php';
         include_once '../api/Model/Student.php';
         include_once '../api/Model/Login.php';
+        include_once '../api/Model/Menu.php';
 
         //DB
         $db = new Database();
         $db_conn = $db->connect();
+
+        //for the prices
+        $updatePrice = new Menu($db_conn);
+        $readStmt = $updatePrice->readPrice();
+        $rowPrice = $readStmt->fetch(PDO::FETCH_ASSOC);
+        $actualPrice = $rowPrice["price"];
+
+        $_SESSION["price"] = $actualPrice;
+
 
         //for login
         $login = new Login($db_conn);

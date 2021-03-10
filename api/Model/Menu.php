@@ -1,5 +1,6 @@
 <?php
-class Menu{
+class Menu
+{
     //conn
     private $conn;
 
@@ -77,6 +78,29 @@ class Menu{
         return false;
     }
 
-}
+    public function readPrice()
+    {
+        $query = "select * from Menu_Price";
 
-?>
+        $result = $this->conn->query($query);
+
+        $result->execute();
+        return $result;
+    }
+
+    public function updatePrice($price, $newprice)
+    {
+        $query = "update Menu_Price set price = ? where price = ?";
+
+        $stmt = $this->conn->prepare($query);
+
+        // bind data
+        $stmt->bindParam(1, $price);
+        $stmt->bindParam(1, $newprice);
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+}
