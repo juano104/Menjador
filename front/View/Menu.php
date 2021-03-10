@@ -104,7 +104,7 @@
 
                         L.control.scale().addTo(map);
 
-                        var marker = L.marker([39.56093185, 3.20064345557848]).addTo(m);
+                        var marker = L.marker([39.56093185, 3.20064345557848]).addTo(map);
                     </script>
                 </div>
                 <!-- Social buttons -->
