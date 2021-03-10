@@ -34,7 +34,7 @@ if (isset($_SESSION["username"])) {
             $menu->insertMenuPlate($last_id, $selected);
             $i++;
             if ($i > $maxindex) {
-                header("Location: https://intranet.menjadorescola.me");
+                header("Location: https://intranet.menjadorescola.me/insertar");
             }
         }
     }

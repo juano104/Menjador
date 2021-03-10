@@ -1,32 +1,36 @@
 <?php
+session_start();
+if (isset($_SESSION["username"])) {
+    include_once "../api/Model/Plate.php";
+    include_once "../api/Model/Database.php";
 
-include_once "../api/Model/Plate.php";
-include_once "../api/Model/Database.php";
-
-//DB
-$db = new Database();
-$db_conn = $db->connect();
-
-
-$plate = new Plate($db_conn);
-
-$stmt = $plate->readMenuPlate();
-$count = $stmt->rowCount();
+    //DB
+    $db = new Database();
+    $db_conn = $db->connect();
 
 
-if ($count > 0) {
+    $plate = new Plate($db_conn);
 
-    $userArr = array();
+    $stmt = $plate->readMenuPlate();
+    $count = $stmt->rowCount();
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
-        $e[] = array(
-            "date" => $date,
-            "title" => $title,
-            "type" => $type,
-        );  
+
+    if ($count > 0) {
+
+        $userArr = array();
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            extract($row);
+            $e[] = array(
+                "date" => $date,
+                "title" => $title,
+                "type" => $type,
+            );
+        }
+        echo json_encode($e);
     }
-    echo json_encode($e);
-}
 
-//include_once "View/View-Plate.php";
+    //include_once "View/View-Plate.php";
+} else {
+    header("Location: https://intranet.menjadorescola.me/");
+}
