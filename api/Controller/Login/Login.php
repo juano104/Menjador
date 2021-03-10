@@ -60,8 +60,8 @@ if (isset($_POST['submit']) || isset($_SESSION["username"])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "parent") {
-                    //include_once "../front/View/index.php";
-                    header('location: https://www.menjadorescola.me/home');
+                    include_once "../front/View/index.php";
+                    //header('location: https://www.menjadorescola.me/home');
                 }
             } else {
                 echo "<script>
