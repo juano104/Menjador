@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="public/css/estils.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href='public/css/fullcalendar.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    	   crossorigin=""/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.3/themes/base/jquery-ui.css" />
     <script type="text/javascript" src="http://code.jquery.com/ui/1.8.3/jquery-ui.js"></script>-->
@@ -22,6 +24,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    	   crossorigin=""></script>
 
     <style>
         #calendar {
@@ -86,42 +92,23 @@
                 <!-- Grid column -->
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
-
-                    <h1>Google Map - Rectangle</h1>
-
-                    <div id="googleMap" style="width:90%;height:400px;margin:10px; float:left;"></div>
-
+                    <h1>LEAFLET - Markers. </h1>
+                    <div id="meuMapa" style="width:600px;height:400px;"></div>
                     <script>
-                        function myMap() {
+                        // Mapa centrat a latitud/longuitud i zoom
+                        var m = L.map('meuMapa').setView([39.56637682250297, 3.2037112138683597], 15);
 
-                            var map = new google.maps.Map(document.getElementById('googleMap'), {
-                                zoom: 13,
-                                center: {
-                                    lat: 33.678,
-                                    lng: -116.243
-                                },
-                                mapTypeId: 'terrain'
-                            });
+                        // Imatges del mapa (OpenStreetMap + MapBox)
+                        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                            maxZoom: 18,
+                            id: 'mapbox.streets',
+                            accessToken: 'pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g'
+                        }).addTo(m);
 
-                            var rectangle = new google.maps.Rectangle({
-                                strokeColor: '#FF0000',
-                                strokeOpacity: 0.8,
-                                strokeWeight: 2,
-                                fillColor: '#FF0000',
-                                fillOpacity: 0.35,
-                                map: map,
-                                bounds: {
-                                    north: 33.685,
-                                    south: 33.671,
-                                    east: -116.234,
-                                    west: -116.251
-                                }
-                            });
-
-                        }
+                        // Marcador sobre el mapa
+                        var marker = L.marker([39.56637682250297, 3.2037112138683597]).addTo(m);
                     </script>
-
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=myMap"></script>
                 </div>
                 <!-- Social buttons -->
                 <div class="col-md-2 mx-auto">
