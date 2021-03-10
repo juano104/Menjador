@@ -98,9 +98,6 @@ class Menu
         $stmt->bindParam(1, $newprice);
         $stmt->bindParam(1, $oldprice);
 
-        if ($stmt->execute()) {
-            return true;
-        }
-        return false;
+        $stmt->execute();
     }
 }
