@@ -72,7 +72,7 @@
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">
                 © 2021 Copyright:
-                <a href="#">MenjadorEscola</a>
+                <a href="#" style="color: whitex;">MenjadorEscola</a>
             </div>
             <!-- Copyright -->
         </div>

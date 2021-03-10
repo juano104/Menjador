@@ -202,8 +202,8 @@
                             <input name="date5" type="text" class="datepicker">
                         </div>
                         <br>
-                        <button type="button" class="newdate btn btn-success">Nueva Fecha</button>
-                        <button type="button" class="deldate btn btn-danger">Eliminar Fecha</button>
+                        <button type="button" class="deldate btn btn-danger"><i class="fas fa-calendar-times"></i></button>
+                        <button type="button" class="newdate btn btn-dark"><i class="fas fa-calendar-plus"></i></button>   
                         <br><br>
                         <button type="button" class="b3p btn btn-outline-danger">Atras</button>
                         <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
