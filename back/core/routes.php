@@ -3,7 +3,7 @@
 
 $router->define([
     "" => "View/login.php",
-    "login" => "../api/Controller/Booking/ReadByDay.php",
+    "login" => "../api/Controller/Login/Login.php",
     //"home" => "../api/Controller/Booking/ReadByDay.php",
     "reservasAdmin" => "../api/Controller/Booking/Read.php",
     "insert/student" => "../api/Controller/Student/Insert.php",
