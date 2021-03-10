@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION["username"] == "") {
-    header("Location: https://admin.menjadorescola.me/");
+    header("Location: https://intranet.menjadorescola.me/");
 }
 ?>
 
