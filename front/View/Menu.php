@@ -90,7 +90,6 @@
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ubicación</h5>
-                </div>
                     <div class="row">
                     <div class="col-2"></div>
                     <div id="mapid" class="col-8" style="width:400px;height:250px;"></div>
@@ -111,7 +110,7 @@
 
                         var marker = L.marker([39.56093185, 3.20064345557848]).addTo(map);
                     </script>
-                
+                </div>
                 <!-- Social buttons -->
                 <div class="col-md-2 mx-auto">
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
