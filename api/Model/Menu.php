@@ -88,19 +88,16 @@ class Menu
         return $result;
     }
 
-    public function updatePrice($price, $newprice)
+    public function updatePrice($oldprice, $newprice)
     {
         $query = "update Menu_Price set price = ? where price = ?";
 
         $stmt = $this->conn->prepare($query);
 
         // bind data
-        $stmt->bindParam(1, $price);
         $stmt->bindParam(1, $newprice);
+        $stmt->bindParam(2, $oldprice);
 
-        if ($stmt->execute()) {
-            return true;
-        }
-        return false;
+        $stmt->execute();
     }
 }
