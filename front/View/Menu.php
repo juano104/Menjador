@@ -92,8 +92,8 @@
                 <!-- Grid column -->
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
-                    <h1>LEAFLET - Markers. </h1>
-                    <div id="meuMapa" style="width:300px;height:100px;"></div>
+                    <h1>Ubicacion</h1>
+                    <div id="meuMapa" style="width:450px;height:400px;"></div>
                     <script>
                         // Mapa centrat a latitud/longuitud i zoom
                         var m = L.map('meuMapa').setView([39.56093185,3.20064345557848], 15);
