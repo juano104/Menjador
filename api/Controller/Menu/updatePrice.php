@@ -8,14 +8,9 @@ if (isset($_SESSION["username"])) {
     //DB
     $db = new Database();
     $db_conn = $db->connect();
+    
 
-    $updatePrice = new Menu($db_conn);
-    $readStmt = $updatePrice->readPrice();
-    $rowPrice = $readStmt->fetch(PDO::FETCH_ASSOC);
-
-
-
-    $oldprice = $rowPrice["price"];
+    $oldprice = $_SESSION["price"];
     $newprice = $_POST["price"];
 
     $updatePrice->updatePrice($oldprice, $newprice);
