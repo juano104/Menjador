@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://admin.menjadorescola.me/">
+                    <a class="nav-link" href="home">
                         Reservas Diarias
                         <span class="sr-only">(current)</span>
                     </a>
