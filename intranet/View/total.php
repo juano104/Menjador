@@ -1,8 +1,8 @@
 <?php
-/*session_start();
-if($_SESSION["name"] != "login"){
-    header("Location: https://www.menjadorescola.me/");
-}*/
+session_start();
+if ($_SESSION["username"] == "") {
+    header("Location: https://admin.menjadorescola.me/");
+}
 ?>
 
 <!DOCTYPE html>
