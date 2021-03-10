@@ -91,19 +91,20 @@
                     <!-- Content -->
                     <h1>Ubicacion</h1>
                     <div id="mapid" style="width:400px;height:300px;"></div>
+
                     <script>
-                        var m = L.map('mapid').setView([39.56637682250297, 3.2037112138683597], 15);
+                        var map = L.map('mapid').
+                        setView([41.66, -4.72],
+                            15);
 
-                        // Imatges del mapa (OpenStreetMap + MapBox)
-                        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-                            attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
-                            maxZoom: 18,
-                            id: 'mapbox.streets',
-                            accessToken: 'pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g'
-                        }).addTo(m);
+                        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                            maxZoom: 18
+                        }).addTo(map);
 
-                        // Marcador sobre el mapa
-                        var marker = L.marker([39.56637682250297, 3.2037112138683597]).addTo(m);
+                        L.control.scale().addTo(map);
+
+                        L.marker([41.66, -4.71],{draggable: false}).addTo(map);
                     </script>
                 </div>
                 <!-- Social buttons -->
