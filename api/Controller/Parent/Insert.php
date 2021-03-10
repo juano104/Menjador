@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+if (isset($_SESSION["username"])) {
     include_once "../api/Model/User_Admin.php";
     include_once "../api/Model/Database.php";
 
@@ -35,6 +36,6 @@
     } else {
         echo json_encode("User not created, password or DNI is null.");
     }
-
-
-
+} else {
+    header("Location: https://admin.menjadorescola.me/");
+}
