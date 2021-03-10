@@ -86,20 +86,42 @@
                 <!-- Grid column -->
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contacte con nosotros</h5>
-                    <p>
-                    <form method="post" action="mail">
-                        <br>
-                        <input type="text" name="nombre" placeholder="Nombre" required><br>
-                        <br> 
-                        <input type="email" name="correo" placeholder="Correo"><br>
-                        <br>
-                        <input type="text" name="telefono" placeholder="Telefono"><br>
-                        </br>
-                        <textarea rows="4" cols="40" placeholder="Escriba aqui su mensaje" name="mensaje"> </textarea>
-                        <input type="submit" name="ENVIAR" id="boton">
-                    </form>
-                    </p>
+
+                    <h1>Google Map - Rectangle</h1>
+
+                    <div id="googleMap" style="width:90%;height:400px;margin:10px; float:left;"></div>
+
+                    <script>
+                        function myMap() {
+
+                            var map = new google.maps.Map(document.getElementById('googleMap'), {
+                                zoom: 13,
+                                center: {
+                                    lat: 33.678,
+                                    lng: -116.243
+                                },
+                                mapTypeId: 'terrain'
+                            });
+
+                            var rectangle = new google.maps.Rectangle({
+                                strokeColor: '#FF0000',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: '#FF0000',
+                                fillOpacity: 0.35,
+                                map: map,
+                                bounds: {
+                                    north: 33.685,
+                                    south: 33.671,
+                                    east: -116.234,
+                                    west: -116.251
+                                }
+                            });
+
+                        }
+                    </script>
+
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=myMap"></script>
                 </div>
                 <!-- Social buttons -->
                 <div class="col-md-2 mx-auto">
