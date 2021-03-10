@@ -73,23 +73,27 @@
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="http://www.iesmanacor.cat/">IES Manacor Web</a>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <a href="https://www.menjadorescola.me/menu">Menu</a>
                         </li>
                         <li>
-                            <a href="#!">Link 3</a>
+                            <a href="https://www.menjadorescola.me/login">Realizar Reserva</a>
                         </li>
                         <li>
-                            <a href="#!">Link 4</a>
+                            <a href="https://www.menjadorescola.me/reservas">Mis Reservas</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Grid column -->
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Ubicación</h5>
+                    <div class="row">
+                    <div class="col-2"></div>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 col-8">Ubicación</h5>
+                    <div class="col-2"></div>
+                    </div>
                     <div class="row">
                     <div class="col-2"></div>
                     <div id="mapid" class="col-8" style="width:400px;height:250px;"></div>
