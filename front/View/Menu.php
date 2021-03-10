@@ -94,7 +94,7 @@
 
                     <script>
                         var map = L.map('mapid').
-                        setView([41.66, -4.72],
+                        setView([39.56093185, 3.20064345557848],
                             15);
 
                         L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -104,7 +104,7 @@
 
                         L.control.scale().addTo(map);
 
-                        L.marker([41.66, -4.71],{draggable: false}).addTo(map);
+                        var marker = L.marker([39.56093185, 3.20064345557848]).addTo(m);
                     </script>
                 </div>
                 <!-- Social buttons -->
