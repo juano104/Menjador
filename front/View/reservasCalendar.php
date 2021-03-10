@@ -50,7 +50,7 @@ if(empty($_SESSION["username"])){
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container margin">
         <H6>DESCARGAR: </H6>
-        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="far fa-file-pdf"></i></a>
+        <a class="btn btn-danger" href="#" id="print" style="margin-bottom: 5%;"><i class="fas fa-file-pdf"></i></a>
         <div id='calendar'></div>
     </div>
 

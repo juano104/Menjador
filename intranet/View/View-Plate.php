@@ -49,7 +49,7 @@ if ($_SESSION["username"] == "") {
   <canvas id="canvas" width="0%" height="0%"></canvas>
   <div class="container margin">
     
-      <h5>Descargar Menu:</h5><a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
+      <h5>Descargar Menu:</h5><a class="btn btn-danger" href="#" id="print"><i class="fas fa-file-pdf"></i></a>
     
     <h1>Inserir Menu</h1>
     <div id='calendar'></div>
