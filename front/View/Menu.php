@@ -92,15 +92,18 @@
                     <h1>Ubicacion</h1>
                     <div id="mapid" style="width:400px;height:300px;"></div>
                     <script>
-                        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-                        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        var m = L.map('meuMapa').setView([39.56637682250297, 3.2037112138683597], 15);
+
+                        // Imatges del mapa (OpenStreetMap + MapBox)
+                        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                             maxZoom: 18,
-                            id: 'mapbox/streets-v11',
-                            tileSize: 512,
-                            zoomOffset: -1,
-                            accessToken: 'your.mapbox.access.token'
-                        }).addTo(mymap);
+                            id: 'mapbox.streets',
+                            accessToken: 'pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g'
+                        }).addTo(m);
+
+                        // Marcador sobre el mapa
+                        var marker = L.marker([39.56637682250297, 3.2037112138683597]).addTo(m);
                     </script>
                 </div>
                 <!-- Social buttons -->
