@@ -345,17 +345,17 @@
                                     <ul class="list-unstyled list-inline text-center">
                                         <li class="list-inline-item">
 
-                                            <i class="fab fa-cc-visa fa-2x"></i>
+                                            <i class="fab fa-cc-mastercard fa-2x" style="background-color: #F70017;"></i>
 
                                         </li>
                                         <li class="list-inline-item">
 
-                                            <i class="fab fa-cc-mastercard fa-2x"></i>
+                                            <i class="fab fa-cc-visa fa-2x" style="background-color: #002187;"></i>
 
                                         </li>
                                         <li class="list-inline-item">
 
-                                            <i class="fab fa-cc-paypal fa-2x"></i>
+                                            <i class="fab fa-cc-paypal fa-2x" style="background-color: #0096DA;"></i>
 
                                         </li>
                                     </ul>
