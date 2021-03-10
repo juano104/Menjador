@@ -8,7 +8,8 @@ if (isset($_SESSION["username"])) {
     //DB
     $db = new Database();
     $db_conn = $db->connect();
-    
+
+    $updatePrice = new Menu($db_conn);
 
     $oldprice = $_SESSION["price"];
     $newprice = $_POST["price"];
