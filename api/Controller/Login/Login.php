@@ -3,7 +3,7 @@
 session_start();
 
 $_SESSION["name"] = "login";
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) || isset($_SESSION["username"])) {
     if ((isset($_POST['username']) && $_POST['username'] != '') && (isset($_POST['password']) && $_POST['password'] != '')) {
 
         $_SESSION["username"] = trim($_POST['username']);
@@ -60,7 +60,8 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "parent") {
-                    include_once "../front/View/index.php";
+                    //include_once "../front/View/index.php";
+                    header('location: https://www.menjadorescola.me/home');
                 }
             } else {
                 echo "<script>
@@ -105,7 +106,7 @@ if (isset($_POST['submit'])) {
             </script>";
         }
     }
-} else if (isset($_SESSION["username"])) {
+} /*else if (isset($_SESSION["username"])) {
 
     $username = $_SESSION["username"];
     $passwordf = $_SESSION["password"];
@@ -126,7 +127,8 @@ if (isset($_POST['submit'])) {
     $stmt = $user->read();
     $count = $stmt->rowCount();
 
-    include_once "../front/View/index.php";
-} else {
+    //include_once "../front/View/index.php";
+    header('location: https://www.menjadorescola.me/home');
+}*/ else {
     header("Location: https://www.menjadorescola.me/");
 }

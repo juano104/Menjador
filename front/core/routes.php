@@ -8,6 +8,7 @@ $router->define([
 
     "insert" => "../api/Controller/Booking/Insert.php",
     "login" => "../api/Controller/Login/Login.php",
+    "home" => "View/index.php",
     "mail" => "../api/Controller/Mail/mail.php",
 
     
