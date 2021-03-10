@@ -96,7 +96,7 @@ class Menu
 
         // bind data
         $stmt->bindParam(1, $newprice);
-        $stmt->bindParam(1, $oldprice);
+        $stmt->bindParam(2, $oldprice);
 
         $stmt->execute();
     }
