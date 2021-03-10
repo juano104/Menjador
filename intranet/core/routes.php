@@ -9,6 +9,6 @@ $router->define([
     "datos" => "../api/Controller/Menu/Read-MenuPlate.php",
     "insertar/menu" => "../api/Controller/Menu/Insert.php",
     "" => "View/login.php",
-    "login" => "View/total.php"
-    //"home" => "View/total.php",
+    "login" => "../api/Controller/Login/Login.php",
+    "home" => "View/total.php"
 ]);

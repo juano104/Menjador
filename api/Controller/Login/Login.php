@@ -63,12 +63,13 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "admin") {
-                    header('location: https://admin.menjadorescola.me/');
+                    header('location: https://admin.menjadorescola.me/home');
+                    //include_once "../back/View/index.php";
                 }
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.replace('https://www.menjadorescola.me/');
+                window.location.replace('https://admin.menjadorescola.me/');
                 </script>";
             }
         } else if ($countpassr  == 1) {
@@ -77,12 +78,13 @@ if (isset($_POST['submit'])) {
 
             if ($passwordf == $row['password']) {
                 if ($login->getDNI() == $rowlog["DNI"] && $login->getRole() == "restaurant") {
-                    header('location: https://intranet.menjadorescola.me/');
+                    header('location: https://intranet.menjadorescola.me/home');
+                    //include_once "../intranet/View/index.php";
                 }
             } else {
                 echo "<script>
                 alert('Wrong Password');
-                window.location.replace('https://www.menjadorescola.me/');
+                window.location.replace('https://intranet.menjadorescola.me/');
                 </script>";
             }
         } else {
