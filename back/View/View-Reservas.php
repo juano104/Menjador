@@ -97,17 +97,16 @@ if ($_SESSION["username"] == "") {
                     <!--<h3>Selecciona una fecha</h3>-->
                     <form action="" class="form-horizontal" method="post" style="margin: 0;">
                         <div class="form-group ">
-                            <!--<div class="col-sm-10">
+                            <div class="col-sm-10">
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-
-                                    <input class="form-control btn btn-dark" id="date" name="day" placeholder="YYYY/MM/DD" type="text" autocomplete="off">
+                                    <label for="datepicker2">Seleccione Fecha:</label> <br>
+                                    <input autocomplete="off" name="day" type="text" class="datepicker">
                                 </div>
-                            </div>-->
-                            <label for="datepicker2">Seleccione Fecha:</label>
-                            <input name="day" type="text" class="datepicker">
+                            </div>
+
                         </div>
                         <div class="form-group">
                             <div class="col-sm-10">
