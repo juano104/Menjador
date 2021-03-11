@@ -218,6 +218,30 @@ if ($_SESSION["username"] == "") {
         </div>
     </div>
 
+    <div class="modal fade" id="eliminarPare" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar Padre</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Esta Seguro que quiere eliminar el padre?</p>
+                    <form action="">
+                        <input id="DNI" name="DNI" type="hidden" value="0">
+                    </form>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <input type="submit" id="eliminar" class="btn btn-success" value="Eliminar Pare">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function() {
@@ -262,6 +286,7 @@ if ($_SESSION["username"] == "") {
                     responsivePriority: 3
                 }, {
                     "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
+                    "defaultContent": "<button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
                     responsivePriority: 2
                 }],
                 language: {
@@ -283,6 +308,13 @@ if ($_SESSION["username"] == "") {
                 $(tbody).on("click", "button.editar", function() {
                     var data = table.row($(this).parents("tr")).data();
                     var last_name = $("#llinatgealumne").val(data.last_name);
+                });
+            }
+
+            var obtener_id_eliminar = function(tbody, table) {
+                $(tbody).on("click", "button.eliminar", function() {
+                    var data = table.row($(this).parents("tr")).data();
+                    var id = $("#DNI").val(data.DNI);
                 });
             }
 
@@ -309,6 +341,7 @@ if ($_SESSION["username"] == "") {
                         responsivePriority: 3
                     }, {
                         "defaultContent": "<button title='Añadir Hiijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
+                        "defaultContent": "<button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
                         responsivePriority: 2
                     }],
                     language: {
