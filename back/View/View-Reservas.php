@@ -72,7 +72,7 @@ if ($_SESSION["username"] == "") {
 
     <script>
         $(document).ready(function() {
-            var date_input = $('input[name="day"]'); //our date input has the name "day"
+            var date_input = $('input[id="day"]'); //our date input has the name "day"
             var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
             date_input.datepicker({
                 format: 'yyyy/mm/dd',
@@ -130,7 +130,6 @@ if ($_SESSION["username"] == "") {
                         </div>
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <input name="_honey" style="display:none" type="text">
                                 <button class="btn btn-dark " name="submit" type="submit">
                                     Actualizar
                                 </button>
