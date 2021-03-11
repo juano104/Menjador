@@ -356,7 +356,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 
-                                <input onclick="location.href='https://www.menjadorescola.me/login'" id="submit" name="submit" type="submit" value="Reservar" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-sm">
+                                <input onclick="location.href='https://www.menjadorescola.me/login'" id="submit" name="submit" type="submit" value="Reservar" class="btn btn-dark">
                             </div>
                         </div>
                     </div>
