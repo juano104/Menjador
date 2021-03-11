@@ -61,6 +61,12 @@ if ($_SESSION["username"] == "") {
     </style>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
+    <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+                <ol class="breadcrumb bg-transparent px-0">
+                    <li class="breadcrumb-item active">Pagina Escuela Admin</li>
+                    <li class="breadcrumb-item active" aria-current="page">Administrar Padres</li>
+                </ol>
+            </div>
         <h1>Administrar Pares</h1>
         <button type="input" title="Añadir Padre" class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
         <table id="table" class="table table-striped table-bordered">

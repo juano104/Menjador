@@ -92,6 +92,12 @@ if ($_SESSION["username"] == "") {
     </div>
     <div class="bootstrap-iso">
         <div class="container">
+        <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+                <ol class="breadcrumb bg-transparent px-0">
+                    <li class="breadcrumb-item active">Pagina Escuela Admin</li>
+                    <li class="breadcrumb-item active" aria-current="page">Ver Reservas</li>
+                </ol>
+            </div>
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <!--<h3>Selecciona una fecha</h3>-->

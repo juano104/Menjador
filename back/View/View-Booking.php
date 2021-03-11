@@ -65,6 +65,12 @@ if ($_SESSION["username"] == "") {
     </div>
 
     <div class="container" style="margin-top: 2%;">
+    <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+                <ol class="breadcrumb bg-transparent px-0">
+                    <li class="breadcrumb-item active">Pagina Escuela Admin</li>
+                    <li class="breadcrumb-item active" aria-current="page">Ver Total Reservas</li>
+                </ol>
+            </div>
         <h1>Reservas Fijas</h1>
         <table id="tableSingle" class="table table-striped table-bordered">
             <thead>

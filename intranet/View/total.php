@@ -42,6 +42,12 @@ if ($_SESSION["username"] == "") {
 
     <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container margin">
+    <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+                <ol class="breadcrumb bg-transparent px-0">
+                    <li class="breadcrumb-item active">Pagina Restaurante</li>
+                    <li class="breadcrumb-item active" aria-current="page">Ver Total Reservas</li>
+                </ol>
+            </div>
 
         <h5>Descargar Calendari:</h5><a class="btn btn-danger" href="#" id="print"><i class="far fa-file-pdf"></i></a>
 
