@@ -193,8 +193,8 @@ if ($_SESSION["username"] == "") {
 
         </div>
         <div class="modal-footer">
-          <input type="submit" class="btn btn-primary" value="Afegir">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-dark" value="Afegir">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </form>
         </div>
       </div>
