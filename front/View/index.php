@@ -269,11 +269,11 @@
                         <br>
                         <h3>Metodo de Pago</h3>
                         <br>
-                        <button type="button" title="Realizar pago con tarjeta de credito" class="btn btn-muted" data-toggle="modal" data-target="#tarjeta">
+                        <button type="button" title="Realizar pago con tarjeta de credito" class="btn btn-dark" data-toggle="modal" data-target="#tarjeta">
                             Tarjeta
                         </button>
 
-                        <button type="button" title="Realizar pago con domiciliacion bancaria" class="btn btn-muted" data-toggle="modal" data-target="#banco">
+                        <button type="button" title="Realizar pago con domiciliacion bancaria" class="btn btn-dark" data-toggle="modal" data-target="#banco">
                             Banco
                         </button>
                         <br>
