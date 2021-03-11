@@ -180,16 +180,16 @@
                         </div>
                         <div class="d1">
                             <label for="datepicker1">Fecha 1:</label>
-                            <input name="date1" type="text" class="datepicker">
+                            <input autocomplete="off" name="date1" type="text" class="datepicker">
                         </div>
 
                         <div class="d2">
                             <label for="datepicker2">Fecha 2:</label>
-                            <input name="date2" type="text" class="datepicker">
+                            <input autocomplete="off" name="date2" type="text" class="datepicker">
                         </div>
                         <div class="d3">
                             <label for="datepicker3">Fecha 3:</label>
-                            <input name="date3" type="text" class="datepicker">
+                            <input autocomplete="off" name="date3" type="text" class="datepicker">
                         </div>
                         <!--<div class="d4">
                             <label for="datepicker4">Fecha 4:</label>
