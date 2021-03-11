@@ -65,10 +65,23 @@ if (isset($_POST['submit']) /*|| isset($_SESSION["username"])*/) {
                     //header('location: https://www.menjadorescola.me/home');
                 }
             } else {
-                echo "<script>
-                alert('Wrong Password');
-                window.location.replace('https://www.menjadorescola.me/');
-                </script>";
+                echo '<div id="myModal" class="modal fade">
+                <div class="modal-dialog modal-confirm">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center">
+                            <div class="icon-box">
+                                <i class="material-icons">&#xE5CD;</i>
+                            </div>
+                            <a type="button" class="close f" data-dismiss="modal" aria-hidden="true" href="https://www.menjadorescola.me/">&times;</a>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h4>Ooops!</h4>	
+                            <p>Usuario o Contraseña no valida.</p>
+                            <a type="button" class="btn btn-success" data-dismiss="modal" href="https://www.menjadorescola.me/">Intentar otra vez</a>
+                        </div>
+                    </div>
+                </div>
+            </div>     ';
             }
         } else if ($countpassa  == 1) {
             $row = $passadmin->fetch(PDO::FETCH_ASSOC);
