@@ -285,8 +285,7 @@ if ($_SESSION["username"] == "") {
                     data: 'student_name',
                     responsivePriority: 3
                 }, {
-                    "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
-                    "defaultContent": "<button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
+                    "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",    
                     responsivePriority: 2
                 }],
                 language: {
@@ -340,8 +339,7 @@ if ($_SESSION["username"] == "") {
                         data: 'student_name',
                         responsivePriority: 3
                     }, {
-                        "defaultContent": "<button title='Añadir Hiijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
-                        "defaultContent": "<button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
+                        "defaultContent": "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
                         responsivePriority: 2
                     }],
                     language: {
