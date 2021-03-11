@@ -102,7 +102,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Realizar Reserva</li>
                 </ol>
             </div>
-            <form id="paymentForm" method="post" name="form1">
+            <form id="paymentForm" method="post" name="form1" class="needs-validation" novalidate>
                 <div class="col-12 tab" id="tabs">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li><a tabindex="0" class="tab1 tabs nav-link active" href="#tabs-1">Reserva</a></li>
@@ -115,25 +115,30 @@
                     <div class="tab-content" id="tabs-1">
                         <h3>Elegeix el fill</h3> <br>
                         <input type="hidden" name="parent_DNI" id="parent_DNI" value="<?php echo $parent_DNI ?>">
-                        <?php
-                        if ($count > 0) {
-                            $userArr = array();
-                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                extract($row);
-                                $e = array(
-                                    "ID" => $ID,
-                                    "name" => $name,
-                                    "last_name" => $last_name,
-                                    "password" => $password
-                                );
-                                array_push($userArr, $e);
-                                if ($password == $passwordf) {
-                                    echo "<input class='radioname' type='radio' value='" . $ID . "' name='radioname' id='" . $name . "'>";
-                                    echo "<label style='margin-left: 2% ;' for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                        <div class="form-group">
+                            <?php
+                            if ($count > 0) {
+                                $userArr = array();
+                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    extract($row);
+                                    $e = array(
+                                        "ID" => $ID,
+                                        "name" => $name,
+                                        "last_name" => $last_name,
+                                        "password" => $password
+                                    );
+                                    array_push($userArr, $e);
+                                    if ($password == $passwordf) {
+                                        echo "<input class='radioname' type='radio' required value='" . $ID . "' name='radioname' id='" . $name . "'>";
+                                        echo "<label style='margin-left: 2% ;' for=" . $name . ">" . $name . " " . $last_name . "</label><br>";
+                                    }
                                 }
                             }
-                        }
-                        ?>
+                            ?>
+                            <div class="invalid-feedback">
+                                Porfavor, elija un hijo.
+                            </div>
+                        </div>
                         <br>
                         <button type="button" class="b1n btn btn-outline-success">Siguiente</button>
 
@@ -153,11 +158,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <input type="radio" value="Loose" name="type" id="Loose">
-                        <label for="Loose">Dia Suelto</label>
-                        <input type="radio" value="Fixed" name="type" id="Fixed">
-                        <label for="Fixed">Multiples dias</label>
-
+                        <div class="form-group">
+                            <input type="radio" value="Loose" name="type" required id="Loose">
+                            <label for="Loose">Dia Suelto</label>
+                            <input type="radio" required value="Fixed" name="type" id="Fixed">
+                            <label for="Fixed">Multiples dias</label>
+                        </div>
                         <br>
 
                         <button type="button" class="b2p btn btn-outline-danger">Atras</button>
@@ -178,18 +184,23 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="d1">
-                            <label for="datepicker1">Fecha 1:</label>
-                            <input name="date1" type="text" class="datepicker" autocomplete="off">
+                        <div class="form-group">
+                            <div class="d1">
+                                <label for="datepicker1">Fecha 1:</label>
+                                <input name="date1" type="text" class="datepicker" autocomplete="off" required>
+                            </div>
                         </div>
-
-                        <div class="d2">
-                            <label for="datepicker2">Fecha 2:</label>
-                            <input name="date2" type="text" class="datepicker" autocomplete="off">
+                        <div class="form-group">
+                            <div class="d2">
+                                <label for="datepicker2">Fecha 2:</label>
+                                <input name="date2" type="text" class="datepicker" autocomplete="off">
+                            </div>
                         </div>
-                        <div class="d3">
-                            <label for="datepicker3">Fecha 3:</label>
-                            <input name="date3" type="text" class="datepicker" autocomplete="off">
+                        <div class="form-group">
+                            <div class="d3">
+                                <label for="datepicker3">Fecha 3:</label>
+                                <input name="date3" type="text" class="datepicker" autocomplete="off">
+                            </div>
                         </div>
                         <br>
                         <button type="button" title="Añadir fecha" class="deldate btn btn-danger"><i class="fas fa-calendar-times"></i></button>
@@ -1002,6 +1013,27 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 
 </body>
 
