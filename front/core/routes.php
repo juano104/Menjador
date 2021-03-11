@@ -10,6 +10,7 @@ $router->define([
     "login" => "../api/Controller/Login/Login.php",
     "home" => "View/index.php",
     "mail" => "../api/Controller/Mail/mail.php",
+    "logout" => "View/logout.php",
 
     
     "test" => "../login.php"
