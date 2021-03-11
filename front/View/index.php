@@ -200,8 +200,8 @@
                             <input name="date5" type="text" class="datepicker">
                         </div>-->
                         <br>
-                        <button type="button" class="deldate btn btn-danger"><i class="fas fa-calendar-times"></i></button>
-                        <button type="button" class="newdate btn btn-dark"><i class="fas fa-calendar-plus"></i></button>
+                        <button type="button" title="Añadir fecha" class="deldate btn btn-danger"><i class="fas fa-calendar-times"></i></button>
+                        <button type="button" title="Eliminar fecha" class="newdate btn btn-dark"><i class="fas fa-calendar-plus"></i></button>
                         <br><br>
                         <button type="button" class="b3p btn btn-outline-danger">Atras</button>
                         <button type="button" class="b3n btn btn-outline-success">Siguiente</button>
@@ -277,11 +277,11 @@
                         <br>
                         <h3>Metodo de Pago</h3>
                         <br>
-                        <button type="button" class="btn" data-toggle="modal" data-target="#tarjeta">
+                        <button type="button" title="Realizar pago con tarjeta de credito" class="btn btn-danger" data-toggle="modal" data-target="#tarjeta">
                             Tarjeta
                         </button>
 
-                        <button type="button" class="btn" data-toggle="modal" data-target="#banco">
+                        <button type="button" title="Realizar pago con domiciliacion bancaria" class="btn btn-danger" data-toggle="modal" data-target="#banco">
                             Banco
                         </button>
                         <br>
@@ -996,16 +996,6 @@
                         friday: friday
                     },
                     ContentType: "application/json",
-                    success: function(response) {
-                        alert("Reserva realizada correctamente");
-                        //alert(JSON.stringify(response));
-                        //return alert(response);
-                    },
-                    error: function(err) {
-                        alert("Reserva realizada correctamente");
-                        //alert(JSON.stringify(err));
-                        //return alert(response);
-                    }
                 });
             });
 
