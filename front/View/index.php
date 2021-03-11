@@ -362,10 +362,18 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 
-                                <input id="submit" name="submit" type="submit" value="Reserve" class="btn btn-dark">
+                                <input id="submit" name="submit" type="submit" value="Reservar" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-sm">
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            Reserva realizada correctamente!
                         </div>
                     </div>
                 </div>
@@ -414,7 +422,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                <input id="submit2" name="submit2" type="submit" value="ReserveB" class="btn btn-dark">
+                                <input id="submit2" name="submit2" type="submit" value="Reservar" class="btn btn-dark">
                             </div>
                         </div>
                     </div>
