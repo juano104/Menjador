@@ -62,7 +62,7 @@ if ($_SESSION["username"] == "") {
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
         <h1>Administrar Pares</h1>
-        <button type="input" class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
+        <button type="input" title="Añadir Padre" class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -261,7 +261,7 @@ if ($_SESSION["username"] == "") {
                     data: 'student_name',
                     responsivePriority: 3
                 }, {
-                    "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
+                    "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
                     responsivePriority: 2
                 }],
                 language: {
@@ -308,7 +308,7 @@ if ($_SESSION["username"] == "") {
                         data: 'student_name',
                         responsivePriority: 3
                     }, {
-                        "defaultContent": "<button type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
+                        "defaultContent": "<button title='Añadir Hiijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button>",
                         responsivePriority: 2
                     }],
                     language: {
