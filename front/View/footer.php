@@ -7,7 +7,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 mx-auto">
                     <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Links</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">ENLACES</h5>
                     <ul class="list-unstyled">
                         <li>
                             <a href="http://www.iesmanacor.cat/" style="color: white;">IES Manacor Web</a>
@@ -27,7 +27,7 @@
                 <div class="col-md-4 mx-auto">
                     <!-- Content -->
 
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Ubicación</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">UBICACIÓN</h5>
 
                     <div class="row">
                         <div class="col-2"></div>
@@ -52,7 +52,7 @@
                 </div>
                 <!-- Social buttons -->
                 <div class="col-md-3 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">Xarxes</h5>
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-center">REDES SOCIALES</h5>
                     <br>
                     <ul class="list-unstyled list-inline text-center">
                         <li class="list-inline-item">
@@ -72,7 +72,7 @@
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">
                 © 2021 Copyright:
-                <a href="#" style="color: whitex;">MenjadorEscola</a>
+                <a href="#" style="color: white;">MenjadorEscola</a>
             </div>
             <!-- Copyright -->
         </div>
