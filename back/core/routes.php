@@ -9,6 +9,7 @@ $router->define([
     "insert/student" => "../api/Controller/Student/Insert.php",
     "insert/parent" => "../api/Controller/Parent/Insert.php",
     "insertar" => "../api/Controller/Parent/Read_Child.php",
+    "eliminar" => "../api/Controller/User/Delete.php",
     "actualizar" => "../api/Controller/Menu/updatePrice.php",
     
     "logout" => "View/logout.php"

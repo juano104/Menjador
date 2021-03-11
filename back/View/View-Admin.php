@@ -229,7 +229,7 @@ if ($_SESSION["username"] == "") {
                 </div>
                 <div class="modal-body">
                     <p>Esta Seguro que quiere eliminar el padre?</p>
-                    <form action="" method="post" id="form" name="f1">
+                    <form action="eliminar" method="post" id="form" name="f1">
                         <input id="pareDNI" name="pareDNI" type="hidden" value="0">
                     </form>
 

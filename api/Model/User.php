@@ -108,6 +108,21 @@ class User
         $this->role = $dataRow['role'];
     }
 
+    public function deleteUser()
+    {
+        $sqlQuery = "Delete from User where DNI = ?";
+
+        $stmt = $this->conn->prepare($sqlQuery);
+
+        // bind data
+        $stmt->bindParam(1, $this->DNI);
+
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
     /*public function insert()
     {
         $sqlQuery = "INSERT INTO
