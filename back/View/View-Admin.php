@@ -61,7 +61,7 @@ if ($_SESSION["username"] == "") {
     </style>
 
     <div class="container" style="margin-bottom: 10%; margin-top: 2%;">
-    <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+            <div aria-label="breadcrumb" style="margin-bottom: 3%;">
                 <ol class="breadcrumb bg-transparent px-0">
                     <li class="breadcrumb-item active">Pagina Escuela Admin</li>
                     <li class="breadcrumb-item active" aria-current="page">Administrar Padres</li>
@@ -292,7 +292,7 @@ if ($_SESSION["username"] == "") {
                     data: 'student_name',
                     responsivePriority: 3
                 }, {
-                    "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
+                    "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button style='margin-left:1.5%;' title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
                     responsivePriority: 2
                 }],
                 language: {
@@ -347,7 +347,7 @@ if ($_SESSION["username"] == "") {
                         data: 'student_name',
                         responsivePriority: 3
                     }, {
-                        "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
+                        "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button style='margin-left:1.5%;' title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
                         responsivePriority: 2
                     }],
                     language: {
