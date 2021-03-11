@@ -65,8 +65,10 @@ if (isset($_POST['submit']) /*|| isset($_SESSION["username"])*/) {
                     //header('location: https://www.menjadorescola.me/home');
                 }
             } else {
+
+                session_destroy();
                 echo "<script>
-                alert('Wrong Password');
+                alert('Contraseña equivocada');
                 window.location.replace('https://www.menjadorescola.me/');
                 </script>";
             }
