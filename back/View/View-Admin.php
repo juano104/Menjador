@@ -229,8 +229,8 @@ if ($_SESSION["username"] == "") {
                 </div>
                 <div class="modal-body">
                     <p>Esta Seguro que quiere eliminar el padre?</p>
-                    <form action="">
-                        <input id="pareID" name="pareID" type="hidden" value="0">
+                    <form action="" method="post" id="form" name="f1">
+                        <input id="pareDNI" name="pareDNI" type="hidden" value="0">
                     </form>
 
                     <div class="modal-footer">
@@ -313,7 +313,7 @@ if ($_SESSION["username"] == "") {
             var obtener_id_eliminar = function(tbody, table) {
                 $(tbody).on("click", "button.eliminar", function() {
                     var data = table.row($(this).parents("tr")).data();
-                    var DNI = $("#pareID").val(data.DNI);
+                    var DNI = $("#pareDNI").val(data.DNI);
                 });
             }
 
