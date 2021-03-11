@@ -89,32 +89,9 @@ if(isset($_SESSION["username"])){
                         </div>
                         <div class="col-1 col-lg-2"></div>
                     </div>
-                    <div class="form-group row">
-                        <button type="button" id="fulano" value="56142879E">Fulanito Fulano</button>
-                        <button type="button" id="jaume" value="79481024P">Marc Jaume</button>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-3 col-lg-4"></div>
-                        <div class="col-6 col-lg-4">
-                            <a href="#" target="_blank" rel="noopener noreferrer">Has olvidado la contraseña?</a>
-                        </div>
-                        <div class="col-1 col-lg-2"></div>
-                    </div>
                 </form>
             </div>
         </div>
-        <script>
-            $("document").ready(function() {
-
-                $("#fulano").click(function() {
-                    $("#username").val($("#fulano").val());
-                })
-                $("#jaume").click(function() {
-                    $("#username").val($("#jaume").val());
-                })
-            });
-
-        </script>
 
         <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields

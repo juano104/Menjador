@@ -39,10 +39,7 @@ if(isset($_SESSION["username"])){
         .na {
             padding-top: 0% !important;
         }
-
-        .page{
-            height: 500px;
-        }
+        
     </style>
 
     <nav class="navbar navbar-expand-lg navbar-light static-top">
@@ -54,7 +51,7 @@ if(isset($_SESSION["username"])){
         </div>
     </nav>
     <br>
-    <div class="container margin justify-content-center page">
+    <div class="container margin justify-content-center">
         <div class="row">
             <div class="col-12 justify-content-center text-center">
                 <h1>BIENVENIDO</h1>
