@@ -47,7 +47,7 @@ $today = date("Y-m-d");
                         <i class="fas fa-user"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="logout.php">LogOut</a>
+                        <a class="dropdown-item" href="logout">LogOut</a>
                     </div>
                 </li>
             </ul>

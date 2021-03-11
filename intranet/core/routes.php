@@ -10,5 +10,6 @@ $router->define([
     "insertar/menu" => "../api/Controller/Menu/Insert.php",
     "" => "View/login.php",
     "login" => "../api/Controller/Login/Login.php",
-    "home" => "View/total.php"
+    "home" => "View/total.php",
+    "logout" => "View/logout.php"
 ]);
