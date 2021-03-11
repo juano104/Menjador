@@ -229,15 +229,16 @@ if ($_SESSION["username"] == "") {
                 </div>
                 <div class="modal-body">
                     <p>Esta Seguro que quiere eliminar el padre?</p>
-                    <form action="eliminar" method="post" id="form" name="f1">
+                    <form action="eliminar" method="post" id="form">
                         <input id="pareDNI" name="pareDNI" type="hidden" value="0">
-                    </form>
+                    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <input type="submit" id="eliminar" class="btn btn-success" value="Eliminar Pare">
+                        <input type="submit" id="eliminar" class="btn btn-success" value="Eliminar Padre">
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
