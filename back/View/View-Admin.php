@@ -67,15 +67,15 @@ if ($_SESSION["username"] == "") {
                     <li class="breadcrumb-item active" aria-current="page">Administrar Padres</li>
                 </ol>
             </div>
-        <h1>Administrar Pares</h1>
+        <h1>Administrar Padres</h1>
         <button type="input" title="Añadir Padre" class='btn btn-dark' name='afegirpare' data-toggle='modal' data-target='#ModalPare'><i class='fas fa-plus-circle'></i></button>
         <table id="table" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th class="head">Name</th>
-                    <th class="head">Llinatge</th>
+                    <th class="head">Nombre</th>
+                    <th class="head">Apellidos</th>
                     <th class="head">DNI</th>
-                    <th class="head">Fills</th>
+                    <th class="head">Hijos</th>
                     <th class="head"></th>
                 </tr>
             </thead>
@@ -181,33 +181,33 @@ if ($_SESSION["username"] == "") {
                         <strong>ALERGIA</strong>
                         <br>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='ous'>Huevos</label>
+                            <label class="form-check-label" style="margin-left: 2%;" for='ous'>Huevos</label>
                             <input class="form-check-input" type='checkbox' id='ous' name='alergia[]' value='1'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='marisc'>Marisco</label>
+                            <label class="form-check-label" style="margin-left: 2%;" for='marisc'>Marisco</label>
                             <input class="form-check-input" type='checkbox' id='marisc' name='alergia[]' value='2'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='peix'>Pescado</label>
+                            <label class="form-check-label" style="margin-left: 2%;" for='peix'>Pescado</label>
                             <input class="form-check-input" type='checkbox' id='peix' name='alergia[]' value='3'>
                         </div>
                         <br>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='frutssecs'>Frutos Secos</label>
+                            <label class="form-check-label" style="margin-left: 2%;" for='frutssecs'>Frutos Secos</label>
                             <input class="form-check-input" type='checkbox' id='frutssecs' name='alergia[]' value='4'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='llet'>Leche</label>
+                            <label class="form-check-label" style="margin-left: 2%;" for='llet'>Leche</label>
                             <input class="form-check-input" type='checkbox' id='llet' name='alergia[]' value='5'>
                         </div>
                         <div class="form-check-inline">
-                            <label class="form-check-label" for='cereals'>Cereales</label>
+                            <label class="form-check-label" style="margin-left: 2%;" for='cereals'>Cereales</label>
                             <input class="form-check-input" type='checkbox' id='cereals' name='alergia[]' value='6'>
                         </div>
                         <input id="pareID" name="pareID" type="hidden" value="0">
 
-                        <div class="form-group">
+                        <div class="form-group" style="margin-top:4%;">
                             <label for="date"><strong>FECHA DE NACIMIENTO:</strong></label>
                             <input class="form-control" type="date" name="date" id="date" required>
                             <div class="invalid-feedback">
