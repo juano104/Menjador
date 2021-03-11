@@ -344,13 +344,19 @@
                                     </p>
                                     <ul class="list-unstyled list-inline text-center">
                                         <li class="list-inline-item">
+
                                             <i class="fab fa-cc-mastercard fa-2x" style="color: #F70017; "></i>
+
                                         </li>
                                         <li class="list-inline-item">
+
                                             <i class="fab fa-cc-visa fa-2x" style="color: #002187;"></i>
+
                                         </li>
                                         <li class="list-inline-item">
+
                                             <i class="fab fa-cc-paypal fa-2x" style="color: #0096DA;"></i>
+
                                         </li>
                                     </ul>
                                 </div>
@@ -358,16 +364,8 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                <input id="submit" name="submit" type="submit" value="Reservar" class="btn btn-dark alert-link" data-toggle="modal" data-target=".bd-example-modal-sm">
+                                <input id="submit" name="submit" type="submit" value="Reserve" class="btn btn-dark">
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            Reserva realizada correctamente!
                         </div>
                     </div>
                 </div>
@@ -414,9 +412,9 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                <input id="submit2" name="submit2" type="submit" value="Reservar" class="btn btn-dark">
+                                <input id="submit2" name="submit2" type="submit" value="ReserveB" class="btn btn-dark">
                             </div>
                         </div>
                     </div>
@@ -431,6 +429,25 @@
     </script>
 
     <script>
+        /*
+         * Display error message based on current element's data attributes
+         */
+        function cgToggleError(element, status) {
+            var errorMessage = $(element).data('validation-error-msg'),
+                errorContainer = $(element).data('validation-error-msg-container');
+
+            $(element).removeClass().addClass(status);
+
+            if (status === 'valid') {
+                $(errorContainer).html(errorMessage).hide();
+            } else if (status === 'invalid') {
+                $(errorContainer).html(errorMessage).show();
+            }
+        }
+
+        /*
+         * Format a date as MM/YY
+         */
         function cgFormatExpiryDate(e) {
             var inputChar = String.fromCharCode(event.keyCode);
             var code = event.keyCode;
@@ -440,19 +457,19 @@
             }
 
             event.target.value = event.target.value.replace(
-                /^([1-9]\/|[2-9])$/g, '0$1/'
+                /^([1-9]\/|[2-9])$/g, '0$1/' // 3 > 03/
             ).replace(
-                /^(0[1-9]|1[0-2])$/g, '$1/'
+                /^(0[1-9]|1[0-2])$/g, '$1/' // 11 > 11/
             ).replace(
-                /^([0-1])([3-9])$/g, '0$1/$2'
+                /^([0-1])([3-9])$/g, '0$1/$2' // 13 > 01/3
             ).replace(
-                /^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2'
+                /^(0?[1-9]|1[0-2])([0-9]{2})$/g, '$1/$2' // 141 > 01/41
             ).replace(
-                /^([0]+)\/|[0]+$/g, '0'
+                /^([0]+)\/|[0]+$/g, '0' // 0/ > 0 and 00 > 0
             ).replace(
-                /[^\d\/]|^[\/]*$/g, ''
+                /[^\d\/]|^[\/]*$/g, '' // To allow only digits and `/`
             ).replace(
-                /\/\//g, '/'
+                /\/\//g, '/' // Prevent entering more than 1 `/`
             );
         }
 
@@ -494,6 +511,9 @@
             return true;
         }
 
+        /*
+         * Credit card expiry date formatting (real-time)
+         */
         $(document).on('keyup blur', '.cardExpiry', function(event) {
             var currentDate = new Date();
             var currentMonth = ("0" + (currentDate.getMonth() + 1)).slice(-2);
@@ -518,11 +538,16 @@
             cgFormatExpiryDate(event);
         });
 
+        /*
+         * Credit card CVV disallow letters (real-time)
+         */
         $(document).on('keyup', '.cardCVV', function(event) {
             event.target.value = event.target.value.replace(/[^\d\/]|^[\/]*$/g, '');
         });
 
-
+        /*
+         * Credit card CVV length check
+         */
         $(document).on('blur', '.cardCVV', function(e) {
             if ($('#cardCVV').val().length < 3) {
                 cgToggleError($(this), 'invalid');
@@ -761,11 +786,7 @@
                         dateArray.push(day5);
                     }*/
                     var newDate = $("<td>" + dateArray + "</td>");
-<<<<<<< Updated upstream
                     var sum = dateArray.length * <?php echo $_SESSION["price"] ?>; // 8 is the price for everyday
-=======
-                    var sum = dateArray.length * <?php echo $actualPrice ?>; // 8 is the price for everyday
->>>>>>> Stashed changes
                     var sumtotal = $("<td>" + sum + " € </td>");
                     $(".tabler > tbody > tr").append(newDate);
                     $(".tabler > tbody > tr").append(sumtotal);
