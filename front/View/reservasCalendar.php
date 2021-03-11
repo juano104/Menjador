@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(empty($_SESSION["username"])){
+if (empty($_SESSION["username"])) {
     header("Location: https://www.menjadorescola.me/");
 }
 //print_r($_SESSION["username"]);
@@ -47,9 +47,8 @@ if(empty($_SESSION["username"])){
     <!-- Menu de navegacio -->
     <?php require_once "navbar.php" ?>
 
-    <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container margin">
-    <div aria-label="breadcrumb" style="margin-bottom: 3%;">
+        <div aria-label="breadcrumb" style="margin-bottom: 3%;">
             <ol class="breadcrumb bg-transparent px-0">
                 <li class="breadcrumb-item active">Pagina Padres</li>
                 <li class="breadcrumb-item active" aria-current="page">Ver tus reservas</li>
@@ -81,11 +80,15 @@ if(empty($_SESSION["username"])){
     </script>
     <!-- Footer -->
     <?php require_once "footer.php" ?>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css">
+
     <!-- Footer -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    -->
+
     <script>
         $("#print").click(function() {
             //#AEFC is my div for FullCalendar
