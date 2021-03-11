@@ -153,7 +153,7 @@ if ($_SESSION["username"] == "") {
 
                         <div class="form-group">
                             <label for="classe"><strong>Classe</strong>
-                                <select class="form-control" name="classe" id="classe" required>
+                                <select class="form-control" name="classe" id="classe">
                                     <option value="1">Primero A</option>
                                     <option value="2">Primero B</option>
                                     <option value="3">Segundo A</option>
@@ -162,10 +162,10 @@ if ($_SESSION["username"] == "") {
                                     <option value="6">Tercero B</option>
                                     <option value="7">Cuarto A</option>
                                     <option value="8">Cuarto B</option>
-                                    <option value="4">Quinto A</option>
-                                    <option value="4">Quinto B</option>
-                                    <option value="4">Sexto A</option>
-                                    <option value="4">Sexto B</option>
+                                    <option value="9">Quinto A</option>
+                                    <option value="10">Quinto B</option>
+                                    <option value="11">Sexto A</option>
+                                    <option value="12">Sexto B</option>
                                 </select></label>
                             <div class="invalid-feedback">
                                 Porfavor, ponga una clase.

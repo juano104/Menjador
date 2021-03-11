@@ -19,7 +19,7 @@ if (isset($_SESSION["username"])) {
     $student->setLast_name($_POST["llinatgealumne"]);
     $student->setBirth_Date($_POST["date"]);
     $student->setParent_Id($_POST["pareID"]);
-    $student->setClass($_POST["class"]);
+    $student->setClass($_POST["classe"]);
 
 
 
