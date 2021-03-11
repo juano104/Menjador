@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION(["username"]))){
+    header("Location: https://admin.menjadorescola.me/home");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
