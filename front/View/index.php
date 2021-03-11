@@ -180,25 +180,17 @@
                         </div>
                         <div class="d1">
                             <label for="datepicker1">Fecha 1:</label>
-                            <input autocomplete="off" name="date1" type="text" class="datepicker">
+                            <input name="date1" type="text" class="datepicker" autocomplete="off">
                         </div>
 
                         <div class="d2">
                             <label for="datepicker2">Fecha 2:</label>
-                            <input autocomplete="off" name="date2" type="text" class="datepicker">
+                            <input name="date2" type="text" class="datepicker" autocomplete="off">
                         </div>
                         <div class="d3">
                             <label for="datepicker3">Fecha 3:</label>
-                            <input autocomplete="off" name="date3" type="text" class="datepicker">
+                            <input name="date3" type="text" class="datepicker" autocomplete="off">
                         </div>
-                        <!--<div class="d4">
-                            <label for="datepicker4">Fecha 4:</label>
-                            <input name="date4" type="text" class="datepicker">
-                        </div>
-                        <div class="d5">
-                            <label for="datepicker5">Fecha 5:</label>
-                            <input name="date5" type="text" class="datepicker">
-                        </div>-->
                         <br>
                         <button type="button" title="Añadir fecha" class="deldate btn btn-danger"><i class="fas fa-calendar-times"></i></button>
                         <button type="button" title="Eliminar fecha" class="newdate btn btn-dark"><i class="fas fa-calendar-plus"></i></button>
@@ -768,8 +760,6 @@
                 var day1 = $("input[name='date1']").val();
                 var day2 = $("input[name='date2']").val();
                 var day3 = $("input[name='date3']").val();
-                /*var day4 = $("input[name='date4']").val();
-                var day5 = $("input[name='date5']").val();*/
 
                 if (day1 != "") {
                     $("#tabs").tabs({
@@ -787,12 +777,6 @@
                     if (day3 != "") {
                         dateArray.push(day3);
                     }
-                    /*if (day4 != "") {
-                        dateArray.push(day4);
-                    }
-                    if (day5 != "") {
-                        dateArray.push(day5);
-                    }*/
                     var newDate = $("<td>" + dateArray + "</td>");
                     var sum = dateArray.length * <?php echo $_SESSION["price"] ?>; // 8 is the price for everyday
                     var sumtotal = $("<td>" + sum + " € </td>");
