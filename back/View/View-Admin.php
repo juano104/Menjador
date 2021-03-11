@@ -230,7 +230,7 @@ if ($_SESSION["username"] == "") {
                 <div class="modal-body">
                     <p>Esta Seguro que quiere eliminar el padre?</p>
                     <form action="">
-                        <input id="DNI" name="DNI" type="hidden" value="0">
+                        <input id="pareID" name="pareID" type="hidden" value="0">
                     </form>
 
                     <div class="modal-footer">
@@ -285,7 +285,7 @@ if ($_SESSION["username"] == "") {
                     data: 'student_name',
                     responsivePriority: 3
                 }, {
-                    "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",    
+                    "defaultContent": "<button title='Añadir Hijo' type='submit' class='editar btn btn-info' data-toggle='modal' data-target='#exampleModal'><i class='fas fa-user-plus'></i></button><button title='Eliminar Padre' type='submit' class='eliminar  btn btn-danger' data-toggle='modal' data-target='#eliminarPare'><i class='far fa-trash-alt'></i></button>",
                     responsivePriority: 2
                 }],
                 language: {
@@ -313,12 +313,13 @@ if ($_SESSION["username"] == "") {
             var obtener_id_eliminar = function(tbody, table) {
                 $(tbody).on("click", "button.eliminar", function() {
                     var data = table.row($(this).parents("tr")).data();
-                    var id = $("#DNI").val(data.DNI);
+                    var DNI = $("#pareID").val(data.DNI);
                 });
             }
 
             obtener_data_editar("#table tbody", t);
             obtener_data_alumne("#table tbody", t);
+            obtener_id_eliminar("#table tbody", t);
 
             function loadData() {
                 t = $('#table').DataTable({
