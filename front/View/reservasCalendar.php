@@ -47,7 +47,6 @@ if(empty($_SESSION["username"])){
     <!-- Menu de navegacio -->
     <?php require_once "navbar.php" ?>
 
-    <canvas id="canvas" width="0%" height="0%"></canvas>
     <div class="container margin">
     <div aria-label="breadcrumb" style="margin-bottom: 3%;">
             <ol class="breadcrumb bg-transparent px-0">
