@@ -132,9 +132,11 @@ if ($_SESSION["username"] == "") {
                 buttons: [{
                     extend: 'pdfHtml5',
                     text: '<i class="fas fa-file-pdf"></i>',
-                    titleAttr: 'PDF',
+                    titleAttr: 'Exportar a PDF',
                     className: 'btn btn-danger pdf'
-                }]
+                }],
+                responsive: true,
+
             });
 
             function loadData() {
@@ -158,14 +160,14 @@ if ($_SESSION["username"] == "") {
                         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
                     },
                     select: true,
-                    responsive: true,
                     dom: 'Bfrtip',
                     buttons: [{
                         extend: 'pdfHtml5',
                         text: '<i class="fas fa-file-pdf"></i>',
-                        titleAttr: 'PDF',
+                        titleAttr: 'Exportar a PDF',
                         className: 'btn btn-danger pdf'
-                    }]
+                    }],
+                    responsive: true,
                 });
 
             }
